@@ -12,7 +12,7 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #18bc9c;
+  color: #2ce969;
   outline: none;
 }
 h1,
@@ -51,10 +51,10 @@ hr.star-light:after {
   color: white;
 }
 hr.star-primary {
-  border-color: #2c3e50;
+  border-color: #f08200;
 }
 hr.star-primary:after {
-  color: #2c3e50;
+  color: #f08200;
 }
 .img-centered {
   margin: 0 auto;
@@ -121,6 +121,7 @@ header .intro-text .skills {
 }
 .navbar {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f08200;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -133,9 +134,18 @@ header .intro-text .skills {
 .navbar .navbar-nav li a:focus {
   outline: none;
 }
+.navbar .navbar-nav li.active {
+  background-color: #b26000;
+}
 .navbar-default,
 .navbar-inverse {
   border: none;
+}
+.navbar-default .navbar-toggle,
+.navbar-inverse .navbar-toggle,
+.navbar-default .navbar-toogle:hover,
+.navbar-inverse .navbar-toogle:hover {
+  border-color: #b26000;
 }
 section {
   padding: 100px 0;
@@ -143,9 +153,10 @@ section {
 section h2 {
   margin: 0;
   font-size: 3em;
+  color: #071a54;
 }
 section.success {
-  background: #18bc9c;
+  background: #2ce969;
   color: white;
 }
 section.success a,
@@ -153,8 +164,17 @@ section.success a:hover,
 section.success a:focus,
 section.success a:active,
 section.success a.active {
-  color: #2c3e50;
   outline: none;
+}
+section.success h2 {
+  color: white;
+}
+section.success li {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+section.success li i {
+  margin-right: 6px;
 }
 @media (max-width: 767px) {
   section {
@@ -175,7 +195,7 @@ section.success a.active {
   margin: 0 auto;
 }
 #portfolio .portfolio-item .portfolio-link .caption {
-  background: rgba(24, 188, 156, 0.9);
+  background: rgba(44, 233, 105, 0.9);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -212,6 +232,12 @@ section.success a.active {
     margin: 0 0 30px;
   }
 }
+#talks {
+  background-color: #dd92d2;
+}
+.embed-responsive {
+  background-color: black;
+}
 .btn-outline {
   color: white;
   font-size: 20px;
@@ -224,7 +250,7 @@ section.success a.active {
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
-  color: #18bc9c;
+  color: #2ce969;
   background: white;
   border: solid 2px white;
 }
@@ -272,7 +298,7 @@ section.success a.active {
   opacity: 1;
 }
 .floating-label-form-group-with-focus label {
-  color: #18bc9c;
+  color: #2ce969;
 }
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee;
@@ -285,14 +311,14 @@ footer h3 {
 }
 footer .footer-above {
   padding-top: 50px;
-  background-color: #2c3e50;
+  background-color: #f08200;
 }
 footer .footer-col {
   margin-bottom: 50px;
 }
 footer .footer-below {
   padding: 25px 0;
-  background-color: #233140;
+  background-color: #d77400;
 }
 .btn-social {
   display: inline-block;
@@ -363,7 +389,7 @@ footer .footer-below {
   height: 75px;
   width: 1px;
   margin-left: 35px;
-  background-color: #2c3e50;
+  background-color: #f08200;
   transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   /* IE 9 */
@@ -374,7 +400,7 @@ footer .footer-below {
 .portfolio-modal .close-modal .lr .rl {
   height: 75px;
   width: 1px;
-  background-color: #2c3e50;
+  background-color: #f08200;
   transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   /* IE 9 */

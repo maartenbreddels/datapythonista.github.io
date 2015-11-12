@@ -140,6 +140,7 @@ header {
 
 .navbar {
 	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: @brand-primary;
 	text-transform: uppercase;
 	font-weight: 700;
 	a:focus {
@@ -152,12 +153,19 @@ header {
 				outline: none;
 			}
 		}
+        li.active {
+            background-color: @brand-primary-dark;
+        }
 	}
 }
 
 .navbar-default,
 .navbar-inverse {
 	border: none;
+    .navbar-toggle,
+    .navbar-toogle:hover {
+        border-color: @brand-primary-dark;
+    }
 }
 
 section {
@@ -165,6 +173,7 @@ section {
     h2 {
     	margin: 0;
     	font-size: 3em;
+        color: @brand-secondary;
     }
 }
 
@@ -177,8 +186,17 @@ section.success {
     a:focus,
     a:active,
     a.active {
-      color: @brand-primary;
       outline: none;
+    }
+    h2 {
+        color: white;
+    }
+    li {
+        font-size: 18px;
+        margin-bottom: 16px;
+        i {
+            margin-right: 6px;
+        }
     }
 }
 
@@ -243,6 +261,14 @@ section.success {
             margin: 0 0 30px;
         }
     }
+}
+
+#talks {
+    background-color: #dd92d2;
+}
+
+.embed-responsive {
+    background-color: black;
 }
 
 .btn-outline {
