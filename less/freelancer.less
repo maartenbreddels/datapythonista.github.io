@@ -124,10 +124,17 @@ header {
         -moz-transition: padding 0.3s;
         transition: padding 0.3s;
 	    .navbar-brand {
+            color: #eee;
 	        font-size: 2em;
 	        -webkit-transition: all 0.3s;
 	        -moz-transition: all 0.3s;
 	        transition: all 0.3s;
+            &:focus {
+                color: #eee;
+            }
+            &:hover {
+                color: white;
+            }
 	    }
     }
     .navbar-fixed-top.navbar-shrink {
@@ -150,10 +157,19 @@ header {
 		li {
 			a:focus {
 				outline: none;
+                color: #eee;
 			}
+            a {
+                color: #eee;
+            }
+            a:hover {
+                color: white;
+            }
 		}
-        li.active {
-            background-color: @brand-primary-dark;
+        .active {
+            a, a:hover, a:focus {
+                background-color: @brand-primary-dark;
+            }
         }
 	}
 }
@@ -177,7 +193,7 @@ section {
 }
 
 section.success {
-	background: @brand-success;
+	background: #2ce969;
 	color: white;
 
     a,
@@ -227,7 +243,7 @@ section.success {
                 -webkit-transition: all ease 0.5s;
                 -moz-transition: all ease 0.5s;
                 &:hover {
-                    opacity: 1;
+                    opacity: .8;
                 }
                 .caption-content {
                     position: absolute;
