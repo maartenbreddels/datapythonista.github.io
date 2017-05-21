@@ -1,0 +1,12 @@
+body:after {
+    content: url(pydata_logo.png);
+    position: fixed;
+    top: 1em;
+    left: 1.5em;
+}
+.rendered_html h1 {
+    padding-bottom: 1em !important;
+}
+.highlight {
+    margin-top: 1em !important;
+}
