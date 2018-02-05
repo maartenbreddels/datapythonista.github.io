@@ -1,1 +1,1 @@
-include: ["_test2.html", "_static/*"]
+include: ["_test2.html", "_static/*", "_static/test.css"]
