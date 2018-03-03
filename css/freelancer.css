@@ -168,10 +168,13 @@ section {
 section h2 {
   margin: 0;
   font-size: 3em;
-  color: #071a54;
+  color: white;
+}
+section h3, section p {
+  color: white;
 }
 section.success {
-  background: #2ce969;
+  background: #0e0e6c;
   color: white;
 }
 section.success a,
@@ -248,7 +251,7 @@ section.success li i {
   }
 }
 #talks {
-  background-color: #dd92d2;
+  background-color: #195b16;
 }
 .embed-responsive {
   background-color: black;
