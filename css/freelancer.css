@@ -253,6 +253,9 @@ section.success li i {
 #talks {
   background-color: #195b16;
 }
+#talks a, #talks a:hover, #talks a:focus, #talks a:active, #talks a.active {
+  color: white;
+}
 .embed-responsive {
   background-color: black;
 }
