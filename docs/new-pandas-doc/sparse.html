@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sparse data structures &#8212; pandas 0.24.0.dev0+98.gbd95c4b9f documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Frequently Asked Questions (FAQ)" href="gotchas.html" />
+    <link rel="prev" title="Enhancing Performance" href="enhancingperf.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><span><img src="_static/pandas_logo.png"></span>
+          pandas</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.24.0.dev0+98.gbd95c4b9f</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s New</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-24-0">v0.24.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-23-1">v0.23.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-23-0-may-15-2018">v0.23.0 (May 15, 2018)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-22-0-december-29-2017">v0.22.0 (December 29, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-21-1-december-12-2017">v0.21.1 (December 12, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-21-0-october-27-2017">v0.21.0 (October 27, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-20-3-july-7-2017">v0.20.3 (July 7, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-20-2-june-4-2017">v0.20.2 (June 4, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-20-1-may-5-2017">v0.20.1 (May 5, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-19-2-december-24-2016">v0.19.2 (December 24, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-19-1-november-3-2016">v0.19.1 (November 3, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-19-0-october-2-2016">v0.19.0 (October 2, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-18-1-may-3-2016">v0.18.1 (May 3, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-18-0-march-13-2016">v0.18.0 (March 13, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-17-1-november-21-2015">v0.17.1 (November 21, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-17-0-october-9-2015">v0.17.0 (October 9, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-16-2-june-12-2015">v0.16.2 (June 12, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-16-1-may-11-2015">v0.16.1 (May 11, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-16-0-march-22-2015">v0.16.0 (March 22, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-15-2-december-12-2014">v0.15.2 (December 12, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-15-1-november-9-2014">v0.15.1 (November 9, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-15-0-october-18-2014">v0.15.0 (October 18, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-14-1-july-11-2014">v0.14.1 (July 11, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-14-0-may-31-2014">v0.14.0 (May 31 , 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-13-1-february-3-2014">v0.13.1 (February 3, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-13-0-january-3-2014">v0.13.0 (January 3, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-12-0-july-24-2013">v0.12.0 (July 24, 2013)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-11-0-april-22-2013">v0.11.0 (April 22, 2013)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-10-1-january-22-2013">v0.10.1 (January 22, 2013)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-10-0-december-17-2012">v0.10.0 (December 17, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-9-1-november-14-2012">v0.9.1 (November 14, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-9-0-october-7-2012">v0.9.0 (October 7, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-8-1-july-22-2012">v0.8.1 (July 22, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-8-0-june-29-2012">v0.8.0 (June 29, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-7-3-april-12-2012">v.0.7.3 (April 12, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-7-2-march-16-2012">v.0.7.2 (March 16, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-7-1-february-29-2012">v.0.7.1 (February 29, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-7-0-february-9-2012">v.0.7.0 (February 9, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-6-1-december-13-2011">v.0.6.1 (December 13, 2011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-6-0-november-25-2011">v.0.6.0 (November 25, 2011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-5-0-october-24-2011">v.0.5.0 (October 24, 2011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-4-3-through-v0-4-1-september-25-october-9-2011">v.0.4.3 through v0.4.1 (September 25 - October 9, 2011)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#plan-for-dropping-python-2-7">Plan for dropping Python 2.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#python-version-support">Python version support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#installing-pandas">Installing pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#running-the-test-suite">Running the test suite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to pandas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#where-to-start">Where to start?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#bug-reports-and-enhancement-requests">Bug reports and enhancement requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#working-with-the-code">Working with the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-to-the-documentation">Contributing to the documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-to-the-code-base">Contributing to the code base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-your-changes-to-pandas">Contributing your changes to <em>pandas</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Package overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#data-structures">Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#mutability-and-copying-of-data">Mutability and copying of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#getting-support">Getting Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#community">Community</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#project-governance">Project Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#development-team">Development Team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#institutional-partners">Institutional Partners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10min.html">10 Minutes to pandas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#object-creation">Object Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#viewing-data">Viewing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#merge">Merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#grouping">Grouping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#reshaping">Reshaping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#time-series">Time Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#categoricals">Categoricals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#plotting">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#getting-data-in-out">Getting Data In/Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#gotchas">Gotchas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#internal-guides">Internal Guides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#pandas-cookbook">pandas Cookbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#lessons-for-new-pandas-users">Lessons for new pandas users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#practical-data-analysis-with-python">Practical data analysis with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#exercises-for-new-users">Exercises for new users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#modern-pandas">Modern pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#excel-charts-with-pandas-vincent-and-xlsxwriter">Excel charts with pandas, vincent and xlsxwriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#video-tutorials">Video Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#various-tutorials">Various Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#idioms">Idioms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#multiindexing">MultiIndexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#grouping">Grouping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#timeseries">Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#merge">Merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#plotting">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#data-in-out">Data In/Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#computation">Computation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#timedeltas">Timedeltas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#aliasing-axis-names">Aliasing Axis Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#creating-example-data">Creating Example Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dsintro.html">Intro to Data Structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dsintro.html#series">Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dsintro.html#dataframe">DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dsintro.html#panel">Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dsintro.html#deprecate-panel">Deprecate Panel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Essential Basic Functionality</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#head-and-tail">Head and Tail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#attributes-and-the-raw-ndarray-s">Attributes and the raw ndarray(s)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#accelerated-operations">Accelerated operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#flexible-binary-operations">Flexible binary operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#descriptive-statistics">Descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#function-application">Function application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#reindexing-and-altering-labels">Reindexing and altering labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#iteration">Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#dt-accessor">.dt accessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#vectorized-string-methods">Vectorized string methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#sorting">Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#copying">Copying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#dtypes">dtypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#selecting-columns-based-on-dtype">Selecting columns based on <code class="docutils literal notranslate"><span class="pre">dtype</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text.html">Working with Text Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text.html#splitting-and-replacing-strings">Splitting and Replacing Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#concatenation">Concatenation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#indexing-with-str">Indexing with <code class="docutils literal notranslate"><span class="pre">.str</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#extracting-substrings">Extracting Substrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#testing-for-strings-that-match-or-contain-a-pattern">Testing for Strings that Match or Contain a Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#creating-indicator-variables">Creating Indicator Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#method-summary">Method Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options and Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="options.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#getting-and-setting-options">Getting and Setting Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#setting-startup-options-in-python-ipython-environment">Setting Startup Options in python/ipython Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#frequently-used-options">Frequently Used Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#available-options">Available Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#number-formatting">Number Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#unicode-formatting">Unicode Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#table-schema-display">Table Schema Display</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="indexing.html">Indexing and Selecting Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#different-choices-for-indexing">Different Choices for Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#basics">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#attribute-access">Attribute Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#slicing-ranges">Slicing ranges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#selection-by-label">Selection By Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#selection-by-position">Selection By Position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#selection-by-callable">Selection By Callable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#ix-indexer-is-deprecated">IX Indexer is Deprecated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#indexing-with-list-with-missing-labels-is-deprecated">Indexing with list with missing labels is Deprecated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#selecting-random-samples">Selecting Random Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#setting-with-enlargement">Setting With Enlargement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#fast-scalar-value-getting-and-setting">Fast scalar value getting and setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#boolean-indexing">Boolean indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#indexing-with-isin">Indexing with isin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#the-where-method-and-masking">The <code class="docutils literal notranslate"><span class="pre">where()</span></code> Method and Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#the-query-method">The <code class="docutils literal notranslate"><span class="pre">query()</span></code> Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#duplicate-data">Duplicate Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#dictionary-like-get-method">Dictionary-like <code class="docutils literal notranslate"><span class="pre">get()</span></code> method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#the-lookup-method">The <code class="docutils literal notranslate"><span class="pre">lookup()</span></code> Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#index-objects">Index objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#set-reset-index">Set / Reset Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#returning-a-view-versus-a-copy">Returning a view versus a copy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">MultiIndex / Advanced Indexing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#hierarchical-indexing-multiindex">Hierarchical indexing (MultiIndex)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#advanced-indexing-with-hierarchical-index">Advanced indexing with hierarchical index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#sorting-a-multiindex">Sorting a <code class="docutils literal notranslate"><span class="pre">MultiIndex</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#take-methods">Take Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#index-types">Index Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#miscellaneous-indexing-faq">Miscellaneous indexing FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="computation.html">Computational tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#statistical-functions">Statistical Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#window-functions">Window Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#aggregation">Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#expanding-windows">Expanding Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#exponentially-weighted-windows">Exponentially Weighted Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="missing_data.html">Working with missing data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#missing-data-basics">Missing data basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#datetimes">Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#inserting-missing-data">Inserting missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#calculations-with-missing-data">Calculations with missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#cleaning-filling-missing-data">Cleaning / filling missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#missing-data-casting-rules-and-indexing">Missing data casting rules and indexing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="groupby.html">Group By: split-apply-combine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#splitting-an-object-into-groups">Splitting an object into groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#iterating-through-groups">Iterating through groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#selecting-a-group">Selecting a group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#aggregation">Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#transformation">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#filtration">Filtration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#dispatching-to-instance-methods">Dispatching to instance methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#flexible-apply">Flexible <code class="docutils literal notranslate"><span class="pre">apply</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#other-useful-features">Other useful features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="merging.html">Merge, join, and concatenate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="merging.html#concatenating-objects">Concatenating objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merging.html#database-style-dataframe-joining-merging">Database-style DataFrame joining/merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merging.html#timeseries-friendly-merging">Timeseries friendly merging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reshaping.html">Reshaping and Pivot Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#reshaping-by-pivoting-dataframe-objects">Reshaping by pivoting DataFrame objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#reshaping-by-stacking-and-unstacking">Reshaping by stacking and unstacking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#reshaping-by-melt">Reshaping by Melt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#combining-with-stats-and-groupby">Combining with stats and GroupBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#pivot-tables">Pivot tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#cross-tabulations">Cross tabulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#tiling">Tiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#computing-indicator-dummy-variables">Computing indicator / dummy variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#factorizing-values">Factorizing values</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timeseries.html">Time Series / Date functionality</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#timestamps-vs-time-spans">Timestamps vs. Time Spans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#converting-to-timestamps">Converting to Timestamps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#generating-ranges-of-timestamps">Generating Ranges of Timestamps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#timestamp-limitations">Timestamp Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#indexing">Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#time-date-components">Time/Date Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#dateoffset-objects">DateOffset Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#time-series-related-instance-methods">Time Series-Related Instance Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#resampling">Resampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#time-span-representation">Time Span Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#converting-between-representations">Converting Between Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#representing-out-of-bounds-spans">Representing Out-of-Bounds Spans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#time-zone-handling">Time Zone Handling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timedeltas.html">Time Deltas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#parsing">Parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#reductions">Reductions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#frequency-conversion">Frequency Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#attributes">Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#timedeltaindex">TimedeltaIndex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#resampling">Resampling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="categorical.html">Categorical Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#object-creation">Object Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#categoricaldtype">CategoricalDtype</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#working-with-categories">Working with categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#sorting-and-order">Sorting and Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#comparisons">Comparisons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#data-munging">Data munging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#getting-data-in-out">Getting Data In/Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#differences-to-r-s-factor">Differences to R’s <cite>factor</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#gotchas">Gotchas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#basic-plotting-plot">Basic Plotting: <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#other-plots">Other Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#plotting-with-missing-data">Plotting with Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#plotting-tools">Plotting Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#plot-formatting">Plot Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#plotting-directly-with-matplotlib">Plotting directly with matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#trellis-plotting-interface">Trellis plotting interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="style.html">Styling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Building-Styles">Building Styles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Building-Styles-Summary">Building Styles Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Finer-Control:-Slicing">Finer Control: Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Finer-Control:-Display-Values">Finer Control: Display Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Builtin-Styles">Builtin Styles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Bar-charts">Bar charts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Sharing-Styles">Sharing Styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Other-Options">Other Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Precision">Precision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Captions">Captions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Table-Styles">Table Styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Hiding-the-Index-or-Columns">Hiding the Index or Columns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#CSS-Classes">CSS Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Limitations">Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Terms">Terms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Fun-stuff">Fun stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Export-to-Excel">Export to Excel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Extensibility">Extensibility</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Subclassing">Subclassing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">IO Tools (Text, CSV, HDF5, …)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="io.html#csv-text-files">CSV &amp; Text files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#json">JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#html">HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#excel-files">Excel files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#clipboard">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#pickling">Pickling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#msgpack">msgpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#hdf5-pytables">HDF5 (PyTables)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#feather">Feather</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#parquet">Parquet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#sql-queries">SQL Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#google-bigquery">Google BigQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#stata-format">Stata Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#sas-formats">SAS Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#other-file-formats">Other file formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#performance-considerations">Performance Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enhancingperf.html">Enhancing Performance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enhancingperf.html#cython-writing-c-extensions-for-pandas">Cython (Writing C extensions for pandas)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enhancingperf.html#using-numba">Using Numba</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enhancingperf.html#expression-evaluation-via-eval">Expression Evaluation via <code class="docutils literal notranslate"><span class="pre">eval()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sparse data structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sparsearray">SparseArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sparseindex-objects">SparseIndex objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sparse-dtypes">Sparse Dtypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sparse-calculation">Sparse Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interaction-with-scipy-sparse">Interaction with scipy.sparse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gotchas.html">Frequently Asked Questions (FAQ)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#dataframe-memory-usage">DataFrame memory usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#using-if-truth-statements-with-pandas">Using If/Truth Statements with pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#nan-integer-na-values-and-na-type-promotions"><code class="docutils literal notranslate"><span class="pre">NaN</span></code>, Integer <code class="docutils literal notranslate"><span class="pre">NA</span></code> values and <code class="docutils literal notranslate"><span class="pre">NA</span></code> type promotions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#differences-with-numpy">Differences with NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#thread-safety">Thread-safety</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#byte-ordering-issues">Byte-Ordering Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="r_interface.html">rpy2 / R interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="r_interface.html#transferring-r-data-sets-into-python">Transferring R data sets into Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r_interface.html#converting-dataframes-into-r-objects">Converting DataFrames into R objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html">pandas Ecosystem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#statistics-and-machine-learning">Statistics and Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#visualization">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#ecosystem-ide">IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#domain-specific">Domain Specific</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#out-of-core">Out-of-core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#data-validation">Data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#extension-data-types">Extension Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#accessors">Accessors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comparison_with_r.html">Comparison with R / R libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_r.html#quick-reference">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_r.html#base-r">Base R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_r.html#plyr">plyr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_r.html#reshape-reshape2">reshape / reshape2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comparison_with_sql.html">Comparison with SQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#select">SELECT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#where">WHERE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#group-by">GROUP BY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#join">JOIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#union">UNION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#pandas-equivalents-for-some-sql-analytic-and-aggregate-functions">Pandas equivalents for some SQL analytic and aggregate functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#update">UPDATE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#delete">DELETE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comparison_with_sas.html">Comparison with SAS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#data-structures">Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#data-input-output">Data Input / Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#data-operations">Data Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#string-processing">String Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#merging">Merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#groupby">GroupBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#other-considerations">Other Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comparison_with_stata.html">Comparison with Stata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#data-structures">Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#data-input-output">Data Input / Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#data-operations">Data Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#string-processing">String Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#merging">Merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#groupby">GroupBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#other-considerations">Other Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#storing-pandas-dataframe-objects-in-apache-parquet-format">Storing pandas DataFrame objects in Apache Parquet format</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="internals.html">Internals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internals.html#indexing">Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html#subclassing-pandas-data-structures">Subclassing pandas Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extending.html">Extending Pandas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extending.html#registering-custom-accessors">Registering Custom Accessors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending.html#extension-types">Extension Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending.html#subclassing-pandas-data-structures">Subclassing pandas Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-23-1">pandas 0.23.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-23-0">pandas 0.23.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-22-0">pandas 0.22.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-21-1">pandas 0.21.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-21-0">pandas 0.21.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-20-0-0-20-1">pandas 0.20.0 / 0.20.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-19-2">pandas 0.19.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-19-1">pandas 0.19.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-19-0">pandas 0.19.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-18-1">pandas 0.18.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-18-0">pandas 0.18.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-17-1">pandas 0.17.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-17-0">pandas 0.17.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-16-2">pandas 0.16.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-16-1">pandas 0.16.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-16-0">pandas 0.16.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-15-2">pandas 0.15.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-15-1">pandas 0.15.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-15-0">pandas 0.15.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-14-1">pandas 0.14.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-14-0">pandas 0.14.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-13-1">pandas 0.13.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-13-0">pandas 0.13.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-12-0">pandas 0.12.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-11-0">pandas 0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-10-1">pandas 0.10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-10-0">pandas 0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-9-1">pandas 0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-9-0">pandas 0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-8-1">pandas 0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-8-0">pandas 0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-7-3">pandas 0.7.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-7-2">pandas 0.7.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-7-1">pandas 0.7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-7-0">pandas 0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-6-1">pandas 0.6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-6-0">pandas 0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-5-0">pandas 0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-4-3">pandas 0.4.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-4-2">pandas 0.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-4-1">pandas 0.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-4-0">pandas 0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-3-0">pandas 0.3.0</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Sparse data structures</a><ul>
+<li><a class="reference internal" href="#sparsearray">SparseArray</a></li>
+<li><a class="reference internal" href="#sparseindex-objects">SparseIndex objects</a></li>
+<li><a class="reference internal" href="#sparse-dtypes">Sparse Dtypes</a></li>
+<li><a class="reference internal" href="#sparse-calculation">Sparse Calculation</a></li>
+<li><a class="reference internal" href="#interaction-with-scipy-sparse">Interaction with scipy.sparse</a></li>
+</ul>
+</li>
+</ul>
+
+  <li>
+    <a href="enhancingperf.html" title="Previous Chapter: Enhancing Performance"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Enhancing Performance</span>
+    </a>
+  </li>
+  <li>
+    <a href="gotchas.html" title="Next Chapter: Frequently Asked Questions (FAQ)"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Frequently As... &raquo;</span>
+    </a>
+  </li>
+<div id="sourcelink">
+  <a href="_sources/sparse.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="sparse-data-structures">
+<span id="sparse"></span><h1>Sparse data structures<a class="headerlink" href="#sparse-data-structures" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">SparsePanel</span></code> class has been removed in 0.19.0</p>
+</div>
+<p>We have implemented “sparse” versions of <code class="docutils literal notranslate"><span class="pre">Series</span></code> and <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. These are not sparse
+in the typical “mostly 0”. Rather, you can view these objects as being “compressed”
+where any data matching a specific value (<code class="docutils literal notranslate"><span class="pre">NaN</span></code> / missing value, though any value
+can be chosen) is omitted. A special <code class="docutils literal notranslate"><span class="pre">SparseIndex</span></code> object tracks where data has been
+“sparsified”. This will make much more sense with an example. All of the standard pandas
+data structures have a <code class="docutils literal notranslate"><span class="pre">to_sparse</span></code> method:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-509cb636079a&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;randn&#39; is not defined
+
+<span class="gp">In [2]: </span><span class="n">ts</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="gp">In [3]: </span><span class="n">sts</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">to_sparse</span><span class="p">()</span>
+
+<span class="gp">In [4]: </span><span class="n">sts</span>
+<span class="gh">Out[4]: </span><span class="go"></span>
+<span class="go">2001-10-31    0.838796</span>
+<span class="go">2001-11-30    0.897333</span>
+<span class="go">2001-12-31         NaN</span>
+<span class="go">2002-01-31    0.758724</span>
+<span class="go">2002-02-28    0.560657</span>
+<span class="go">Freq: M, dtype: float64</span>
+<span class="go">BlockIndex</span>
+<span class="go">Block locations: array([0, 3], dtype=int32)</span>
+<span class="go">Block lengths: array([2, 2], dtype=int32)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">to_sparse</span></code> method takes a <code class="docutils literal notranslate"><span class="pre">kind</span></code> argument (for the sparse index, see
+below) and a <code class="docutils literal notranslate"><span class="pre">fill_value</span></code>. So if we had a mostly zero <code class="docutils literal notranslate"><span class="pre">Series</span></code>, we could
+convert it to sparse with <code class="docutils literal notranslate"><span class="pre">fill_value=0</span></code>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="n">ts</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to_sparse</span><span class="p">(</span><span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gh">Out[5]: </span><span class="go"></span>
+<span class="go">2001-10-31    0.838796</span>
+<span class="go">2001-11-30    0.897333</span>
+<span class="go">2001-12-31    0.000000</span>
+<span class="go">2002-01-31    0.758724</span>
+<span class="go">2002-02-28    0.560657</span>
+<span class="go">Freq: M, dtype: float64</span>
+<span class="go">BlockIndex</span>
+<span class="go">Block locations: array([0, 3], dtype=int32)</span>
+<span class="go">Block lengths: array([2, 2], dtype=int32)</span>
+</pre></div>
+</div>
+<p>The sparse objects exist for memory efficiency reasons. Suppose you had a
+large, mostly NA <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-6-87b1ba2ffa1c&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;randn&#39; is not defined
+
+<span class="gp">In [7]: </span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">9998</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="gp">In [8]: </span><span class="n">sdf</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_sparse</span><span class="p">()</span>
+
+<span class="gp">In [9]: </span><span class="n">sdf</span>
+<span class="gh">Out[9]: </span><span class="go"></span>
+<span class="go">     A   B</span>
+<span class="go">0  NaN NaN</span>
+<span class="go">1  NaN NaN</span>
+<span class="go">2  NaN NaN</span>
+
+<span class="gp">In [10]: </span><span class="n">sdf</span><span class="o">.</span><span class="n">density</span>
+<span class="go">                                                     Out[10]: 0.0</span>
+</pre></div>
+</div>
+<p>As you can see, the density (% of values that have not been “compressed”) is
+extremely low. This sparse object takes up much less memory on disk (pickled)
+and in the Python interpreter. Functionally, their behavior should be nearly
+identical to their dense counterparts.</p>
+<p>Any sparse object can be converted back to the standard dense form by calling
+<code class="docutils literal notranslate"><span class="pre">to_dense</span></code>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [11]: </span><span class="n">sts</span><span class="o">.</span><span class="n">to_dense</span><span class="p">()</span>
+<span class="gh">Out[11]: </span><span class="go"></span>
+<span class="go">2001-10-31    0.838796</span>
+<span class="go">2001-11-30    0.897333</span>
+<span class="go">2001-12-31         NaN</span>
+<span class="go">2002-01-31    0.758724</span>
+<span class="go">2002-02-28    0.560657</span>
+<span class="go">Freq: M, dtype: float64</span>
+</pre></div>
+</div>
+<div class="section" id="sparsearray">
+<span id="sparse-array"></span><h2>SparseArray<a class="headerlink" href="#sparsearray" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">SparseArray</span></code> is the base layer for all of the sparse indexed data
+structures. It is a 1-dimensional ndarray-like object storing only values
+distinct from the <code class="docutils literal notranslate"><span class="pre">fill_value</span></code>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="gp">In [13]: </span><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">;</span> <span class="n">arr</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="gp">In [14]: </span><span class="n">sparr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">SparseArray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="gp">In [15]: </span><span class="n">sparr</span>
+<span class="gh">Out[15]: </span><span class="go"></span>
+<span class="go">[0.4691122999071863, -0.2828633443286633, nan, nan, nan, -0.17321464905330858, 0.11920871129693428, nan, -0.8618489633477999, -2.1045692188948086]</span>
+<span class="go">Fill: nan</span>
+<span class="go">IntIndex</span>
+<span class="go">Indices: array([0, 1, 5, 6, 8, 9], dtype=int32)</span>
+</pre></div>
+</div>
+<p>Like the indexed objects (SparseSeries, SparseDataFrame), a <code class="docutils literal notranslate"><span class="pre">SparseArray</span></code>
+can be converted back to a regular ndarray by calling <code class="docutils literal notranslate"><span class="pre">to_dense</span></code>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">sparr</span><span class="o">.</span><span class="n">to_dense</span><span class="p">()</span>
+<span class="gh">Out[16]: </span><span class="go"></span>
+<span class="go">array([ 0.4691, -0.2829,     nan,     nan,     nan, -0.1732,  0.1192,</span>
+<span class="go">           nan, -0.8618, -2.1046])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sparseindex-objects">
+<h2>SparseIndex objects<a class="headerlink" href="#sparseindex-objects" title="Permalink to this headline">¶</a></h2>
+<p>Two kinds of <code class="docutils literal notranslate"><span class="pre">SparseIndex</span></code> are implemented, <code class="docutils literal notranslate"><span class="pre">block</span></code> and <code class="docutils literal notranslate"><span class="pre">integer</span></code>. We
+recommend using <code class="docutils literal notranslate"><span class="pre">block</span></code> as it’s more memory efficient. The <code class="docutils literal notranslate"><span class="pre">integer</span></code> format
+keeps an arrays of all of the locations where the data are not equal to the
+fill value. The <code class="docutils literal notranslate"><span class="pre">block</span></code> format tracks only the locations and sizes of blocks
+of data.</p>
+</div>
+<div class="section" id="sparse-dtypes">
+<span id="sparse-dtype"></span><h2>Sparse Dtypes<a class="headerlink" href="#sparse-dtypes" title="Permalink to this headline">¶</a></h2>
+<p>Sparse data should have the same dtype as its dense representation. Currently,
+<code class="docutils literal notranslate"><span class="pre">float64</span></code>, <code class="docutils literal notranslate"><span class="pre">int64</span></code> and <code class="docutils literal notranslate"><span class="pre">bool</span></code> dtypes are supported. Depending on the original
+dtype, <code class="docutils literal notranslate"><span class="pre">fill_value</span></code> default changes:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">float64</span></code>: <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">int64</span></code>: <code class="docutils literal notranslate"><span class="pre">0</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">bool</span></code>: <code class="docutils literal notranslate"><span class="pre">False</span></code></li>
+</ul>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [17]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+
+<span class="gp">In [18]: </span><span class="n">s</span>
+<span class="gh">Out[18]: </span><span class="go"></span>
+<span class="go">0    1.0</span>
+<span class="go">1    NaN</span>
+<span class="go">2    NaN</span>
+<span class="go">dtype: float64</span>
+
+<span class="gp">In [19]: </span><span class="n">s</span><span class="o">.</span><span class="n">to_sparse</span><span class="p">()</span>
+<span class="go">                                                    Out[19]: </span>
+<span class="go">0    1.0</span>
+<span class="go">1    NaN</span>
+<span class="go">2    NaN</span>
+<span class="go">dtype: float64</span>
+<span class="go">BlockIndex</span>
+<span class="go">Block locations: array([0], dtype=int32)</span>
+<span class="go">Block lengths: array([1], dtype=int32)</span>
+
+<span class="gp">In [20]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="gp">In [21]: </span><span class="n">s</span>
+<span class="gh">Out[21]: </span><span class="go"></span>
+<span class="go">0    1</span>
+<span class="go">1    0</span>
+<span class="go">2    0</span>
+<span class="go">dtype: int64</span>
+
+<span class="gp">In [22]: </span><span class="n">s</span><span class="o">.</span><span class="n">to_sparse</span><span class="p">()</span>
+<span class="go">                                            Out[22]: </span>
+<span class="go">0    1</span>
+<span class="go">1    0</span>
+<span class="go">2    0</span>
+<span class="go">dtype: int64</span>
+<span class="go">BlockIndex</span>
+<span class="go">Block locations: array([0], dtype=int32)</span>
+<span class="go">Block lengths: array([1], dtype=int32)</span>
+
+<span class="gp">In [23]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">])</span>
+
+<span class="gp">In [24]: </span><span class="n">s</span>
+<span class="gh">Out[24]: </span><span class="go"></span>
+<span class="go">0     True</span>
+<span class="go">1    False</span>
+<span class="go">2     True</span>
+<span class="go">dtype: bool</span>
+
+<span class="gp">In [25]: </span><span class="n">s</span><span class="o">.</span><span class="n">to_sparse</span><span class="p">()</span>
+<span class="go">                                                       Out[25]: </span>
+<span class="go">0     True</span>
+<span class="go">1    False</span>
+<span class="go">2     True</span>
+<span class="go">dtype: bool</span>
+<span class="go">BlockIndex</span>
+<span class="go">Block locations: array([0, 2], dtype=int32)</span>
+<span class="go">Block lengths: array([1, 1], dtype=int32)</span>
+</pre></div>
+</div>
+<p>You can change the dtype using <code class="docutils literal notranslate"><span class="pre">.astype()</span></code>, the result is also sparse. Note that
+<code class="docutils literal notranslate"><span class="pre">.astype()</span></code> also affects to the <code class="docutils literal notranslate"><span class="pre">fill_value</span></code> to keep its dense representation.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [26]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="gp">In [27]: </span><span class="n">s</span>
+<span class="gh">Out[27]: </span><span class="go"></span>
+<span class="go">0    1</span>
+<span class="go">1    0</span>
+<span class="go">2    0</span>
+<span class="go">3    0</span>
+<span class="go">4    0</span>
+<span class="go">dtype: int64</span>
+
+<span class="gp">In [28]: </span><span class="n">ss</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">to_sparse</span><span class="p">()</span>
+
+<span class="gp">In [29]: </span><span class="n">ss</span>
+<span class="gh">Out[29]: </span><span class="go"></span>
+<span class="go">0    1</span>
+<span class="go">1    0</span>
+<span class="go">2    0</span>
+<span class="go">3    0</span>
+<span class="go">4    0</span>
+<span class="go">dtype: int64</span>
+<span class="go">BlockIndex</span>
+<span class="go">Block locations: array([0], dtype=int32)</span>
+<span class="go">Block lengths: array([1], dtype=int32)</span>
+
+<span class="gp">In [30]: </span><span class="n">ss</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="go">                                                                                                                                                     Out[30]: </span>
+<span class="go">0    1.0</span>
+<span class="go">1    0.0</span>
+<span class="go">2    0.0</span>
+<span class="go">3    0.0</span>
+<span class="go">4    0.0</span>
+<span class="go">dtype: float64</span>
+<span class="go">BlockIndex</span>
+<span class="go">Block locations: array([0], dtype=int32)</span>
+<span class="go">Block lengths: array([1], dtype=int32)</span>
+</pre></div>
+</div>
+<p>It raises if any value cannot be coerced to specified dtype.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">ss</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span><span class="o">.</span><span class="n">to_sparse</span><span class="p">()</span>
+<span class="go">0    1.0</span>
+<span class="go">1    NaN</span>
+<span class="go">2    NaN</span>
+<span class="go">dtype: float64</span>
+<span class="go">BlockIndex</span>
+<span class="go">Block locations: array([0], dtype=int32)</span>
+<span class="go">Block lengths: array([1], dtype=int32)</span>
+
+<span class="gp">In [2]: </span><span class="n">ss</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+<span class="go">ValueError: unable to coerce current fill_value nan to int64 dtype</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sparse-calculation">
+<span id="id1"></span><h2>Sparse Calculation<a class="headerlink" href="#sparse-calculation" title="Permalink to this headline">¶</a></h2>
+<p>You can apply NumPy <em>ufuncs</em> to <code class="docutils literal notranslate"><span class="pre">SparseArray</span></code> and get a <code class="docutils literal notranslate"><span class="pre">SparseArray</span></code> as a result.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [31]: </span><span class="n">arr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">SparseArray</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+
+<span class="gp">In [32]: </span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="gh">Out[32]: </span><span class="go"></span>
+<span class="go">[1.0, nan, nan, 2.0, nan]</span>
+<span class="go">Fill: nan</span>
+<span class="go">IntIndex</span>
+<span class="go">Indices: array([0, 3], dtype=int32)</span>
+</pre></div>
+</div>
+<p>The <em>ufunc</em> is also applied to <code class="docutils literal notranslate"><span class="pre">fill_value</span></code>. This is needed to get
+the correct dense result.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [33]: </span><span class="n">arr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">SparseArray</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">fill_value</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="gp">In [34]: </span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="gh">Out[34]: </span><span class="go"></span>
+<span class="go">[1.0, 1.0, 1.0, 2.0, 1.0]</span>
+<span class="go">Fill: 1</span>
+<span class="go">IntIndex</span>
+<span class="go">Indices: array([0, 3], dtype=int32)</span>
+
+<span class="gp">In [35]: </span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">.</span><span class="n">to_dense</span><span class="p">()</span>
+<span class="go">                                                                                         Out[35]: array([1., 1., 1., 2., 1.])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="interaction-with-scipy-sparse">
+<span id="sparse-scipysparse"></span><h2>Interaction with scipy.sparse<a class="headerlink" href="#interaction-with-scipy-sparse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sparsedataframe">
+<h3>SparseDataFrame<a class="headerlink" href="#sparsedataframe" title="Permalink to this headline">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.20.0.</span></p>
+</div>
+<p>Pandas supports creating sparse dataframes directly from <code class="docutils literal notranslate"><span class="pre">scipy.sparse</span></code> matrices.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [36]: </span><span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">csr_matrix</span>
+
+<span class="gp">In [37]: </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="gp">In [38]: </span><span class="n">arr</span><span class="p">[</span><span class="n">arr</span> <span class="o">&lt;</span> <span class="o">.</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="gp">In [39]: </span><span class="n">sp_arr</span> <span class="o">=</span> <span class="n">csr_matrix</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="gp">In [40]: </span><span class="n">sp_arr</span>
+<span class="gh">Out[40]: </span><span class="go"></span>
+<span class="go">&lt;1000x5 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;</span>
+<span class="go">	with 524 stored elements in Compressed Sparse Row format&gt;</span>
+
+<span class="gp">In [41]: </span><span class="n">sdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">SparseDataFrame</span><span class="p">(</span><span class="n">sp_arr</span><span class="p">)</span>
+
+<span class="gp">In [42]: </span><span class="n">sdf</span>
+<span class="gh">Out[42]: </span><span class="go"></span>
+<span class="go">      0         1         2        3   4</span>
+<span class="go">0   NaN       NaN       NaN      NaN NaN</span>
+<span class="go">1   NaN       NaN       NaN      NaN NaN</span>
+<span class="go">2   NaN       NaN       NaN      NaN NaN</span>
+<span class="go">3   NaN       NaN  0.984729  0.91954 NaN</span>
+<span class="go">4   NaN       NaN       NaN      NaN NaN</span>
+<span class="go">5   NaN       NaN       NaN      NaN NaN</span>
+<span class="go">6   NaN       NaN       NaN      NaN NaN</span>
+<span class="go">..   ..       ...       ...      ...  ..</span>
+<span class="go">993 NaN       NaN       NaN      NaN NaN</span>
+<span class="go">994 NaN       NaN       NaN      NaN NaN</span>
+<span class="go">995 NaN       NaN  0.994239      NaN NaN</span>
+<span class="go">996 NaN       NaN       NaN      NaN NaN</span>
+<span class="go">997 NaN       NaN       NaN      NaN NaN</span>
+<span class="go">998 NaN  0.972655       NaN      NaN NaN</span>
+<span class="go">999 NaN       NaN       NaN      NaN NaN</span>
+
+<span class="go">[1000 rows x 5 columns]</span>
+</pre></div>
+</div>
+<p>All sparse formats are supported, but matrices that are not in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/sparse.html#module-scipy.sparse" title="(in SciPy v1.1.0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">COOrdinate</span></code></a> format will be converted, copying data as needed.
+To convert a <code class="docutils literal notranslate"><span class="pre">SparseDataFrame</span></code> back to sparse SciPy matrix in COO format, you can use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">SparseDataFrame.to_coo()</span></code> method:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [43]: </span><span class="n">sdf</span><span class="o">.</span><span class="n">to_coo</span><span class="p">()</span>
+<span class="gh">Out[43]: </span><span class="go"></span>
+<span class="go">&lt;1000x5 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;</span>
+<span class="go">	with 524 stored elements in COOrdinate format&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sparseseries">
+<h3>SparseSeries<a class="headerlink" href="#sparseseries" title="Permalink to this headline">¶</a></h3>
+<p>A <code class="xref py py-meth docutils literal notranslate"><span class="pre">SparseSeries.to_coo()</span></code> method is implemented for transforming a <code class="docutils literal notranslate"><span class="pre">SparseSeries</span></code> indexed by a <code class="docutils literal notranslate"><span class="pre">MultiIndex</span></code> to a <code class="docutils literal notranslate"><span class="pre">scipy.sparse.coo_matrix</span></code>.</p>
+<p>The method requires a <code class="docutils literal notranslate"><span class="pre">MultiIndex</span></code> with two or more levels.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [44]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+
+<span class="gp">In [45]: </span><span class="n">s</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="gp">   ....: </span>                                     <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="gp">   ....: </span>                                     <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="gp">   ....: </span>                                     <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="gp">   ....: </span>                                     <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="gp">   ....: </span>                                     <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span>
+<span class="gp">   ....: </span>                                     <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">])</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [46]: </span><span class="n">s</span>
+<span class="gh">Out[46]: </span><span class="go"></span>
+<span class="go">A  B  C  D</span>
+<span class="go">1  2  a  0    3.0</span>
+<span class="go">         1    NaN</span>
+<span class="go">   1  b  0    1.0</span>
+<span class="go">         1    3.0</span>
+<span class="go">2  1  b  0    NaN</span>
+<span class="go">         1    NaN</span>
+<span class="go">dtype: float64</span>
+
+<span class="go"># SparseSeries</span>
+<span class="gp">In [47]: </span><span class="n">ss</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">to_sparse</span><span class="p">()</span>
+
+<span class="gp">In [48]: </span><span class="n">ss</span>
+<span class="gh">Out[48]: </span><span class="go"></span>
+<span class="go">A  B  C  D</span>
+<span class="go">1  2  a  0    3.0</span>
+<span class="go">         1    NaN</span>
+<span class="go">   1  b  0    1.0</span>
+<span class="go">         1    3.0</span>
+<span class="go">2  1  b  0    NaN</span>
+<span class="go">         1    NaN</span>
+<span class="go">dtype: float64</span>
+<span class="go">BlockIndex</span>
+<span class="go">Block locations: array([0, 2], dtype=int32)</span>
+<span class="go">Block lengths: array([1, 2], dtype=int32)</span>
+</pre></div>
+</div>
+<p>In the example below, we transform the <code class="docutils literal notranslate"><span class="pre">SparseSeries</span></code> to a sparse representation of a 2-d array by specifying that the first and second <code class="docutils literal notranslate"><span class="pre">MultiIndex</span></code> levels define labels for the rows and the third and fourth levels define labels for the columns. We also specify that the column and row labels should be sorted in the final sparse representation.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [49]: </span><span class="n">A</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">to_coo</span><span class="p">(</span><span class="n">row_levels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span>
+<span class="gp">   ....: </span>                             <span class="n">column_levels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">],</span>
+<span class="gp">   ....: </span>                             <span class="n">sort_labels</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [50]: </span><span class="n">A</span>
+<span class="gh">Out[50]: </span><span class="go"></span>
+<span class="go">&lt;3x4 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;</span>
+<span class="go">	with 3 stored elements in COOrdinate format&gt;</span>
+
+<span class="gp">In [51]: </span><span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+<span class="go">                                                                                                             Out[51]: </span>
+<span class="go">matrix([[0., 0., 1., 3.],</span>
+<span class="go">        [3., 0., 0., 0.],</span>
+<span class="go">        [0., 0., 0., 0.]])</span>
+
+<span class="gp">In [52]: </span><span class="n">rows</span>
+<span class="go">                                                                                                                                                                                                      Out[52]: [(1, 1), (1, 2), (2, 1)]</span>
+
+<span class="gp">In [53]: </span><span class="n">columns</span>
+<span class="go">                                                                                                                                                                                                                                        Out[53]: [(&#39;a&#39;, 0), (&#39;a&#39;, 1), (&#39;b&#39;, 0), (&#39;b&#39;, 1)]</span>
+</pre></div>
+</div>
+<p>Specifying different row and column labels (and not sorting them) yields a different sparse matrix:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [54]: </span><span class="n">A</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">to_coo</span><span class="p">(</span><span class="n">row_levels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span>
+<span class="gp">   ....: </span>                             <span class="n">column_levels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">],</span>
+<span class="gp">   ....: </span>                             <span class="n">sort_labels</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [55]: </span><span class="n">A</span>
+<span class="gh">Out[55]: </span><span class="go"></span>
+<span class="go">&lt;3x2 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;</span>
+<span class="go">	with 3 stored elements in COOrdinate format&gt;</span>
+
+<span class="gp">In [56]: </span><span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+<span class="go">                                                                                                             Out[56]: </span>
+<span class="go">matrix([[3., 0.],</span>
+<span class="go">        [1., 3.],</span>
+<span class="go">        [0., 0.]])</span>
+
+<span class="gp">In [57]: </span><span class="n">rows</span>
+<span class="go">                                                                                                                                                                              Out[57]: [(1, 2, &#39;a&#39;), (1, 1, &#39;b&#39;), (2, 1, &#39;b&#39;)]</span>
+
+<span class="gp">In [58]: </span><span class="n">columns</span>
+<span class="go">                                                                                                                                                                                                                               Out[58]: [0, 1]</span>
+</pre></div>
+</div>
+<p>A convenience method <code class="xref py py-meth docutils literal notranslate"><span class="pre">SparseSeries.from_coo()</span></code> is implemented for creating a <code class="docutils literal notranslate"><span class="pre">SparseSeries</span></code> from a <code class="docutils literal notranslate"><span class="pre">scipy.sparse.coo_matrix</span></code>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [59]: </span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
+
+<span class="gp">In [60]: </span><span class="n">A</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span><span class="p">(([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])),</span>
+<span class="gp">   ....: </span>                      <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [61]: </span><span class="n">A</span>
+<span class="gh">Out[61]: </span><span class="go"></span>
+<span class="go">&lt;3x4 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;</span>
+<span class="go">	with 3 stored elements in COOrdinate format&gt;</span>
+
+<span class="gp">In [62]: </span><span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+<span class="go">                                                                                                             Out[62]: </span>
+<span class="go">matrix([[0., 0., 1., 2.],</span>
+<span class="go">        [3., 0., 0., 0.],</span>
+<span class="go">        [0., 0., 0., 0.]])</span>
+</pre></div>
+</div>
+<p>The default behaviour (with <code class="docutils literal notranslate"><span class="pre">dense_index=False</span></code>) simply returns a <code class="docutils literal notranslate"><span class="pre">SparseSeries</span></code> containing
+only the non-null entries.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [63]: </span><span class="n">ss</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">SparseSeries</span><span class="o">.</span><span class="n">from_coo</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="gp">In [64]: </span><span class="n">ss</span>
+<span class="gh">Out[64]: </span><span class="go"></span>
+<span class="go">0  2    1.0</span>
+<span class="go">   3    2.0</span>
+<span class="go">1  0    3.0</span>
+<span class="go">dtype: float64</span>
+<span class="go">BlockIndex</span>
+<span class="go">Block locations: array([0], dtype=int32)</span>
+<span class="go">Block lengths: array([3], dtype=int32)</span>
+</pre></div>
+</div>
+<p>Specifying <code class="docutils literal notranslate"><span class="pre">dense_index=True</span></code> will result in an index that is the Cartesian product of the
+row and columns coordinates of the matrix. Note that this will consume a significant amount of memory
+(relative to <code class="docutils literal notranslate"><span class="pre">dense_index=False</span></code>) if the sparse matrix is large (and sparse) enough.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [65]: </span><span class="n">ss_dense</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">SparseSeries</span><span class="o">.</span><span class="n">from_coo</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">dense_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="gp">In [66]: </span><span class="n">ss_dense</span>
+<span class="gh">Out[66]: </span><span class="go"></span>
+<span class="go">0  0    NaN</span>
+<span class="go">   1    NaN</span>
+<span class="go">   2    1.0</span>
+<span class="go">   3    2.0</span>
+<span class="go">1  0    3.0</span>
+<span class="go">   1    NaN</span>
+<span class="go">   2    NaN</span>
+<span class="go">   3    NaN</span>
+<span class="go">2  0    NaN</span>
+<span class="go">   1    NaN</span>
+<span class="go">   2    NaN</span>
+<span class="go">   3    NaN</span>
+<span class="go">dtype: float64</span>
+<span class="go">BlockIndex</span>
+<span class="go">Block locations: array([2], dtype=int32)</span>
+<span class="go">Block lengths: array([3], dtype=int32)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/sparse.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2008-2014, the pandas development team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,2411 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Styling &#8212; pandas 0.24.0.dev0+98.gbd95c4b9f documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="IO Tools (Text, CSV, HDF5, …)" href="io.html" />
+    <link rel="prev" title="Visualization" href="visualization.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><span><img src="_static/pandas_logo.png"></span>
+          pandas</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.24.0.dev0+98.gbd95c4b9f</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s New</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-24-0">v0.24.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-23-1">v0.23.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-23-0-may-15-2018">v0.23.0 (May 15, 2018)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-22-0-december-29-2017">v0.22.0 (December 29, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-21-1-december-12-2017">v0.21.1 (December 12, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-21-0-october-27-2017">v0.21.0 (October 27, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-20-3-july-7-2017">v0.20.3 (July 7, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-20-2-june-4-2017">v0.20.2 (June 4, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-20-1-may-5-2017">v0.20.1 (May 5, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-19-2-december-24-2016">v0.19.2 (December 24, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-19-1-november-3-2016">v0.19.1 (November 3, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-19-0-october-2-2016">v0.19.0 (October 2, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-18-1-may-3-2016">v0.18.1 (May 3, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-18-0-march-13-2016">v0.18.0 (March 13, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-17-1-november-21-2015">v0.17.1 (November 21, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-17-0-october-9-2015">v0.17.0 (October 9, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-16-2-june-12-2015">v0.16.2 (June 12, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-16-1-may-11-2015">v0.16.1 (May 11, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-16-0-march-22-2015">v0.16.0 (March 22, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-15-2-december-12-2014">v0.15.2 (December 12, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-15-1-november-9-2014">v0.15.1 (November 9, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-15-0-october-18-2014">v0.15.0 (October 18, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-14-1-july-11-2014">v0.14.1 (July 11, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-14-0-may-31-2014">v0.14.0 (May 31 , 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-13-1-february-3-2014">v0.13.1 (February 3, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-13-0-january-3-2014">v0.13.0 (January 3, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-12-0-july-24-2013">v0.12.0 (July 24, 2013)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-11-0-april-22-2013">v0.11.0 (April 22, 2013)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-10-1-january-22-2013">v0.10.1 (January 22, 2013)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-10-0-december-17-2012">v0.10.0 (December 17, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-9-1-november-14-2012">v0.9.1 (November 14, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-9-0-october-7-2012">v0.9.0 (October 7, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-8-1-july-22-2012">v0.8.1 (July 22, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-8-0-june-29-2012">v0.8.0 (June 29, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-7-3-april-12-2012">v.0.7.3 (April 12, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-7-2-march-16-2012">v.0.7.2 (March 16, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-7-1-february-29-2012">v.0.7.1 (February 29, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-7-0-february-9-2012">v.0.7.0 (February 9, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-6-1-december-13-2011">v.0.6.1 (December 13, 2011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-6-0-november-25-2011">v.0.6.0 (November 25, 2011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-5-0-october-24-2011">v.0.5.0 (October 24, 2011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-4-3-through-v0-4-1-september-25-october-9-2011">v.0.4.3 through v0.4.1 (September 25 - October 9, 2011)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#plan-for-dropping-python-2-7">Plan for dropping Python 2.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#python-version-support">Python version support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#installing-pandas">Installing pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#running-the-test-suite">Running the test suite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to pandas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#where-to-start">Where to start?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#bug-reports-and-enhancement-requests">Bug reports and enhancement requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#working-with-the-code">Working with the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-to-the-documentation">Contributing to the documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-to-the-code-base">Contributing to the code base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-your-changes-to-pandas">Contributing your changes to <em>pandas</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Package overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#data-structures">Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#mutability-and-copying-of-data">Mutability and copying of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#getting-support">Getting Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#community">Community</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#project-governance">Project Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#development-team">Development Team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#institutional-partners">Institutional Partners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10min.html">10 Minutes to pandas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#object-creation">Object Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#viewing-data">Viewing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#merge">Merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#grouping">Grouping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#reshaping">Reshaping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#time-series">Time Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#categoricals">Categoricals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#plotting">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#getting-data-in-out">Getting Data In/Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#gotchas">Gotchas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#internal-guides">Internal Guides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#pandas-cookbook">pandas Cookbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#lessons-for-new-pandas-users">Lessons for new pandas users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#practical-data-analysis-with-python">Practical data analysis with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#exercises-for-new-users">Exercises for new users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#modern-pandas">Modern pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#excel-charts-with-pandas-vincent-and-xlsxwriter">Excel charts with pandas, vincent and xlsxwriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#video-tutorials">Video Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#various-tutorials">Various Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#idioms">Idioms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#multiindexing">MultiIndexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#grouping">Grouping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#timeseries">Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#merge">Merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#plotting">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#data-in-out">Data In/Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#computation">Computation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#timedeltas">Timedeltas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#aliasing-axis-names">Aliasing Axis Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#creating-example-data">Creating Example Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dsintro.html">Intro to Data Structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dsintro.html#series">Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dsintro.html#dataframe">DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dsintro.html#panel">Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dsintro.html#deprecate-panel">Deprecate Panel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Essential Basic Functionality</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#head-and-tail">Head and Tail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#attributes-and-the-raw-ndarray-s">Attributes and the raw ndarray(s)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#accelerated-operations">Accelerated operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#flexible-binary-operations">Flexible binary operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#descriptive-statistics">Descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#function-application">Function application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#reindexing-and-altering-labels">Reindexing and altering labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#iteration">Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#dt-accessor">.dt accessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#vectorized-string-methods">Vectorized string methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#sorting">Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#copying">Copying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#dtypes">dtypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#selecting-columns-based-on-dtype">Selecting columns based on <code class="docutils literal notranslate"><span class="pre">dtype</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text.html">Working with Text Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text.html#splitting-and-replacing-strings">Splitting and Replacing Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#concatenation">Concatenation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#indexing-with-str">Indexing with <code class="docutils literal notranslate"><span class="pre">.str</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#extracting-substrings">Extracting Substrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#testing-for-strings-that-match-or-contain-a-pattern">Testing for Strings that Match or Contain a Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#creating-indicator-variables">Creating Indicator Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#method-summary">Method Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options and Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="options.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#getting-and-setting-options">Getting and Setting Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#setting-startup-options-in-python-ipython-environment">Setting Startup Options in python/ipython Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#frequently-used-options">Frequently Used Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#available-options">Available Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#number-formatting">Number Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#unicode-formatting">Unicode Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#table-schema-display">Table Schema Display</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="indexing.html">Indexing and Selecting Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#different-choices-for-indexing">Different Choices for Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#basics">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#attribute-access">Attribute Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#slicing-ranges">Slicing ranges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#selection-by-label">Selection By Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#selection-by-position">Selection By Position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#selection-by-callable">Selection By Callable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#ix-indexer-is-deprecated">IX Indexer is Deprecated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#indexing-with-list-with-missing-labels-is-deprecated">Indexing with list with missing labels is Deprecated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#selecting-random-samples">Selecting Random Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#setting-with-enlargement">Setting With Enlargement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#fast-scalar-value-getting-and-setting">Fast scalar value getting and setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#boolean-indexing">Boolean indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#indexing-with-isin">Indexing with isin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#the-where-method-and-masking">The <code class="docutils literal notranslate"><span class="pre">where()</span></code> Method and Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#the-query-method">The <code class="docutils literal notranslate"><span class="pre">query()</span></code> Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#duplicate-data">Duplicate Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#dictionary-like-get-method">Dictionary-like <code class="docutils literal notranslate"><span class="pre">get()</span></code> method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#the-lookup-method">The <code class="docutils literal notranslate"><span class="pre">lookup()</span></code> Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#index-objects">Index objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#set-reset-index">Set / Reset Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#returning-a-view-versus-a-copy">Returning a view versus a copy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">MultiIndex / Advanced Indexing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#hierarchical-indexing-multiindex">Hierarchical indexing (MultiIndex)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#advanced-indexing-with-hierarchical-index">Advanced indexing with hierarchical index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#sorting-a-multiindex">Sorting a <code class="docutils literal notranslate"><span class="pre">MultiIndex</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#take-methods">Take Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#index-types">Index Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#miscellaneous-indexing-faq">Miscellaneous indexing FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="computation.html">Computational tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#statistical-functions">Statistical Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#window-functions">Window Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#aggregation">Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#expanding-windows">Expanding Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#exponentially-weighted-windows">Exponentially Weighted Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="missing_data.html">Working with missing data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#missing-data-basics">Missing data basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#datetimes">Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#inserting-missing-data">Inserting missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#calculations-with-missing-data">Calculations with missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#cleaning-filling-missing-data">Cleaning / filling missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#missing-data-casting-rules-and-indexing">Missing data casting rules and indexing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="groupby.html">Group By: split-apply-combine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#splitting-an-object-into-groups">Splitting an object into groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#iterating-through-groups">Iterating through groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#selecting-a-group">Selecting a group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#aggregation">Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#transformation">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#filtration">Filtration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#dispatching-to-instance-methods">Dispatching to instance methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#flexible-apply">Flexible <code class="docutils literal notranslate"><span class="pre">apply</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#other-useful-features">Other useful features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="merging.html">Merge, join, and concatenate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="merging.html#concatenating-objects">Concatenating objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merging.html#database-style-dataframe-joining-merging">Database-style DataFrame joining/merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merging.html#timeseries-friendly-merging">Timeseries friendly merging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reshaping.html">Reshaping and Pivot Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#reshaping-by-pivoting-dataframe-objects">Reshaping by pivoting DataFrame objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#reshaping-by-stacking-and-unstacking">Reshaping by stacking and unstacking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#reshaping-by-melt">Reshaping by Melt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#combining-with-stats-and-groupby">Combining with stats and GroupBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#pivot-tables">Pivot tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#cross-tabulations">Cross tabulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#tiling">Tiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#computing-indicator-dummy-variables">Computing indicator / dummy variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#factorizing-values">Factorizing values</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timeseries.html">Time Series / Date functionality</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#timestamps-vs-time-spans">Timestamps vs. Time Spans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#converting-to-timestamps">Converting to Timestamps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#generating-ranges-of-timestamps">Generating Ranges of Timestamps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#timestamp-limitations">Timestamp Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#indexing">Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#time-date-components">Time/Date Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#dateoffset-objects">DateOffset Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#time-series-related-instance-methods">Time Series-Related Instance Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#resampling">Resampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#time-span-representation">Time Span Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#converting-between-representations">Converting Between Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#representing-out-of-bounds-spans">Representing Out-of-Bounds Spans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#time-zone-handling">Time Zone Handling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timedeltas.html">Time Deltas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#parsing">Parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#reductions">Reductions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#frequency-conversion">Frequency Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#attributes">Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#timedeltaindex">TimedeltaIndex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#resampling">Resampling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="categorical.html">Categorical Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#object-creation">Object Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#categoricaldtype">CategoricalDtype</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#working-with-categories">Working with categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#sorting-and-order">Sorting and Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#comparisons">Comparisons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#data-munging">Data munging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#getting-data-in-out">Getting Data In/Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#differences-to-r-s-factor">Differences to R’s <cite>factor</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#gotchas">Gotchas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#basic-plotting-plot">Basic Plotting: <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#other-plots">Other Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#plotting-with-missing-data">Plotting with Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#plotting-tools">Plotting Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#plot-formatting">Plot Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#plotting-directly-with-matplotlib">Plotting directly with matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#trellis-plotting-interface">Trellis plotting interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Styling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Building-Styles">Building Styles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Building-Styles-Summary">Building Styles Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Finer-Control:-Slicing">Finer Control: Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Finer-Control:-Display-Values">Finer Control: Display Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Builtin-Styles">Builtin Styles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Bar-charts">Bar charts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Sharing-Styles">Sharing Styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Other-Options">Other Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Precision">Precision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Captions">Captions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Table-Styles">Table Styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Hiding-the-Index-or-Columns">Hiding the Index or Columns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CSS-Classes">CSS Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Limitations">Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Terms">Terms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Fun-stuff">Fun stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Export-to-Excel">Export to Excel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Extensibility">Extensibility</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Subclassing">Subclassing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">IO Tools (Text, CSV, HDF5, …)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="io.html#csv-text-files">CSV &amp; Text files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#json">JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#html">HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#excel-files">Excel files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#clipboard">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#pickling">Pickling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#msgpack">msgpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#hdf5-pytables">HDF5 (PyTables)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#feather">Feather</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#parquet">Parquet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#sql-queries">SQL Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#google-bigquery">Google BigQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#stata-format">Stata Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#sas-formats">SAS Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#other-file-formats">Other file formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#performance-considerations">Performance Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enhancingperf.html">Enhancing Performance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enhancingperf.html#cython-writing-c-extensions-for-pandas">Cython (Writing C extensions for pandas)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enhancingperf.html#using-numba">Using Numba</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enhancingperf.html#expression-evaluation-via-eval">Expression Evaluation via <code class="docutils literal notranslate"><span class="pre">eval()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sparse.html">Sparse data structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#sparsearray">SparseArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#sparseindex-objects">SparseIndex objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#sparse-dtypes">Sparse Dtypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#sparse-calculation">Sparse Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#interaction-with-scipy-sparse">Interaction with scipy.sparse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gotchas.html">Frequently Asked Questions (FAQ)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#dataframe-memory-usage">DataFrame memory usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#using-if-truth-statements-with-pandas">Using If/Truth Statements with pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#nan-integer-na-values-and-na-type-promotions"><code class="docutils literal notranslate"><span class="pre">NaN</span></code>, Integer <code class="docutils literal notranslate"><span class="pre">NA</span></code> values and <code class="docutils literal notranslate"><span class="pre">NA</span></code> type promotions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#differences-with-numpy">Differences with NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#thread-safety">Thread-safety</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#byte-ordering-issues">Byte-Ordering Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="r_interface.html">rpy2 / R interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="r_interface.html#transferring-r-data-sets-into-python">Transferring R data sets into Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r_interface.html#converting-dataframes-into-r-objects">Converting DataFrames into R objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html">pandas Ecosystem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#statistics-and-machine-learning">Statistics and Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#visualization">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#ecosystem-ide">IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#domain-specific">Domain Specific</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#out-of-core">Out-of-core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#data-validation">Data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#extension-data-types">Extension Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#accessors">Accessors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comparison_with_r.html">Comparison with R / R libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_r.html#quick-reference">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_r.html#base-r">Base R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_r.html#plyr">plyr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_r.html#reshape-reshape2">reshape / reshape2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comparison_with_sql.html">Comparison with SQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#select">SELECT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#where">WHERE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#group-by">GROUP BY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#join">JOIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#union">UNION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#pandas-equivalents-for-some-sql-analytic-and-aggregate-functions">Pandas equivalents for some SQL analytic and aggregate functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#update">UPDATE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#delete">DELETE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comparison_with_sas.html">Comparison with SAS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#data-structures">Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#data-input-output">Data Input / Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#data-operations">Data Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#string-processing">String Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#merging">Merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#groupby">GroupBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#other-considerations">Other Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comparison_with_stata.html">Comparison with Stata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#data-structures">Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#data-input-output">Data Input / Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#data-operations">Data Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#string-processing">String Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#merging">Merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#groupby">GroupBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#other-considerations">Other Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#storing-pandas-dataframe-objects-in-apache-parquet-format">Storing pandas DataFrame objects in Apache Parquet format</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="internals.html">Internals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internals.html#indexing">Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html#subclassing-pandas-data-structures">Subclassing pandas Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extending.html">Extending Pandas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extending.html#registering-custom-accessors">Registering Custom Accessors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending.html#extension-types">Extension Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending.html#subclassing-pandas-data-structures">Subclassing pandas Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-23-1">pandas 0.23.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-23-0">pandas 0.23.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-22-0">pandas 0.22.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-21-1">pandas 0.21.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-21-0">pandas 0.21.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-20-0-0-20-1">pandas 0.20.0 / 0.20.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-19-2">pandas 0.19.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-19-1">pandas 0.19.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-19-0">pandas 0.19.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-18-1">pandas 0.18.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-18-0">pandas 0.18.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-17-1">pandas 0.17.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-17-0">pandas 0.17.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-16-2">pandas 0.16.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-16-1">pandas 0.16.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-16-0">pandas 0.16.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-15-2">pandas 0.15.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-15-1">pandas 0.15.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-15-0">pandas 0.15.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-14-1">pandas 0.14.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-14-0">pandas 0.14.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-13-1">pandas 0.13.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-13-0">pandas 0.13.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-12-0">pandas 0.12.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-11-0">pandas 0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-10-1">pandas 0.10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-10-0">pandas 0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-9-1">pandas 0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-9-0">pandas 0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-8-1">pandas 0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-8-0">pandas 0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-7-3">pandas 0.7.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-7-2">pandas 0.7.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-7-1">pandas 0.7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-7-0">pandas 0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-6-1">pandas 0.6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-6-0">pandas 0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-5-0">pandas 0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-4-3">pandas 0.4.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-4-2">pandas 0.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-4-1">pandas 0.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-4-0">pandas 0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-3-0">pandas 0.3.0</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Styling</a><ul>
+<li><a class="reference internal" href="#Building-Styles">Building Styles</a><ul>
+<li><a class="reference internal" href="#Building-Styles-Summary">Building Styles Summary</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Finer-Control:-Slicing">Finer Control: Slicing</a></li>
+<li><a class="reference internal" href="#Finer-Control:-Display-Values">Finer Control: Display Values</a></li>
+<li><a class="reference internal" href="#Builtin-Styles">Builtin Styles</a><ul>
+<li><a class="reference internal" href="#Bar-charts">Bar charts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Sharing-Styles">Sharing Styles</a></li>
+<li><a class="reference internal" href="#Other-Options">Other Options</a><ul>
+<li><a class="reference internal" href="#Precision">Precision</a></li>
+<li><a class="reference internal" href="#Captions">Captions</a></li>
+<li><a class="reference internal" href="#Table-Styles">Table Styles</a></li>
+<li><a class="reference internal" href="#Hiding-the-Index-or-Columns">Hiding the Index or Columns</a></li>
+<li><a class="reference internal" href="#CSS-Classes">CSS Classes</a></li>
+<li><a class="reference internal" href="#Limitations">Limitations</a></li>
+<li><a class="reference internal" href="#Terms">Terms</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Fun-stuff">Fun stuff</a></li>
+<li><a class="reference internal" href="#Export-to-Excel">Export to Excel</a></li>
+<li><a class="reference internal" href="#Extensibility">Extensibility</a><ul>
+<li><a class="reference internal" href="#Subclassing">Subclassing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <li>
+    <a href="visualization.html" title="Previous Chapter: Visualization"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Visualization</span>
+    </a>
+  </li>
+  <li>
+    <a href="io.html" title="Next Chapter: IO Tools (Text, CSV, HDF5, …)"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">IO Tools (Tex... &raquo;</span>
+    </a>
+  </li>
+<div id="sourcelink">
+  <a href="_sources/style.ipynb.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 9ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="section" id="Styling">
+<h1>Styling<a class="headerlink" href="#Styling" title="Permalink to this headline">¶</a></h1>
+<p><em>New in version 0.17.1</em></p>
+<p><em>Provisional: This is a new feature and still under development. We’ll
+be adding features and possibly making breaking changes in future
+releases. We’d love to hear your feedback.</em></p>
+<p>This document is written as a Jupyter Notebook, and can be viewed or
+downloaded
+<a class="reference external" href="http://nbviewer.ipython.org/github/pandas-dev/pandas/blob/master/doc/source/style.ipynb">here</a>.</p>
+<p>You can apply <strong>conditional formatting</strong>, the visual styling of a
+DataFrame depending on the data within, by using the <code class="docutils literal notranslate"><span class="pre">DataFrame.style</span></code>
+property. This is a property that returns a <code class="docutils literal notranslate"><span class="pre">Styler</span></code> object, which has
+useful methods for formatting and displaying DataFrames.</p>
+<p>The styling is accomplished using CSS. You write “style functions” that
+take scalars, <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s or <code class="docutils literal notranslate"><span class="pre">Series</span></code>, and return <em>like-indexed</em>
+DataFrames or Series with CSS <code class="docutils literal notranslate"><span class="pre">&quot;attribute:</span> <span class="pre">value&quot;</span></code> pairs for the
+values. These functions can be incrementally passed to the <code class="docutils literal notranslate"><span class="pre">Styler</span></code>
+which collects the styles before rendering.</p>
+<div class="section" id="Building-Styles">
+<h2>Building Styles<a class="headerlink" href="#Building-Styles" title="Permalink to this headline">¶</a></h2>
+<p>Pass your style functions into one of the following methods:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Styler.applymap</span></code>: elementwise</li>
+<li><code class="docutils literal notranslate"><span class="pre">Styler.apply</span></code>: column-/row-/table-wise</li>
+</ul>
+<p>Both of those methods take a function (and some other keyword arguments)
+and applies your function to the DataFrame in a certain way.
+<code class="docutils literal notranslate"><span class="pre">Styler.applymap</span></code> works through the DataFrame elementwise.
+<code class="docutils literal notranslate"><span class="pre">Styler.apply</span></code> passes each column or row into your DataFrame
+one-at-a-time or the entire table at once, depending on the <code class="docutils literal notranslate"><span class="pre">axis</span></code>
+keyword argument. For columnwise use <code class="docutils literal notranslate"><span class="pre">axis=0</span></code>, rowwise use <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>,
+and for the entire table at once use <code class="docutils literal notranslate"><span class="pre">axis=None</span></code>.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">Styler.applymap</span></code> your function should take a scalar and return a
+single string with the CSS attribute-value pair.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">Styler.apply</span></code> your function should take a Series or DataFrame
+(depending on the axis parameter), and return a Series or DataFrame with
+an identical shape where each value is a string with a CSS
+attribute-value pair.</p>
+<p>Let’s see some examples.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;BCDE&#39;</span><span class="p">))],</span>
+               <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ImportError</span>                               Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-2-44cfd8d19cc8&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">import</span> pandas <span class="ansi-green-fg">as</span> pd
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">import</span> numpy <span class="ansi-green-fg">as</span> np
+<span class="ansi-green-intense-fg ansi-bold">      3</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> np<span class="ansi-blue-fg">.</span>random<span class="ansi-blue-fg">.</span>seed<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">24</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> df <span class="ansi-blue-fg">=</span> pd<span class="ansi-blue-fg">.</span>DataFrame<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">&#39;A&#39;</span><span class="ansi-blue-fg">:</span> np<span class="ansi-blue-fg">.</span>linspace<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">}</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/src/forks/pandas/pandas/__init__.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     17</span> <span class="ansi-green-fg">if</span> missing_dependencies<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     18</span>     raise ImportError(
+<span class="ansi-green-fg">---&gt; 19</span><span class="ansi-red-fg">         &#34;Missing required dependencies {0}&#34;.format(missing_dependencies))
+</span><span class="ansi-green-intense-fg ansi-bold">     20</span> <span class="ansi-green-fg">del</span> hard_dependencies<span class="ansi-blue-fg">,</span> dependency<span class="ansi-blue-fg">,</span> missing_dependencies
+<span class="ansi-green-intense-fg ansi-bold">     21</span>
+
+<span class="ansi-red-fg">ImportError</span>: Missing required dependencies [&#39;numpy&#39;, &#39;pytz&#39;]
+</pre></div></div>
+</div>
+<p>Here’s a boring example of rendering a DataFrame, without any (visible)
+styles:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-3-2935261c0ab1&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p><em>Note</em>: The <code class="docutils literal notranslate"><span class="pre">DataFrame.style</span></code> attribute is a property that returns a
+<code class="docutils literal notranslate"><span class="pre">Styler</span></code> object. <code class="docutils literal notranslate"><span class="pre">Styler</span></code> has a <code class="docutils literal notranslate"><span class="pre">_repr_html_</span></code> method defined on it
+so they are rendered automatically. If you want the actual HTML back for
+further processing or for writing to file call the <code class="docutils literal notranslate"><span class="pre">.render()</span></code> method
+which returns a string.</p>
+<p>The above output looks very similar to the standard DataFrame HTML
+representation. But we’ve done some work behind the scenes to attach CSS
+classes to each cell. We can view these by calling the <code class="docutils literal notranslate"><span class="pre">.render</span></code>
+method.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">highlight_null</span><span class="p">()</span><span class="o">.</span><span class="n">render</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-4-e90e3e8805c9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>highlight_null<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>render<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;\n&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">]</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">row0_col2</span></code> is the identifier for that particular cell. We’ve also
+prepended each row/column identifier with a UUID unique to each
+DataFrame so that the style from one doesn’t collide with the styling
+from another within the same notebook or page (you can set the <code class="docutils literal notranslate"><span class="pre">uuid</span></code>
+if you’d like to tie together the styling of two DataFrames).</p>
+<p>When writing style functions, you take care of producing the CSS
+attribute / value pairs you want. Pandas matches those up with the CSS
+classes that identify each cell.</p>
+<p>Let’s write a simple style function that will color negative numbers red
+and positive numbers black.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">color_negative_red</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Takes a scalar and returns a string with</span>
+<span class="sd">    the css property `&#39;color: red&#39;` for negative</span>
+<span class="sd">    strings, black otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span> <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;black&#39;</span>
+    <span class="k">return</span> <span class="s1">&#39;color: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">color</span>
+</pre></div>
+</div>
+</div>
+<p>In this case, the cell’s style depends only on it’s own value. That
+means we should use the <code class="docutils literal notranslate"><span class="pre">Styler.applymap</span></code> method which works
+elementwise.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">color_negative_red</span><span class="p">)</span>
+<span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-6-0d30d8e63569&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>s <span class="ansi-blue-fg">=</span> df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>applymap<span class="ansi-blue-fg">(</span>color_negative_red<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> s
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>Notice the similarity with the standard <code class="docutils literal notranslate"><span class="pre">df.applymap</span></code>, which operates
+on DataFrames elementwise. We want you to be able to reuse your existing
+knowledge of how to interact with DataFrames.</p>
+<p>Notice also that our function returned a string containing the CSS
+attribute and value, separated by a colon just like in a <code class="docutils literal notranslate"><span class="pre">&lt;style&gt;</span></code>
+tag. This will be a common theme.</p>
+<p>Finally, the input shapes matched. <code class="docutils literal notranslate"><span class="pre">Styler.applymap</span></code> calls the
+function on each scalar input, and the function returns a scalar output.</p>
+<p>Now suppose you wanted to highlight the maximum value in each column. We
+can’t use <code class="docutils literal notranslate"><span class="pre">.applymap</span></code> anymore since that operated elementwise.
+Instead, we’ll turn to <code class="docutils literal notranslate"><span class="pre">.apply</span></code> which operates columnwise (or rowwise
+using the <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword). Later on we’ll see that something like
+<code class="docutils literal notranslate"><span class="pre">highlight_max</span></code> is already defined on <code class="docutils literal notranslate"><span class="pre">Styler</span></code> so you wouldn’t need
+to write this yourself.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">highlight_max</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    highlight the maximum in a Series yellow.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">is_max</span> <span class="o">=</span> <span class="n">s</span> <span class="o">==</span> <span class="n">s</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;background-color: yellow&#39;</span> <span class="k">if</span> <span class="n">v</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">is_max</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">highlight_max</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-8-8e5351859b53&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>apply<span class="ansi-blue-fg">(</span>highlight_max<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>In this case the input is a <code class="docutils literal notranslate"><span class="pre">Series</span></code>, one column at a time. Notice
+that the output shape of <code class="docutils literal notranslate"><span class="pre">highlight_max</span></code> matches the input shape, an
+array with <code class="docutils literal notranslate"><span class="pre">len(s)</span></code> items.</p>
+<p>We encourage you to use method chains to build up a style piecewise,
+before finally rending at the end of the chain.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span>\
+    <span class="n">applymap</span><span class="p">(</span><span class="n">color_negative_red</span><span class="p">)</span><span class="o">.</span>\
+    <span class="nb">apply</span><span class="p">(</span><span class="n">highlight_max</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-9-5f393a04abb7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>    applymap<span class="ansi-blue-fg">(</span>color_negative_red<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>    apply<span class="ansi-blue-fg">(</span>highlight_max<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>Above we used <code class="docutils literal notranslate"><span class="pre">Styler.apply</span></code> to pass in each column one at a time.</p>
+<p><em>Debugging Tip</em>: If you’re having trouble writing your style function,
+try just passing it into DataFrame.apply. Internally, Styler.apply uses
+DataFrame.apply so the result should be the same.</p>
+<p>What if you wanted to highlight just the maximum value in the entire
+table? Use <code class="docutils literal notranslate"><span class="pre">.apply(function,</span> <span class="pre">axis=None)</span></code> to indicate that your
+function wants the entire table, not one column or row at a time. Let’s
+try that next.</p>
+<p>We’ll rewrite our <code class="docutils literal notranslate"><span class="pre">highlight-max</span></code> to handle either Series (from
+<code class="docutils literal notranslate"><span class="pre">.apply(axis=0</span> <span class="pre">or</span> <span class="pre">1)</span></code>) or DataFrames (from <code class="docutils literal notranslate"><span class="pre">.apply(axis=None)</span></code>).
+We’ll also allow the color to be adjustable, to demonstrate that
+<code class="docutils literal notranslate"><span class="pre">.apply</span></code>, and <code class="docutils literal notranslate"><span class="pre">.applymap</span></code> pass along keyword arguments.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">highlight_max</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    highlight the maximum in a Series or DataFrame</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">attr</span> <span class="o">=</span> <span class="s1">&#39;background-color: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># Series from .apply(axis=0) or axis=1</span>
+        <span class="n">is_max</span> <span class="o">=</span> <span class="n">data</span> <span class="o">==</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">attr</span> <span class="k">if</span> <span class="n">v</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">is_max</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># from .apply(axis=None)</span>
+        <span class="n">is_max</span> <span class="o">=</span> <span class="n">data</span> <span class="o">==</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">is_max</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+                            <span class="n">index</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>When using <code class="docutils literal notranslate"><span class="pre">Styler.apply(func,</span> <span class="pre">axis=None)</span></code>, the function must return a
+DataFrame with the same index and column labels.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">highlight_max</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-11-4a3939fc44f4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>apply<span class="ansi-blue-fg">(</span>highlight_max<span class="ansi-blue-fg">,</span> color<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;darkorange&#39;</span><span class="ansi-blue-fg">,</span> axis<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<div class="section" id="Building-Styles-Summary">
+<h3>Building Styles Summary<a class="headerlink" href="#Building-Styles-Summary" title="Permalink to this headline">¶</a></h3>
+<p>Style functions should return strings with one or more CSS
+<code class="docutils literal notranslate"><span class="pre">attribute:</span> <span class="pre">value</span></code> delimited by semicolons. Use</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Styler.applymap(func)</span></code> for elementwise styles</li>
+<li><code class="docutils literal notranslate"><span class="pre">Styler.apply(func,</span> <span class="pre">axis=0)</span></code> for columnwise styles</li>
+<li><code class="docutils literal notranslate"><span class="pre">Styler.apply(func,</span> <span class="pre">axis=1)</span></code> for rowwise styles</li>
+<li><code class="docutils literal notranslate"><span class="pre">Styler.apply(func,</span> <span class="pre">axis=None)</span></code> for tablewise styles</li>
+</ul>
+<p>And crucially the input and output shapes of <code class="docutils literal notranslate"><span class="pre">func</span></code> must match. If
+<code class="docutils literal notranslate"><span class="pre">x</span></code> is the input then <code class="docutils literal notranslate"><span class="pre">func(x).shape</span> <span class="pre">==</span> <span class="pre">x.shape</span></code>.</p>
+</div>
+</div>
+<div class="section" id="Finer-Control:-Slicing">
+<h2>Finer Control: Slicing<a class="headerlink" href="#Finer-Control:-Slicing" title="Permalink to this headline">¶</a></h2>
+<p>Both <code class="docutils literal notranslate"><span class="pre">Styler.apply</span></code>, and <code class="docutils literal notranslate"><span class="pre">Styler.applymap</span></code> accept a <code class="docutils literal notranslate"><span class="pre">subset</span></code>
+keyword. This allows you to apply styles to specific rows or columns,
+without having to code that logic into your <code class="docutils literal notranslate"><span class="pre">style</span></code> function.</p>
+<p>The value passed to <code class="docutils literal notranslate"><span class="pre">subset</span></code> behaves similar to slicing a DataFrame.</p>
+<ul class="simple">
+<li>A scalar is treated as a column label</li>
+<li>A list (or series or numpy array)</li>
+<li>A tuple is treated as <code class="docutils literal notranslate"><span class="pre">(row_indexer,</span> <span class="pre">column_indexer)</span></code></li>
+</ul>
+<p>Consider using <code class="docutils literal notranslate"><span class="pre">pd.IndexSlice</span></code> to construct the tuple for the last
+one.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">highlight_max</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-12-6ae08e38ffef&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>apply<span class="ansi-blue-fg">(</span>highlight_max<span class="ansi-blue-fg">,</span> subset<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;B&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;C&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;D&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>For row and column slicing, any valid indexer to <code class="docutils literal notranslate"><span class="pre">.loc</span></code> will work.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">color_negative_red</span><span class="p">,</span>
+                  <span class="n">subset</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">IndexSlice</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-13-43772c0e5089&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> df.style.applymap(color_negative_red,
+</span><span class="ansi-green-intense-fg ansi-bold">      2</span>                   subset=pd.IndexSlice[2:5, [&#39;B&#39;, &#39;D&#39;]])
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>Only label-based slicing is supported right now, not positional.</p>
+<p>If your style function uses a <code class="docutils literal notranslate"><span class="pre">subset</span></code> or <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument,
+consider wrapping your function in a <code class="docutils literal notranslate"><span class="pre">functools.partial</span></code>, partialing
+out that keyword.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_func2</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">my_func</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Finer-Control:-Display-Values">
+<h2>Finer Control: Display Values<a class="headerlink" href="#Finer-Control:-Display-Values" title="Permalink to this headline">¶</a></h2>
+<p>We distinguish the <em>display</em> value from the <em>actual</em> value in
+<code class="docutils literal notranslate"><span class="pre">Styler</span></code>. To control the display value, the text is printed in each
+cell, use <code class="docutils literal notranslate"><span class="pre">Styler.format</span></code>. Cells can be formatted according to a
+<a class="reference external" href="https://docs.python.org/3/library/string.html#format-specification-mini-language">format spec
+string</a>
+or a callable that takes a single value and returns a string.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;{:.2%}&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-14-522d739e4e40&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;{:.2%}&#34;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>Use a dictionary to format specific columns.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">format</span><span class="p">({</span><span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="s2">&quot;{:0&lt;4.0f}&quot;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="s1">&#39;{:+.2f}&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-15-980b170abea6&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">&#39;B&#39;</span><span class="ansi-blue-fg">:</span> <span class="ansi-blue-fg">&#34;{:0&lt;4.0f}&#34;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;D&#39;</span><span class="ansi-blue-fg">:</span> <span class="ansi-blue-fg">&#39;{:+.2f}&#39;</span><span class="ansi-blue-fg">}</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>Or pass in a callable (or dictionary of callables) for more flexible
+handling.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">format</span><span class="p">({</span><span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;±{:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">))})</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-16-fbc61ff5e9b9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">&#34;B&#34;</span><span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">lambda</span> x<span class="ansi-blue-fg">:</span> <span class="ansi-blue-fg">&#34;±{:.2f}&#34;</span><span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>abs<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">}</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Builtin-Styles">
+<h2>Builtin Styles<a class="headerlink" href="#Builtin-Styles" title="Permalink to this headline">¶</a></h2>
+<p>Finally, we expect certain styling functions to be common enough that
+we’ve included a few “built-in” to the <code class="docutils literal notranslate"><span class="pre">Styler</span></code>, so you don’t have to
+write them yourself.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">highlight_null</span><span class="p">(</span><span class="n">null_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-17-bb8a7cd5d584&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>highlight_null<span class="ansi-blue-fg">(</span>null_color<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;red&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>You can create “heatmaps” with the <code class="docutils literal notranslate"><span class="pre">background_gradient</span></code> method. These
+require matplotlib, and we’ll use
+<a class="reference external" href="http://stanford.edu/~mwaskom/software/seaborn/">Seaborn</a> to get a
+nice colormap.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+
+<span class="n">cm</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">light_palette</span><span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">as_cmap</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">background_gradient</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="p">)</span>
+<span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-18-598ad5eeb200&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">import</span> seaborn <span class="ansi-green-fg">as</span> sns
+<span class="ansi-green-intense-fg ansi-bold">      2</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> cm <span class="ansi-blue-fg">=</span> sns<span class="ansi-blue-fg">.</span>light_palette<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;green&#34;</span><span class="ansi-blue-fg">,</span> as_cmap<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> s <span class="ansi-blue-fg">=</span> df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>background_gradient<span class="ansi-blue-fg">(</span>cmap<span class="ansi-blue-fg">=</span>cm<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
+</pre></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Styler.background_gradient</span></code> takes the keyword arguments <code class="docutils literal notranslate"><span class="pre">low</span></code> and
+<code class="docutils literal notranslate"><span class="pre">high</span></code>. Roughly speaking these extend the range of your data by
+<code class="docutils literal notranslate"><span class="pre">low</span></code> and <code class="docutils literal notranslate"><span class="pre">high</span></code> percent so that when we convert the colors, the
+colormap’s entire range isn’t used. This is useful so that you can
+actually read the text still.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Uses the full color range</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">background_gradient</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-19-0b56213de7d9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># Uses the full color range</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>loc<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>background_gradient<span class="ansi-blue-fg">(</span>cmap<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;viridis&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Compress the color range</span>
+<span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">style</span>
+    <span class="o">.</span><span class="n">background_gradient</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">low</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">highlight_null</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-20-8756003b558d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># Compress the color range</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> (df.loc[:4]
+</span><span class="ansi-green-intense-fg ansi-bold">      3</span>     <span class="ansi-blue-fg">.</span>style
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-blue-fg">.</span>background_gradient<span class="ansi-blue-fg">(</span>cmap<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;viridis&#39;</span><span class="ansi-blue-fg">,</span> low<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">.5</span><span class="ansi-blue-fg">,</span> high<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     .highlight_null(&#39;red&#39;))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>There’s also <code class="docutils literal notranslate"><span class="pre">.highlight_min</span></code> and <code class="docutils literal notranslate"><span class="pre">.highlight_max</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">highlight_max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-21-711c69038134&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>highlight_max<span class="ansi-blue-fg">(</span>axis<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">Styler.set_properties</span></code> when the style doesn’t actually depend on
+the values.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;background-color&#39;</span><span class="p">:</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;lawngreen&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;border-color&#39;</span><span class="p">:</span> <span class="s1">&#39;white&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-22-48f23290ccc4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> df.style.set_properties(**{&#39;background-color&#39;: &#39;black&#39;,
+</span><span class="ansi-green-intense-fg ansi-bold">      2</span>                            <span class="ansi-blue-fg">&#39;color&#39;</span><span class="ansi-blue-fg">:</span> <span class="ansi-blue-fg">&#39;lawngreen&#39;</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>                            &#39;border-color&#39;: &#39;white&#39;})
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<div class="section" id="Bar-charts">
+<h3>Bar charts<a class="headerlink" href="#Bar-charts" title="Permalink to this headline">¶</a></h3>
+<p>You can include “bar charts” in your DataFrame.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#d65f5f&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-23-cd2a0696e3ec&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>bar<span class="ansi-blue-fg">(</span>subset<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;A&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;B&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> color<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;#d65f5f&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>New in version 0.20.0 is the ability to customize further the bar chart:
+You can now have the <code class="docutils literal notranslate"><span class="pre">df.style.bar</span></code> be centered on zero or midpoint
+value (in addition to the already existing way of having the min value
+at the left side of the cell), and you can pass a list of
+<code class="docutils literal notranslate"><span class="pre">[color_negative,</span> <span class="pre">color_positive]</span></code>.</p>
+<p>Here’s how you can change the above with the new <code class="docutils literal notranslate"><span class="pre">align='mid'</span></code> option:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;mid&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;#d65f5f&#39;</span><span class="p">,</span> <span class="s1">&#39;#5fba7d&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-24-15638fc2eef8&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>bar<span class="ansi-blue-fg">(</span>subset<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;A&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;B&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> align<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;mid&#39;</span><span class="ansi-blue-fg">,</span> color<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;#d65f5f&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;#5fba7d&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>The following example aims to give a highlight of the behavior of the
+new align options:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="c1"># Test series</span>
+<span class="n">test1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;All Negative&#39;</span><span class="p">)</span>
+<span class="n">test2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;All Positive&#39;</span><span class="p">)</span>
+<span class="n">test3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Both Pos and Neg&#39;</span><span class="p">)</span>
+
+<span class="n">head</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;table&gt;</span>
+<span class="s2">    &lt;thead&gt;</span>
+<span class="s2">        &lt;th&gt;Align&lt;/th&gt;</span>
+<span class="s2">        &lt;th&gt;All Negative&lt;/th&gt;</span>
+<span class="s2">        &lt;th&gt;All Positive&lt;/th&gt;</span>
+<span class="s2">        &lt;th&gt;Both Neg and Pos&lt;/th&gt;</span>
+<span class="s2">    &lt;/thead&gt;</span>
+<span class="s2">    &lt;/tbody&gt;</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">aligns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span><span class="s1">&#39;zero&#39;</span><span class="p">,</span><span class="s1">&#39;mid&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">align</span> <span class="ow">in</span> <span class="n">aligns</span><span class="p">:</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="s2">&quot;&lt;tr&gt;&lt;th&gt;{}&lt;/th&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">align</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">serie</span> <span class="ow">in</span> <span class="p">[</span><span class="n">test1</span><span class="p">,</span><span class="n">test2</span><span class="p">,</span><span class="n">test3</span><span class="p">]:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">serie</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+        <span class="n">row</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;{}&lt;/td&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="n">align</span><span class="p">,</span>
+                                                           <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;#d65f5f&#39;</span><span class="p">,</span> <span class="s1">&#39;#5fba7d&#39;</span><span class="p">],</span>
+                                                           <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">())</span> <span class="c1">#testn[&#39;width&#39;]</span>
+    <span class="n">row</span> <span class="o">+=</span> <span class="s1">&#39;&lt;/tr&gt;&#39;</span>
+    <span class="n">head</span> <span class="o">+=</span> <span class="n">row</span>
+
+<span class="n">head</span><span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;/tbody&gt;</span>
+<span class="s2">&lt;/table&gt;&quot;&quot;&quot;</span>
+
+
+<span class="n">HTML</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ImportError</span>                               Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-25-3e76cd574ee0&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">import</span> pandas <span class="ansi-green-fg">as</span> pd
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">from</span> IPython<span class="ansi-blue-fg">.</span>display <span class="ansi-green-fg">import</span> HTML
+<span class="ansi-green-intense-fg ansi-bold">      3</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-red-fg"># Test series</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> test1 <span class="ansi-blue-fg">=</span> pd<span class="ansi-blue-fg">.</span>Series<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">100</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">60</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">30</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">20</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;All Negative&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/src/forks/pandas/pandas/__init__.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     17</span> <span class="ansi-green-fg">if</span> missing_dependencies<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     18</span>     raise ImportError(
+<span class="ansi-green-fg">---&gt; 19</span><span class="ansi-red-fg">         &#34;Missing required dependencies {0}&#34;.format(missing_dependencies))
+</span><span class="ansi-green-intense-fg ansi-bold">     20</span> <span class="ansi-green-fg">del</span> hard_dependencies<span class="ansi-blue-fg">,</span> dependency<span class="ansi-blue-fg">,</span> missing_dependencies
+<span class="ansi-green-intense-fg ansi-bold">     21</span>
+
+<span class="ansi-red-fg">ImportError</span>: Missing required dependencies [&#39;numpy&#39;, &#39;pytz&#39;]
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Sharing-Styles">
+<h2>Sharing Styles<a class="headerlink" href="#Sharing-Styles" title="Permalink to this headline">¶</a></h2>
+<p>Say you have a lovely style built up for a DataFrame, and now you want
+to apply the same style to a second DataFrame. Export the style with
+<code class="docutils literal notranslate"><span class="pre">df1.style.export</span></code>, and import it on the second DataFrame with
+<code class="docutils literal notranslate"><span class="pre">df1.style.set</span></code></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df2</span> <span class="o">=</span> <span class="o">-</span><span class="n">df</span>
+<span class="n">style1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">color_negative_red</span><span class="p">)</span>
+<span class="n">style1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-26-a9a909c862e7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df2 <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">-</span>df
+<span class="ansi-green-intense-fg ansi-bold">      2</span> style1 <span class="ansi-blue-fg">=</span> df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>applymap<span class="ansi-blue-fg">(</span>color_negative_red<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> style1
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">style2</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">style</span>
+<span class="n">style2</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">style1</span><span class="o">.</span><span class="n">export</span><span class="p">())</span>
+<span class="n">style2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-27-73fc34894da0&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>style2 <span class="ansi-blue-fg">=</span> df2<span class="ansi-blue-fg">.</span>style
+<span class="ansi-green-intense-fg ansi-bold">      2</span> style2<span class="ansi-blue-fg">.</span>use<span class="ansi-blue-fg">(</span>style1<span class="ansi-blue-fg">.</span>export<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> style2
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df2&#39; is not defined
+</pre></div></div>
+</div>
+<p>Notice that you’re able share the styles even though they’re data aware.
+The styles are re-evaluated on the new DataFrame they’ve been <code class="docutils literal notranslate"><span class="pre">use</span></code>d
+upon.</p>
+</div>
+<div class="section" id="Other-Options">
+<h2>Other Options<a class="headerlink" href="#Other-Options" title="Permalink to this headline">¶</a></h2>
+<p>You’ve seen a few methods for data-driven styling. <code class="docutils literal notranslate"><span class="pre">Styler</span></code> also
+provides a few other options for styles that don’t depend on the data.</p>
+<ul class="simple">
+<li>precision</li>
+<li>captions</li>
+<li>table-wide styles</li>
+<li>hiding the index or columns</li>
+</ul>
+<p>Each of these can be specified in two ways:</p>
+<ul class="simple">
+<li>A keyword argument to <code class="docutils literal notranslate"><span class="pre">Styler.__init__</span></code></li>
+<li>A call to one of the <code class="docutils literal notranslate"><span class="pre">.set_</span></code> or <code class="docutils literal notranslate"><span class="pre">.hide_</span></code> methods, e.g.
+<code class="docutils literal notranslate"><span class="pre">.set_caption</span></code> or <code class="docutils literal notranslate"><span class="pre">.hide_columns</span></code></li>
+</ul>
+<p>The best method to use depends on the context. Use the <code class="docutils literal notranslate"><span class="pre">Styler</span></code>
+constructor when building many styled DataFrames that should all share
+the same properties. For interactive use, the<code class="docutils literal notranslate"><span class="pre">.set_</span></code> and <code class="docutils literal notranslate"><span class="pre">.hide_</span></code>
+methods are more convenient.</p>
+<div class="section" id="Precision">
+<h3>Precision<a class="headerlink" href="#Precision" title="Permalink to this headline">¶</a></h3>
+<p>You can control the precision of floats using pandas’ regular
+<code class="docutils literal notranslate"><span class="pre">display.precision</span></code> option.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">option_context</span><span class="p">(</span><span class="s1">&#39;display.precision&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">style</span>
+              <span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">color_negative_red</span><span class="p">)</span>
+              <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">highlight_max</span><span class="p">))</span>
+<span class="n">html</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-28-6839101a8182&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">with</span> pd<span class="ansi-blue-fg">.</span>option_context<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;display.precision&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     html = (df.style
+<span class="ansi-green-intense-fg ansi-bold">      3</span>               <span class="ansi-blue-fg">.</span>applymap<span class="ansi-blue-fg">(</span>color_negative_red<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>               .apply(highlight_max))
+<span class="ansi-green-intense-fg ansi-bold">      5</span> html
+
+<span class="ansi-red-fg">NameError</span>: name &#39;pd&#39; is not defined
+</pre></div></div>
+</div>
+<p>Or through a <code class="docutils literal notranslate"><span class="pre">set_precision</span></code> method.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span>\
+  <span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">color_negative_red</span><span class="p">)</span>\
+  <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">highlight_max</span><span class="p">)</span>\
+  <span class="o">.</span><span class="n">set_precision</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-29-4a90617c805a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style  <span class="ansi-blue-fg">.</span>applymap<span class="ansi-blue-fg">(</span>color_negative_red<span class="ansi-blue-fg">)</span>  <span class="ansi-blue-fg">.</span>apply<span class="ansi-blue-fg">(</span>highlight_max<span class="ansi-blue-fg">)</span>  <span class="ansi-blue-fg">.</span>set_precision<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>Setting the precision only affects the printed number; the
+full-precision values are always passed to your style functions. You can
+always use <code class="docutils literal notranslate"><span class="pre">df.round(2).style</span></code> if you’d prefer to round from the
+start.</p>
+</div>
+<div class="section" id="Captions">
+<h3>Captions<a class="headerlink" href="#Captions" title="Permalink to this headline">¶</a></h3>
+<p>Regular table captions can be added in a few ways.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;Colormaps, with a caption.&#39;</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">background_gradient</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-30-6556d49d50a5&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>set_caption<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Colormaps, with a caption.&#39;</span><span class="ansi-blue-fg">)</span>    <span class="ansi-blue-fg">.</span>background_gradient<span class="ansi-blue-fg">(</span>cmap<span class="ansi-blue-fg">=</span>cm<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Table-Styles">
+<h3>Table Styles<a class="headerlink" href="#Table-Styles" title="Permalink to this headline">¶</a></h3>
+<p>The next option you have are “table styles”. These are styles that apply
+to the table as a whole, but don’t look at the data. Certain sytlings,
+including pseudo-selectors like <code class="docutils literal notranslate"><span class="pre">:hover</span></code> can only be used this way.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="k">def</span> <span class="nf">hover</span><span class="p">(</span><span class="n">hover_color</span><span class="o">=</span><span class="s2">&quot;#ffff99&quot;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;tr:hover&quot;</span><span class="p">,</span>
+                <span class="n">props</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">hover_color</span><span class="p">)])</span>
+
+<span class="n">styles</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">hover</span><span class="p">(),</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;th&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;font-size&quot;</span><span class="p">,</span> <span class="s2">&quot;150%&quot;</span><span class="p">),</span>
+                               <span class="p">(</span><span class="s2">&quot;text-align&quot;</span><span class="p">,</span> <span class="s2">&quot;center&quot;</span><span class="p">)]),</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;caption&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;caption-side&quot;</span><span class="p">,</span> <span class="s2">&quot;bottom&quot;</span><span class="p">)])</span>
+<span class="p">]</span>
+<span class="n">html</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_table_styles</span><span class="p">(</span><span class="n">styles</span><span class="p">)</span>
+          <span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Hover to highlight.&quot;</span><span class="p">))</span>
+<span class="n">html</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-31-31bd622f1539&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     11</span>     dict<span class="ansi-blue-fg">(</span>selector<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;caption&#34;</span><span class="ansi-blue-fg">,</span> props<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;caption-side&#34;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;bottom&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     12</span> ]
+<span class="ansi-green-fg">---&gt; 13</span><span class="ansi-red-fg"> html = (df.style.set_table_styles(styles)
+</span><span class="ansi-green-intense-fg ansi-bold">     14</span>           .set_caption(&#34;Hover to highlight.&#34;))
+<span class="ansi-green-intense-fg ansi-bold">     15</span> html
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">table_styles</span></code> should be a list of dictionaries. Each dictionary
+should have the <code class="docutils literal notranslate"><span class="pre">selector</span></code> and <code class="docutils literal notranslate"><span class="pre">props</span></code> keys. The value for
+<code class="docutils literal notranslate"><span class="pre">selector</span></code> should be a valid CSS selector. Recall that all the styles
+are already attached to an <code class="docutils literal notranslate"><span class="pre">id</span></code>, unique to each <code class="docutils literal notranslate"><span class="pre">Styler</span></code>. This
+selector is in addition to that <code class="docutils literal notranslate"><span class="pre">id</span></code>. The value for <code class="docutils literal notranslate"><span class="pre">props</span></code> should
+be a list of tuples of <code class="docutils literal notranslate"><span class="pre">('attribute',</span> <span class="pre">'value')</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">table_styles</span></code> are extremely flexible, but not as fun to type out by
+hand. We hope to collect some useful ones either in pandas, or
+preferable in a new package that <a class="reference external" href="#Extensibility">builds on top</a> the
+tools here.</p>
+</div>
+<div class="section" id="Hiding-the-Index-or-Columns">
+<h3>Hiding the Index or Columns<a class="headerlink" href="#Hiding-the-Index-or-Columns" title="Permalink to this headline">¶</a></h3>
+<p>The index can be hidden from rendering by calling <code class="docutils literal notranslate"><span class="pre">Styler.hide_index</span></code>.
+Columns can be hidden from rendering by calling <code class="docutils literal notranslate"><span class="pre">Styler.hide_columns</span></code>
+and passing in the name of a column, or a slice of columns.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-32-046e9c3a6dbb&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>hide_index<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide_columns</span><span class="p">([</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-33-469db9cdb344&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>hide_columns<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;C&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">&#39;D&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="CSS-Classes">
+<h3>CSS Classes<a class="headerlink" href="#CSS-Classes" title="Permalink to this headline">¶</a></h3>
+<p>Certain CSS classes are attached to cells.</p>
+<ul class="simple">
+<li>Index and Column names include <code class="docutils literal notranslate"><span class="pre">index_name</span></code> and <code class="docutils literal notranslate"><span class="pre">level&lt;k&gt;</span></code> where
+<code class="docutils literal notranslate"><span class="pre">k</span></code> is its level in a MultiIndex</li>
+<li>Index label cells include</li>
+<li><code class="docutils literal notranslate"><span class="pre">row_heading</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">row&lt;n&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the numeric position of the row</li>
+<li><code class="docutils literal notranslate"><span class="pre">level&lt;k&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">k</span></code> is the level in a MultiIndex</li>
+<li>Column label cells include</li>
+<li><code class="docutils literal notranslate"><span class="pre">col_heading</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">col&lt;n&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the numeric position of the column</li>
+<li><code class="docutils literal notranslate"><span class="pre">level&lt;k&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">k</span></code> is the level in a MultiIndex</li>
+<li>Blank cells include <code class="docutils literal notranslate"><span class="pre">blank</span></code></li>
+<li>Data cells include <code class="docutils literal notranslate"><span class="pre">data</span></code></li>
+</ul>
+</div>
+<div class="section" id="Limitations">
+<h3>Limitations<a class="headerlink" href="#Limitations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>DataFrame only <code class="docutils literal notranslate"><span class="pre">(use</span> <span class="pre">Series.to_frame().style)</span></code></li>
+<li>The index and columns must be unique</li>
+<li>No large repr, and performance isn’t great; this is intended for
+summary DataFrames</li>
+<li>You can only style the <em>values</em>, not the index or columns</li>
+<li>You can only apply styles, you can’t insert new HTML entities</li>
+</ul>
+<p>Some of these will be addressed in the future.</p>
+</div>
+<div class="section" id="Terms">
+<h3>Terms<a class="headerlink" href="#Terms" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Style function: a function that’s passed into <code class="docutils literal notranslate"><span class="pre">Styler.apply</span></code> or
+<code class="docutils literal notranslate"><span class="pre">Styler.applymap</span></code> and returns values like
+<code class="docutils literal notranslate"><span class="pre">'css</span> <span class="pre">attribute:</span> <span class="pre">value'</span></code></li>
+<li>Builtin style functions: style functions that are methods on
+<code class="docutils literal notranslate"><span class="pre">Styler</span></code></li>
+<li>table style: a dictionary with the two keys <code class="docutils literal notranslate"><span class="pre">selector</span></code> and
+<code class="docutils literal notranslate"><span class="pre">props</span></code>. <code class="docutils literal notranslate"><span class="pre">selector</span></code> is the CSS selector that <code class="docutils literal notranslate"><span class="pre">props</span></code> will apply
+to. <code class="docutils literal notranslate"><span class="pre">props</span></code> is a list of <code class="docutils literal notranslate"><span class="pre">(attribute,</span> <span class="pre">value)</span></code> tuples. A list of
+table styles passed into <code class="docutils literal notranslate"><span class="pre">Styler</span></code>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="Fun-stuff">
+<h2>Fun stuff<a class="headerlink" href="#Fun-stuff" title="Permalink to this headline">¶</a></h2>
+<p>Here are a few interesting examples.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Styler</span></code> interacts pretty well with widgets. If you’re viewing this
+online instead of running the notebook yourself, you’re missing out on
+interactively adjusting the color palette.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">IPython.html</span> <span class="kn">import</span> <span class="n">widgets</span>
+<span class="nd">@widgets.interact</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">h_neg</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">359</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">h_pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">359</span><span class="p">),</span> <span class="n">s</span><span class="o">=</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">99.9</span><span class="p">),</span> <span class="n">l</span><span class="o">=</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">99.9</span><span class="p">)):</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">background_gradient</span><span class="p">(</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">palettes</span><span class="o">.</span><span class="n">diverging_palette</span><span class="p">(</span><span class="n">h_neg</span><span class="o">=</span><span class="n">h_neg</span><span class="p">,</span> <span class="n">h_pos</span><span class="o">=</span><span class="n">h_pos</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span>
+                                            <span class="n">as_cmap</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">~/.miniconda3/envs/py2/lib/python3.6/site-packages/ipywidgets/widgets/interaction.py</span> in <span class="ansi-cyan-fg">update</span><span class="ansi-blue-fg">(self, *args)</span>
+<span class="ansi-green-intense-fg ansi-bold">    249</span>                     value <span class="ansi-blue-fg">=</span> widget<span class="ansi-blue-fg">.</span>get_interact_value<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    250</span>                     self<span class="ansi-blue-fg">.</span>kwargs<span class="ansi-blue-fg">[</span>widget<span class="ansi-blue-fg">.</span>_kwarg<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> value
+<span class="ansi-green-fg">--&gt; 251</span><span class="ansi-red-fg">                 </span>self<span class="ansi-blue-fg">.</span>result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>f<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">**</span>self<span class="ansi-blue-fg">.</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    252</span>                 show_inline_matplotlib_plots<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    253</span>                 <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>auto_display <span class="ansi-green-fg">and</span> self<span class="ansi-blue-fg">.</span>result <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-34-2832dcd4da26&gt;</span> in <span class="ansi-cyan-fg">f</span><span class="ansi-blue-fg">(h_neg, h_pos, s, l)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-blue-fg">@</span>widgets<span class="ansi-blue-fg">.</span>interact
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">def</span> f<span class="ansi-blue-fg">(</span>h_neg<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">359</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> h_pos<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">359</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> s<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0.</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">99.9</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> l<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0.</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">99.9</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg">     return df.style.background_gradient(
+</span><span class="ansi-green-intense-fg ansi-bold">      5</span>         cmap=sns.palettes.diverging_palette(h_neg=h_neg, h_pos=h_pos, s=s, l=l,
+<span class="ansi-green-intense-fg ansi-bold">      6</span>                                             as_cmap=True)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">magnify</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;th&quot;</span><span class="p">,</span>
+                 <span class="n">props</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;font-size&quot;</span><span class="p">,</span> <span class="s2">&quot;4pt&quot;</span><span class="p">)]),</span>
+            <span class="nb">dict</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;td&quot;</span><span class="p">,</span>
+                 <span class="n">props</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;padding&#39;</span><span class="p">,</span> <span class="s2">&quot;0em 0em&quot;</span><span class="p">)]),</span>
+            <span class="nb">dict</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;th:hover&quot;</span><span class="p">,</span>
+                 <span class="n">props</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;font-size&quot;</span><span class="p">,</span> <span class="s2">&quot;12pt&quot;</span><span class="p">)]),</span>
+            <span class="nb">dict</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;tr:hover td:hover&quot;</span><span class="p">,</span>
+                 <span class="n">props</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;max-width&#39;</span><span class="p">,</span> <span class="s1">&#39;200px&#39;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="s1">&#39;font-size&#39;</span><span class="p">,</span> <span class="s1">&#39;12pt&#39;</span><span class="p">)])</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">cmap</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">diverging_palette</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="n">as_cmap</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">bigdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+<span class="n">bigdf</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">background_gradient</span><span class="p">(</span><span class="n">cmap</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;max-width&#39;</span><span class="p">:</span> <span class="s1">&#39;80px&#39;</span><span class="p">,</span> <span class="s1">&#39;font-size&#39;</span><span class="p">:</span> <span class="s1">&#39;1pt&#39;</span><span class="p">})</span>\
+    <span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Hover to magnify&quot;</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">set_precision</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">set_table_styles</span><span class="p">(</span><span class="n">magnify</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-36-6c5e5df7a3a2&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>np<span class="ansi-blue-fg">.</span>random<span class="ansi-blue-fg">.</span>seed<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">25</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> cmap <span class="ansi-blue-fg">=</span> cmap<span class="ansi-blue-fg">=</span>sns<span class="ansi-blue-fg">.</span>diverging_palette<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">250</span><span class="ansi-blue-fg">,</span> as_cmap<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> bigdf <span class="ansi-blue-fg">=</span> pd<span class="ansi-blue-fg">.</span>DataFrame<span class="ansi-blue-fg">(</span>np<span class="ansi-blue-fg">.</span>random<span class="ansi-blue-fg">.</span>randn<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">20</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">25</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>cumsum<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> bigdf<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>background_gradient<span class="ansi-blue-fg">(</span>cmap<span class="ansi-blue-fg">,</span> axis<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>    <span class="ansi-blue-fg">.</span>set_properties<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">**</span><span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">&#39;max-width&#39;</span><span class="ansi-blue-fg">:</span> <span class="ansi-blue-fg">&#39;80px&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;font-size&#39;</span><span class="ansi-blue-fg">:</span> <span class="ansi-blue-fg">&#39;1pt&#39;</span><span class="ansi-blue-fg">}</span><span class="ansi-blue-fg">)</span>    <span class="ansi-blue-fg">.</span>set_caption<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Hover to magnify&#34;</span><span class="ansi-blue-fg">)</span>    <span class="ansi-blue-fg">.</span>set_precision<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span>    <span class="ansi-blue-fg">.</span>set_table_styles<span class="ansi-blue-fg">(</span>magnify<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;np&#39; is not defined
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Export-to-Excel">
+<h2>Export to Excel<a class="headerlink" href="#Export-to-Excel" title="Permalink to this headline">¶</a></h2>
+<p><em>New in version 0.20.0</em></p>
+<p><em>Experimental: This is a new feature and still under development. We’ll
+be adding features and possibly making breaking changes in future
+releases. We’d love to hear your feedback.</em></p>
+<p>Some support is available for exporting styled <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code>&nbsp;to Excel
+worksheets using the <code class="docutils literal notranslate"><span class="pre">OpenPyXL</span></code> or <code class="docutils literal notranslate"><span class="pre">XlsxWriter</span></code> engines. CSS2.2
+properties handled include:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">background-color</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">border-style</span></code>, <code class="docutils literal notranslate"><span class="pre">border-width</span></code>, <code class="docutils literal notranslate"><span class="pre">border-color</span></code> and their
+{<code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">right</span></code>, <code class="docutils literal notranslate"><span class="pre">bottom</span></code>, <code class="docutils literal notranslate"><span class="pre">left</span></code> variants}</li>
+<li><code class="docutils literal notranslate"><span class="pre">color</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">font-family</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">font-style</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">font-weight</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">text-align</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">text-decoration</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">vertical-align</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">white-space:</span> <span class="pre">nowrap</span></code></li>
+</ul>
+<p>Only CSS2 named colors and hex colors of the form <code class="docutils literal notranslate"><span class="pre">#rgb</span></code> or
+<code class="docutils literal notranslate"><span class="pre">#rrggbb</span></code> are currently supported.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span>\
+    <span class="n">applymap</span><span class="p">(</span><span class="n">color_negative_red</span><span class="p">)</span><span class="o">.</span>\
+    <span class="nb">apply</span><span class="p">(</span><span class="n">highlight_max</span><span class="p">)</span><span class="o">.</span>\
+    <span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;styled.xlsx&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;openpyxl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-37-cc45b4e65de4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df<span class="ansi-blue-fg">.</span>style<span class="ansi-blue-fg">.</span>    applymap<span class="ansi-blue-fg">(</span>color_negative_red<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>    apply<span class="ansi-blue-fg">(</span>highlight_max<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>    to_excel<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;styled.xlsx&#39;</span><span class="ansi-blue-fg">,</span> engine<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;openpyxl&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined
+</pre></div></div>
+</div>
+<p>A screenshot of the output:</p>
+<div class="figure" id="id1">
+<img alt="Excel spreadsheet with styled DataFrame" src="_images/style-excel.png" />
+<p class="caption"><span class="caption-text">Excel spreadsheet with styled DataFrame</span></p>
+</div>
+</div>
+<div class="section" id="Extensibility">
+<h2>Extensibility<a class="headerlink" href="#Extensibility" title="Permalink to this headline">¶</a></h2>
+<p>The core of pandas is, and will remain, its “high-performance,
+easy-to-use data structures”. With that in mind, we hope that
+<code class="docutils literal notranslate"><span class="pre">DataFrame.style</span></code> accomplishes two goals</p>
+<ul class="simple">
+<li>Provide an API that is pleasing to use interactively and is “good
+enough” for many tasks</li>
+<li>Provide the foundations for dedicated libraries to build on</li>
+</ul>
+<p>If you build a great library on top of this, let us know and we’ll
+<a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/ecosystem.html">link</a> to
+it.</p>
+<div class="section" id="Subclassing">
+<h3>Subclassing<a class="headerlink" href="#Subclassing" title="Permalink to this headline">¶</a></h3>
+<p>If the default template doesn’t quite suit your needs, you can subclass
+Styler and extend or override the template. We’ll show an example of
+extending the default template to insert a custom header before each
+table.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">ChoiceLoader</span><span class="p">,</span> <span class="n">FileSystemLoader</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="kn">from</span> <span class="nn">pandas.io.formats.style</span> <span class="kn">import</span> <span class="n">Styler</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ImportError</span>                               Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-38-f2964fa0925a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">from</span> jinja2 <span class="ansi-green-fg">import</span> Environment<span class="ansi-blue-fg">,</span> ChoiceLoader<span class="ansi-blue-fg">,</span> FileSystemLoader
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">from</span> IPython<span class="ansi-blue-fg">.</span>display <span class="ansi-green-fg">import</span> HTML
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> pandas<span class="ansi-blue-fg">.</span>io<span class="ansi-blue-fg">.</span>formats<span class="ansi-blue-fg">.</span>style <span class="ansi-green-fg">import</span> Styler
+
+<span class="ansi-green-fg">~/src/forks/pandas/pandas/__init__.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     17</span> <span class="ansi-green-fg">if</span> missing_dependencies<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     18</span>     raise ImportError(
+<span class="ansi-green-fg">---&gt; 19</span><span class="ansi-red-fg">         &#34;Missing required dependencies {0}&#34;.format(missing_dependencies))
+</span><span class="ansi-green-intense-fg ansi-bold">     20</span> <span class="ansi-green-fg">del</span> hard_dependencies<span class="ansi-blue-fg">,</span> dependency<span class="ansi-blue-fg">,</span> missing_dependencies
+<span class="ansi-green-intense-fg ansi-bold">     21</span>
+
+<span class="ansi-red-fg">ImportError</span>: Missing required dependencies [&#39;numpy&#39;, &#39;pytz&#39;]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">mkdir</span> templates
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+mkdir: cannot create directory ‘templates’: File exists
+</pre></div></div>
+</div>
+<p>This next cell writes the custom template. We extend the template
+<code class="docutils literal notranslate"><span class="pre">html.tpl</span></code>, which comes with pandas.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">file</span> templates/myhtml.tpl
+{% extends &quot;html.tpl&quot; %}
+{% block table %}
+&lt;h1&gt;{{ table_title|default(&quot;My Table&quot;) }}&lt;/h1&gt;
+{{ super() }}
+{% endblock table %}
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Overwriting templates/myhtml.tpl
+</pre></div></div>
+</div>
+<p>Now that we’ve created a template, we need to set up a subclass of
+<code class="docutils literal notranslate"><span class="pre">Styler</span></code> that knows about it.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">MyStyler</span><span class="p">(</span><span class="n">Styler</span><span class="p">):</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span>
+        <span class="n">loader</span><span class="o">=</span><span class="n">ChoiceLoader</span><span class="p">([</span>
+            <span class="n">FileSystemLoader</span><span class="p">(</span><span class="s2">&quot;templates&quot;</span><span class="p">),</span>  <span class="c1"># contains ours</span>
+            <span class="n">Styler</span><span class="o">.</span><span class="n">loader</span><span class="p">,</span>  <span class="c1"># the default</span>
+        <span class="p">])</span>
+    <span class="p">)</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s2">&quot;myhtml.tpl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-41-5b4a0db5c090&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">class</span> MyStyler<span class="ansi-blue-fg">(</span>Styler<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     env = Environment(
+<span class="ansi-green-intense-fg ansi-bold">      3</span>         loader=ChoiceLoader([
+<span class="ansi-green-intense-fg ansi-bold">      4</span>             FileSystemLoader<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;templates&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>  <span class="ansi-red-fg"># contains ours</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>             Styler<span class="ansi-blue-fg">.</span>loader<span class="ansi-blue-fg">,</span>  <span class="ansi-red-fg"># the default</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;Styler&#39; is not defined
+</pre></div></div>
+</div>
+<p>Notice that we include the original loader in our environment’s loader.
+That’s because we extend the original template, so the Jinja environment
+needs to be able to find it.</p>
+<p>Now we can use that custom styler. It’s <code class="docutils literal notranslate"><span class="pre">__init__</span></code> takes a DataFrame.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">MyStyler</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-42-544c6ec28b03&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>MyStyler<span class="ansi-blue-fg">(</span>df<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;MyStyler&#39; is not defined
+</pre></div></div>
+</div>
+<p>Our custom template accepts a <code class="docutils literal notranslate"><span class="pre">table_title</span></code> keyword. We can provide
+the value in the <code class="docutils literal notranslate"><span class="pre">.render</span></code> method.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">HTML</span><span class="p">(</span><span class="n">MyStyler</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">table_title</span><span class="o">=</span><span class="s2">&quot;Extending Example&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-43-bea775904890&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>HTML<span class="ansi-blue-fg">(</span>MyStyler<span class="ansi-blue-fg">(</span>df<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>render<span class="ansi-blue-fg">(</span>table_title<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;Extending Example&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;MyStyler&#39; is not defined
+</pre></div></div>
+</div>
+<p>For convenience, we provide the <code class="docutils literal notranslate"><span class="pre">Styler.from_custom_template</span></code> method
+that does the same as the custom subclass.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">EasyStyler</span> <span class="o">=</span> <span class="n">Styler</span><span class="o">.</span><span class="n">from_custom_template</span><span class="p">(</span><span class="s2">&quot;templates&quot;</span><span class="p">,</span> <span class="s2">&quot;myhtml.tpl&quot;</span><span class="p">)</span>
+<span class="n">EasyStyler</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-44-43f53afa7263&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>EasyStyler <span class="ansi-blue-fg">=</span> Styler<span class="ansi-blue-fg">.</span>from_custom_template<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;templates&#34;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;myhtml.tpl&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> EasyStyler<span class="ansi-blue-fg">(</span>df<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;Styler&#39; is not defined
+</pre></div></div>
+</div>
+<p>Here’s the template structure:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;template_structure.html&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[45]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<!--
+     This is an HTML fragment that gets included into a notebook & rst document
+
+     Inspired by nbconvert
+
+     https://github.com/jupyter/nbconvert/blob/8ac591a0b8694147d0f34bf6392594c2811c1395/docs/source/template_structure.html
+
+
+   -->
+<style type="text/css">
+    /* Overrides of notebook CSS for static HTML export */
+    .template_block {
+        background-color: hsla(120, 60%, 70%, 0.2);
+        margin: 10px;
+        padding: 5px;
+        border: 1px solid hsla(120, 60%, 70%, 0.5);
+        border-left: 2px solid black;
+    }
+    .template_block pre {
+        background: transparent;
+        padding: 0;
+    }
+    .big_vertical_ellipsis {
+        font-size: 24pt;
+    }
+</style>
+
+<div class="template_block">before_style</div>
+<div class="template_block">style
+    <pre>&lt;style type=&quot;text/css&quot;&gt;</pre>
+    <div class="template_block">table_styles</div>
+    <div class="template_block">before_cellstyle</div>
+    <div class="template_block">cellstyle</div>
+    <pre>&lt;/style&gt;</pre>
+</div><!-- /style -->
+
+<div class="template_block" >before_table</div>
+
+<div class="template_block" >table
+    <pre>&lt;table ...&gt;</pre>
+    <div class="template_block">caption</div>
+
+    <div class="template_block" >thead
+        <div class="template_block" >before_head_rows</div>
+        <div class="template_block">head_tr (loop over headers)</div>
+        <div class="template_block" >after_head_rows</div>
+    </div>
+
+    <div class="template_block" >tbody
+        <div class="template_block" >before_rows</div>
+        <div class="template_block">tr (loop over data rows)</div>
+        <div class="template_block" >after_rows</div>
+    </div>
+    <pre>&lt;/table&gt;</pre>
+</div><!-- /table -->
+
+<div class="template_block" >after_table</div></div>
+</div>
+<p>See the template in the <a class="reference external" href="https://github.com/pandas-dev/pandas">GitHub
+repo</a> for more details.</p>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 1, "version_minor": 0}
+</script></div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/style.ipynb.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2008-2014, the pandas development team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Comparison with R / R libraries &#8212; pandas 0.24.0.dev0+98.gbd95c4b9f documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Comparison with SQL" href="comparison_with_sql.html" />
+    <link rel="prev" title="pandas Ecosystem" href="ecosystem.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><span><img src="_static/pandas_logo.png"></span>
+          pandas</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.24.0.dev0+98.gbd95c4b9f</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s New</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-24-0">v0.24.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-23-1">v0.23.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-23-0-may-15-2018">v0.23.0 (May 15, 2018)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-22-0-december-29-2017">v0.22.0 (December 29, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-21-1-december-12-2017">v0.21.1 (December 12, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-21-0-october-27-2017">v0.21.0 (October 27, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-20-3-july-7-2017">v0.20.3 (July 7, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-20-2-june-4-2017">v0.20.2 (June 4, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-20-1-may-5-2017">v0.20.1 (May 5, 2017)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-19-2-december-24-2016">v0.19.2 (December 24, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-19-1-november-3-2016">v0.19.1 (November 3, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-19-0-october-2-2016">v0.19.0 (October 2, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-18-1-may-3-2016">v0.18.1 (May 3, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-18-0-march-13-2016">v0.18.0 (March 13, 2016)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-17-1-november-21-2015">v0.17.1 (November 21, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-17-0-october-9-2015">v0.17.0 (October 9, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-16-2-june-12-2015">v0.16.2 (June 12, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-16-1-may-11-2015">v0.16.1 (May 11, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-16-0-march-22-2015">v0.16.0 (March 22, 2015)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-15-2-december-12-2014">v0.15.2 (December 12, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-15-1-november-9-2014">v0.15.1 (November 9, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-15-0-october-18-2014">v0.15.0 (October 18, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-14-1-july-11-2014">v0.14.1 (July 11, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-14-0-may-31-2014">v0.14.0 (May 31 , 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-13-1-february-3-2014">v0.13.1 (February 3, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-13-0-january-3-2014">v0.13.0 (January 3, 2014)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-12-0-july-24-2013">v0.12.0 (July 24, 2013)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-11-0-april-22-2013">v0.11.0 (April 22, 2013)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-10-1-january-22-2013">v0.10.1 (January 22, 2013)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-10-0-december-17-2012">v0.10.0 (December 17, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-9-1-november-14-2012">v0.9.1 (November 14, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-9-0-october-7-2012">v0.9.0 (October 7, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-8-1-july-22-2012">v0.8.1 (July 22, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v0-8-0-june-29-2012">v0.8.0 (June 29, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-7-3-april-12-2012">v.0.7.3 (April 12, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-7-2-march-16-2012">v.0.7.2 (March 16, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-7-1-february-29-2012">v.0.7.1 (February 29, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-7-0-february-9-2012">v.0.7.0 (February 9, 2012)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-6-1-december-13-2011">v.0.6.1 (December 13, 2011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-6-0-november-25-2011">v.0.6.0 (November 25, 2011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-5-0-october-24-2011">v.0.5.0 (October 24, 2011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#v-0-4-3-through-v0-4-1-september-25-october-9-2011">v.0.4.3 through v0.4.1 (September 25 - October 9, 2011)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#plan-for-dropping-python-2-7">Plan for dropping Python 2.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#python-version-support">Python version support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#installing-pandas">Installing pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#running-the-test-suite">Running the test suite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to pandas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#where-to-start">Where to start?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#bug-reports-and-enhancement-requests">Bug reports and enhancement requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#working-with-the-code">Working with the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-to-the-documentation">Contributing to the documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-to-the-code-base">Contributing to the code base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-your-changes-to-pandas">Contributing your changes to <em>pandas</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Package overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#data-structures">Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#mutability-and-copying-of-data">Mutability and copying of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#getting-support">Getting Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#community">Community</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#project-governance">Project Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#development-team">Development Team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#institutional-partners">Institutional Partners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10min.html">10 Minutes to pandas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#object-creation">Object Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#viewing-data">Viewing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#merge">Merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#grouping">Grouping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#reshaping">Reshaping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#time-series">Time Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#categoricals">Categoricals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#plotting">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#getting-data-in-out">Getting Data In/Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#gotchas">Gotchas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#internal-guides">Internal Guides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#pandas-cookbook">pandas Cookbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#lessons-for-new-pandas-users">Lessons for new pandas users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#practical-data-analysis-with-python">Practical data analysis with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#exercises-for-new-users">Exercises for new users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#modern-pandas">Modern pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#excel-charts-with-pandas-vincent-and-xlsxwriter">Excel charts with pandas, vincent and xlsxwriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#video-tutorials">Video Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#various-tutorials">Various Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#idioms">Idioms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#multiindexing">MultiIndexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#grouping">Grouping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#timeseries">Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#merge">Merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#plotting">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#data-in-out">Data In/Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#computation">Computation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#timedeltas">Timedeltas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#aliasing-axis-names">Aliasing Axis Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook.html#creating-example-data">Creating Example Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dsintro.html">Intro to Data Structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dsintro.html#series">Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dsintro.html#dataframe">DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dsintro.html#panel">Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dsintro.html#deprecate-panel">Deprecate Panel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Essential Basic Functionality</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#head-and-tail">Head and Tail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#attributes-and-the-raw-ndarray-s">Attributes and the raw ndarray(s)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#accelerated-operations">Accelerated operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#flexible-binary-operations">Flexible binary operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#descriptive-statistics">Descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#function-application">Function application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#reindexing-and-altering-labels">Reindexing and altering labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#iteration">Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#dt-accessor">.dt accessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#vectorized-string-methods">Vectorized string methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#sorting">Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#copying">Copying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#dtypes">dtypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#selecting-columns-based-on-dtype">Selecting columns based on <code class="docutils literal notranslate"><span class="pre">dtype</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text.html">Working with Text Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text.html#splitting-and-replacing-strings">Splitting and Replacing Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#concatenation">Concatenation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#indexing-with-str">Indexing with <code class="docutils literal notranslate"><span class="pre">.str</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#extracting-substrings">Extracting Substrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#testing-for-strings-that-match-or-contain-a-pattern">Testing for Strings that Match or Contain a Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#creating-indicator-variables">Creating Indicator Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html#method-summary">Method Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options and Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="options.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#getting-and-setting-options">Getting and Setting Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#setting-startup-options-in-python-ipython-environment">Setting Startup Options in python/ipython Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#frequently-used-options">Frequently Used Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#available-options">Available Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#number-formatting">Number Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#unicode-formatting">Unicode Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html#table-schema-display">Table Schema Display</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="indexing.html">Indexing and Selecting Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#different-choices-for-indexing">Different Choices for Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#basics">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#attribute-access">Attribute Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#slicing-ranges">Slicing ranges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#selection-by-label">Selection By Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#selection-by-position">Selection By Position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#selection-by-callable">Selection By Callable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#ix-indexer-is-deprecated">IX Indexer is Deprecated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#indexing-with-list-with-missing-labels-is-deprecated">Indexing with list with missing labels is Deprecated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#selecting-random-samples">Selecting Random Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#setting-with-enlargement">Setting With Enlargement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#fast-scalar-value-getting-and-setting">Fast scalar value getting and setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#boolean-indexing">Boolean indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#indexing-with-isin">Indexing with isin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#the-where-method-and-masking">The <code class="docutils literal notranslate"><span class="pre">where()</span></code> Method and Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#the-query-method">The <code class="docutils literal notranslate"><span class="pre">query()</span></code> Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#duplicate-data">Duplicate Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#dictionary-like-get-method">Dictionary-like <code class="docutils literal notranslate"><span class="pre">get()</span></code> method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#the-lookup-method">The <code class="docutils literal notranslate"><span class="pre">lookup()</span></code> Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#index-objects">Index objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#set-reset-index">Set / Reset Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#returning-a-view-versus-a-copy">Returning a view versus a copy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">MultiIndex / Advanced Indexing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#hierarchical-indexing-multiindex">Hierarchical indexing (MultiIndex)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#advanced-indexing-with-hierarchical-index">Advanced indexing with hierarchical index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#sorting-a-multiindex">Sorting a <code class="docutils literal notranslate"><span class="pre">MultiIndex</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#take-methods">Take Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#index-types">Index Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#miscellaneous-indexing-faq">Miscellaneous indexing FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="computation.html">Computational tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#statistical-functions">Statistical Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#window-functions">Window Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#aggregation">Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#expanding-windows">Expanding Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computation.html#exponentially-weighted-windows">Exponentially Weighted Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="missing_data.html">Working with missing data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#missing-data-basics">Missing data basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#datetimes">Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#inserting-missing-data">Inserting missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#calculations-with-missing-data">Calculations with missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#cleaning-filling-missing-data">Cleaning / filling missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="missing_data.html#missing-data-casting-rules-and-indexing">Missing data casting rules and indexing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="groupby.html">Group By: split-apply-combine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#splitting-an-object-into-groups">Splitting an object into groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#iterating-through-groups">Iterating through groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#selecting-a-group">Selecting a group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#aggregation">Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#transformation">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#filtration">Filtration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#dispatching-to-instance-methods">Dispatching to instance methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#flexible-apply">Flexible <code class="docutils literal notranslate"><span class="pre">apply</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#other-useful-features">Other useful features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groupby.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="merging.html">Merge, join, and concatenate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="merging.html#concatenating-objects">Concatenating objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merging.html#database-style-dataframe-joining-merging">Database-style DataFrame joining/merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merging.html#timeseries-friendly-merging">Timeseries friendly merging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reshaping.html">Reshaping and Pivot Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#reshaping-by-pivoting-dataframe-objects">Reshaping by pivoting DataFrame objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#reshaping-by-stacking-and-unstacking">Reshaping by stacking and unstacking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#reshaping-by-melt">Reshaping by Melt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#combining-with-stats-and-groupby">Combining with stats and GroupBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#pivot-tables">Pivot tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#cross-tabulations">Cross tabulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#tiling">Tiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#computing-indicator-dummy-variables">Computing indicator / dummy variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping.html#factorizing-values">Factorizing values</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timeseries.html">Time Series / Date functionality</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#timestamps-vs-time-spans">Timestamps vs. Time Spans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#converting-to-timestamps">Converting to Timestamps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#generating-ranges-of-timestamps">Generating Ranges of Timestamps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#timestamp-limitations">Timestamp Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#indexing">Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#time-date-components">Time/Date Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#dateoffset-objects">DateOffset Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#time-series-related-instance-methods">Time Series-Related Instance Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#resampling">Resampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#time-span-representation">Time Span Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#converting-between-representations">Converting Between Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#representing-out-of-bounds-spans">Representing Out-of-Bounds Spans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#time-zone-handling">Time Zone Handling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timedeltas.html">Time Deltas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#parsing">Parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#reductions">Reductions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#frequency-conversion">Frequency Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#attributes">Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#timedeltaindex">TimedeltaIndex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timedeltas.html#resampling">Resampling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="categorical.html">Categorical Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#object-creation">Object Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#categoricaldtype">CategoricalDtype</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#working-with-categories">Working with categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#sorting-and-order">Sorting and Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#comparisons">Comparisons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#data-munging">Data munging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#getting-data-in-out">Getting Data In/Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#differences-to-r-s-factor">Differences to R’s <cite>factor</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="categorical.html#gotchas">Gotchas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#basic-plotting-plot">Basic Plotting: <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#other-plots">Other Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#plotting-with-missing-data">Plotting with Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#plotting-tools">Plotting Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#plot-formatting">Plot Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#plotting-directly-with-matplotlib">Plotting directly with matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#trellis-plotting-interface">Trellis plotting interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="style.html">Styling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Building-Styles">Building Styles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Building-Styles-Summary">Building Styles Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Finer-Control:-Slicing">Finer Control: Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Finer-Control:-Display-Values">Finer Control: Display Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Builtin-Styles">Builtin Styles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Bar-charts">Bar charts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Sharing-Styles">Sharing Styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Other-Options">Other Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Precision">Precision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Captions">Captions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Table-Styles">Table Styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Hiding-the-Index-or-Columns">Hiding the Index or Columns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#CSS-Classes">CSS Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Limitations">Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Terms">Terms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Fun-stuff">Fun stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Export-to-Excel">Export to Excel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style.html#Extensibility">Extensibility</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="style.html#Subclassing">Subclassing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">IO Tools (Text, CSV, HDF5, …)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="io.html#csv-text-files">CSV &amp; Text files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#json">JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#html">HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#excel-files">Excel files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#clipboard">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#pickling">Pickling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#msgpack">msgpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#hdf5-pytables">HDF5 (PyTables)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#feather">Feather</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#parquet">Parquet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#sql-queries">SQL Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#google-bigquery">Google BigQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#stata-format">Stata Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#sas-formats">SAS Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#other-file-formats">Other file formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#performance-considerations">Performance Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enhancingperf.html">Enhancing Performance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enhancingperf.html#cython-writing-c-extensions-for-pandas">Cython (Writing C extensions for pandas)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enhancingperf.html#using-numba">Using Numba</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enhancingperf.html#expression-evaluation-via-eval">Expression Evaluation via <code class="docutils literal notranslate"><span class="pre">eval()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sparse.html">Sparse data structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#sparsearray">SparseArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#sparseindex-objects">SparseIndex objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#sparse-dtypes">Sparse Dtypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#sparse-calculation">Sparse Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse.html#interaction-with-scipy-sparse">Interaction with scipy.sparse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gotchas.html">Frequently Asked Questions (FAQ)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#dataframe-memory-usage">DataFrame memory usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#using-if-truth-statements-with-pandas">Using If/Truth Statements with pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#nan-integer-na-values-and-na-type-promotions"><code class="docutils literal notranslate"><span class="pre">NaN</span></code>, Integer <code class="docutils literal notranslate"><span class="pre">NA</span></code> values and <code class="docutils literal notranslate"><span class="pre">NA</span></code> type promotions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#differences-with-numpy">Differences with NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#thread-safety">Thread-safety</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html#byte-ordering-issues">Byte-Ordering Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="r_interface.html">rpy2 / R interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="r_interface.html#transferring-r-data-sets-into-python">Transferring R data sets into Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r_interface.html#converting-dataframes-into-r-objects">Converting DataFrames into R objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ecosystem.html">pandas Ecosystem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#statistics-and-machine-learning">Statistics and Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#visualization">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#ecosystem-ide">IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#domain-specific">Domain Specific</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#out-of-core">Out-of-core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#data-validation">Data validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#extension-data-types">Extension Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecosystem.html#accessors">Accessors</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Comparison with R / R libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quick-reference">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#base-r">Base R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plyr">plyr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reshape-reshape2">reshape / reshape2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comparison_with_sql.html">Comparison with SQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#select">SELECT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#where">WHERE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#group-by">GROUP BY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#join">JOIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#union">UNION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#pandas-equivalents-for-some-sql-analytic-and-aggregate-functions">Pandas equivalents for some SQL analytic and aggregate functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#update">UPDATE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sql.html#delete">DELETE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comparison_with_sas.html">Comparison with SAS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#data-structures">Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#data-input-output">Data Input / Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#data-operations">Data Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#string-processing">String Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#merging">Merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#groupby">GroupBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_sas.html#other-considerations">Other Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comparison_with_stata.html">Comparison with Stata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#data-structures">Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#data-input-output">Data Input / Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#data-operations">Data Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#string-processing">String Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#merging">Merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#missing-data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#groupby">GroupBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison_with_stata.html#other-considerations">Other Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#storing-pandas-dataframe-objects-in-apache-parquet-format">Storing pandas DataFrame objects in Apache Parquet format</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="internals.html">Internals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internals.html#indexing">Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html#subclassing-pandas-data-structures">Subclassing pandas Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extending.html">Extending Pandas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extending.html#registering-custom-accessors">Registering Custom Accessors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending.html#extension-types">Extension Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending.html#subclassing-pandas-data-structures">Subclassing pandas Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-23-1">pandas 0.23.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-23-0">pandas 0.23.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-22-0">pandas 0.22.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-21-1">pandas 0.21.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-21-0">pandas 0.21.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-20-0-0-20-1">pandas 0.20.0 / 0.20.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-19-2">pandas 0.19.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-19-1">pandas 0.19.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-19-0">pandas 0.19.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-18-1">pandas 0.18.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-18-0">pandas 0.18.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-17-1">pandas 0.17.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-17-0">pandas 0.17.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-16-2">pandas 0.16.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-16-1">pandas 0.16.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-16-0">pandas 0.16.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-15-2">pandas 0.15.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-15-1">pandas 0.15.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-15-0">pandas 0.15.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-14-1">pandas 0.14.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-14-0">pandas 0.14.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-13-1">pandas 0.13.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-13-0">pandas 0.13.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-12-0">pandas 0.12.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-11-0">pandas 0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-10-1">pandas 0.10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-10-0">pandas 0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-9-1">pandas 0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-9-0">pandas 0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-8-1">pandas 0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-8-0">pandas 0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-7-3">pandas 0.7.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-7-2">pandas 0.7.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-7-1">pandas 0.7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-7-0">pandas 0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-6-1">pandas 0.6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-6-0">pandas 0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-5-0">pandas 0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-4-3">pandas 0.4.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-4-2">pandas 0.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-4-1">pandas 0.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-4-0">pandas 0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html#pandas-0-3-0">pandas 0.3.0</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Comparison with R / R libraries</a><ul>
+<li><a class="reference internal" href="#quick-reference">Quick Reference</a></li>
+<li><a class="reference internal" href="#base-r">Base R</a></li>
+<li><a class="reference internal" href="#plyr">plyr</a></li>
+<li><a class="reference internal" href="#reshape-reshape2">reshape / reshape2</a></li>
+</ul>
+</li>
+</ul>
+
+  <li>
+    <a href="ecosystem.html" title="Previous Chapter: pandas Ecosystem"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; pandas Ecosystem</span>
+    </a>
+  </li>
+  <li>
+    <a href="comparison_with_sql.html" title="Next Chapter: Comparison with SQL"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Comparison with SQL &raquo;</span>
+    </a>
+  </li>
+<div id="sourcelink">
+  <a href="_sources/comparison_with_r.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="comparison-with-r-r-libraries">
+<span id="compare-with-r"></span><h1>Comparison with R / R libraries<a class="headerlink" href="#comparison-with-r-r-libraries" title="Permalink to this headline">¶</a></h1>
+<p>Since <code class="docutils literal notranslate"><span class="pre">pandas</span></code> aims to provide a lot of the data manipulation and analysis
+functionality that people use <a class="reference external" href="http://www.r-project.org/">R</a> for, this page
+was started to provide a more detailed look at the <a class="reference external" href="http://en.wikipedia.org/wiki/R_(programming_language)">R language</a> and its many third
+party libraries as they relate to <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. In comparisons with R and CRAN
+libraries, we care about the following things:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Functionality / flexibility</strong>: what can/cannot be done with each tool</li>
+<li><strong>Performance</strong>: how fast are operations. Hard numbers/benchmarks are
+preferable</li>
+<li><strong>Ease-of-use</strong>: Is one tool easier/harder to use (you may have to be
+the judge of this, given side-by-side code comparisons)</li>
+</ul>
+</div></blockquote>
+<p>This page is also here to offer a bit of a translation guide for users of these
+R packages.</p>
+<p>For transfer of <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> objects from <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to R, one option is to
+use HDF5 files, see <a class="reference internal" href="io.html#io-external-compatibility"><span class="std std-ref">External Compatibility</span></a> for an
+example.</p>
+<div class="section" id="quick-reference">
+<h2>Quick Reference<a class="headerlink" href="#quick-reference" title="Permalink to this headline">¶</a></h2>
+<p>We’ll start off with a quick reference guide pairing some common R
+operations using <a class="reference external" href="http://cran.r-project.org/web/packages/dplyr/index.html">dplyr</a> with
+pandas equivalents.</p>
+<div class="section" id="querying-filtering-sampling">
+<h3>Querying, Filtering, Sampling<a class="headerlink" href="#querying-filtering-sampling" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">R</th>
+<th class="head">pandas</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">dim(df)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.shape</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">head(df)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.head()</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">slice(df,</span> <span class="pre">1:10)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.iloc[:9]</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">filter(df,</span> <span class="pre">col1</span> <span class="pre">==</span> <span class="pre">1,</span> <span class="pre">col2</span> <span class="pre">==</span> <span class="pre">1)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.query('col1</span> <span class="pre">==</span> <span class="pre">1</span> <span class="pre">&amp;</span> <span class="pre">col2</span> <span class="pre">==</span> <span class="pre">1')</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">df[df$col1</span> <span class="pre">==</span> <span class="pre">1</span> <span class="pre">&amp;</span> <span class="pre">df$col2</span> <span class="pre">==</span> <span class="pre">1,]</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df[(df.col1</span> <span class="pre">==</span> <span class="pre">1)</span> <span class="pre">&amp;</span> <span class="pre">(df.col2</span> <span class="pre">==</span> <span class="pre">1)]</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">select(df,</span> <span class="pre">col1,</span> <span class="pre">col2)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df[['col1',</span> <span class="pre">'col2']]</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">select(df,</span> <span class="pre">col1:col3)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.loc[:,</span> <span class="pre">'col1':'col3']</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">select(df,</span> <span class="pre">-(col1:col3))</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.drop(cols_to_drop,</span> <span class="pre">axis=1)</span></code> but see <a class="footnote-reference" href="#select-range" id="id1">[1]</a></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">distinct(select(df,</span> <span class="pre">col1))</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df[['col1']].drop_duplicates()</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">distinct(select(df,</span> <span class="pre">col1,</span> <span class="pre">col2))</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df[['col1',</span> <span class="pre">'col2']].drop_duplicates()</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">sample_n(df,</span> <span class="pre">10)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.sample(n=10)</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">sample_frac(df,</span> <span class="pre">0.01)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.sample(frac=0.01)</span></code></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="select-range" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>R’s shorthand for a subrange of columns
+(<code class="docutils literal notranslate"><span class="pre">select(df,</span> <span class="pre">col1:col3)</span></code>) can be approached
+cleanly in pandas, if you have the list of columns,
+for example <code class="docutils literal notranslate"><span class="pre">df[cols[1:3]]</span></code> or
+<code class="docutils literal notranslate"><span class="pre">df.drop(cols[1:3])</span></code>, but doing this by column
+name is a bit messy.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sorting">
+<h3>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">R</th>
+<th class="head">pandas</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">arrange(df,</span> <span class="pre">col1,</span> <span class="pre">col2)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.sort_values(['col1',</span> <span class="pre">'col2'])</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">arrange(df,</span> <span class="pre">desc(col1))</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.sort_values('col1',</span> <span class="pre">ascending=False)</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="transforming">
+<h3>Transforming<a class="headerlink" href="#transforming" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">R</th>
+<th class="head">pandas</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">select(df,</span> <span class="pre">col_one</span> <span class="pre">=</span> <span class="pre">col1)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.rename(columns={'col1':</span> <span class="pre">'col_one'})['col_one']</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">rename(df,</span> <span class="pre">col_one</span> <span class="pre">=</span> <span class="pre">col1)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.rename(columns={'col1':</span> <span class="pre">'col_one'})</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">mutate(df,</span> <span class="pre">c=a-b)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.assign(c=df.a-df.b)</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="grouping-and-summarizing">
+<h3>Grouping and Summarizing<a class="headerlink" href="#grouping-and-summarizing" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">R</th>
+<th class="head">pandas</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">summary(df)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">gdf</span> <span class="pre">&lt;-</span> <span class="pre">group_by(df,</span> <span class="pre">col1)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">gdf</span> <span class="pre">=</span> <span class="pre">df.groupby('col1')</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">summarise(gdf,</span> <span class="pre">avg=mean(col1,</span> <span class="pre">na.rm=TRUE))</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.groupby('col1').agg({'col1':</span> <span class="pre">'mean'})</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">summarise(gdf,</span> <span class="pre">total=sum(col1))</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">df.groupby('col1').sum()</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="base-r">
+<h2>Base R<a class="headerlink" href="#base-r" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="slicing-with-r-s-c">
+<h3>Slicing with R’s <a class="reference external" href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/c.html"><code class="docutils literal notranslate"><span class="pre">c</span></code></a><a class="headerlink" href="#slicing-with-r-s-c" title="Permalink to this headline">¶</a></h3>
+<p>R makes it easy to access <code class="docutils literal notranslate"><span class="pre">data.frame</span></code> columns by name</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>a<span class="o">=</span>rnorm<span class="p">(</span><span class="m">5</span><span class="p">),</span> b<span class="o">=</span>rnorm<span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="kt">c</span><span class="o">=</span>rnorm<span class="p">(</span><span class="m">5</span><span class="p">),</span> d<span class="o">=</span>rnorm<span class="p">(</span><span class="m">5</span><span class="p">),</span> e<span class="o">=</span>rnorm<span class="p">(</span><span class="m">5</span><span class="p">))</span>
+df<span class="p">[,</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">,</span> <span class="s">&quot;e&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>or by integer location</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span><span class="kt">matrix</span><span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000</span><span class="p">),</span> ncol<span class="o">=</span><span class="m">100</span><span class="p">))</span>
+df<span class="p">[,</span> <span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> <span class="m">25</span><span class="o">:</span><span class="m">30</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">50</span><span class="o">:</span><span class="m">100</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>Selecting multiple columns by name in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is straightforward</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">))</span>
+
+<span class="gp">In [2]: </span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]]</span>
+<span class="gh">Out[2]: </span><span class="go"></span>
+<span class="go">          a         c</span>
+<span class="go">0  0.133443  2.175970</span>
+<span class="go">1 -1.776321  0.200487</span>
+<span class="go">2 -0.232835  0.389133</span>
+<span class="go">3  1.093279  0.998169</span>
+<span class="go">4  0.543865 -0.195060</span>
+<span class="go">5 -2.398180 -0.511403</span>
+<span class="go">6  0.321480 -1.820808</span>
+<span class="go">7  0.699394 -0.657830</span>
+<span class="go">8 -0.699012  1.051203</span>
+<span class="go">9  0.757933 -0.816758</span>
+
+<span class="gp">In [3]: </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]]</span>
+<span class="go">                                                                                                                                                                                                                                                           Out[3]: </span>
+<span class="go">          a         c</span>
+<span class="go">0  0.133443  2.175970</span>
+<span class="go">1 -1.776321  0.200487</span>
+<span class="go">2 -0.232835  0.389133</span>
+<span class="go">3  1.093279  0.998169</span>
+<span class="go">4  0.543865 -0.195060</span>
+<span class="go">5 -2.398180 -0.511403</span>
+<span class="go">6  0.321480 -1.820808</span>
+<span class="go">7  0.699394 -0.657830</span>
+<span class="go">8 -0.699012  1.051203</span>
+<span class="go">9  0.757933 -0.816758</span>
+</pre></div>
+</div>
+<p>Selecting multiple noncontiguous columns by integer location can be achieved
+with a combination of the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> indexer attribute and <code class="docutils literal notranslate"><span class="pre">numpy.r_</span></code>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [4]: </span><span class="n">named</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abcdefg&#39;</span><span class="p">)</span>
+
+<span class="gp">In [5]: </span><span class="n">n</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="gp">In [6]: </span><span class="n">columns</span> <span class="o">=</span> <span class="n">named</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">named</span><span class="p">),</span> <span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="gp">In [7]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="gp">In [8]: </span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[:</span><span class="mi">10</span><span class="p">,</span> <span class="mi">24</span><span class="p">:</span><span class="mi">30</span><span class="p">]]</span>
+<span class="gh">Out[8]: </span><span class="go"></span>
+<span class="go">           a         b         c         d         e         f         g         7         8         9        24        25        26        27        28        29</span>
+<span class="go">0  -0.636222  0.328868 -0.654595 -2.028848  0.167809  0.945241 -0.949030 -0.301380  0.505891  0.912304  0.862888 -0.660235  0.072998  0.142748 -1.443111  0.765685</span>
+<span class="go">1   1.103311 -0.401018  1.023914  0.641499 -0.500877  0.024915 -1.136231  0.434839 -0.014468 -1.800785 -1.438150  0.055406  0.188117 -0.318093 -2.291956  0.245350</span>
+<span class="go">2   1.329504  2.325140  1.688488 -1.306897  0.703248  0.628803  0.408496 -2.090313 -0.228769 -0.292698 -0.020188 -0.727206 -0.583801 -0.157694  1.990568  0.538843</span>
+<span class="go">3   0.713124  2.102079 -0.133095 -1.904478  0.559216  0.200628  0.576351 -0.957849 -1.058456 -0.060626  0.816927  0.512224  0.770386  1.471718 -0.951111 -1.258396</span>
+<span class="go">4   0.046371 -0.342434 -1.469785  0.035396 -0.929225 -0.550486 -0.074446  0.192998  1.213896 -1.545669  0.334873 -0.580455  0.559113  0.350015 -1.858119  0.520755</span>
+<span class="go">5  -0.665067 -0.215398  1.702269  0.282784  1.602458 -0.449518  0.024379  1.625629 -0.724116  0.267248 -1.125677  1.812578 -0.232817 -0.031978 -1.685624 -0.343033</span>
+<span class="go">6  -0.717314  1.752429 -1.764702 -0.076538 -1.296649 -0.609026 -0.683406  0.325206 -0.405424 -0.878048 -0.353489  0.156806 -0.829404 -0.558093 -1.788572  1.097175</span>
+<span class="go">..       ...       ...       ...       ...       ...       ...       ...       ...       ...       ...       ...       ...       ...       ...       ...       ...</span>
+<span class="go">23 -1.072975  0.675291 -0.497560  1.152193 -1.633182 -1.352972 -0.480831 -0.501891  2.025181  0.118856 -1.664656 -0.790932 -0.703915  0.258407  1.660009  0.582168</span>
+<span class="go">24 -0.340808 -0.522026  1.912256  1.562502 -0.191462  0.786738 -0.756272 -0.134146 -0.286675 -0.588062 -0.665365  0.521990 -0.529404 -0.799764 -0.568420  0.932637</span>
+<span class="go">25 -0.724768 -1.425445 -0.098115  0.148417  0.565314 -2.190820 -0.432225 -0.748578 -0.440729 -0.229863  0.446561  0.406410 -0.249897 -0.943144  0.494048  0.137113</span>
+<span class="go">26  0.464025 -0.371614  0.748962  0.963816  1.151199 -0.444359 -0.513056 -0.381860 -0.332857 -0.677606 -0.917571  0.837840  1.283097  1.058742 -1.086219  0.776236</span>
+<span class="go">27  1.062819  0.112273 -0.909614  0.158923 -0.121933  0.119791  0.035665  0.550439  1.609152 -1.068184  1.241116  0.388067 -0.853223  0.113954 -1.228217  0.100625</span>
+<span class="go">28  0.446473  0.321423 -1.464180 -1.059507  0.451299  0.703095 -0.119168 -0.869632  0.604639  0.367752  0.489082 -0.378881 -0.351219 -0.496992 -0.243791  1.112344</span>
+<span class="go">29 -0.070442 -0.693655 -0.750147  0.225899 -1.310329  0.224391  0.298028  0.102659 -1.414886  0.142246  0.639946 -0.482398  0.641681  2.421208  0.427124 -0.791987</span>
+
+<span class="go">[30 rows x 16 columns]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="aggregate">
+<h3><a class="reference external" href="http://finzi.psych.upenn.edu/R/library/stats/html/aggregate.html"><code class="docutils literal notranslate"><span class="pre">aggregate</span></code></a><a class="headerlink" href="#aggregate" title="Permalink to this headline">¶</a></h3>
+<p>In R you may want to split data into subsets and compute the mean for each.
+Using a data.frame called <code class="docutils literal notranslate"><span class="pre">df</span></code> and splitting it into groups <code class="docutils literal notranslate"><span class="pre">by1</span></code> and
+<code class="docutils literal notranslate"><span class="pre">by2</span></code>:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>
+  v1 <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="kc">NA</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">9</span><span class="p">),</span>
+  v2 <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">11</span><span class="p">,</span><span class="m">33</span><span class="p">,</span><span class="m">55</span><span class="p">,</span><span class="m">77</span><span class="p">,</span><span class="m">88</span><span class="p">,</span><span class="m">33</span><span class="p">,</span><span class="m">55</span><span class="p">,</span><span class="kc">NA</span><span class="p">,</span><span class="m">44</span><span class="p">,</span><span class="m">55</span><span class="p">,</span><span class="m">77</span><span class="p">,</span><span class="m">99</span><span class="p">),</span>
+  by1 <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="s">&quot;big&quot;</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span>
+  by2 <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;wet&quot;</span><span class="p">,</span> <span class="s">&quot;dry&quot;</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="m">95</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="s">&quot;damp&quot;</span><span class="p">,</span> <span class="m">95</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">))</span>
+aggregate<span class="p">(</span>x<span class="o">=</span>df<span class="p">[,</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;v1&quot;</span><span class="p">,</span> <span class="s">&quot;v2&quot;</span><span class="p">)],</span> by<span class="o">=</span><span class="kt">list</span><span class="p">(</span>mydf2<span class="o">$</span>by1<span class="p">,</span> mydf2<span class="o">$</span>by2<span class="p">),</span> FUN <span class="o">=</span> <span class="kp">mean</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code> method is similar to base R <code class="docutils literal notranslate"><span class="pre">aggregate</span></code>
+function.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<span class="gp">   ...: </span>  <span class="s1">&#39;v1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span>
+<span class="gp">   ...: </span>  <span class="s1">&#39;v2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">99</span><span class="p">],</span>
+<span class="gp">   ...: </span>  <span class="s1">&#39;by1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s2">&quot;big&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+<span class="gp">   ...: </span>  <span class="s1">&#39;by2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;wet&quot;</span><span class="p">,</span> <span class="s2">&quot;dry&quot;</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s2">&quot;damp&quot;</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
+<span class="gp">   ...: </span>          <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+<span class="gp">   ...: </span><span class="p">})</span>
+<span class="gp">   ...: </span>
+
+<span class="gp">In [10]: </span><span class="n">g</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;by1&#39;</span><span class="p">,</span><span class="s1">&#39;by2&#39;</span><span class="p">])</span>
+
+<span class="gp">In [11]: </span><span class="n">g</span><span class="p">[[</span><span class="s1">&#39;v1&#39;</span><span class="p">,</span><span class="s1">&#39;v2&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="gh">Out[11]: </span><span class="go"></span>
+<span class="go">            v1    v2</span>
+<span class="go">by1  by2            </span>
+<span class="go">1    95    5.0  55.0</span>
+<span class="go">     99    5.0  55.0</span>
+<span class="go">2    95    7.0  77.0</span>
+<span class="go">     99    NaN   NaN</span>
+<span class="go">big  damp  3.0  33.0</span>
+<span class="go">blue dry   3.0  33.0</span>
+<span class="go">red  red   4.0  44.0</span>
+<span class="go">     wet   1.0  11.0</span>
+</pre></div>
+</div>
+<p>For more details and examples see <a class="reference internal" href="groupby.html#groupby-split"><span class="std std-ref">the groupby documentation</span></a>.</p>
+</div>
+<div class="section" id="match">
+<h3><a class="reference external" href="http://finzi.psych.upenn.edu/R/library/base/html/match.html"><code class="docutils literal notranslate"><span class="pre">match</span></code> / <code class="docutils literal notranslate"><span class="pre">%in%</span></code></a><a class="headerlink" href="#match" title="Permalink to this headline">¶</a></h3>
+<p>A common way to select data in R is using <code class="docutils literal notranslate"><span class="pre">%in%</span></code> which is defined using the
+function <code class="docutils literal notranslate"><span class="pre">match</span></code>. The operator <code class="docutils literal notranslate"><span class="pre">%in%</span></code> is used to return a logical vector
+indicating if there is a match or not:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>s <span class="o">&lt;-</span> <span class="m">0</span><span class="o">:</span><span class="m">4</span>
+s <span class="o">%in%</span> <span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">isin()</span></code> method is similar to R <code class="docutils literal notranslate"><span class="pre">%in%</span></code> operator:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="gp">In [13]: </span><span class="n">s</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="gh">Out[13]: </span><span class="go"></span>
+<span class="go">0    False</span>
+<span class="go">1    False</span>
+<span class="go">2     True</span>
+<span class="go">3    False</span>
+<span class="go">4     True</span>
+<span class="go">dtype: bool</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">match</span></code> function returns a vector of the positions of matches
+of its first argument in its second:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>s <span class="o">&lt;-</span> <span class="m">0</span><span class="o">:</span><span class="m">4</span>
+<span class="kp">match</span><span class="p">(</span>s<span class="p">,</span> <span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>For more details and examples see <a class="reference internal" href="indexing.html#indexing-basics-indexing-isin"><span class="std std-ref">the reshaping documentation</span></a>.</p>
+</div>
+<div class="section" id="tapply">
+<h3><a class="reference external" href="http://finzi.psych.upenn.edu/R/library/base/html/tapply.html"><code class="docutils literal notranslate"><span class="pre">tapply</span></code></a><a class="headerlink" href="#tapply" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">tapply</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">aggregate</span></code>, but data can be in a ragged array,
+since the subclass sizes are possibly irregular. Using a data.frame called
+<code class="docutils literal notranslate"><span class="pre">baseball</span></code>, and retrieving information based on the array <code class="docutils literal notranslate"><span class="pre">team</span></code>:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>baseball <span class="o">&lt;-</span>
+  <span class="kt">data.frame</span><span class="p">(</span>team <span class="o">=</span> <span class="kp">gl</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span>
+             labels <span class="o">=</span> <span class="kp">paste</span><span class="p">(</span><span class="s">&quot;Team&quot;</span><span class="p">,</span> <span class="kc">LETTERS</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">])),</span>
+             player <span class="o">=</span> <span class="kp">sample</span><span class="p">(</span><span class="kc">letters</span><span class="p">,</span> <span class="m">25</span><span class="p">),</span>
+             batting.average <span class="o">=</span> runif<span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">.200</span><span class="p">,</span> <span class="m">.400</span><span class="p">))</span>
+
+<span class="kp">tapply</span><span class="p">(</span>baseball<span class="o">$</span>batting.average<span class="p">,</span> baseball.example<span class="o">$</span>team<span class="p">,</span>
+       <span class="kp">max</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">pandas</span></code> we may use <code class="xref py py-meth docutils literal notranslate"><span class="pre">pivot_table()</span></code> method to handle this:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [14]: </span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="gp">In [15]: </span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="gp">In [16]: </span><span class="n">baseball</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<span class="gp">   ....: </span>   <span class="s1">&#39;team&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;team </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span>
+<span class="gp">   ....: </span>   <span class="s1">&#39;player&#39;</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">),</span><span class="mi">25</span><span class="p">),</span>
+<span class="gp">   ....: </span>   <span class="s1">&#39;batting avg&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">.</span><span class="mi">200</span><span class="p">,</span> <span class="o">.</span><span class="mi">400</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="gp">   ....: </span>   <span class="p">})</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [17]: </span><span class="n">baseball</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s1">&#39;batting avg&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
+<span class="gh">Out[17]: </span><span class="go"></span>
+<span class="go">team           team 1    team 2    team 3    team 4    team 5</span>
+<span class="go">batting avg  0.397845  0.368468  0.378262  0.398303  0.337999</span>
+</pre></div>
+</div>
+<p>For more details and examples see <a class="reference internal" href="reshaping.html#reshaping-pivot"><span class="std std-ref">the reshaping documentation</span></a>.</p>
+</div>
+<div class="section" id="subset">
+<h3><a class="reference external" href="http://finzi.psych.upenn.edu/R/library/base/html/subset.html"><code class="docutils literal notranslate"><span class="pre">subset</span></code></a><a class="headerlink" href="#subset" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code> method is similar to the base R <code class="docutils literal notranslate"><span class="pre">subset</span></code>
+function. In R you might want to get the rows of a <code class="docutils literal notranslate"><span class="pre">data.frame</span></code> where one
+column’s values are less than another column’s values:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>a<span class="o">=</span>rnorm<span class="p">(</span><span class="m">10</span><span class="p">),</span> b<span class="o">=</span>rnorm<span class="p">(</span><span class="m">10</span><span class="p">))</span>
+<span class="kp">subset</span><span class="p">(</span>df<span class="p">,</span> a <span class="o">&lt;=</span> b<span class="p">)</span>
+df<span class="p">[</span>df<span class="o">$</span>a <span class="o">&lt;=</span> df<span class="o">$</span>b<span class="p">,]</span>  <span class="c1"># note the comma</span>
+</pre></div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, there are a few ways to perform subsetting. You can use
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code> or pass an expression as if it were an
+index/slice as well as standard boolean indexing:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [18]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">)})</span>
+
+<span class="gp">In [19]: </span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;a &lt;= b&#39;</span><span class="p">)</span>
+<span class="gh">Out[19]: </span><span class="go"></span>
+<span class="go">          a         b</span>
+<span class="go">0 -0.934828  0.394388</span>
+<span class="go">1 -1.399203  0.634001</span>
+<span class="go">2 -0.892131 -0.100728</span>
+<span class="go">5 -0.237391  0.176846</span>
+<span class="go">6  0.297232  0.375451</span>
+<span class="go">7  1.115941  1.611525</span>
+<span class="go">8 -0.714203  0.785462</span>
+
+<span class="gp">In [20]: </span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">a</span> <span class="o">&lt;=</span> <span class="n">df</span><span class="o">.</span><span class="n">b</span><span class="p">]</span>
+<span class="go">                                                                                                                                                                                          Out[20]: </span>
+<span class="go">          a         b</span>
+<span class="go">0 -0.934828  0.394388</span>
+<span class="go">1 -1.399203  0.634001</span>
+<span class="go">2 -0.892131 -0.100728</span>
+<span class="go">5 -0.237391  0.176846</span>
+<span class="go">6  0.297232  0.375451</span>
+<span class="go">7  1.115941  1.611525</span>
+<span class="go">8 -0.714203  0.785462</span>
+
+<span class="gp">In [21]: </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">a</span> <span class="o">&lt;=</span> <span class="n">df</span><span class="o">.</span><span class="n">b</span><span class="p">]</span>
+<span class="go">                                                                                                                                                                                                                                                                                                                                                                                    Out[21]: </span>
+<span class="go">          a         b</span>
+<span class="go">0 -0.934828  0.394388</span>
+<span class="go">1 -1.399203  0.634001</span>
+<span class="go">2 -0.892131 -0.100728</span>
+<span class="go">5 -0.237391  0.176846</span>
+<span class="go">6  0.297232  0.375451</span>
+<span class="go">7  1.115941  1.611525</span>
+<span class="go">8 -0.714203  0.785462</span>
+</pre></div>
+</div>
+<p>For more details and examples see <a class="reference internal" href="indexing.html#indexing-query"><span class="std std-ref">the query documentation</span></a>.</p>
+</div>
+<div class="section" id="with">
+<h3><a class="reference external" href="http://finzi.psych.upenn.edu/R/library/base/html/with.html"><code class="docutils literal notranslate"><span class="pre">with</span></code></a><a class="headerlink" href="#with" title="Permalink to this headline">¶</a></h3>
+<p>An expression using a data.frame called <code class="docutils literal notranslate"><span class="pre">df</span></code> in R with the columns <code class="docutils literal notranslate"><span class="pre">a</span></code> and
+<code class="docutils literal notranslate"><span class="pre">b</span></code> would be evaluated using <code class="docutils literal notranslate"><span class="pre">with</span></code> like so:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>a<span class="o">=</span>rnorm<span class="p">(</span><span class="m">10</span><span class="p">),</span> b<span class="o">=</span>rnorm<span class="p">(</span><span class="m">10</span><span class="p">))</span>
+<span class="kp">with</span><span class="p">(</span>df<span class="p">,</span> a <span class="o">+</span> b<span class="p">)</span>
+df<span class="o">$</span>a <span class="o">+</span> df<span class="o">$</span>b  <span class="c1"># same as the previous expression</span>
+</pre></div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">pandas</span></code> the equivalent expression, using the
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">eval()</span></code> method, would be:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [22]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">)})</span>
+
+<span class="gp">In [23]: </span><span class="n">df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;a + b&#39;</span><span class="p">)</span>
+<span class="gh">Out[23]: </span><span class="go"></span>
+<span class="go">0   -1.678401</span>
+<span class="go">1    1.366408</span>
+<span class="go">2   -0.861858</span>
+<span class="go">3   -1.606415</span>
+<span class="go">4    0.143931</span>
+<span class="go">5    1.372584</span>
+<span class="go">6    2.040286</span>
+<span class="go">7   -0.669303</span>
+<span class="go">8   -0.038385</span>
+<span class="go">9    0.055372</span>
+<span class="go">dtype: float64</span>
+
+<span class="gp">In [24]: </span><span class="n">df</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">b</span>  <span class="c1"># same as the previous expression</span>
+<span class="go">                                                                                                                                                                     Out[24]: </span>
+<span class="go">0   -1.678401</span>
+<span class="go">1    1.366408</span>
+<span class="go">2   -0.861858</span>
+<span class="go">3   -1.606415</span>
+<span class="go">4    0.143931</span>
+<span class="go">5    1.372584</span>
+<span class="go">6    2.040286</span>
+<span class="go">7   -0.669303</span>
+<span class="go">8   -0.038385</span>
+<span class="go">9    0.055372</span>
+<span class="go">dtype: float64</span>
+</pre></div>
+</div>
+<p>In certain cases <code class="xref py py-meth docutils literal notranslate"><span class="pre">eval()</span></code> will be much faster than
+evaluation in pure Python. For more details and examples see <a class="reference internal" href="enhancingperf.html#enhancingperf-eval"><span class="std std-ref">the eval
+documentation</span></a>.</p>
+</div>
+</div>
+<div class="section" id="plyr">
+<h2>plyr<a class="headerlink" href="#plyr" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">plyr</span></code> is an R library for the split-apply-combine strategy for data
+analysis. The functions revolve around three data structures in R, <code class="docutils literal notranslate"><span class="pre">a</span></code>
+for <code class="docutils literal notranslate"><span class="pre">arrays</span></code>, <code class="docutils literal notranslate"><span class="pre">l</span></code> for <code class="docutils literal notranslate"><span class="pre">lists</span></code>, and <code class="docutils literal notranslate"><span class="pre">d</span></code> for <code class="docutils literal notranslate"><span class="pre">data.frame</span></code>. The
+table below shows how these data structures could be mapped in Python.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">R</th>
+<th class="head">Python</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>array</td>
+<td>list</td>
+</tr>
+<tr class="row-odd"><td>lists</td>
+<td>dictionary or list of objects</td>
+</tr>
+<tr class="row-even"><td>data.frame</td>
+<td>dataframe</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="ddply">
+<h3><a class="reference external" href="http://www.inside-r.org/packages/cran/plyr/docs/ddply"><code class="docutils literal notranslate"><span class="pre">ddply</span></code></a><a class="headerlink" href="#ddply" title="Permalink to this headline">¶</a></h3>
+<p>An expression using a data.frame called <code class="docutils literal notranslate"><span class="pre">df</span></code> in R where you want to
+summarize <code class="docutils literal notranslate"><span class="pre">x</span></code> by <code class="docutils literal notranslate"><span class="pre">month</span></code>:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="kn">require</span><span class="p">(</span>plyr<span class="p">)</span>
+df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>
+  x <span class="o">=</span> runif<span class="p">(</span><span class="m">120</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">168</span><span class="p">),</span>
+  y <span class="o">=</span> runif<span class="p">(</span><span class="m">120</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">334</span><span class="p">),</span>
+  z <span class="o">=</span> runif<span class="p">(</span><span class="m">120</span><span class="p">,</span> <span class="m">1.7</span><span class="p">,</span> <span class="m">20.7</span><span class="p">),</span>
+  month <span class="o">=</span> <span class="kp">rep</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">),</span><span class="m">30</span><span class="p">),</span>
+  week <span class="o">=</span> <span class="kp">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span> <span class="m">120</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="p">)</span>
+
+ddply<span class="p">(</span>df<span class="p">,</span> <span class="m">.</span><span class="p">(</span>month<span class="p">,</span> week<span class="p">),</span> summarize<span class="p">,</span>
+      mean <span class="o">=</span> <span class="kp">round</span><span class="p">(</span><span class="kp">mean</span><span class="p">(</span>x<span class="p">),</span> <span class="m">2</span><span class="p">),</span>
+      sd <span class="o">=</span> <span class="kp">round</span><span class="p">(</span>sd<span class="p">(</span>x<span class="p">),</span> <span class="m">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">pandas</span></code> the equivalent expression, using the
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code> method, would be:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [25]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<span class="gp">   ....: </span>    <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">168.</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span>
+<span class="gp">   ....: </span>    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">334.</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span>
+<span class="gp">   ....: </span>    <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">1.7</span><span class="p">,</span> <span class="mf">20.7</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span>
+<span class="gp">   ....: </span>    <span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span><span class="o">*</span><span class="mi">30</span><span class="p">,</span>
+<span class="gp">   ....: </span>    <span class="s1">&#39;week&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+<span class="gp">   ....: </span><span class="p">})</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [26]: </span><span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="s1">&#39;week&#39;</span><span class="p">])</span>
+
+<span class="gp">In [27]: </span><span class="n">grouped</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">])</span>
+<span class="gh">Out[27]: </span><span class="go"></span>
+<span class="go">                  mean        std</span>
+<span class="go">month week                       </span>
+<span class="go">5     1     104.020357  34.850447</span>
+<span class="go">      2     100.725559  42.311881</span>
+<span class="go">      3      89.374798  51.581259</span>
+<span class="go">6     1      76.198864  51.529396</span>
+<span class="go">      2      88.394122  51.733761</span>
+<span class="go">      3      62.410441  37.029323</span>
+<span class="go">7     1     100.962759  43.956399</span>
+<span class="go">      2     103.813781  58.340139</span>
+<span class="go">      3      94.930266  50.984314</span>
+<span class="go">8     1      73.621258  47.175418</span>
+<span class="go">      2     102.800866  53.320216</span>
+<span class="go">      3      35.010519  43.123885</span>
+</pre></div>
+</div>
+<p>For more details and examples see <a class="reference internal" href="groupby.html#groupby-aggregate"><span class="std std-ref">the groupby documentation</span></a>.</p>
+</div>
+</div>
+<div class="section" id="reshape-reshape2">
+<h2>reshape / reshape2<a class="headerlink" href="#reshape-reshape2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="meltarray">
+<h3><a class="reference external" href="http://www.inside-r.org/packages/cran/reshape2/docs/melt.array"><code class="docutils literal notranslate"><span class="pre">melt.array</span></code></a><a class="headerlink" href="#meltarray" title="Permalink to this headline">¶</a></h3>
+<p>An expression using a 3 dimensional array called <code class="docutils literal notranslate"><span class="pre">a</span></code> in R where you want to
+melt it into a data.frame:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>a <span class="o">&lt;-</span> <span class="kt">array</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">23</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span> <span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">))</span>
+<span class="kt">data.frame</span><span class="p">(</span>melt<span class="p">(</span>a<span class="p">))</span>
+</pre></div>
+</div>
+<p>In Python, since <code class="docutils literal notranslate"><span class="pre">a</span></code> is a list, you can simply use list comprehension.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">24</span><span class="p">))</span><span class="o">+</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">NAN</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="gp">In [29]: </span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="p">[</span><span class="n">val</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="n">a</span><span class="p">)])</span>
+<span class="gh">Out[29]: </span><span class="go"></span>
+<span class="go">    0  1  2     3</span>
+<span class="go">0   0  0  0   1.0</span>
+<span class="go">1   0  0  1   2.0</span>
+<span class="go">2   0  0  2   3.0</span>
+<span class="go">3   0  0  3   4.0</span>
+<span class="go">4   0  1  0   5.0</span>
+<span class="go">5   0  1  1   6.0</span>
+<span class="go">6   0  1  2   7.0</span>
+<span class="go">.. .. .. ..   ...</span>
+<span class="go">17  1  1  1  18.0</span>
+<span class="go">18  1  1  2  19.0</span>
+<span class="go">19  1  1  3  20.0</span>
+<span class="go">20  1  2  0  21.0</span>
+<span class="go">21  1  2  1  22.0</span>
+<span class="go">22  1  2  2  23.0</span>
+<span class="go">23  1  2  3   NaN</span>
+
+<span class="go">[24 rows x 4 columns]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="meltlist">
+<h3><a class="reference internal" href="#meltlist"><code class="docutils literal notranslate"><span class="pre">melt.list</span></code></a><a class="headerlink" href="#meltlist" title="Permalink to this headline">¶</a></h3>
+<p>An expression using a list called <code class="docutils literal notranslate"><span class="pre">a</span></code> in R where you want to melt it
+into a data.frame:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>a <span class="o">&lt;-</span> <span class="kp">as.list</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span> <span class="kc">NA</span><span class="p">))</span>
+<span class="kt">data.frame</span><span class="p">(</span>melt<span class="p">(</span>a<span class="p">))</span>
+</pre></div>
+</div>
+<p>In Python, this list would be a list of tuples, so
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame()</span></code> method would convert it to a dataframe as required.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span><span class="o">+</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">NAN</span><span class="p">]))</span>
+
+<span class="gp">In [31]: </span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gh">Out[31]: </span><span class="go"></span>
+<span class="go">   0    1</span>
+<span class="go">0  0  1.0</span>
+<span class="go">1  1  2.0</span>
+<span class="go">2  2  3.0</span>
+<span class="go">3  3  4.0</span>
+<span class="go">4  4  NaN</span>
+</pre></div>
+</div>
+<p>For more details and examples see <a class="reference internal" href="dsintro.html#dsintro"><span class="std std-ref">the Into to Data Structures
+documentation</span></a>.</p>
+</div>
+<div class="section" id="meltdf">
+<h3><a class="reference internal" href="#meltdf"><code class="docutils literal notranslate"><span class="pre">melt.data.frame</span></code></a><a class="headerlink" href="#meltdf" title="Permalink to this headline">¶</a></h3>
+<p>An expression using a data.frame called <code class="docutils literal notranslate"><span class="pre">cheese</span></code> in R where you want to
+reshape the data.frame:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>cheese <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>
+  first <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;John&#39;</span><span class="p">,</span> <span class="s">&#39;Mary&#39;</span><span class="p">),</span>
+  last <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;Doe&#39;</span><span class="p">,</span> <span class="s">&#39;Bo&#39;</span><span class="p">),</span>
+  height <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">5.5</span><span class="p">,</span> <span class="m">6.0</span><span class="p">),</span>
+  weight <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">130</span><span class="p">,</span> <span class="m">150</span><span class="p">)</span>
+<span class="p">)</span>
+melt<span class="p">(</span>cheese<span class="p">,</span> id<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;first&quot;</span><span class="p">,</span> <span class="s">&quot;last&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In Python, the <code class="xref py py-meth docutils literal notranslate"><span class="pre">melt()</span></code> method is the R equivalent:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [32]: </span><span class="n">cheese</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;first&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Mary&#39;</span><span class="p">],</span>
+<span class="gp">   ....: </span>                    <span class="s1">&#39;last&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;Bo&#39;</span><span class="p">],</span>
+<span class="gp">   ....: </span>                    <span class="s1">&#39;height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">5.5</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">],</span>
+<span class="gp">   ....: </span>                    <span class="s1">&#39;weight&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">130</span><span class="p">,</span> <span class="mi">150</span><span class="p">]})</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [33]: </span><span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">cheese</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">])</span>
+<span class="gh">Out[33]: </span><span class="go"></span>
+<span class="go">  first last variable  value</span>
+<span class="go">0  John  Doe   height    5.5</span>
+<span class="go">1  Mary   Bo   height    6.0</span>
+<span class="go">2  John  Doe   weight  130.0</span>
+<span class="go">3  Mary   Bo   weight  150.0</span>
+
+<span class="gp">In [34]: </span><span class="n">cheese</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span> <span class="c1"># alternative way</span>
+<span class="go">                                                                                                                                                           Out[34]: </span>
+<span class="go">first  last        </span>
+<span class="go">John   Doe   height      5.5</span>
+<span class="go">             weight    130.0</span>
+<span class="go">Mary   Bo    height      6.0</span>
+<span class="go">             weight    150.0</span>
+<span class="go">dtype: float64</span>
+</pre></div>
+</div>
+<p>For more details and examples see <a class="reference internal" href="reshaping.html#reshaping-melt"><span class="std std-ref">the reshaping documentation</span></a>.</p>
+</div>
+<div class="section" id="cast">
+<h3><a class="reference internal" href="#cast"><code class="docutils literal notranslate"><span class="pre">cast</span></code></a><a class="headerlink" href="#cast" title="Permalink to this headline">¶</a></h3>
+<p>In R <code class="docutils literal notranslate"><span class="pre">acast</span></code> is an expression using a data.frame called <code class="docutils literal notranslate"><span class="pre">df</span></code> in R to cast
+into a higher dimensional array:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>
+  x <span class="o">=</span> runif<span class="p">(</span><span class="m">12</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">168</span><span class="p">),</span>
+  y <span class="o">=</span> runif<span class="p">(</span><span class="m">12</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">334</span><span class="p">),</span>
+  z <span class="o">=</span> runif<span class="p">(</span><span class="m">12</span><span class="p">,</span> <span class="m">1.7</span><span class="p">,</span> <span class="m">20.7</span><span class="p">),</span>
+  month <span class="o">=</span> <span class="kp">rep</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">),</span><span class="m">4</span><span class="p">),</span>
+  week <span class="o">=</span> <span class="kp">rep</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">),</span> <span class="m">6</span><span class="p">)</span>
+<span class="p">)</span>
+
+mdf <span class="o">&lt;-</span> melt<span class="p">(</span>df<span class="p">,</span> id<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;month&quot;</span><span class="p">,</span> <span class="s">&quot;week&quot;</span><span class="p">))</span>
+acast<span class="p">(</span>mdf<span class="p">,</span> week <span class="o">~</span> month <span class="o">~</span> variable<span class="p">,</span> <span class="kp">mean</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In Python the best way is to make use of <code class="xref py py-meth docutils literal notranslate"><span class="pre">pivot_table()</span></code>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [35]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<span class="gp">   ....: </span>     <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">168.</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+<span class="gp">   ....: </span>     <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">334.</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+<span class="gp">   ....: </span>     <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">1.7</span><span class="p">,</span> <span class="mf">20.7</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+<span class="gp">   ....: </span>     <span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span>
+<span class="gp">   ....: </span>     <span class="s1">&#39;week&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span>
+<span class="gp">   ....: </span><span class="p">})</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [36]: </span><span class="n">mdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;week&#39;</span><span class="p">])</span>
+
+<span class="gp">In [37]: </span><span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">mdf</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;variable&#39;</span><span class="p">,</span><span class="s1">&#39;week&#39;</span><span class="p">],</span>
+<span class="gp">   ....: </span>                 <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">],</span> <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+<span class="gp">   ....: </span>
+<span class="gh">Out[37]: </span><span class="go"></span>
+<span class="go">month                   5           6           7</span>
+<span class="go">variable week                                    </span>
+<span class="go">x        1      54.601344   89.488054   76.015975</span>
+<span class="go">         2      35.764720   99.695808   39.812984</span>
+<span class="go">y        1     108.798204  160.750374  190.732382</span>
+<span class="go">         2     109.647941  188.037281   75.945219</span>
+<span class="go">z        1      15.565140   11.396794   18.100522</span>
+<span class="go">         2       3.764401   10.379832   19.923091</span>
+</pre></div>
+</div>
+<p>Similarly for <code class="docutils literal notranslate"><span class="pre">dcast</span></code> which uses a data.frame called <code class="docutils literal notranslate"><span class="pre">df</span></code> in R to
+aggregate information based on <code class="docutils literal notranslate"><span class="pre">Animal</span></code> and <code class="docutils literal notranslate"><span class="pre">FeedType</span></code>:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>
+  Animal <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;Animal1&#39;</span><span class="p">,</span> <span class="s">&#39;Animal2&#39;</span><span class="p">,</span> <span class="s">&#39;Animal3&#39;</span><span class="p">,</span> <span class="s">&#39;Animal2&#39;</span><span class="p">,</span> <span class="s">&#39;Animal1&#39;</span><span class="p">,</span>
+             <span class="s">&#39;Animal2&#39;</span><span class="p">,</span> <span class="s">&#39;Animal3&#39;</span><span class="p">),</span>
+  FeedType <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="s">&#39;A&#39;</span><span class="p">),</span>
+  Amount <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+<span class="p">)</span>
+
+dcast<span class="p">(</span>df<span class="p">,</span> Animal <span class="o">~</span> FeedType<span class="p">,</span> <span class="kp">sum</span><span class="p">,</span> fill<span class="o">=</span><span class="kc">NaN</span><span class="p">)</span>
+<span class="c1"># Alternative method using base R</span>
+<span class="kp">with</span><span class="p">(</span>df<span class="p">,</span> <span class="kp">tapply</span><span class="p">(</span>Amount<span class="p">,</span> <span class="kt">list</span><span class="p">(</span>Animal<span class="p">,</span> FeedType<span class="p">),</span> <span class="kp">sum</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Python can approach this in two different ways. Firstly, similar to above
+using <code class="xref py py-meth docutils literal notranslate"><span class="pre">pivot_table()</span></code>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [38]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<span class="gp">   ....: </span>    <span class="s1">&#39;Animal&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Animal1&#39;</span><span class="p">,</span> <span class="s1">&#39;Animal2&#39;</span><span class="p">,</span> <span class="s1">&#39;Animal3&#39;</span><span class="p">,</span> <span class="s1">&#39;Animal2&#39;</span><span class="p">,</span> <span class="s1">&#39;Animal1&#39;</span><span class="p">,</span>
+<span class="gp">   ....: </span>               <span class="s1">&#39;Animal2&#39;</span><span class="p">,</span> <span class="s1">&#39;Animal3&#39;</span><span class="p">],</span>
+<span class="gp">   ....: </span>    <span class="s1">&#39;FeedType&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">],</span>
+<span class="gp">   ....: </span>    <span class="s1">&#39;Amount&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="gp">   ....: </span><span class="p">})</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [39]: </span><span class="n">df</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s1">&#39;Amount&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;Animal&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;FeedType&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+<span class="gh">Out[39]: </span><span class="go"></span>
+<span class="go">FeedType     A     B</span>
+<span class="go">Animal              </span>
+<span class="go">Animal1   10.0   5.0</span>
+<span class="go">Animal2    2.0  13.0</span>
+<span class="go">Animal3    6.0   NaN</span>
+</pre></div>
+</div>
+<p>The second approach is to use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code> method:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [40]: </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Animal&#39;</span><span class="p">,</span><span class="s1">&#39;FeedType&#39;</span><span class="p">])[</span><span class="s1">&#39;Amount&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="gh">Out[40]: </span><span class="go"></span>
+<span class="go">Animal   FeedType</span>
+<span class="go">Animal1  A           10</span>
+<span class="go">         B            5</span>
+<span class="go">Animal2  A            2</span>
+<span class="go">         B           13</span>
+<span class="go">Animal3  A            6</span>
+<span class="go">Name: Amount, dtype: int64</span>
+</pre></div>
+</div>
+<p>For more details and examples see <a class="reference internal" href="reshaping.html#reshaping-pivot"><span class="std std-ref">the reshaping documentation</span></a> or <a class="reference internal" href="groupby.html#groupby-split"><span class="std std-ref">the groupby documentation</span></a>.</p>
+</div>
+<div class="section" id="factor">
+<h3><a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/factor.html"><code class="docutils literal notranslate"><span class="pre">factor</span></code></a><a class="headerlink" href="#factor" title="Permalink to this headline">¶</a></h3>
+<p>pandas has a data type for categorical data.</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="kp">cut</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">),</span> <span class="m">3</span><span class="p">)</span>
+<span class="kp">factor</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In pandas this is accomplished with <code class="docutils literal notranslate"><span class="pre">pd.cut</span></code> and <code class="docutils literal notranslate"><span class="pre">astype(&quot;category&quot;)</span></code>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [41]: </span><span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]),</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gh">Out[41]: </span><span class="go"></span>
+<span class="go">0    (0.995, 2.667]</span>
+<span class="go">1    (0.995, 2.667]</span>
+<span class="go">2    (2.667, 4.333]</span>
+<span class="go">3    (2.667, 4.333]</span>
+<span class="go">4      (4.333, 6.0]</span>
+<span class="go">5      (4.333, 6.0]</span>
+<span class="go">dtype: category</span>
+<span class="go">Categories (3, interval[float64]): [(0.995, 2.667] &lt; (2.667, 4.333] &lt; (4.333, 6.0]]</span>
+
+<span class="gp">In [42]: </span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+<span class="go">                                                                                                                                                                                                                                      Out[42]: </span>
+<span class="go">0    1</span>
+<span class="go">1    2</span>
+<span class="go">2    3</span>
+<span class="go">3    2</span>
+<span class="go">4    2</span>
+<span class="go">5    3</span>
+<span class="go">dtype: category</span>
+<span class="go">Categories (3, int64): [1, 2, 3]</span>
+</pre></div>
+</div>
+<p>For more details and examples see <a class="reference internal" href="categorical.html#categorical"><span class="std std-ref">categorical introduction</span></a> and the
+<span class="xref std std-ref">API documentation</span>. There is also a documentation regarding the
+<a class="reference internal" href="categorical.html#categorical-rfactor"><span class="std std-ref">differences to R’s factor</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/comparison_with_r.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2008-2014, the pandas development team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
