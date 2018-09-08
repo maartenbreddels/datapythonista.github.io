@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="english">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>django-cart released!</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="/blog/" rel="canonical" />
+
+  <!-- Feed -->
+
+  <link href="/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/blog/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="/blog/django-cart-released.html" rel="canonical" />
+
+    <meta name="description" content="Until now, if you had to develop an online store in django, you had two options, use satchmo, or write your own code. Satchmo is a huge...">
+
+    <meta name="author" content="Marc">
+
+    <meta name="tags" content="Django">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="datapythonista blog"/>
+<meta property="og:title" content="django-cart released!"/>
+<meta property="og:description" content="Until now, if you had to develop an online store in django, you had two options, use satchmo, or write your own code. Satchmo is a huge..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/blog/django-cart-released.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2009-03-25 18:50:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/blog/author/marc.html">
+<meta property="article:section" content="03"/>
+<meta property="article:tag" content="Django"/>
+<meta property="og:image" content="/blog/../img/bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "django-cart released!",
+  "headline": "django-cart released!",
+  "datePublished": "2009-03-25 18:50:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Marc",
+    "url": "/blog/author/marc.html"
+  },
+  "image": "/blog/../img/bg.jpg",
+  "url": "/blog/django-cart-released.html",
+  "description": "Until now, if you had to develop an online store in django, you had two options, use satchmo, or write your own code. Satchmo is a huge..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">django-cart released!</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/blog/author/marc.html">Marc</a>
+            | <time datetime="Wed 25 March 2009">Wed 25 March 2009</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('/blog/../img/bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>Until now, if you had to develop an online store in django, you had two options, use <a href="http://www.satchmoproject.com/">satchmo</a>, or write your own code. Satchmo is a huge application that tries to provide everything for all the cases, so for a simple shop you've to deal with hundreds of features that you're not going to use, and in some case it won't be enough flexible.</p>
+<p>So what I've not any complain for satchmo, the fact is that is not the ideal solution for some cases as some small shops with few options.</p>
+<p>With that said, this post is to announce the release of a new project that could help some people to do simple web shops in a very simple way. This project is <a href="http://code.google.com/p/django-cart/">django-cart</a>.</p>
+<p>While django-cart already existed, it was an unfinished (and unmaintained) project by Eric Woundenberg, to whom I'm very thankful for letting reuse it's project, and avoid confusion.</p>
+<p>So, what's django-cart. Django Cart is basically a django application that provides a Cart class, with add/remove/update and get methods to be used for storing products. The products model isn't included in the application, so you can define your products with the fields you need. Then you just need something like...</p>
+<div class="highlight"><pre><span></span>product_to_add = MyProductModel.objects.get(id=whatever)
+cart = Cart(request)
+cart.add(product_to_add, product_to_add.price)
+</pre></div>
+
+
+<p>and your product will be saved on the database, on a session based cart. Getting the content of the cart is as easy as itering the cart instance.</p>
+<p>And basically that's it. More information is available on the project page. Just note that the current version of the application is unstable, and hasn't been tested enough, so feel free to use it, but consider that you'll have to test it by yourself and report/fix some bugs.</p>
+<p>I hope all you like it!</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=django-cart released!&amp;url=/blog/django-cart-released.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/blog/django-cart-released.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/blog/django-cart-released.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/blog/tag/django.html">Django</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="/blog/theme/js/script.js"></script>
+
+</body>
+</html>

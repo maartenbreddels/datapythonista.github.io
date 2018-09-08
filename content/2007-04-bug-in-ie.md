@@ -1,0 +1,7 @@
+Title: bug in IE
+Author: Marc
+Date: 2007-04-07 19:39:00
+Slug: bug-in-ie
+Tags: Development,IT
+
+It's known that Microsoft Internet Explorer usually shows pages in a different way than good web programmers expect. Luckily those differences diminish when using XHTML Strict and CSS, but sometimes we are surprised for some huge bugs.<br/><br/>This is the case when trying to create an empty layer, something like that:<br/><span style="color: #999999">our_style {</span><br/><span style="color: #999999">    height: 1px;</span><br/><span style="color: #999999">    width: 100px;</span><br/><span style="color: #999999">    background-color: black;</span><br/><span style="color: #999999">}</span><br/>[...]<br/><span style="color: #999999"><div class="our_style"></div></span><br/><br/>Obviously we expect something like a horizontal line, but IE increases our layer height to 10px 18px or whatever...<br/><br/>This time there is a easy solution for solving the bug, that is just adding a zero font size for the layer:<br/><br/><span style="color: #999999">our_style {</span><br/><span style="color: #999999">    <span style="font-weight: bold; color: #000000">font-size: 0px</span></span><br/><span style="color: #999999">     height: 1px;</span><br/><span style="color: #999999">     width: 100px;</span><br/><span style="color: #999999">     background-color: black;</span><br/><span style="color: #999999"> }</span>

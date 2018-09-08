@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="english">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Brother printer and GNU (aka Linux)</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="/blog/" rel="canonical" />
+
+  <!-- Feed -->
+
+  <link href="/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/blog/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="/blog/brother-printer-and-gnu-aka-linux.html" rel="canonical" />
+
+    <meta name="description" content="Some time ago I purchased a Brother multifunctional priner/scanner/fax, the MFC-235C.Today, after reinstalling my laptop, I had to...">
+
+    <meta name="author" content="Marc">
+
+    <meta name="tags" content="Systems">
+    <meta name="tags" content="IT">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="datapythonista blog"/>
+<meta property="og:title" content="Brother printer and GNU (aka Linux)"/>
+<meta property="og:description" content="Some time ago I purchased a Brother multifunctional priner/scanner/fax, the MFC-235C.Today, after reinstalling my laptop, I had to..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/blog/brother-printer-and-gnu-aka-linux.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2008-08-17 16:12:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/blog/author/marc.html">
+<meta property="article:section" content="08"/>
+<meta property="article:tag" content="Systems"/>
+<meta property="article:tag" content="IT"/>
+<meta property="og:image" content="/blog/../img/bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Brother printer and GNU (aka Linux)",
+  "headline": "Brother printer and GNU (aka Linux)",
+  "datePublished": "2008-08-17 16:12:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Marc",
+    "url": "/blog/author/marc.html"
+  },
+  "image": "/blog/../img/bg.jpg",
+  "url": "/blog/brother-printer-and-gnu-aka-linux.html",
+  "description": "Some time ago I purchased a Brother multifunctional priner/scanner/fax, the MFC-235C.Today, after reinstalling my laptop, I had to..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Brother printer and GNU (aka Linux)</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/blog/author/marc.html">Marc</a>
+            | <time datetime="Sun 17 August 2008">Sun 17 August 2008</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('/blog/../img/bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>Some time ago I purchased a <a href="http://www.brother.com/">Brother</a> multifunctional priner/scanner/fax, the <a href="http://www.brother.es/g3.cfm/s_page/67210/s_level/32130/s_product/MFC235CT1">MFC-235C</a>.<br/><br/>Today, after reinstalling my laptop, I had to install it again, and it has been as easy as the first. Specially because Brother has GNU (aka Linux) support, including GPL drivers for all printer features.<br/><br/>As well as the deserved publicity that I want to give to Brother in this post, I want to write a quick installation howto. I'm installing the printer locally using USB, and CUPS in my Debian. You should have this installed in your computer before starting the next steps (otherwise you'll have to add some steps, or change some).<br/>- <br/>    <li>apt-get install lpr</li><br/>   <li>Download lpr driver from <a href="http://solutions.brother.com/linux/sol/printer/linux/lpr_drivers.html">http://solutions.brother.com/linux/sol/printer/linux/lpr_drivers.html</a></li><br/>   <li>dpkg -i <downloaded driver></li><br/>   <li>Download cups driver from <a href="http://solutions.brother.com/linux/sol/printer/linux/cups_drivers.html">http://solutions.brother.com/linux/sol/printer/linux/cups_drivers.html</a></li><br/>    <li>dpkg -i <downloaded driver></li><br/>   <li>Go to the <a href="http://solutions.brother.com/linux/sol/printer/linux/linux_faq-2.html">FAQ</a> if you have any problem</li><br/>    <li>Download scanner sane driver from <a href="http://solutions.brother.com/linux/sol/printer/linux/sane_drivers.html">http://solutions.brother.com/linux/sol/printer/linux/sane_drivers.html</a></li><br/>    <li>dpkg -i <downloaded driver></li><br/>   <li>Got to the scanner <a href="http://solutions.brother.com/linux/sol/printer/linux/linux_faq.html">FAQ</a> if you have any problem (it's common having problems running sane with a standard user, but information on how to fix it is available at this FAQ).</li><br/>
+<br/>And that's it! Very easy compared with the problems that I had doing the same installation for HP all-in-one printers.</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Brother printer and GNU (aka Linux)&amp;url=/blog/brother-printer-and-gnu-aka-linux.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/blog/brother-printer-and-gnu-aka-linux.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/blog/brother-printer-and-gnu-aka-linux.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/blog/tag/systems.html">Systems</a><a href="/blog/tag/it.html">IT</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="/blog/theme/js/script.js"></script>
+
+</body>
+</html>

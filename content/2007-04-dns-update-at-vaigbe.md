@@ -1,0 +1,7 @@
+Title: DNS update at vaig.be
+Author: Marc
+Date: 2007-04-08 20:50:00
+Slug: dns-update-at-vaigbe
+Tags: This blog
+
+I've changed the <span class="blsp-spelling-error" id="SPELLING_ERROR_0">dns</span> settings for this blog, because a blogger issue (I suppose) that didn't redirect requests to [http://vaig.be](http://vaig.be) to this blog (just from [http://www.vaig.be](http://www.vaig.be)).<br/><br/>Blogger manages external domains for blogs, but with <span class="blsp-spelling-corrected" id="SPELLING_ERROR_1">previous</span> commented issue, so I'm not going to use this feature anymore, and I'll use [http://vaigbe.blogspot.com](http://vaigbe.blogspot.com) and change <span class="blsp-spelling-error" id="SPELLING_ERROR_2">dns</span> settings for my domain <span class="blsp-spelling-error" id="SPELLING_ERROR_3">vaig</span>.be.<br/><br/>This means that this page won't be available throw [http://www.vaig.be](http://www.vaig.be) for some time during <span class="blsp-spelling-error" id="SPELLING_ERROR_4">dns</span> update, and <span class="blsp-spelling-error" id="SPELLING_ERROR_5">dns</span> mirrors update. I apologize for it. But after <span class="blsp-spelling-error" id="SPELLING_ERROR_6">dns</span> updates it will be also available at [http://vaig.be](http://vaig.be) and [http://vaigbe.blogspot.com](http://vaigbe.blogspot.com/).

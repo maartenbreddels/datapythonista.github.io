@@ -1,0 +1,7 @@
+Title: Django is “order sensitive”
+Author: Marc
+Date: 2007-11-14 00:21:00
+Slug: django-is-order-sensitive
+Tags: Applications,Django,IT
+
+Sometimes I forget that django's settings.py is a Python script, and not a plain configuration file. And forgetting it causes django to behave unexpectedly. A couple of examples that happened to are related to array sorting.<br/><br/>Some days ago I customized middleware classes, and after that I left on my setting.py:<br/><br/>MIDDLEWARE_CLASSES = (<br/>'django.middleware.locale.LocaleMiddleware',<br/>'django.contrib.sessions.middleware.SessionMiddleware',<br/>'django.contrib.auth.middleware.AuthenticationMiddleware',<br/>'django.middleware.doc.XViewMiddleware',<br/>'django.middleware.common.CommonMiddleware',<br/>)<br/><br/>With it, LocaleMiddleware doesn't work, because it requires SessionMiddleware that isn't loaded when LocaleMiddleware is executed.<br/><br/>Today's issue was something similar, but with templates. I customized some admin templates, copying them to a directory loaded with filesystem loader. My settings.py looked like:<br/><br/>TEMPLATE_LOADERS = (<br/>'django.template.loaders.app_directories.load_template_source',<br/>'django.template.loaders.filesystem.load_template_source',<br/>)<br/><br/>With it, loaders looked first to application template directories, including the admin ones, so overriding template was never used.

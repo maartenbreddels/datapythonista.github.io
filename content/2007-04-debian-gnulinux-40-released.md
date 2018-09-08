@@ -1,0 +1,7 @@
+Title: Debian GNU/Linux 4.0 released
+Author: Marc
+Date: 2007-04-08 20:14:00
+Slug: debian-gnulinux-40-released
+Tags: Systems,IT
+
+Finally, after 21 months of constant development, last version of Debian distribution has been released. Oppositely to previous versions of Debian, Etch has a "up-to-date flavour", including last version packages such as Linux kernel 2.6, MySQL 5, <span class="blsp-spelling-error" id="SPELLING_ERROR_0">PHP</span> 5, Python 2.5, <span class="blsp-spelling-error" id="SPELLING_ERROR_1">OpenOffice</span> 2.0, <span class="blsp-spelling-error" id="SPELLING_ERROR_2">Iceweasel</span> (<span class="blsp-spelling-error" id="SPELLING_ERROR_3">Firefox</span>) 2.0...<br/><br/>I'm using Etch for some months in different beta and release candidates versions, with very good results. For me <span class="blsp-spelling-corrected" id="SPELLING_ERROR_4">Debian</span> has been probably the best system for many time, but with a big handicap, versions. Now I think that there is no good competitor for this distribution, for a medium/advanced GNU user.<br/><br/>You can find more information in announcements at [Debian page](http://www.debian.org/News/2007/20070408) and [distribution list](http://lists.debian.org/debian-announce/debian-announce-2007/msg00002.html).<br/><br/>Convinced? Just download [here](http://cdimage.debian.org/debian-cd/4.0_r0/i386/iso-cd/debian-40r0-i386-netinst.iso) and enjoy!

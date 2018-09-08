@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="english">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Jupyter environment setup</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="/blog/" rel="canonical" />
+
+  <!-- Feed -->
+
+  <link href="/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/blog/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="/blog/jupyter-environment-setup.html" rel="canonical" />
+
+    <meta name="description" content="This is a short note about how I set up my "data scientist" environment. Different people have different tastes, but what I use, and...">
+
+    <meta name="author" content="Marc">
+
+    <meta name="tags" content="Python">
+    <meta name="tags" content="Data Mining">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="datapythonista blog"/>
+<meta property="og:title" content="Jupyter environment setup"/>
+<meta property="og:description" content="This is a short note about how I set up my "data scientist" environment. Different people have different tastes, but what I use, and..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/blog/jupyter-environment-setup.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2015-12-22 14:07:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/blog/author/marc.html">
+<meta property="article:section" content="12"/>
+<meta property="article:tag" content="Python"/>
+<meta property="article:tag" content="Data Mining"/>
+<meta property="og:image" content="/blog/../img/bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Jupyter environment setup",
+  "headline": "Jupyter environment setup",
+  "datePublished": "2015-12-22 14:07:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Marc",
+    "url": "/blog/author/marc.html"
+  },
+  "image": "/blog/../img/bg.jpg",
+  "url": "/blog/jupyter-environment-setup.html",
+  "description": "This is a short note about how I set up my "data scientist" environment. Different people have different tastes, but what I use, and..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Jupyter environment setup</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/blog/author/marc.html">Marc</a>
+            | <time datetime="Tue 22 December 2015">Tue 22 December 2015</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('/blog/../img/bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>This is a short note about how I set up my "data scientist" environment. Different people have different tastes, but what I use, and what I set up is:</p>
+<ul>
+<li><li><strong>conda</strong> for environment and package management (equivalent to virtualenv and pip to say)</li><li>Latest <strong>Python</strong> (yes, Python 3)</li><li><strong>Jupyter</strong>&nbsp;(aka IPython notebook)</li><li>Disable all the autocomplete quotes and brackets stuff, that comes by default with Jupyter</li><li>Set the IPython backend for matplotlib</li>
+<div>So, we download Anaconda from:&nbsp;https://www.continuum.io/downloads (Linux 64 bits, Python 3, in my case). We install it by:</div><div>
+</div><blockquote class="tr_bq">bash&nbsp;Anaconda3-2.4.1-Linux-x86_64.sh</blockquote><div>
+</div><div>We can either restart the terminal, or type the next command, so we start using conda environment:</div><div>
+</div><blockquote class="tr_bq">. ~/.bashrc</blockquote><div>
+</div><div>We can update conda and all packages:</div><div>
+</div><blockquote class="tr_bq">conda update conda &amp;&amp; conda update --all</blockquote><div>
+</div><div>Then we create a new conda environment (this way we can change package versions without affecting the main conda packages). We name it myenv and specify the packages we want (numpy, pandas...).</div><div>
+</div><blockquote class="tr_bq">conda create --name myenv jupyter numpy scipy pandas matplotlib scikit-learn bokeh</blockquote><div>
+</div><div>We activate the new environment:</div><div>
+</div><blockquote class="tr_bq">source activate myenv</blockquote><div>
+</div><div>Now we have everything we wanted installed, let's change the configuration.</div><div>
+</div><div>We start by creating a default ipython profile.</div><div>
+</div><blockquote class="tr_bq">ipython profile create</blockquote><div>
+</div><div>Then we edit the file ~/.ipython/profile_default/ipython_kernel_config.py and we add the next lines to make matplotlib display the images with the inline backend, and with a decent size:</div><div>
+</div><blockquote class="tr_bq">c.InteractiveShellApp.matplotlib = 'inline' c.InlineBackend.rc = {'font.size': 10, 'figure.figsize': (18., 9.), 'figure.facecolor': 'white', 'savefig.dpi': 72, 'figure.subplot.bottom': 0.125, 'figure.edgecolor': 'white'} </blockquote>
+<div>
+</div><div>To disable autoclosing brackets, run in a notebook:</div><div>
+</div><pre style="background-color: #f6f8fa; border-radius: 3px; box-sizing: border-box; color: #24292e; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 11.9px; font-stretch: normal; line-height: 1.45; overflow: auto; padding: 16px; word-break: normal; word-wrap: normal;"><span class="pl-k" style="box-sizing: border-box; color: #d73a49;">from</span> notebook.services.config <span class="pl-k" style="box-sizing: border-box; color: #d73a49;">import</span> ConfigManager
+c <span class="pl-k" style="box-sizing: border-box; color: #d73a49;">=</span> ConfigManager()
+c.update(<span class="pl-s" style="box-sizing: border-box; color: #032f62;"><span class="pl-pds" style="box-sizing: border-box;">'</span>notebook<span class="pl-pds" style="box-sizing: border-box;">'</span></span>, {<span class="pl-s" style="box-sizing: border-box; color: #032f62;"><span class="pl-pds" style="box-sizing: border-box;">"</span>CodeCell<span class="pl-pds" style="box-sizing: border-box;">"</span></span>: {<span class="pl-s" style="box-sizing: border-box; color: #032f62;"><span class="pl-pds" style="box-sizing: border-box;">"</span>cm_config<span class="pl-pds" style="box-sizing: border-box;">"</span></span>: {<span class="pl-s" style="box-sizing: border-box; color: #032f62;"><span class="pl-pds" style="box-sizing: border-box;">"</span>autoCloseBrackets<span class="pl-pds" style="box-sizing: border-box;">"</span></span>: <span class="pl-c1" style="box-sizing: border-box; color: #005cc5;">False</span>}}})</pre>
+<div>
+</div></li>
+</ul>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Jupyter environment setup&amp;url=/blog/jupyter-environment-setup.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/blog/jupyter-environment-setup.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/blog/jupyter-environment-setup.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/blog/tag/python.html">Python</a><a href="/blog/tag/data-mining.html">Data Mining</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="/blog/theme/js/script.js"></script>
+
+</body>
+</html>

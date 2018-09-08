@@ -1,0 +1,7 @@
+Title: GPG Error updating Debian Etch
+Author: Marc
+Date: 2007-04-17 14:08:00
+Slug: gpg-error-updating-debian-etch
+Tags: Systems,IT
+
+Probably not happening anymore with Debian Etch as stable, but that error happened sometimes when apt-get update:<br/><br/>W: <span class="blsp-spelling-error" id="SPELLING_ERROR_0">GPG</span> error: http://security.debian.org etch/updates Release: The following signatures couldn't be verified because the public key is not available: NO_<span class="blsp-spelling-error" id="SPELLING_ERROR_1">PUBKEY</span> A70<span class="blsp-spelling-error" id="SPELLING_ERROR_2">DAF</span>536070D3A1<br/>W: <span class="blsp-spelling-error" id="SPELLING_ERROR_3">GPG</span> error: ftp://ftp.hr.debian.org testing Release: The following signatures couldn't be verified because the public key is not available: NO_<span class="blsp-spelling-error" id="SPELLING_ERROR_4">PUBKEY</span> A70<span class="blsp-spelling-error" id="SPELLING_ERROR_5">DAF</span>536070D3A1<br/>W: You may want to run apt-get update to correct these problems<br/><br/>I've solved it just with:<br/><span style="font-style: italic">apt-get install <span class="blsp-spelling-error" id="SPELLING_ERROR_6">debian</span>-archive-keyring</span><br/><br/>Source: [<span class="blsp-spelling-error" id="SPELLING_ERROR_7">LinuxQuestions</span>](http://www.linuxquestions.org/questions/showthread.php?t=533672&amp;highlight=apt-get+public+key+gpg+error)

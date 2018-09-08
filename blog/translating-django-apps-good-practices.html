@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="english">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Translating Django apps. Good practices</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="/blog/" rel="canonical" />
+
+  <!-- Feed -->
+
+  <link href="/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/blog/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="/blog/translating-django-apps-good-practices.html" rel="canonical" />
+
+    <meta name="description" content="In this article you'll find some tips, that could be useful for avoiding problems or extra work when translating your Django...">
+
+    <meta name="author" content="Marc">
+
+    <meta name="tags" content="Applications">
+    <meta name="tags" content="Django">
+    <meta name="tags" content="IT">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="datapythonista blog"/>
+<meta property="og:title" content="Translating Django apps. Good practices"/>
+<meta property="og:description" content="In this article you'll find some tips, that could be useful for avoiding problems or extra work when translating your Django..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/blog/translating-django-apps-good-practices.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2008-08-01 18:59:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/blog/author/marc.html">
+<meta property="article:section" content="08"/>
+<meta property="article:tag" content="Applications"/>
+<meta property="article:tag" content="Django"/>
+<meta property="article:tag" content="IT"/>
+<meta property="og:image" content="/blog/../img/bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Translating Django apps. Good practices",
+  "headline": "Translating Django apps. Good practices",
+  "datePublished": "2008-08-01 18:59:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Marc",
+    "url": "/blog/author/marc.html"
+  },
+  "image": "/blog/../img/bg.jpg",
+  "url": "/blog/translating-django-apps-good-practices.html",
+  "description": "In this article you'll find some tips, that could be useful for avoiding problems or extra work when translating your Django..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Translating Django apps. Good practices</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/blog/author/marc.html">Marc</a>
+            | <time datetime="Fri 01 August 2008">Fri 01 August 2008</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('/blog/../img/bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>In this article you'll find some tips, that could be useful for avoiding problems or extra work when translating your Django application.<br/><br/><strong>1. Setting up the environment</strong><br/><br/>Doing some trivial changes to your project structure, can avoid you of translating many string (the ones that are already translated in Django, or in any external application).<br/><br/>For achieving it, my tip is to copy Django itself, and all external applications to your project path, not in a PYTHONPATH directory. It can also avoid compatibility problems, and version conflicts if you're working on several  projects. Then your project root will contain something like:<br/><br/><code><code>__init__</code>.py<br/>settings.py<br/>urls.py<br/>django/<br/>transdb/<br/>myapp/</code><br/><br/>Next step is  patching Django (while it's not included in trunk) to omit the inclusion of already translated applications into your project. Here is the <a href="http://code.djangoproject.com/attachment/ticket/7916/7916_v2.diff">patch</a>, and you can also see <a href="http://code.djangoproject.com/ticket/7050">#7050</a> for further information, or know the status.<br/><br/>Then, when executing <em>./manage.py makemessages</em> you'll find in your project catalogs, just strings that aren't previously translated.<br/><br/><strong>2. Creating string</strong><br/><br/>If you don't have a correct literal creation policy, then your translator will have extra work, problems, and your translation won't be as correct as it should.<br/><br/>The first thing to do is write literals thinking in reusability (as  software reusability but for translations). I'll show it with some examples:<br/><br/>Using<br/><br/><code>{% trans 'product' %}<br/>{% trans 'Product' %}<br/>{% trans 'product:' %}<br/></code><br/>you'll create 3 different string in your translation. Using<br/><br/><code>{% trans 'product' %}<br/>{{ <em>("product")|capfirst }}<br/>{% trans 'product' %}:<br/></code><br/>will create just one.<br/><br/>Another thing to consider is that some times  you consider that a word has just one meaning, or at least you don't think that could be translated using different words. But actually, when translating it to another language it can be converted to different words depending on the context. Let's use an example.<br/><code><br/><em>Play</em> football<br/><em>Play</em> the guitar</code><br/><br/>Probably for most native English  speakers <em>play</em> doesn't have more than a subtle difference in two sentences, but if I translate it as follows:<br/><code><br/></em>("play") -&gt; jugar</code><br/><br/>Then you'll find something like<br/><br/><code>Play football -&gt; Jugar a  futbol (what's correct)<br/>Play the guitar -&gt; Jugar con la guitarra (what means "To have fun with the guitar", probably without generating any sound)</code><br/><br/>This will be avoided most times, because usually we don't translate word my word, but there are few cases where we do that, and you should consider doing something like that in that case (actually I never had to do it :)<br/><br/><code><em>("play <!-- an instrument -->")<br/></em>("play <!-- a sport -->")</code><br/><br/>Then when you translate into Spanish:<br/><br/><code>"play <!-- an instrument -->" -&gt; "tocar"<br/>"play <!-- a sport -->" -&gt; "jugar"</code><br/><br/>And I would also translate English into English:<br/><br/><code>"play <!-- an instrument -->" -&gt; "play"<br/>"play <!-- a sport -->" -&gt; "play"</code><br/><br/>There will be infinite cases that will generate issues when translating, and it'll be impossible to control everyone. I just wanted to give some tips focused to Django applications.<br/><br/><strong>3. Translating</strong><br/><br/>This article isn't intended to explain how to translate (I think that there is a degree at university for it ;) . But may be you should give some tips/explanations to your translators for better results.<br/><br/>The first thing you should explain them is how to work with some special cases in your strings. Here you have the two mos common examples that they will found:<br/><code><br/>"This is normal text, <big>and this one is bigger</big>"<br/>"Hello %(name)s"</code><br/><br/>Unless you explain them what it means, probably you'll find something like that in you translated string (using Spanish in the example):<br/><br/><code>"Este texto es normal, <grande>y  éste es mayor</grande>"<br/>"Hola %(nombre)s"</code><br/><br/>Of course those translations doesn't generate the expected results, because the correct ones are:<br/><br/><code>"Este texto es normal, <big>y  éste es mayor</big>"<br/>"Hola %(name)s"</code><br/><br/>Another thing that could be clarified, specially if your translator is involved in the Web site that is being translated (or at least knows the context where every string is used), is not to create translations more specific than the original texts.<br/><br/>For example, imagine that you've in your application a form for personal data, and one of the fields is called "name". Then you translate your application to Catalan, and your translator knows when translating "name", that is used as person name, and translate it as "nom propi" (first name). It will look nicer by now, while being incorrect for me, so later may be you'll add a form where you ask corporate information and you have a field "name" for the company name. You won't send the string "name" to the translator again, and your translation will be incorrect, so "nom propi" (first name) is not valid for the company name.<br/><br/><strong>4. Choosing the main language</strong><br/><br/>Sometimes it isn't so obvious  the language your application is written in (I mean the language you use inside gettext strings, or trans/blocktrans tags).<br/><br/>If you're writing an application that will be used widely in the world, and it will be translated to many languages, probably you think that English should be the right language for it, but in some cases there are some questions to take care on.<br/>- <br/> <li>Will your company have an international team (specially of Django developers)? If you have workers from many countries, probably English will be good for letting all of them write/read from the code.</li><br/>   <li>Will your translation team/company use English as it source language? The .po files will show your main language as source for translating string. If you hire a German to French translator, isn't a good idea writing your strings in English, so your/their work will increase a lot, and the reliability of the process will decrease.</li><br/>    <li> Are your coders fluent in English? It's more complicated (more work) to change a string from a the main language than from a translation. So if your developers can't write correct English, writing literals in their mother tongue language will save time and work.</li><br/>
+<br/>Unluckily some times you'll have conflicts in previous questions, and you'll have to choose the lesser evil.</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Translating Django apps. Good practices&amp;url=/blog/translating-django-apps-good-practices.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/blog/translating-django-apps-good-practices.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/blog/translating-django-apps-good-practices.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/blog/tag/applications.html">Applications</a><a href="/blog/tag/django.html">Django</a><a href="/blog/tag/it.html">IT</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="/blog/theme/js/script.js"></script>
+
+</body>
+</html>

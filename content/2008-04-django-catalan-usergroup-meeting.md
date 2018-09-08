@@ -1,0 +1,7 @@
+Title: Django Catalan usergroup meeting
+Author: Marc
+Date: 2008-04-01 04:43:00
+Slug: django-catalan-usergroup-meeting
+Tags: Django
+
+Six months ago, I decided to create the [Django Catalan usergroup](http://groups.google.com/group/django-cat), for user in [Catalonia](http://en.wikipedia.org/wiki/Catalonia), and for users who speak [catalan](http://en.wikipedia.org/wiki/Catalan_language).<br/><br/>Today I'm happy to announce that we are already 26 members, and we are going to have our first meeting on April 3rd. We've decided to meet together with people from [The Barcelona Python Meetup Group](http://python.meetup.com/185/), so both groups have common interests, and many people in common.<br/><br/>Our planning is having some talks on key subjects such as "Django presentation to non-Django users", "Django status", "Django i18n", "Python 3k"... as well as lightning talks from everybody, to share personal or professional experience with Python/Django. We'll also discuss about organizing a conference in Barcelona, and about the Django-Rails football (aka soccer) match.<br/><br/>If you are in Barcelona on 3rd, and you want to join us, here you have details (remember that attendance confirmation is required one day before the event):<br/><br/>[http://python.meetup.com/185/calendar/7640211/](http://python.meetup.com/185/calendar/7640211/)<br/><br/>See you there!

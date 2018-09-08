@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="english">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>GSoC: Implementation of additional i18n features on Django</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="/blog/" rel="canonical" />
+
+  <!-- Feed -->
+
+  <link href="/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/blog/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="/blog/gsoc-implementation-of-additional-i18n.html" rel="canonical" />
+
+    <meta name="description" content="Here you have my proposal for Google Summer of Code 2009. It was approved previous week, and I'll be working on it during this summer....">
+
+    <meta name="author" content="Marc">
+
+    <meta name="tags" content="Django">
+    <meta name="tags" content="Django-i18n">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="datapythonista blog"/>
+<meta property="og:title" content="GSoC: Implementation of additional i18n features on Django"/>
+<meta property="og:description" content="Here you have my proposal for Google Summer of Code 2009. It was approved previous week, and I'll be working on it during this summer...."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/blog/gsoc-implementation-of-additional-i18n.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2009-04-24 19:09:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/blog/author/marc.html">
+<meta property="article:section" content="04"/>
+<meta property="article:tag" content="Django"/>
+<meta property="article:tag" content="Django-i18n"/>
+<meta property="og:image" content="/blog/../img/bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "GSoC: Implementation of additional i18n features on Django",
+  "headline": "GSoC: Implementation of additional i18n features on Django",
+  "datePublished": "2009-04-24 19:09:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Marc",
+    "url": "/blog/author/marc.html"
+  },
+  "image": "/blog/../img/bg.jpg",
+  "url": "/blog/gsoc-implementation-of-additional-i18n.html",
+  "description": "Here you have my proposal for Google Summer of Code 2009. It was approved previous week, and I'll be working on it during this summer...."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">GSoC: Implementation of additional i18n features on Django</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/blog/author/marc.html">Marc</a>
+            | <time datetime="Fri 24 April 2009">Fri 24 April 2009</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('/blog/../img/bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p><span><span>Here you have my proposal for Google Summer of Code </span></span><span><span>2009. It was approved previous week, and I'll be working on it during this summer.</span></span><span style="font-size:180%;"><span><span><span><strong>
+</strong></span></span></span></span></p>
+
+<p><h2><span><span><span><strong><span><span><span><strong>The problem
+</strong></span></span></span></strong></span></span></span></h2><p><span><span>While Django provides an amazing system to translate texts, and displays localized dates in some parts of the admin; it has many data that could be internationalized, not it's not yet.</span></span></p> <p><span><span>The information that developers should be able to localize/translate is mainly:</span></span></p> - <li> <p><span><span><span>All  dates and related information (times, calendars...)</span></span></span></p> </li><li> <p><span><span><span>All  numbers (mainly decimal ones)</span></span></span></p> </li><li> <p><span><span><span>Texts  (and any data in general) saved on the database</span></span></span></p> </li>
+ <p><span><span><span>More information on these issues can be found in the following blog post and this ticket:</span></span></span></p> <p><a href="http://vaig.be/2008/07/django-i18n-status.html"><span><span>http://vaig.be/2008/07/django-i18n-status.html</span></span></a></p> <p><a href="http://code.djangoproject.com/ticket/7980"><span><span>http://code.djangoproject.com/ticket/7980</span></span></a></p> <h2><span><span><span><strong><span><span><span><strong>Proposal</strong></span></span></span></strong></span></span></span></h2> <p><span><span>The proposed solution for improving Django i18n includes several different tasks. Those tasks are:</span></span></p> <ul><li> <p><span><span>Import  locale data from CLDR</span></span></p> </li><li> <p><span><span>Apply  i18n to Django dates and times</span></span></p> </li><li> <p><span><span>Apply  i18n to Django numbers</span></span></p> </li><li> <p><span><span>Allow  translating content on the database</span></span></p> </li><li><span><span>Fix already reported bug about i18n
+</span></span></li></ul> <p><span><span>Next are the details for every task. Note that all those specifications are subject to change, according to discussions with the mentor of the project, Django core developers team, and the main Django community.</span></span></p> <h2><span><span><span><strong><span><span><span><strong>Importing locale data
+</strong></span></span></span></strong></span></span></span></h2> <p><span><span><span>The main repository of locale data is the Common Locale Data Repository (CLDR) by the Unicode Consortium </span></span>http://cldr.unicode.org/.<span><span> It provides a set of XML files with information such as date, time and number formatting for most languages.</span></span></span></p> <p><span><span>The idea of this task would be to create a python script (probably as a django-admin command), that will extract all necessary data from those XML files and put it into configuration files on the Django structure. This information will be used by Django to internationalize data on applications.</span></span></p> <p>The idea of this script is to be used just by Django developers. It would mainly be a one-time execution script, and then it would be executed just when new locales are added (are some are changed).</p> <p><span><span>All information gathered from CLDR files could be saved on django/conf/locale/{  language code }/formats/django.po</span></span></p> <p><span><span>Specific settings imported from CLDR could be (with English localized example):</span></span></p> - <li> <p><span><span>SHORT_DATETIME_FORMAT  (12-31-2000 11:59 p.m.)</span></span></p> </li><li> <p><span><span>LONG_DATETIME_FORMAT  (December 31th 2000, 11:59 p.m.)</span></span></p> </li><li> <p><span><span>SHORT_DATE_FORMAT  (12-31-2000)</span></span></p> </li><li> <p><span><span>LONG_DATE_FORMAT  (December 31th 2000)</span></span></p> </li><li> <p><span><span>FIRST_DAY_OF_WEEK  (0 meaning Sunday)</span></span></p> </li><li> <p><span><span>TIME_FORMAT  (11:59 p.m.)</span></span></p> </li><li> <p><span><span>YEAR_MONTH_FORMAT  (December of 2000)</span></span></p> </li><li> <p><span><span><span>MONTH_DAY_FORMAT  (December 31th)</span></span></span></p> </li>
+ - <li> <p><span><span>DECIMAL_NUMBER  FORMAT (1,000,000.123)</span></span></p> </li>
+ <p><span><span>There are some locale based parameters that already exist on Django, on translation files (LC_MESSAGES) and could be deprecated on future releases of Django (when breaking backward compatibility). Those are:</span></span></p> - <li> <p><span><span>DATETIME_FORMAT</span></span></p> </li><li> <p><span><span>DATE_FORMAT</span></span></p> </li><li> <p><span><span>TIME_FORMAT</span></span></p> </li><li> <p><span><span>YEAR_MONTH_FORMAT</span></span></p> </li><li> <p><span><span>MONTH_DAY_FORMAT</span></span></p> </li>
+ <p>For keeping the system flexible, existing default values on settings will be kept. Probably it would be worth to add new ones for the new customizable formats.</p> <h2><span><span><strong>Dates, times and calendar i18n</strong></span></span></h2> <p><span><span>All dates and times displayed using Django should use the format defined for the current session locale. This is already implemented for some dates, like the ones displayed in admin's lists. Also a filter for formatting dates already exists in templates, which, together with the formats in the translation files, can do the job. But the good way to do that would be displaying the date by default on the session locale.</span></span></p> <p><span><span>All Django forms (including admin forms) should accept the short date/datetime format of the current locale. Now it's possible to define the accepted formats using parameters of the widget, and this can be kept, but at least support for entering data formatted in current locale should be added. ISO and/or English locale can be kept as well. Existing data on input fields should be displayed in current locale too.</span></span></p> <p>As Django 1.0 series is maintaining backward compatibility, those changes have to be implemented being compatible with existing behavior by default.</p> <p><span><span>The calendar on admin's date/datetime field should also be displayed according to user session locale.</span></span></p> <p><span><span>So basically those are the main tasks required for internationalizing Django dates:</span></span></p> - <li> <p><span><span>Format all python date/datetimes objects using locale settings when converted to string to be displayed. Basically it means models.DateField and models.DateTimeField values on model instances.</span></span></p> </li><li> <p><span><span>Change  input widgets to display data and to allow entering data on the  format of the current locale.</span></span></p> </li><li> <p><span><span>Display  admin calendar starting weeks on the day defined for current locale.</span></span></p> </li>
+ <p><span><span>With those changes next tickets would be fixed:</span></span></p> - <li> <p><span><span><span>#1061  About first day on calendars</span></span></span></p> </li><li> <p><span><span><span>#5526  About accepting non-English formats on input widgets</span></span></span></p> </li><li> <p><span><span><span>#6231  About the output format of the SelectDateWidget</span></span></span></p> </li><li> <p><span><span><span>#6449  About default format of displayed dates</span></span></span></p> </li><li> <p><span><span><span>#6483  About supporting European dates on javascript routines</span></span></span></p> </li><li> <p><span><span><span>#7509  About supporting different formats on SplitDateTimeWidget</span></span></span></p> </li><li> <p><span><span><span>#7656  About inheriting i18n features of AdminDateWidget</span></span></span></p> </li>
+ <h2><span><span><strong>Number i18n</strong></span></span></h2> <p><span><span>Right now, Django doesn't provide anything for localizing numbers on applications. All numeric values within Django applications are formatted using American formats. Users from many countries are not used to dealing with the American format, and a simple shop using Django can create confusion among users who, for example, expect the comma to be the decimal separator, and they find the point on prices.</span></span></p> <p>As for the previous section, changes must be applied keeping backward compatibility.</p> <p><span><span>So Django should display, and use by default the language of the current locale to format numbers. Basically that means:</span></span></p> - <li> <p><span><span><span>Format  numbers on templates using current session locale</span></span></span></p> </li><li> <p><span><span><span>Display  and allow entering data using session locale on input widgets</span></span></span></p> </li>
+ <p><span><span>With those changes next ticket should be fixed:</span></span></p> - <li> <p><span><span>#3940  About comma as decimal separator</span></span></p> </li>
+ <h2><span><span><strong>Translating dynamic content</strong></span></span></h2> <p><span><span>Django has an amazing system for translating texts to any language. The only problem of this system is that it can just be used for static content (defined on source files, including templates), and not for dynamic content, created by users after deploying the web site. This can be useful for many different situations like an application that has a product catalog where product names and descriptions have to be translated, or a news website, where news can be translated to any language.</span></span></p> <p><span><span>There are some external applications, widely used, that allow to do that on Django, but all of them have many different problems, like complex and tricky syntax for developers, ugly interface for users, bad design, bad scalability... Main applications are:</span></span></p> - <li> <p><span><span><span>django-multilingual</span></span></span></p> </li><li> <p><span><span><span>transdb</span></span></span></p> </li><li> <p><span><span><span>django-transmeta</span></span></span></p> </li><li> <p><span><span><span>django-multilingual-model</span></span></span></p> </li>
+ <p><span><span><span>A comparison of the two first applications, and some ideas for a better solution, can be found on a presentation at</span></span></span></p> <p><a href="http://docs.google.com/Presentation?docid=dfbzs3ks_7f2z85hvr&amp;amp;hl=en"><span><span><span>http://docs.google.com/Presentation?docid=dfbzs3ks_7f2z85hvr&amp;hl=en</span></span></span></a></p> <p><span><span>Basically, a good solution to allow Django developers to translate their models should include:</span></span></p> - <li> <p><span><span><span>An  easy way to specify translatable fields on models (or outside the  models)</span></span></span></p> </li><li> <p><span><span><span>An  easy way to allow translating content using the admin or custom  forms</span></span></span></p> </li><li> <p><span><span><span>Displaying  translated fields in session language by default (allowing to get  the value for a specific value)</span></span></span></p> </li><li> <p><span><span><span>A  scalable way to save translations on the database</span></span></span></p> </li>
+ <p><span><span><span>To achieve those targets a lot of analysis is required, so, just some ideas are detailed here.
+</span></span></span></p> <p><span><span><span>For the model syntax there are many different options, some of them can be checked on this blog post, and this poll:</span></span></span></p> <p><a href="http://vaig.be/2009/03/django-multilingual-syntax-poll.html"><span><span>http://vaig.be/2009/03/django-multilingual-syntax-poll.html</span></span></a></p> <p><a href="http://doodle.com/aicvayf8ss2mxm2h"><span><span><span>http://doodle.com/aicvayf8ss2mxm2h</span></span></span></a></p> <p><span><span>The most popular one is (using an example):</span></span></p> 
+    ::::
+    <span><span>class MyModel(model.Model):</span></span>
+     <span>my_field = CharField()</span>
+     <span>my_i18n_field = CharField()</span></p>
+<div class="highlight"><pre><span></span> <span class="nt">&lt;span&gt;</span>class Meta:<span class="nt">&lt;/span&gt;</span>
+     <span class="nt">&lt;span&gt;</span>translate = (&#39;my_i18n_field&#39;,)<span class="nt">&lt;/span&gt;</span>
+</pre></div>
+
+
+<p><p><span><span>A way to translate models (and whole applications) without modifying its code would be great, in order to translate applications that already exist.</span></span></p> <p>For the database backend there are also different options, including:</p> - <li>To create a field on the model for every translation</li><li>To create a related model</li>
+ <p><span><span>There is just one generic ticket on Django that would be fixed:</span></span></p> - <li> <p><span><span>#6460  About multilingual content on database</span></span></p> </li>
+ <p>May be it's not possible having a generic solution that fits most of the user-cases, and in that case could be worth making some modifications on Django to make it easier creating external applications that can do this job.</p> <h2>Fix i18n bugs</h2> <p>There are many bugs already accepted on Django trac, that would be fixed on this Summer of Code. A better review will be done, but some of them could be:</p> - <li>#3907: LocaleMiddleware allows languages not supported by Django</li><li>#5494: Javascript catalog doesn't check project level locales</li><li>#7050: make-messages should ignore applications with custom localization</li>
+ <h2><span><span><span><strong>Timeline</strong></span></span></span></h2> <p><span><span>The estimated time line for this project, detailed in a weekly basis is:</span></span></p> <ul><li> <p><span><span>Week  01: Analysis and working environment setup
+</span></span></p> </li><li> <p><span><span>Week  02: </span></span><span><span>Import CLDR</span></span></p> </li><li> <p><span><span>Week  03: Import CLDR</span></span></p> </li><li> <p><span><span>Week  04: </span></span><span><span>I18n of dates and numbers</span></span></p> </li><li> <p><span><span>Week  05: I18n of dates and numbers</span></span></p> </li><li> <p><span><span>Week  06: I18n of dates and numbers</span></span></p> </li><li> <p><span><span>Week  07: </span></span><span><span>Translation of dynamic content</span></span></p> </li><li> <p><span><span>Week  08: Translation of dynamic content</span></span></p> </li><li> <p><span><span>Week  09: Translation of dynamic content</span></span></p> </li><li> <p><span><span>Week  10: Translation of dynamic content</span></span></p> </li><li> <p><span><span>Week  11: Fix i18n bugs</span></span></p> </li><li> <p><span><span>Week  12: Fix i18n bugs</span></span></p> </li></ul> <p><span><span>My dedication to the project will be full time, around 40 hours per week. A total of 480 hours are estimated for the whole project.</span></span></p> <h2><span><span><span><strong>About me</strong></span></span></span></h2> <p><span><span>My name is Marc Garcia, I'm from Barcelona, Europe, and I'm 29 years old.</span></span></p> <p><span><span>I am studying computer science at Universitat Oberta de Catalunya, an Internet-based university from Barcelona. Currently I'm not working but I have almost 8 years of programming experience (with different technologies, mainly Python, PHP and VB).</span></span></p> <p><span><span>I started using Django in 2006, and at this time I developed and participated on the development of many websites, as well as many reusable applications for Django.</span></span></p> <p><span><span>As examples of reusable Django applications note:</span></span></p> - <li> <p><span><span>django-stdimage:  Saves ImageField files with standard names, allowing to delete them,  and creating automatic thumbnails.</span></span></p> </li><li> <p><span><span>Transdb:  Allows translating database content</span></span></p> </li><li> <p><span><span>django-transmeta:  Also allows translating database content (different approach)</span></span></p> </li><li> <p><span><span>django-cart:  Simple cart object to easily add/update/remove products to user  session</span></span></p> </li>
+ <p> </p> <p><span><span>As examples of websites, note next ones:</span></span></p> - <li> <p><span><span>http://elisa.fluendo.com  (main developer)</span></span></p> </li><li> <p><span><span>http://www.andalucia.org  (developer of some parts, mainly the shop and the registration  system)</span></span></p> </li><li> <p><span><span>http://www.muchomasqueunregalo.com (developer of the Django part of the web site, including the shopping system and product detail pages).</span></span></p> </li><li> <p><span><span>http://www.accopensys.com  (only developer)</span></span></p> </li><li> <p><span><span>http://www.showroom.es  (only developer)</span></span></p> </li><li> <p><span><span>http://www.tierratenis.com  (only developer)</span></span></p> </li><li> <p><span><span>http://www.latelierdelraval.com  (only developer)</span></span></p> </li><li> <p><span><span>http://www.restaurantalpunt.com  (only developer)</span></span></p> </li>
+ <p><span><span>I'm also one of the two official translators of Django to Castilian Spanish and Catalan. In addition, I was interviewed about localization on Django on <em>This Week in Django</em> 20 (on 2008-04-27). I maintain a blog with many Django related posts at http://vaig.be.</span></span></p></p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=GSoC: Implementation of additional i18n features on Django&amp;url=/blog/gsoc-implementation-of-additional-i18n.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/blog/gsoc-implementation-of-additional-i18n.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/blog/gsoc-implementation-of-additional-i18n.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/blog/tag/django.html">Django</a><a href="/blog/tag/django-i18n.html">Django-i18n</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="/blog/theme/js/script.js"></script>
+
+</body>
+</html>

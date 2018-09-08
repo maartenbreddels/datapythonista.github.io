@@ -1,0 +1,7 @@
+Title: Truth age
+Author: Marc
+Date: 2007-08-23 16:02:00
+Slug: truth-age
+Tags: Offtopic
+
+Most people already realized that nowadays our society is governed by information most than by economy itself, and that means an evolution from industrial age to information age.<br/><br/>Today I was wondering about a new age. In my opinion it becomes from another revolution, what is called Web 2.0. This revolution implies that through the internet, everyone can contribute and express their ideas or their opinions to anybody else. It can be done in many different media such as a blog, a video, a presentation... And what it means is that now information isn't controlled exclusively by big corporations and its conventional media channels.<br/><br/>An example is that [video](http://video.google.com/videoplay?docid=-5296803036286377485), where an alternative version of what happened in NY on 9/11, that no conventional media has shown. Today most people still gets most information by those channels, but hopefully in some time we can get some kind of <strong>Truth age</strong>, where our information isn't what "they" want us to know; our information is what we want to know; where we can choose, and where everybody that has something to say, can express it.

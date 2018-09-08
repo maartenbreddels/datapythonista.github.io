@@ -1,0 +1,7 @@
+Title: Sony Vaio support
+Author: Marc
+Date: 2007-02-27 22:48:00
+Slug: sony-vaio-support
+Tags: Systems,IT,Personal
+
+Some days ago, my laptop's screen crashed. It's a Sony Vaio, and my experience hasn't been good at all.<br/>My first problems were when contacting vaio support spain, I had to do many calls to know the whole procedure, register my laptop in the support center, and finally register the issue. More problems about data in my disk, so they were no responsible for any data on my disk -even when it was a screen problem-, and then because they asked me to install the original operating system (w32), for being able to do testing on it.<br/>The worse part of the story was not directly with sony, it has been with dhl, the company that picked up the laptop at my home, and the give it back to me. The tracking service of this company is pretty good, but in both visits they don't come when they were supposed to come. The courier notified that I wasn't at home, but I was there, and the visit notes are still missing.<br/>The good part of the history has been the quick reparation at Sony, with a good delivery system I would had my computer back in less than one week.<br/>So my rating of both companies:<br/>[Sony VAIO support](http://www.vaio-link.com): 7<br/>[DHL](http://www.dhl.com" rel="nofollow): 4

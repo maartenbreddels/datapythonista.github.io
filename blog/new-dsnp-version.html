@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="english">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>New DSNP version</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="/blog/" rel="canonical" />
+
+  <!-- Feed -->
+
+  <link href="/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/blog/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="/blog/new-dsnp-version.html" rel="canonical" />
+
+    <meta name="description" content="DSNP is a simple and customizable Python script, that automatically creates a working Django project.Project (and application) creation...">
+
+    <meta name="author" content="Marc">
+
+    <meta name="tags" content="Applications">
+    <meta name="tags" content="Django">
+    <meta name="tags" content="IT">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="datapythonista blog"/>
+<meta property="og:title" content="New DSNP version"/>
+<meta property="og:description" content="DSNP is a simple and customizable Python script, that automatically creates a working Django project.Project (and application) creation..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/blog/new-dsnp-version.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2008-05-07 03:46:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/blog/author/marc.html">
+<meta property="article:section" content="05"/>
+<meta property="article:tag" content="Applications"/>
+<meta property="article:tag" content="Django"/>
+<meta property="article:tag" content="IT"/>
+<meta property="og:image" content="/blog/../img/bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "New DSNP version",
+  "headline": "New DSNP version",
+  "datePublished": "2008-05-07 03:46:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Marc",
+    "url": "/blog/author/marc.html"
+  },
+  "image": "/blog/../img/bg.jpg",
+  "url": "/blog/new-dsnp-version.html",
+  "description": "DSNP is a simple and customizable Python script, that automatically creates a working Django project.Project (and application) creation..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">New DSNP version</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/blog/author/marc.html">Marc</a>
+            | <time datetime="Wed 07 May 2008">Wed 07 May 2008</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('/blog/../img/bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p><a href="http://code.google.com/p/dsnp/">DSNP</a> is a simple and customizable Python script, that automatically creates a working Django project.<br/><br/>Project (and application) creation in Django are very openend and flexible, but sometimes is useful getting all the work done for you, specially:<br/>- <br/>  <li>If you create many Django projects with the same structure.</li><br/>   <li>If you're new to Python, and want to see a "hello world!"  application working in less than one minute.</li><br/>   <li>If you want to check your Django structure with somebody's else (me).</li><br/>
+<br/>DSNP does exactly that, automates the process of creating projects and applications in Django. The resulting website is a simple project with a single application, ready for start creating models and templates. It's also customizable, to let everyone set their own preferences in the script, and adapt it to your desired structure.<br/><br/>Want to try it (in five simple steps)?<br/><br/><em>svn checkout http://dsnp.googlecode.com/svn/trunk/</em><br/><em>python dsnp.py myproject</em><br/><em>cd myproject</em><br/><em>python manage.py runserver</em><br/><em>Browse <a href="http://localhost:8000/">http://localhost:8000/ </a></em><br/><br/>Easy right?</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=New DSNP version&amp;url=/blog/new-dsnp-version.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/blog/new-dsnp-version.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/blog/new-dsnp-version.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/blog/tag/applications.html">Applications</a><a href="/blog/tag/django.html">Django</a><a href="/blog/tag/it.html">IT</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="/blog/theme/js/script.js"></script>
+
+</body>
+</html>

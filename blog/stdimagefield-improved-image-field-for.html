@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="english">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>StdImageField: Improved image field for Django</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="/blog/" rel="canonical" />
+
+  <!-- Feed -->
+
+  <link href="/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/blog/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="/blog/stdimagefield-improved-image-field-for.html" rel="canonical" />
+
+    <meta name="description" content="I'm pleased to announce a new project, django-stdimage, that provides a new image field with many improvements respect to Django's core...">
+
+    <meta name="author" content="Marc">
+
+    <meta name="tags" content="Applications">
+    <meta name="tags" content="Django">
+    <meta name="tags" content="IT">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="datapythonista blog"/>
+<meta property="og:title" content="StdImageField: Improved image field for Django"/>
+<meta property="og:description" content="I'm pleased to announce a new project, django-stdimage, that provides a new image field with many improvements respect to Django's core..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/blog/stdimagefield-improved-image-field-for.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2008-05-17 03:23:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/blog/author/marc.html">
+<meta property="article:section" content="05"/>
+<meta property="article:tag" content="Applications"/>
+<meta property="article:tag" content="Django"/>
+<meta property="article:tag" content="IT"/>
+<meta property="og:image" content="/blog/../img/bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "StdImageField: Improved image field for Django",
+  "headline": "StdImageField: Improved image field for Django",
+  "datePublished": "2008-05-17 03:23:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Marc",
+    "url": "/blog/author/marc.html"
+  },
+  "image": "/blog/../img/bg.jpg",
+  "url": "/blog/stdimagefield-improved-image-field-for.html",
+  "description": "I'm pleased to announce a new project, django-stdimage, that provides a new image field with many improvements respect to Django's core..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">StdImageField: Improved image field for Django</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/blog/author/marc.html">Marc</a>
+            | <time datetime="Sat 17 May 2008">Sat 17 May 2008</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('/blog/../img/bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>I'm pleased to announce a new project, <a href="http://code.google.com/p/django-stdimage/">django-stdimage</a>, that provides a new image field with many improvements respect to Django's core ImageField.<br/><br/>Features of StdImageField:<br/>- <br/>    <li>Saved files have standardized names (using field name and object id)</li><br/>  <li>Images can be removed</li><br/> <li>Automatically creates a thumbnail</li><br/> <li>Automatically resizes both image and thumbnail (with optional crop to fit exactly specified size)</li><br/>
+<br/>Here you've an example of usage:<br/><br/><code><br/>from django.db import models<br/>from stdimage import StdImageField</code><br/><code><br/>class MyClass(models.Model):<br/>&nbsp;&nbsp;my_image = StdImageField(upload_to='path/to/img', blank=True, \<br/>&nbsp;&nbsp;&nbsp;&nbsp;size=(640, 480), thumbnail_size=(100, 100, True))</code><br/><br/>If a file called "uploaded_file.png" is uploaded for object id 34, then result will be:<br/>- <br/>  <li> /path/to/img/my_image_34.png (with bigger possible size to fit in a 640x480 area)</li><br/>    <li>/path/to/img/my_image_34.thumbnail.png (with a exact size of 100x100, cropping if necessary)</li><br/>
+<br/>Also it will appear a check-box for deleting when using admin.</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=StdImageField: Improved image field for Django&amp;url=/blog/stdimagefield-improved-image-field-for.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/blog/stdimagefield-improved-image-field-for.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/blog/stdimagefield-improved-image-field-for.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/blog/tag/applications.html">Applications</a><a href="/blog/tag/django.html">Django</a><a href="/blog/tag/it.html">IT</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="/blog/theme/js/script.js"></script>
+
+</body>
+</html>

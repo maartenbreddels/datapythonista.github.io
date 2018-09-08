@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="english">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Linux and Debian simple boot</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="/blog/" rel="canonical" />
+
+  <!-- Feed -->
+
+  <link href="/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/blog/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="/blog/linux-and-debian-simple-boot.html" rel="canonical" />
+
+    <meta name="description" content="Today I've been researching on Linux and Debian booting. There is an excellent article from IBM, which explains the procedure, and the...">
+
+    <meta name="author" content="Marc">
+
+    <meta name="tags" content="Systems">
+    <meta name="tags" content="IT">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="datapythonista blog"/>
+<meta property="og:title" content="Linux and Debian simple boot"/>
+<meta property="og:description" content="Today I've been researching on Linux and Debian booting. There is an excellent article from IBM, which explains the procedure, and the..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/blog/linux-and-debian-simple-boot.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2010-01-01 20:46:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/blog/author/marc.html">
+<meta property="article:section" content="01"/>
+<meta property="article:tag" content="Systems"/>
+<meta property="article:tag" content="IT"/>
+<meta property="og:image" content="/blog/../img/bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Linux and Debian simple boot",
+  "headline": "Linux and Debian simple boot",
+  "datePublished": "2010-01-01 20:46:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Marc",
+    "url": "/blog/author/marc.html"
+  },
+  "image": "/blog/../img/bg.jpg",
+  "url": "/blog/linux-and-debian-simple-boot.html",
+  "description": "Today I've been researching on Linux and Debian booting. There is an excellent article from IBM, which explains the procedure, and the..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Linux and Debian simple boot</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/blog/author/marc.html">Marc</a>
+            | <time datetime="Fri 01 January 2010">Fri 01 January 2010</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('/blog/../img/bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <div>Today I've been researching on Linux and Debian booting.</div>
+
+<div>
+</div>
+
+<div>There is an excellent article from IBM, which explains the procedure, and the involved parts:</div>
+
+<div>
+</div>
+
+<p><a href="http://www.ibm.com/developerworks/linux/library/l-linuxboot/">http://www.ibm.com/developerworks/linux/library/l-linuxboot/</a><div>
+</div><div>Basically:</div><div>- <li>BIOS checks CMOS and choose the booting device</li><li>Control is given to device's MBR (physically first 512 bytes)</li><li>MBR checks for partitions on the device (in a self contained table), and gives control to bootable partition.</li><li>Then, Grub, LILO or whatever takes control, to load the kernel, and the file system.</li><li>Usually a <a href="http://en.wikipedia.org/wiki/Initrd">initrd</a> filesystem is loaded before the "real" one. This way, the kernel can access this filesystem, while the modules for loading the one in the root partition are not yet loaded.</li><li>Finally, init program is called, to load all <a href="http://en.wikipedia.org/wiki/User_space">user-space</a> applications.</li>
+<div>To set this up in a USB drive (my idea), in a simple way, we need:</div><div>
+</div><div>Make the drive bootable, using the <a href="http://en.wikipedia.org/wiki/Syslinux">syslinux</a> tool, which is used for FAT filesystems:</div><div>syslinux /dev/sdb (or whatever device you want)</div><div>
+</div><div>Then, mount the filesystem, and copy:</div><div>linux: the linux kernel binary</div><div>initrd.gz: compressed cpio file containing the initrd file tree</div><div>
+</div><div>and</div><div>
+</div><div>syslinux.cfg: syslinux settings, to let syslinux know where to find the kernel and the initrd. Basically:</div><div>
+</div><div>default linux</div><div>append initrd=initrd.gz</div><div>
+</div><div>Then, just restart, and your device will boot your kernel, and your filesystem.</div><div>
+</div><div>Here, you can find a Linux kernel, and a initrd file, which will load a basic linux system, running the Debian installer:</div><div>
+</div><div><a href="http://ftp.debian.org/debian/dists/stable/main/installer-i386/current/images/netboot/debian-installer/i386/">http://ftp.debian.org/debian/dists/stable/main/installer-i386/current/images/netboot/debian-installer/i386/</a></div><div>
+</div><div>Some more info on it at:</div><div>
+</div><div><a href="http://www.debian.org/releases/stable/i386/ch04s03.html.en">http://www.debian.org/releases/stable/i386/ch04s03.html.en</a></div><div>
+</div></div></p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Linux and Debian simple boot&amp;url=/blog/linux-and-debian-simple-boot.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/blog/linux-and-debian-simple-boot.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/blog/linux-and-debian-simple-boot.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/blog/tag/systems.html">Systems</a><a href="/blog/tag/it.html">IT</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="/blog/theme/js/script.js"></script>
+
+</body>
+</html>
