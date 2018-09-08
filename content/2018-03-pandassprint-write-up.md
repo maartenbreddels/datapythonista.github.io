@@ -163,6 +163,8 @@ and could tell whether it was a good idea, or provide useful feedback. An email 
 [Jeff Reback](https://twitter.com/jreback) was enough to start. He loved the idea, even if I
 think he didn’t believed at that time it was going to be something as big as it finally was. :)
 
+### Dividing the work
+
 The next thing was to make sure everybody had something to work on the day of the sprint.
 Working on the documentation made it possible. There are around
 [1,200 API pages](https://docs.google.com/spreadsheets/d/10EpQFkVDqiIFLLVGtIWzCMRACz20yWuta3_DU0qV6-E/edit?usp=sharing)
@@ -183,6 +185,8 @@ functions in Series.str where in a group. Functions like
 [upper()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.upper.html),
 [capitalize()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.capitalize.html)
 use the same template, so it should be somehow easy to detect it in the chapter working on that group.
+
+### Documentation
 
 Then, after being able to provide each participant a task, we had to make sure everybody knew
 what to do. For it, there were two main things. First, having documentation explaining all the

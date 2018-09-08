@@ -23,6 +23,10 @@
   <!-- Code highlight color scheme -->
       <link href="/blog/theme/css/code_blocks/github.css" rel="stylesheet">
 
+    <!-- CSS specified by the user -->
+
+
+    <link href="/blog/../static/css/blog.css" type="text/css" rel="stylesheet" />
 
   <!-- Custom fonts -->
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
@@ -103,8 +107,8 @@
     <header id="post-header" class="has-cover">
       <div class="inner">
         <nav id="navigation">
-            <span id="home-button" class="nav-button">
-                <a class="home-button" href="/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            <span class="blog-logo">
+                <a href="/blog/"><img src="../static/img/profile.png" alt="Blog Logo" /></a>
             </span>
           <span id="menu-button" class="nav-button">
             <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
@@ -257,6 +261,7 @@ to be a lot of work from their side, and they know much more about pandas than a
 and could tell whether it was a good idea, or provide useful feedback. An email to
 <a href="https://twitter.com/jreback">Jeff Reback</a> was enough to start. He loved the idea, even if I
 think he didn’t believed at that time it was going to be something as big as it finally was. :)</p>
+<h3>Dividing the work</h3>
 <p>The next thing was to make sure everybody had something to work on the day of the sprint.
 Working on the documentation made it possible. There are around
 <a href="https://docs.google.com/spreadsheets/d/10EpQFkVDqiIFLLVGtIWzCMRACz20yWuta3_DU0qV6-E/edit?usp=sharing">1,200 API pages</a>
@@ -276,6 +281,7 @@ functions in Series.str where in a group. Functions like
 <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.upper.html">upper()</a>,
 <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.capitalize.html">capitalize()</a>
 use the same template, so it should be somehow easy to detect it in the chapter working on that group.</p>
+<h3>Documentation</h3>
 <p>Then, after being able to provide each participant a task, we had to make sure everybody knew
 what to do. For it, there were two main things. First, having documentation explaining all the
 steps. And second having mentors in every city.</p>
@@ -450,5 +456,15 @@ whole weekend? :)</p>
 
   <script type="text/javascript" src="/blog/theme/js/script.js"></script>
 
+    <!-- Script specified by the user -->
+    <script type="text/javascript"  src="/blog/../static/js/blog.js"></script>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1635939-25"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-1635939-25', { 'anonymize_ip': true });
+    </script>
 </body>
 </html>

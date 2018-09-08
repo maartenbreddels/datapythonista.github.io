@@ -23,6 +23,10 @@
   <!-- Code highlight color scheme -->
       <link href="/blog/theme/css/code_blocks/github.css" rel="stylesheet">
 
+    <!-- CSS specified by the user -->
+
+
+    <link href="/blog/../static/css/blog.css" type="text/css" rel="stylesheet" />
 
   <!-- Custom fonts -->
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
@@ -54,8 +58,8 @@
     <header id="blog-header" class="has-cover">
       <div class="inner">
         <nav id="navigation">
-            <span id="home-button" class="nav-button">
-                <a class="home-button" href="/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            <span class="blog-logo">
+                <a href="/blog/"><img src="../static/img/profile.png" alt="Blog Logo" /></a>
             </span>
           <span id="menu-button" class="nav-button">
             <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
@@ -73,6 +77,13 @@
 <div id="index" class="container">
   <main class="content" role="main">
     <div class="extra-pagination">
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <span class="pagination-info">Page 1 / 2</span>
+    <a class="pagination-prev" href="/blog/tag/systems2.html"><span class="pagination-label">Older Posts</span> <i class="ic ic-arrow-right"></i></a>
+    <div class="clear"></div>
+  </div>
+</nav>
     </div>
 
         <article class="post">
@@ -165,97 +176,14 @@
                 </section>
             </div>
         </article>
-        <article class="post">
-        <div class="inner">
-            <header class="post-header">
-                <h2 class="post-title"><a href="/blog/chmod-and-umask.html" rel="bookmark" title="Permalink to chmod and umask">chmod and umask</a>
-                </h2>
-                <span class="post-meta">
-                        <a href="/blog/author/marc.html">Marc</a>
-                     | <time datetime="Sat 12 May 2007">Sat 12 May 2007</time>
-                </span>
-                <div class="clear"></div>
-            </header>
-                <section class="post-excerpt">
-                    <p>
-                        Both UNIX commands are used to set permissions, chmod is for changing permissions of a specific file, and umask is for setting default creation permissions for a user.BasicsSimple UNIX permissions are:r (read)w (write)x (execute)and them can be...
-                    </p>
-                </section>
-            </div>
-        </article>
-        <article class="post">
-        <div class="inner">
-            <header class="post-header">
-                <h2 class="post-title"><a href="/blog/allow-user-to-execute-root-files.html" rel="bookmark" title="Permalink to Allow user to execute root files">Allow user to execute root files</a>
-                </h2>
-                <span class="post-meta">
-                        <a href="/blog/author/marc.html">Marc</a>
-                     | <time datetime="Tue 17 April 2007">Tue 17 April 2007</time>
-                </span>
-                <div class="clear"></div>
-            </header>
-                <section class="post-excerpt">
-                    <p>
-                        Sometimes it's useful allowing users to execute programs reserved for root. For example if we have a desktop system, we can allow users to halt or reboot computer.There are several ways to achieve it, the proposed here is the simplest one...
-                    </p>
-                </section>
-            </div>
-        </article>
-        <article class="post">
-        <div class="inner">
-            <header class="post-header">
-                <h2 class="post-title"><a href="/blog/gpg-error-updating-debian-etch.html" rel="bookmark" title="Permalink to GPG Error updating Debian Etch">GPG Error updating Debian Etch</a>
-                </h2>
-                <span class="post-meta">
-                        <a href="/blog/author/marc.html">Marc</a>
-                     | <time datetime="Tue 17 April 2007">Tue 17 April 2007</time>
-                </span>
-                <div class="clear"></div>
-            </header>
-                <section class="post-excerpt">
-                    <p>
-                        Probably not happening anymore with Debian Etch as stable, but that error happened sometimes when apt-get update:W: GPG error: http://security.debian.org etch/updates Release: The following signatures couldn't be verified because the public key...
-                    </p>
-                </section>
-            </div>
-        </article>
-        <article class="post">
-        <div class="inner">
-            <header class="post-header">
-                <h2 class="post-title"><a href="/blog/debian-gnulinux-40-released.html" rel="bookmark" title="Permalink to Debian GNU/Linux 4.0 released">Debian GNU/Linux 4.0 released</a>
-                </h2>
-                <span class="post-meta">
-                        <a href="/blog/author/marc.html">Marc</a>
-                     | <time datetime="Sun 08 April 2007">Sun 08 April 2007</time>
-                </span>
-                <div class="clear"></div>
-            </header>
-                <section class="post-excerpt">
-                    <p>
-                        Finally, after 21 months of constant development, last version of Debian distribution has been released. Oppositely to previous versions of Debian, Etch has a "up-to-date flavour", including last version packages such as Linux kernel 2.6, MySQL...
-                    </p>
-                </section>
-            </div>
-        </article>
-        <article class="post">
-        <div class="inner">
-            <header class="post-header">
-                <h2 class="post-title"><a href="/blog/sony-vaio-support.html" rel="bookmark" title="Permalink to Sony Vaio support">Sony Vaio support</a>
-                </h2>
-                <span class="post-meta">
-                        <a href="/blog/author/marc.html">Marc</a>
-                     | <time datetime="Tue 27 February 2007">Tue 27 February 2007</time>
-                </span>
-                <div class="clear"></div>
-            </header>
-                <section class="post-excerpt">
-                    <p>
-                        Some days ago, my laptop's screen crashed. It's a Sony Vaio, and my experience hasn't been good at all.My first problems were when contacting vaio support spain, I had to do many calls to know the whole procedure, register my laptop in the...
-                    </p>
-                </section>
-            </div>
-        </article>
 
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <span class="pagination-info">Page 1 / 2</span>
+    <a class="pagination-prev" href="/blog/tag/systems2.html"><span class="pagination-label">Older Posts</span> <i class="ic ic-arrow-right"></i></a>
+    <div class="clear"></div>
+  </div>
+</nav>
   </main>
 </div>
       <!-- TODO : Body class -->
@@ -275,5 +203,15 @@
 
   <script type="text/javascript" src="/blog/theme/js/script.js"></script>
 
+    <!-- Script specified by the user -->
+    <script type="text/javascript"  src="/blog/../static/js/blog.js"></script>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1635939-25"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-1635939-25', { 'anonymize_ip': true });
+    </script>
 </body>
 </html>

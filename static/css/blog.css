@@ -1,0 +1,11 @@
+#menu-button {
+    display: none;
+}
+.blog-logo {
+    max-width: 4em;
+}
+#blog-header .blog-description a,
+#blog-header .blog-description a:hover,
+#blog-header .blog-description a:visited {
+    color: white;
+}

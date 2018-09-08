@@ -7,8 +7,12 @@ Today I finally did it. :)
 
 .. code-block:: python
 
-    print('hello world')
+    print('hello world (from Pelican)')
 
-This new blog is uses Pelican hosted on GitHub pages. Which will
+This new blog uses Pelican, and is hosted on GitHub pages. Which will
 let me create blog posts by simply using restructuredText, or
 Jupyter notebooks.
+
+You can check the source code here: https://github.com/datapythonista/datapythonista.github.io
+
+More info: https://blog.getpelican.com/

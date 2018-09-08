@@ -23,6 +23,10 @@
   <!-- Code highlight color scheme -->
       <link href="/blog/theme/css/code_blocks/github.css" rel="stylesheet">
 
+    <!-- CSS specified by the user -->
+
+
+    <link href="/blog/../static/css/blog.css" type="text/css" rel="stylesheet" />
 
   <!-- Custom fonts -->
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
@@ -38,7 +42,7 @@
 
   <link href="/blog/blog-moved.html" rel="canonical" />
 
-    <meta name="description" content="It's been a while since I wanted to move my blog out of blogger. Today I finally did it. :) print('hello world') This new blog is uses...">
+    <meta name="description" content="It's been a while since I wanted to move my blog out of blogger. Today I finally did it. :) print('hello world (from Pelican)') This new...">
 
     <meta name="author" content="Marc Garcia">
 
@@ -49,7 +53,7 @@
 <!-- Open Graph -->
 <meta property="og:site_name" content="datapythonista blog"/>
 <meta property="og:title" content="Blog moved"/>
-<meta property="og:description" content="It's been a while since I wanted to move my blog out of blogger. Today I finally did it. :) print('hello world') This new blog is uses..."/>
+<meta property="og:description" content="It's been a while since I wanted to move my blog out of blogger. Today I finally did it. :) print('hello world (from Pelican)') This new..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="/blog/blog-moved.html"/>
 <meta property="og:type" content="article"/>
@@ -76,7 +80,7 @@
   },
   "image": "/blog/../static/img/bg.jpg",
   "url": "/blog/blog-moved.html",
-  "description": "It's been a while since I wanted to move my blog out of blogger. Today I finally did it. :) print('hello world') This new blog is uses..."
+  "description": "It's been a while since I wanted to move my blog out of blogger. Today I finally did it. :) print('hello world (from Pelican)') This new..."
 }
 </script>
 </head>
@@ -103,8 +107,8 @@
     <header id="post-header" class="has-cover">
       <div class="inner">
         <nav id="navigation">
-            <span id="home-button" class="nav-button">
-                <a class="home-button" href="/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            <span class="blog-logo">
+                <a href="/blog/"><img src="../static/img/profile.png" alt="Blog Logo" /></a>
             </span>
           <span id="menu-button" class="nav-button">
             <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
@@ -131,11 +135,13 @@
             <section class="post-content">
                 <p>It's been a while since I wanted to move my blog out of blogger.</p>
 <p>Today I finally did it. :)</p>
-<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;hello world (from Pelican)&#39;</span><span class="p">)</span>
 </pre></div>
-<p>This new blog is uses Pelican hosted on GitHub pages. Which will
+<p>This new blog uses Pelican, and is hosted on GitHub pages. Which will
 let me create blog posts by simply using restructuredText, or
 Jupyter notebooks.</p>
+<p>You can check the source code here: <a class="reference external" href="https://github.com/datapythonista/datapythonista.github.io">https://github.com/datapythonista/datapythonista.github.io</a></p>
+<p>More info: <a class="reference external" href="https://blog.getpelican.com/">https://blog.getpelican.com/</a></p>
 
             </section>
 
@@ -184,5 +190,15 @@ Jupyter notebooks.</p>
 
   <script type="text/javascript" src="/blog/theme/js/script.js"></script>
 
+    <!-- Script specified by the user -->
+    <script type="text/javascript"  src="/blog/../static/js/blog.js"></script>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1635939-25"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-1635939-25', { 'anonymize_ip': true });
+    </script>
 </body>
 </html>
