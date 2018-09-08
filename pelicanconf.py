@@ -7,7 +7,6 @@ PATH = 'content'
 TIMEZONE = 'Europe/London'
 DEFAULT_LANG = 'English'
 THEME = 'attila'
-#STATIC_PATHS = ['static']
 HEADER_COVER = '../img/bg.jpg'
 
 # Feed generation is usually not desired when developing
