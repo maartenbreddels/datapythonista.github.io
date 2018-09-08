@@ -1,3 +1,6 @@
 [submodule "attila"]
 	path = attila
 	url = https://github.com/arulrajnet/attila.git
+[submodule "plugins/ipynb"]
+	path = plugins/ipynb
+	url = https://github.com/danielfrg/pelican-ipynb.git

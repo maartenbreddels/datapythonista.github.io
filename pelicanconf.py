@@ -7,7 +7,11 @@ PATH = 'content'
 TIMEZONE = 'Europe/London'
 DEFAULT_LANG = 'English'
 THEME = 'attila'
-HEADER_COVER = '../img/bg.jpg'
+HEADER_COVER = '../static/img/bg.jpg'
+MARKUP = ('rst', 'md', 'ipynb')
+PLUGIN_PATHS = ['plugins']
+#PLUGINS = ['ipynb.markup']
+IPYNB_USE_METACELL = True
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
