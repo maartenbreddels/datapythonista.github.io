@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="english">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Useful git commands</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="https://datapythonista.github.io/blog/" rel="canonical" />
+
+  <!-- Feed -->
+        <link href="https://datapythonista.github.io/blog/atom.xml" type="application/atom+xml" rel="alternate" title="datapythonista blog Full Atom Feed" />
+          <link href="https://datapythonista.github.io/blog/misc.atom.xml" type="application/atom+xml" rel="alternate" title="datapythonista blog Categories Atom Feed" />
+
+  <link href="https://datapythonista.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://datapythonista.github.io/blog/theme/css/code_blocks/github.css" rel="stylesheet">
+
+    <!-- CSS specified by the user -->
+
+
+    <link href="https://datapythonista.github.io/blog/../static/css/blog.css" type="text/css" rel="stylesheet" />
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="https://datapythonista.github.io/blog/useful-git-commands.html" rel="canonical" />
+
+    <meta name="description" content="While git is surely one of my favorite tools, and increases my productivity in a sometimes unbelivable way (like when working on 3 or 5...">
+
+    <meta name="author" content="Marc Garcia">
+
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="datapythonista blog"/>
+<meta property="og:title" content="Useful git commands"/>
+<meta property="og:description" content="While git is surely one of my favorite tools, and increases my productivity in a sometimes unbelivable way (like when working on 3 or 5..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://datapythonista.github.io/blog/useful-git-commands.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-11-08 00:00:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://datapythonista.github.io/blog/author/marc-garcia.html">
+<meta property="article:section" content="misc"/>
+<meta property="og:image" content="https://datapythonista.github.io/blog/../static/img/bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Useful git commands",
+  "headline": "Useful git commands",
+  "datePublished": "2018-11-08 00:00:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Marc Garcia",
+    "url": "https://datapythonista.github.io/blog/author/marc-garcia.html"
+  },
+  "image": "https://datapythonista.github.io/blog/../static/img/bg.jpg",
+  "url": "https://datapythonista.github.io/blog/useful-git-commands.html",
+  "description": "While git is surely one of my favorite tools, and increases my productivity in a sometimes unbelivable way (like when working on 3 or 5..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span class="blog-logo">
+                <a href="https://datapythonista.github.io/blog/"><img src="../static/img/profile.png" alt="Blog Logo" /></a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Useful git commands</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="https://datapythonista.github.io/blog/author/marc-garcia.html">Marc Garcia</a>
+            | <time datetime="Thu 08 November 2018">Thu 08 November 2018</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('https://datapythonista.github.io/blog/../static/img/bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>While <cite>git</cite> is surely one of my favorite tools, and increases my productivity
+in a sometimes unbelivable way (like when working on 3 or 5 features at the
+same time), some times there are operations that can be a bit tricky.</p>
+<p>There are plenty of git tutorials and guides to get started and that explain
+the basic concepts. This post is not one of them. If that is what you need,
+you can check these great resources:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://rogerdudler.github.io/git-guide/">git - the simple guide</a></li>
+<li><a class="reference external" href="https://medium.com/girl-writes-code/git-is-a-directed-acyclic-graph-and-what-the-heck-does-that-mean-b6c8dec65059">Git is a Directed Acyclic Graph and What the Heck Does That Mean?</a></li>
+<li><a class="reference external" href="http://think-like-a-git.net/">Think Like (a) Git</a></li>
+<li><a class="reference external" href="https://git-scm.com/doc">Official documentation</a></li>
+</ul>
+<p>There is another quite popular resource, that doesn't focus on explaining
+the concepts, but on what to do if you get into certain cases (aka problems):</p>
+<ul class="simple">
+<li><a class="reference external" href="http://ohshitgit.com/">Oh shit,git!</a></li>
+</ul>
+<p>More on the style of the latter, in this post I'll explain some operations
+that are somehow advanced, I don't think are well known, but I use them
+frequently. So, hopefully they can be useful to others.</p>
+<div class="section" id="i-ve-got-some-cool-changes-but-my-history-is-a-mess">
+<h2>I've got some cool changes, but my history is a mess</h2>
+<p>There are many reasons why this can happen. The one that I encounter most
+frequently is people opening a pull request, that does not only contain
+the user changes (and possibly some merges from master), but instead it
+contains commits from other users in the branch, as if they were part of
+the pull request. I never spent the time to research what is the cause, but
+this is what I usually recommend or do.</p>
+<p>Whether it is the previous case, or because of any other reason, if you have
+some changes in your branch mixed with a messy git history, the easiest
+way I know to go back to a state under control is:</p>
+<ul class="simple">
+<li><tt class="docutils literal">git fetch upstream</tt>: Just updating our local repository.</li>
+<li><tt class="docutils literal">git merge upstream/master</tt>: Getting anything in the latest repository
+version into our branch.</li>
+<li><tt class="docutils literal">git reset <span class="pre">--soft</span> upstream/master</tt>: This will make that the git history
+in our branch is exactly as the one in master, replacing our messy history.
+And it will leave in our staging area all the changes that we made, compared
+to master.</li>
+<li><tt class="docutils literal">git commit <span class="pre">-m</span> &quot;All my changes in a single commit&quot;</tt></li>
+</ul>
+<p>Now the history in our branch will be equivalent as if we just created
+the branch from the latest version, and added a single commit with all our
+changes. As usual, we shouldn't rewrite the history if someone else pulled
+our commits. But if this is a local branch, or it is remote but only used
+to open a pull request, that should be all right.</p>
+</div>
+<div class="section" id="i-have-changes-in-the-working-directory-and-i-want-to-change-branch">
+<h2>I have changes in the working directory, and I want to change branch</h2>
+<p>There are also different cases for this. The simplest case (but not
+common in my case) is that you are working in a branch, and want to
+go to make some changes to a different one, but your current changes are
+not in a state that you want to commit.</p>
+<p>The other cases (the ones that happen to me in practice) are:</p>
+<ul class="simple">
+<li>You start working in some changes, and you realize that you are in the
+wrong branch.</li>
+<li>You are making some last minute addition to a pull request, and before
+you commit and push, the pull request is merged. So, you want to continue
+the work in a new branch.</li>
+</ul>
+<p>The problem is that when you have uncommitted changes in your working
+directory, and you try to change branch, you get the next error message:
+<cite>error: Your local changes to the following files would be overwritten by
+checkout</cite> preventing any branch change until you commit those changes.
+But committing in the current branch is not what we want.</p>
+<p>The solution in this case is <tt class="docutils literal">git stash</tt>. With it, the changes in the
+working directory are saved into a stack, and the working directory becomes
+clean.  This allows us to freely switch branches, and perform other operations.
+Once we have the environment ready, and we are in the branch in which the
+stacked changes belong to, then we can simply <tt class="docutils literal">git stash apply</tt>. We will get
+the uncommitted changes back to the working directory.</p>
+</div>
+<div class="section" id="i-want-to-test-or-edit-someone-else-pull-request">
+<h2>I want to test or edit someone else pull request</h2>
+<p>This is something that mainly project maintainers do, but that can be useful
+for anyone. In general, when someone opens a pull request, the changes are
+reviewed, and feedback is provided, both in the GitHub (or similar)
+interface. And the author, who already got the branch locally, makes changes
+and run the code. But in some cases, it may be useful to get the changes of the
+pull request locally, so they can be run, and edited.</p>
+<p>One example could be a stale pull request, that was opened many months ago
+and that the author is not interesting in updating anymore. But it contains
+code, that with few changes, would be nice to get merged.</p>
+<p>Git is a distributed system, and there is nothing in git itself that tells
+which is the &quot;official&quot; repository, and which are forks. To interact
+with other repositories from your local copy, all you need is to set a
+remote, fetch the changes, and switch to their branches. This would be
+done with the commands:</p>
+<ul class="simple">
+<li><tt class="docutils literal">git remote add <span class="pre">&lt;remote-name-for-user-fork&gt;</span> <span class="pre">&lt;url-to-user-fork&gt;</span></tt></li>
+<li><tt class="docutils literal">git fetch <span class="pre">&lt;remote-name-for-user-fork&gt;</span></tt></li>
+</ul>
+<p>Now, we already have locally all the data in the repo of the author of the
+pull request. Next thing is to checkout the branch used for the pull request.
+This can be done with:</p>
+<ul class="simple">
+<li><tt class="docutils literal">git branch <span class="pre">&lt;branch-name&gt;</span> <span class="pre">--track</span> <span class="pre">&lt;remote-name-for-user-fork&gt;/&lt;branch-name&gt;</span></tt></li>
+</ul>
+<p>Now we have the code in the pull request in our working directory. And we can
+run or edit.</p>
+<p>GitHub has an option when creating a pull request &quot;Allow edits from
+maintainers&quot;, that is checked by default. If the author of the pull request
+left it checked, then maintainers can push to the pull request branch
+after editing it locally. So, the updates are made in the same pull request,
+which can be merged when it's ready.</p>
+<p>For people that are not maintainers, when the checkbox was unchecked, or when
+the fork of the author does not exist anymore, pushing to <cite>origin</cite> (your own
+fork), and opening a new pull request is required.</p>
+<p>If editing other people branches is something that needs to be done often, it
+is probably a good idea to use <cite>hub</cite>, a tool from GitHub. It can be installed
+with conda:</p>
+<ul class="simple">
+<li><tt class="docutils literal">conda install <span class="pre">-c</span> <span class="pre">conda-forge</span> hub</tt></li>
+</ul>
+<p>And then, checking out the branch from a pull request is as simple as:</p>
+<ul class="simple">
+<li><tt class="docutils literal">hub checkout <span class="pre">&lt;github-url-of-the-pull-request&gt;</span></tt></li>
+</ul>
+<p>Which will set up the remotes, and make the branch track the parent, so
+changes can be pushed with a simple <tt class="docutils literal">git push</tt> given the right permissions.</p>
+</div>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Useful git commands&amp;url=https://datapythonista.github.io/blog/useful-git-commands.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://datapythonista.github.io/blog/useful-git-commands.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=https://datapythonista.github.io/blog/useful-git-commands.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+
+                <div class="clear"></div>
+
+
+                </section>
+
+                <script type="text/javascript">
+                    var disqus = 'datapythonista';
+                    var disqus_shortname = 'datapythonista';
+                    var disqus_identifier = '/useful-git-commands.html';
+                    var disqus_url = 'https://datapythonista.github.io/blog/useful-git-commands.html';
+                </script>
+                <noscript>Please enable JavaScript to view the comments.</noscript>
+                <section class="post-comments">
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/useful-git-commands.html" >Show Comments</a>
+                    <div id="disqus_thread"></div>
+                </section>
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="https://datapythonista.github.io/blog/theme/js/script.js"></script>
+
+    <!-- Script specified by the user -->
+    <script type="text/javascript"  src="https://datapythonista.github.io/blog/../static/js/blog.js"></script>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1635939-25"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-1635939-25', { 'anonymize_ip': true });
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'datapythonista';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
