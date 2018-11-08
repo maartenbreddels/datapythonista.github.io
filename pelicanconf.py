@@ -3,7 +3,7 @@ AUTHOR = 'Marc Garcia'
 SITE_LOGO = '../static/img/profile.png'
 SITENAME = 'datapythonista blog'
 SITESUBTITLE = 'about me'
-SITEURL = '/blog'
+SITEURL = 'https://datapythonista.github.io/blog'
 OUTPUT_PATH = 'blog'
 PATH = 'content'
 TIMEZONE = 'Europe/London'
@@ -17,12 +17,9 @@ IPYNB_USE_METACELL = True
 GOOGLE_ANALYTICS = 'UA-1635939-25'
 CSS_OVERRIDE = ['../static/css/blog.css']
 JS_OVERRIDE = ['../static/js/blog.js']
-
-# Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
+DISQUS_SITENAME = 'datapythonista'
+FEED_DOMAIN = SITEURL
+FEED_ALL_ATOM = 'atom.xml'
+CATEGORY_FEED_ATOM = '%s.atom.xml'
 
 DEFAULT_PAGINATION = 5
