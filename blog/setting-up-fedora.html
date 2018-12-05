@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Setting up Fedora</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="https://datapythonista.github.io/blog/" rel="canonical" />
+
+  <!-- Feed -->
+        <link href="https://datapythonista.github.io/blog/atom.xml" type="application/atom+xml" rel="alternate" title="datapythonista blog Full Atom Feed" />
+
+  <link href="https://datapythonista.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://datapythonista.github.io/blog/theme/css/code_blocks/github.css" rel="stylesheet">
+
+    <!-- CSS specified by the user -->
+
+
+    <link href="https://datapythonista.github.io/blog/../static/css/blog.css" type="text/css" rel="stylesheet" />
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="https://datapythonista.github.io/blog/setting-up-fedora.html" rel="canonical" />
+
+    <meta name="description" content="Today I've got my new Dell XPS (with Ubuntu preinstalled), and this is the procedure to set it up, and get my perfect working...">
+
+    <meta name="author" content="Marc Garcia">
+
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="datapythonista blog"/>
+<meta property="og:title" content="Setting up Fedora"/>
+<meta property="og:description" content="Today I've got my new Dell XPS (with Ubuntu preinstalled), and this is the procedure to set it up, and get my perfect working..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://datapythonista.github.io/blog/setting-up-fedora.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-12-05 00:00:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://datapythonista.github.io/blog/author/marc-garcia.html">
+<meta property="article:section" content="misc"/>
+<meta property="og:image" content="https://datapythonista.github.io/blog/../static/img/bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Setting up Fedora",
+  "headline": "Setting up Fedora",
+  "datePublished": "2018-12-05 00:00:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Marc Garcia",
+    "url": "https://datapythonista.github.io/blog/author/marc-garcia.html"
+  },
+  "image": "https://datapythonista.github.io/blog/../static/img/bg.jpg",
+  "url": "https://datapythonista.github.io/blog/setting-up-fedora.html",
+  "description": "Today I've got my new Dell XPS (with Ubuntu preinstalled), and this is the procedure to set it up, and get my perfect working..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span class="blog-logo">
+                <a href="https://datapythonista.github.io/blog/"><img src="../static/img/profile.png" alt="Blog Logo" /></a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Setting up Fedora</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="https://datapythonista.github.io/blog/author/marc-garcia.html">Marc Garcia</a>
+            | <time datetime="Wed 05 December 2018">Wed 05 December 2018</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('https://datapythonista.github.io/blog/../static/img/bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>Today I've got my new Dell XPS (with Ubuntu preinstalled), and this is the procedure
+to set it up, and get my perfect working environment. This is expected to be useful
+mainly for my <strong>future self</strong>, but sharing it here in case someone else can find
+ideas or tips that are useful. Also happy to receive comments on how you do things
+differently (and potentially better).</p>
+<p>My operating system of choice is <a class="reference external" href="https://spins.fedoraproject.org/mate-compiz/">Fedora MATE Compiz</a>,
+I think GNOME 3 was a big mistake, so staying in what was GNOME 2.</p>
+<p>After downloading the ISO, I create the live USB with <a class="reference external" href="https://unetbootin.github.io/">UNetbootin</a>.
+This works well, but it has a problem. The label of the volume is not updated, and it becomes inconsistent
+with the one that GRUB loads. This will create a lot of warnings like this:</p>
+<pre class="literal-block">
+dracut-initqueue[602]: Warning dracut-initqueue timeout - starting timeout scripts
+</pre>
+<p>With couple of final warnings:</p>
+<pre class="literal-block">
+Warning: /dev/disk/by-label/Fedora-Live-WS-x86_64-29-1 does not exist
+Warning: /dev/mapper/live-rw does not exist
+</pre>
+<p>To fix it, we just need to know the label of our live USB (can be obtained in the rescue terminal by
+calling <tt class="docutils literal">blkid</tt>). And then, in the GRUB menu, press <cite>e</cite> with the <cite>Start Fedora Live</cite> option
+selected, and replace the value of <cite>LABEL</cite> by the correct one. A <cite>Ctrl-x</cite> will make the system
+boot with the updated configuration, and should start normally. This
+<a class="reference external" href="https://www.youtube.com/watch?v=C3iSqmfPRxY">video</a> shows the process step by step.</p>
+<p>The default configurations during the installation work well for me (using 50Gb for <cite>/</cite>, the rest
+for <cite>/home/</cite>, and <cite>ext4</cite> filesystem). But I encrypt <cite>/home/</cite>, which is not enabled by default.</p>
+<p>Once the new system is installed, and running, those are the tasks I perform.</p>
+<div class="section" id="configuration">
+<h2>Configuration</h2>
+<ul>
+<li><p class="first">Merge both panels into one, and leave it to the bottom (removing the workspaces and Thunderbird,
+which I not use)</p>
+</li>
+<li><p class="first">Mouse setup: enable touchpad click, natural scrolling and increase acceleration</p>
+</li>
+<li><p class="first">Disable screensaver, and make windows be selected when mouse moves over them</p>
+</li>
+<li><p class="first">Change the terminal shorcuts to change and move tabs (I got used to the KDE shortcuts and never
+bothered in learning the GNOME ones)</p>
+</li>
+<li><p class="first">Change the default search engine in Firefox to <a class="reference external" href="https://duckduckgo.com/">DuckDuckGo</a>.</p>
+</li>
+<li><p class="first">Set up couple of aliases in <cite>~/.bashrc</cite>: <tt class="docutils literal">alias <span class="pre">rgrep=&quot;grep</span> <span class="pre">-R&quot;</span></tt> and <tt class="docutils literal">alias <span class="pre">vi=&quot;vim&quot;</span></tt> (which
+doesn't seem to be required anymore)</p>
+</li>
+<li><p class="first">Set up <cite>vim</cite> for Python (and remove some unwanted features like folding):</p>
+<pre class="literal-block">
+syntax on
+set number
+set autoindent
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set nofoldenable
+
+execute pathogen#infect()
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+</pre>
+</li>
+</ul>
+</div>
+<div class="section" id="installing-software">
+<h2>Installing software</h2>
+<p>Quite happy with the software that comes preinstalled with Fedora, but few things left to install.
+First adding <a class="reference external" href="https://rpmfusion.org">RPM Fusion</a> repositories:</p>
+<pre class="literal-block">
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+</pre>
+<p>Then updating the system:</p>
+<pre class="literal-block">
+sudo dnf update
+</pre>
+<p>Then installing the development group:</p>
+<pre class="literal-block">
+sudo dnf groupinstall &quot;Development Tools&quot;
+</pre>
+<p>Also installing all the missing packages (or not missing, but had this list for some years now):</p>
+<pre class="literal-block">
+sudo dnf install vim-enhanced git vlc gimp inkscape unzip
+</pre>
+<p>And finally installing <a class="reference external" href="https://conda.io/miniconda.html">Miniconda</a>. I prefer Miniconda over
+Anaconda, because I don't like to have any package in the base environment. So, in every
+environment I'm sure there are the packages I'm using (and it's not falling back to the base
+environment version, which can be different of the expected).</p>
+</div>
+
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Setting up Fedora&amp;url=https://datapythonista.github.io/blog/setting-up-fedora.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://datapythonista.github.io/blog/setting-up-fedora.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=https://datapythonista.github.io/blog/setting-up-fedora.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+
+                <div class="clear"></div>
+
+
+                </section>
+
+                <script type="text/javascript">
+                    var disqus = 'datapythonista';
+                    var disqus_shortname = 'datapythonista';
+                    var disqus_identifier = '/setting-up-fedora.html';
+                    var disqus_url = 'https://datapythonista.github.io/blog/setting-up-fedora.html';
+                </script>
+                <noscript>Please enable JavaScript to view the comments.</noscript>
+                <section class="post-comments">
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/setting-up-fedora.html" >Show Comments</a>
+                    <div id="disqus_thread"></div>
+                </section>
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="https://datapythonista.github.io/blog/theme/js/script.js"></script>
+
+    <!-- Script specified by the user -->
+    <script type="text/javascript"  src="https://datapythonista.github.io/blog/../static/js/blog.js"></script>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1635939-25"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-1635939-25', { 'anonymize_ip': true });
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'datapythonista';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

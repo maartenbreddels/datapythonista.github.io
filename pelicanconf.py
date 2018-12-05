@@ -7,7 +7,7 @@ SITEURL = 'https://datapythonista.github.io/blog'
 OUTPUT_PATH = 'blog'
 PATH = 'content'
 TIMEZONE = 'Europe/London'
-DEFAULT_LANG = 'English'
+DEFAULT_LANG = 'en'
 THEME = 'attila'
 HEADER_COVER = '../static/img/bg.jpg'
 MARKUP = ('rst', 'md', 'ipynb')
@@ -20,6 +20,7 @@ JS_OVERRIDE = ['../static/js/blog.js']
 DISQUS_SITENAME = 'datapythonista'
 FEED_DOMAIN = SITEURL
 FEED_ALL_ATOM = 'atom.xml'
-CATEGORY_FEED_ATOM = '%s.atom.xml'
+# Using CATEGORY_FEED_ATOM seems broken
+CATEGORY_FEED_ATOM = None  #'{slug}.atom.xml'
 
 DEFAULT_PAGINATION = 5

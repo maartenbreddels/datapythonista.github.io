@@ -14,8 +14,8 @@ It has two main components:
 To add a new entry to the blog:
 - Create a new markdown file/notebook in `content/`
 - Run `pelican content` (requires that dependencies in `environment.yml` are
-  installed
-- `git push`
+  installed)
+- `git commit && git push`
 
 If the `attila` submodule is not initialized locally, it can be fetched with
 `git submodule update --init attila/`

@@ -1,5 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog - misc</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/misc.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2018-11-08T00:00:00+00:00</updated><entry><title>Useful git commands</title><link href="https://datapythonista.github.io/blog/useful-git-commands.html" rel="alternate"></link><published>2018-11-08T00:00:00+00:00</published><updated>2018-11-08T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2018-11-08:/blog/useful-git-commands.html</id><summary type="html">&lt;p&gt;While &lt;cite&gt;git&lt;/cite&gt; is surely one of my favorite tools, and increases my productivity
+<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog - misc</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/misc.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2018-12-05T00:00:00+00:00</updated><subtitle>about me</subtitle><entry><title>Setting up Fedora</title><link href="https://datapythonista.github.io/blog/setting-up-fedora.html" rel="alternate"></link><published>2018-12-05T00:00:00+00:00</published><updated>2018-12-05T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2018-12-05:/blog/setting-up-fedora.html</id><summary type="html">&lt;p&gt;Today I've got my new Dell XPS (with Ubuntu preinstalled), and this is the procedure
+to set it up, and get my perfect working environment. This is expected to be useful
+mainly for my &lt;strong&gt;future self&lt;/strong&gt;, but sharing it here in case someone else can find
+ideas or tips that …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today I've got my new Dell XPS (with Ubuntu preinstalled), and this is the procedure
+to set it up, and get my perfect working environment. This is expected to be useful
+mainly for my &lt;strong&gt;future self&lt;/strong&gt;, but sharing it here in case someone else can find
+ideas or tips that are useful. Also happy to receive comments on how you do things
+differently (and potentially better).&lt;/p&gt;
+&lt;p&gt;My operating system of choice is &lt;a class="reference external" href="https://spins.fedoraproject.org/mate-compiz/"&gt;Fedora MATE Compiz&lt;/a&gt;,
+I think GNOME 3 was a big mistake, so staying in what was GNOME 2.&lt;/p&gt;
+&lt;p&gt;After downloading the ISO, I create the live USB with &lt;a class="reference external" href="https://unetbootin.github.io/"&gt;UNetbootin&lt;/a&gt;.
+This works well, but it has a problem. The label of the volume is not updated, and it becomes inconsistent
+with the one that GRUB loads. This will create a lot of warnings like this:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+dracut-initqueue[602]: Warning dracut-initqueue timeout - starting timeout scripts
+&lt;/pre&gt;
+&lt;p&gt;With couple of final warnings:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Warning: /dev/disk/by-label/Fedora-Live-WS-x86_64-29-1 does not exist
+Warning: /dev/mapper/live-rw does not exist
+&lt;/pre&gt;
+&lt;p&gt;To fix it, we just need to know the label of our live USB (can be obtained in the rescue terminal by
+calling &lt;tt class="docutils literal"&gt;blkid&lt;/tt&gt;). And then, in the GRUB menu, press &lt;cite&gt;e&lt;/cite&gt; with the &lt;cite&gt;Start Fedora Live&lt;/cite&gt; option
+selected, and replace the value of &lt;cite&gt;LABEL&lt;/cite&gt; by the correct one. A &lt;cite&gt;Ctrl-x&lt;/cite&gt; will make the system
+boot with the updated configuration, and should start normally. This
+&lt;a class="reference external" href="https://www.youtube.com/watch?v=C3iSqmfPRxY"&gt;video&lt;/a&gt; shows the process step by step.&lt;/p&gt;
+&lt;p&gt;The default configurations during the installation work well for me (using 50Gb for &lt;cite&gt;/&lt;/cite&gt;, the rest
+for &lt;cite&gt;/home/&lt;/cite&gt;, and &lt;cite&gt;ext4&lt;/cite&gt; filesystem). But I encrypt &lt;cite&gt;/home/&lt;/cite&gt;, which is not enabled by default.&lt;/p&gt;
+&lt;p&gt;Once the new system is installed, and running, those are the tasks I perform.&lt;/p&gt;
+&lt;div class="section" id="configuration"&gt;
+&lt;h2&gt;Configuration&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Merge both panels into one, and leave it to the bottom (removing the workspaces and Thunderbird,
+which I not use)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Mouse setup: enable touchpad click, natural scrolling and increase acceleration&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Disable screensaver, and make windows be selected when mouse moves over them&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Change the terminal shorcuts to change and move tabs (I got used to the KDE shortcuts and never
+bothered in learning the GNOME ones)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Change the default search engine in Firefox to &lt;a class="reference external" href="https://duckduckgo.com/"&gt;DuckDuckGo&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Set up couple of aliases in &lt;cite&gt;~/.bashrc&lt;/cite&gt;: &lt;tt class="docutils literal"&gt;alias &lt;span class="pre"&gt;rgrep=&amp;quot;grep&lt;/span&gt; &lt;span class="pre"&gt;-R&amp;quot;&lt;/span&gt;&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;alias &lt;span class="pre"&gt;vi=&amp;quot;vim&amp;quot;&lt;/span&gt;&lt;/tt&gt; (which
+doesn't seem to be required anymore)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Set up &lt;cite&gt;vim&lt;/cite&gt; for Python (and remove some unwanted features like folding):&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+syntax on
+set number
+set autoindent
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set nofoldenable
+
+execute pathogen#infect()
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="installing-software"&gt;
+&lt;h2&gt;Installing software&lt;/h2&gt;
+&lt;p&gt;Quite happy with the software that comes preinstalled with Fedora, but few things left to install.
+First adding &lt;a class="reference external" href="https://rpmfusion.org"&gt;RPM Fusion&lt;/a&gt; repositories:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+&lt;/pre&gt;
+&lt;p&gt;Then updating the system:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo dnf update
+&lt;/pre&gt;
+&lt;p&gt;Then installing the development group:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo dnf groupinstall &amp;quot;Development Tools&amp;quot;
+&lt;/pre&gt;
+&lt;p&gt;Also installing all the missing packages (or not missing, but had this list for some years now):&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo dnf install vim-enhanced git vlc gimp inkscape unzip
+&lt;/pre&gt;
+&lt;p&gt;And finally installing &lt;a class="reference external" href="https://conda.io/miniconda.html"&gt;Miniconda&lt;/a&gt;. I prefer Miniconda over
+Anaconda, because I don't like to have any package in the base environment. So, in every
+environment I'm sure there are the packages I'm using (and it's not falling back to the base
+environment version, which can be different of the expected).&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Useful git commands</title><link href="https://datapythonista.github.io/blog/useful-git-commands.html" rel="alternate"></link><published>2018-11-08T00:00:00+00:00</published><updated>2018-11-08T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2018-11-08:/blog/useful-git-commands.html</id><summary type="html">&lt;p&gt;While &lt;cite&gt;git&lt;/cite&gt; is surely one of my favorite tools, and increases my productivity
 in a sometimes unbelivable way (like when working on 3 or 5 features at the
 same time), some times there are operations that can be a bit tricky.&lt;/p&gt;
 &lt;p&gt;There are plenty of git tutorials and guides to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;While &lt;cite&gt;git&lt;/cite&gt; is surely one of my favorite tools, and increases my productivity

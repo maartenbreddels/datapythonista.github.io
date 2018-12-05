@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>datapythonista blog - Marc Garcia</title><link>https://datapythonista.github.io/blog/</link><description>about me</description><lastBuildDate>Wed, 05 Dec 2018 00:00:00 +0000</lastBuildDate><item><title>Setting up Fedora</title><link>https://datapythonista.github.io/blog/setting-up-fedora.html</link><description>&lt;p&gt;Today I've got my new Dell XPS (with Ubuntu preinstalled), and this is the procedure
+to set it up, and get my perfect working environment. This is expected to be useful
+mainly for my &lt;strong&gt;future self&lt;/strong&gt;, but sharing it here in case someone else can find
+ideas or tips that …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marc Garcia</dc:creator><pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:datapythonista.github.io,2018-12-05:/blog/setting-up-fedora.html</guid></item><item><title>Useful git commands</title><link>https://datapythonista.github.io/blog/useful-git-commands.html</link><description>&lt;p&gt;While &lt;cite&gt;git&lt;/cite&gt; is surely one of my favorite tools, and increases my productivity
+in a sometimes unbelivable way (like when working on 3 or 5 features at the
+same time), some times there are operations that can be a bit tricky.&lt;/p&gt;
+&lt;p&gt;There are plenty of git tutorials and guides to …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marc Garcia</dc:creator><pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:datapythonista.github.io,2018-11-08:/blog/useful-git-commands.html</guid></item><item><title>Blog moved</title><link>https://datapythonista.github.io/blog/blog-moved.html</link><description>&lt;p&gt;It's been a while since I wanted to move my blog out of blogger.&lt;/p&gt;
+&lt;p&gt;Today I finally did it. :)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hello world (from Pelican)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This new blog uses Pelican, and is hosted on GitHub pages. Which will
+let me create blog posts by simply using restructuredText, or
+Jupyter notebooks.&lt;/p&gt;
+&lt;p&gt;You …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marc Garcia</dc:creator><pubDate>Sat, 08 Sep 2018 00:00:00 +0100</pubDate><guid isPermaLink="false">tag:datapythonista.github.io,2018-09-08:/blog/blog-moved.html</guid></item></channel></rss>

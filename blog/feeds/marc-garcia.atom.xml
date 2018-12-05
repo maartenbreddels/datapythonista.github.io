@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog - Marc Garcia</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/feeds/marc-garcia.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2018-12-05T00:00:00+00:00</updated><subtitle>about me</subtitle><entry><title>Setting up Fedora</title><link href="https://datapythonista.github.io/blog/setting-up-fedora.html" rel="alternate"></link><published>2018-12-05T00:00:00+00:00</published><updated>2018-12-05T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2018-12-05:/blog/setting-up-fedora.html</id><summary type="html">&lt;p&gt;Today I've got my new Dell XPS (with Ubuntu preinstalled), and this is the procedure
+to set it up, and get my perfect working environment. This is expected to be useful
+mainly for my &lt;strong&gt;future self&lt;/strong&gt;, but sharing it here in case someone else can find
+ideas or tips that …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today I've got my new Dell XPS (with Ubuntu preinstalled), and this is the procedure
+to set it up, and get my perfect working environment. This is expected to be useful
+mainly for my &lt;strong&gt;future self&lt;/strong&gt;, but sharing it here in case someone else can find
+ideas or tips that are useful. Also happy to receive comments on how you do things
+differently (and potentially better).&lt;/p&gt;
+&lt;p&gt;My operating system of choice is &lt;a class="reference external" href="https://spins.fedoraproject.org/mate-compiz/"&gt;Fedora MATE Compiz&lt;/a&gt;,
+I think GNOME 3 was a big mistake, so staying in what was GNOME 2.&lt;/p&gt;
+&lt;p&gt;After downloading the ISO, I create the live USB with &lt;a class="reference external" href="https://unetbootin.github.io/"&gt;UNetbootin&lt;/a&gt;.
+This works well, but it has a problem. The label of the volume is not updated, and it becomes inconsistent
+with the one that GRUB loads. This will create a lot of warnings like this:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+dracut-initqueue[602]: Warning dracut-initqueue timeout - starting timeout scripts
+&lt;/pre&gt;
+&lt;p&gt;With couple of final warnings:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Warning: /dev/disk/by-label/Fedora-Live-WS-x86_64-29-1 does not exist
+Warning: /dev/mapper/live-rw does not exist
+&lt;/pre&gt;
+&lt;p&gt;To fix it, we just need to know the label of our live USB (can be obtained in the rescue terminal by
+calling &lt;tt class="docutils literal"&gt;blkid&lt;/tt&gt;). And then, in the GRUB menu, press &lt;cite&gt;e&lt;/cite&gt; with the &lt;cite&gt;Start Fedora Live&lt;/cite&gt; option
+selected, and replace the value of &lt;cite&gt;LABEL&lt;/cite&gt; by the correct one. A &lt;cite&gt;Ctrl-x&lt;/cite&gt; will make the system
+boot with the updated configuration, and should start normally. This
+&lt;a class="reference external" href="https://www.youtube.com/watch?v=C3iSqmfPRxY"&gt;video&lt;/a&gt; shows the process step by step.&lt;/p&gt;
+&lt;p&gt;The default configurations during the installation work well for me (using 50Gb for &lt;cite&gt;/&lt;/cite&gt;, the rest
+for &lt;cite&gt;/home/&lt;/cite&gt;, and &lt;cite&gt;ext4&lt;/cite&gt; filesystem). But I encrypt &lt;cite&gt;/home/&lt;/cite&gt;, which is not enabled by default.&lt;/p&gt;
+&lt;p&gt;Once the new system is installed, and running, those are the tasks I perform.&lt;/p&gt;
+&lt;div class="section" id="configuration"&gt;
+&lt;h2&gt;Configuration&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Merge both panels into one, and leave it to the bottom (removing the workspaces and Thunderbird,
+which I not use)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Mouse setup: enable touchpad click, natural scrolling and increase acceleration&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Disable screensaver, and make windows be selected when mouse moves over them&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Change the terminal shorcuts to change and move tabs (I got used to the KDE shortcuts and never
+bothered in learning the GNOME ones)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Change the default search engine in Firefox to &lt;a class="reference external" href="https://duckduckgo.com/"&gt;DuckDuckGo&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Set up couple of aliases in &lt;cite&gt;~/.bashrc&lt;/cite&gt;: &lt;tt class="docutils literal"&gt;alias &lt;span class="pre"&gt;rgrep=&amp;quot;grep&lt;/span&gt; &lt;span class="pre"&gt;-R&amp;quot;&lt;/span&gt;&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;alias &lt;span class="pre"&gt;vi=&amp;quot;vim&amp;quot;&lt;/span&gt;&lt;/tt&gt; (which
+doesn't seem to be required anymore)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Set up &lt;cite&gt;vim&lt;/cite&gt; for Python (and remove some unwanted features like folding):&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+syntax on
+set number
+set autoindent
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set nofoldenable
+
+execute pathogen#infect()
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="installing-software"&gt;
+&lt;h2&gt;Installing software&lt;/h2&gt;
+&lt;p&gt;Quite happy with the software that comes preinstalled with Fedora, but few things left to install.
+First adding &lt;a class="reference external" href="https://rpmfusion.org"&gt;RPM Fusion&lt;/a&gt; repositories:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+&lt;/pre&gt;
+&lt;p&gt;Then updating the system:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo dnf update
+&lt;/pre&gt;
+&lt;p&gt;Then installing the development group:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo dnf groupinstall &amp;quot;Development Tools&amp;quot;
+&lt;/pre&gt;
+&lt;p&gt;Also installing all the missing packages (or not missing, but had this list for some years now):&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo dnf install vim-enhanced git vlc gimp inkscape unzip
+&lt;/pre&gt;
+&lt;p&gt;And finally installing &lt;a class="reference external" href="https://conda.io/miniconda.html"&gt;Miniconda&lt;/a&gt;. I prefer Miniconda over
+Anaconda, because I don't like to have any package in the base environment. So, in every
+environment I'm sure there are the packages I'm using (and it's not falling back to the base
+environment version, which can be different of the expected).&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Useful git commands</title><link href="https://datapythonista.github.io/blog/useful-git-commands.html" rel="alternate"></link><published>2018-11-08T00:00:00+00:00</published><updated>2018-11-08T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2018-11-08:/blog/useful-git-commands.html</id><summary type="html">&lt;p&gt;While &lt;cite&gt;git&lt;/cite&gt; is surely one of my favorite tools, and increases my productivity
+in a sometimes unbelivable way (like when working on 3 or 5 features at the
+same time), some times there are operations that can be a bit tricky.&lt;/p&gt;
+&lt;p&gt;There are plenty of git tutorials and guides to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;While &lt;cite&gt;git&lt;/cite&gt; is surely one of my favorite tools, and increases my productivity
+in a sometimes unbelivable way (like when working on 3 or 5 features at the
+same time), some times there are operations that can be a bit tricky.&lt;/p&gt;
+&lt;p&gt;There are plenty of git tutorials and guides to get started and that explain
+the basic concepts. This post is not one of them. If that is what you need,
+you can check these great resources:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://rogerdudler.github.io/git-guide/"&gt;git - the simple guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://medium.com/girl-writes-code/git-is-a-directed-acyclic-graph-and-what-the-heck-does-that-mean-b6c8dec65059"&gt;Git is a Directed Acyclic Graph and What the Heck Does That Mean?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://think-like-a-git.net/"&gt;Think Like (a) Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git-scm.com/doc"&gt;Official documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is another quite popular resource, that doesn't focus on explaining
+the concepts, but on what to do if you get into certain cases (aka problems):&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://ohshitgit.com/"&gt;Oh shit,git!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;More on the style of the latter, in this post I'll explain some operations
+that are somehow advanced, I don't think are well known, but I use them
+frequently. So, hopefully they can be useful to others.&lt;/p&gt;
+&lt;div class="section" id="i-ve-got-some-cool-changes-but-my-history-is-a-mess"&gt;
+&lt;h2&gt;I've got some cool changes, but my history is a mess&lt;/h2&gt;
+&lt;p&gt;There are many reasons why this can happen. The one that I encounter most
+frequently is people opening a pull request, that does not only contain
+the user changes (and possibly some merges from master), but instead it
+contains commits from other users in the branch, as if they were part of
+the pull request. I never spent the time to research what is the cause, but
+this is what I usually recommend or do.&lt;/p&gt;
+&lt;p&gt;Whether it is the previous case, or because of any other reason, if you have
+some changes in your branch mixed with a messy git history, the easiest
+way I know to go back to a state under control is:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;git fetch upstream&lt;/tt&gt;: Just updating our local repository.&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;git merge upstream/master&lt;/tt&gt;: Getting anything in the latest repository
+version into our branch.&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;git reset &lt;span class="pre"&gt;--soft&lt;/span&gt; upstream/master&lt;/tt&gt;: This will make that the git history
+in our branch is exactly as the one in master, replacing our messy history.
+And it will leave in our staging area all the changes that we made, compared
+to master.&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;git commit &lt;span class="pre"&gt;-m&lt;/span&gt; &amp;quot;All my changes in a single commit&amp;quot;&lt;/tt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now the history in our branch will be equivalent as if we just created
+the branch from the latest version, and added a single commit with all our
+changes. As usual, we shouldn't rewrite the history if someone else pulled
+our commits. But if this is a local branch, or it is remote but only used
+to open a pull request, that should be all right.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="i-have-changes-in-the-working-directory-and-i-want-to-change-branch"&gt;
+&lt;h2&gt;I have changes in the working directory, and I want to change branch&lt;/h2&gt;
+&lt;p&gt;There are also different cases for this. The simplest case (but not
+common in my case) is that you are working in a branch, and want to
+go to make some changes to a different one, but your current changes are
+not in a state that you want to commit.&lt;/p&gt;
+&lt;p&gt;The other cases (the ones that happen to me in practice) are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;You start working in some changes, and you realize that you are in the
+wrong branch.&lt;/li&gt;
+&lt;li&gt;You are making some last minute addition to a pull request, and before
+you commit and push, the pull request is merged. So, you want to continue
+the work in a new branch.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The problem is that when you have uncommitted changes in your working
+directory, and you try to change branch, you get the next error message:
+&lt;cite&gt;error: Your local changes to the following files would be overwritten by
+checkout&lt;/cite&gt; preventing any branch change until you commit those changes.
+But committing in the current branch is not what we want.&lt;/p&gt;
+&lt;p&gt;The solution in this case is &lt;tt class="docutils literal"&gt;git stash&lt;/tt&gt;. With it, the changes in the
+working directory are saved into a stack, and the working directory becomes
+clean.  This allows us to freely switch branches, and perform other operations.
+Once we have the environment ready, and we are in the branch in which the
+stacked changes belong to, then we can simply &lt;tt class="docutils literal"&gt;git stash apply&lt;/tt&gt;. We will get
+the uncommitted changes back to the working directory.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="i-want-to-test-or-edit-someone-else-pull-request"&gt;
+&lt;h2&gt;I want to test or edit someone else pull request&lt;/h2&gt;
+&lt;p&gt;This is something that mainly project maintainers do, but that can be useful
+for anyone. In general, when someone opens a pull request, the changes are
+reviewed, and feedback is provided, both in the GitHub (or similar)
+interface. And the author, who already got the branch locally, makes changes
+and run the code. But in some cases, it may be useful to get the changes of the
+pull request locally, so they can be run, and edited.&lt;/p&gt;
+&lt;p&gt;One example could be a stale pull request, that was opened many months ago
+and that the author is not interesting in updating anymore. But it contains
+code, that with few changes, would be nice to get merged.&lt;/p&gt;
+&lt;p&gt;Git is a distributed system, and there is nothing in git itself that tells
+which is the &amp;quot;official&amp;quot; repository, and which are forks. To interact
+with other repositories from your local copy, all you need is to set a
+remote, fetch the changes, and switch to their branches. This would be
+done with the commands:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;git remote add &lt;span class="pre"&gt;&amp;lt;remote-name-for-user-fork&amp;gt;&lt;/span&gt; &lt;span class="pre"&gt;&amp;lt;url-to-user-fork&amp;gt;&lt;/span&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;git fetch &lt;span class="pre"&gt;&amp;lt;remote-name-for-user-fork&amp;gt;&lt;/span&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now, we already have locally all the data in the repo of the author of the
+pull request. Next thing is to checkout the branch used for the pull request.
+This can be done with:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;git branch &lt;span class="pre"&gt;&amp;lt;branch-name&amp;gt;&lt;/span&gt; &lt;span class="pre"&gt;--track&lt;/span&gt; &lt;span class="pre"&gt;&amp;lt;remote-name-for-user-fork&amp;gt;/&amp;lt;branch-name&amp;gt;&lt;/span&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now we have the code in the pull request in our working directory. And we can
+run or edit.&lt;/p&gt;
+&lt;p&gt;GitHub has an option when creating a pull request &amp;quot;Allow edits from
+maintainers&amp;quot;, that is checked by default. If the author of the pull request
+left it checked, then maintainers can push to the pull request branch
+after editing it locally. So, the updates are made in the same pull request,
+which can be merged when it's ready.&lt;/p&gt;
+&lt;p&gt;For people that are not maintainers, when the checkbox was unchecked, or when
+the fork of the author does not exist anymore, pushing to &lt;cite&gt;origin&lt;/cite&gt; (your own
+fork), and opening a new pull request is required.&lt;/p&gt;
+&lt;p&gt;If editing other people branches is something that needs to be done often, it
+is probably a good idea to use &lt;cite&gt;hub&lt;/cite&gt;, a tool from GitHub. It can be installed
+with conda:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;conda install &lt;span class="pre"&gt;-c&lt;/span&gt; &lt;span class="pre"&gt;conda-forge&lt;/span&gt; hub&lt;/tt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And then, checking out the branch from a pull request is as simple as:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;hub checkout &lt;span class="pre"&gt;&amp;lt;github-url-of-the-pull-request&amp;gt;&lt;/span&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Which will set up the remotes, and make the branch track the parent, so
+changes can be pushed with a simple &lt;tt class="docutils literal"&gt;git push&lt;/tt&gt; given the right permissions.&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Blog moved</title><link href="https://datapythonista.github.io/blog/blog-moved.html" rel="alternate"></link><published>2018-09-08T00:00:00+01:00</published><updated>2018-09-08T00:00:00+01:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2018-09-08:/blog/blog-moved.html</id><summary type="html">&lt;p&gt;It's been a while since I wanted to move my blog out of blogger.&lt;/p&gt;
+&lt;p&gt;Today I finally did it. :)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hello world (from Pelican)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This new blog uses Pelican, and is hosted on GitHub pages. Which will
+let me create blog posts by simply using restructuredText, or
+Jupyter notebooks.&lt;/p&gt;
+&lt;p&gt;You …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It's been a while since I wanted to move my blog out of blogger.&lt;/p&gt;
+&lt;p&gt;Today I finally did it. :)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hello world (from Pelican)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This new blog uses Pelican, and is hosted on GitHub pages. Which will
+let me create blog posts by simply using restructuredText, or
+Jupyter notebooks.&lt;/p&gt;
+&lt;p&gt;You can check the source code here: &lt;a class="reference external" href="https://github.com/datapythonista/datapythonista.github.io"&gt;https://github.com/datapythonista/datapythonista.github.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;More info: &lt;a class="reference external" href="https://blog.getpelican.com/"&gt;https://blog.getpelican.com/&lt;/a&gt;&lt;/p&gt;
+</content></entry></feed>
