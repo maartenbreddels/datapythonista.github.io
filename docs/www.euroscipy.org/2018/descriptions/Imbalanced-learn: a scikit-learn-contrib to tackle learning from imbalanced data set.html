@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Imbalanced-learn: a scikit-learn-contrib to tackle learning from imbalanced data set</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Imbalanced-learn: a scikit-learn-contrib to tackle learning from imbalanced data set</h3>
+    
+    <h1>Imbalanced-learn: a scikit-learn-contrib to tackle learning from imbalanced data set</h1>
+<h2>The curse of imbalanced data sets</h2>
+<p>The curse of imbalanced data set refers to data sets in which the number of samples in one class is less than in others. This issue is often encountered in real world data sets such as medical imaging applications (e.g. cancer detection), fraud detection, etc. In such particular condition, machine learning algorithms learn sub-optimal models which will generally favor the class having the largest number of samples.</p>
+<p>In this talk, we will present the imbalanced-learn package which implement some of the state-of-the-art algorithms, tackling the class imbalance problem.</p>
+<h2>A scikit-learn-contrib project</h2>
+<p>scikit-learn includes a tremendous set of pre-processing methods (i.e. transformers, standardizers, etc.) to optimally train machine learning algorithms. However, there is currently no estimators to reduce or generate samples. Therefore, the imbalanced-learn provides a new type of estimator, named sampler, aiming at resampling a data set whenever it is desired.</p>
+<p>We will give a brief overview of the imbalanced-learn API and its integration with scikit-learn.</p>
+<h2>Overview of the propose methods</h2>
+<p>Regarding the data science aspect of this talk, we will highlight the distinctive characteristics of the different algorithms: (i) over-sampling, (ii) controlled under-sampling, (iii) cleaning under-sampling, (iv) combination of over-sampling and cleaning under-sampling, and (v) ensemble sampler.</p>
+<h2>What's new in 0.4</h2>
+<p>We are going to make a new release at the same time than scikit-learn 0.20 which will incorporate new features:</p>
+<ul>
+<li>Change of API</li>
+<li>Documentation User Guide</li>
+<li><code>FunctionSampler</code> with an application on outlier rejection</li>
+<li>Keras and Tensforflow balanced batch generator</li>
+</ul>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

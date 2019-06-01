@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Python Tools for Climate Science</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Python Tools for Climate Science</h3>
+    
+    <h1>Python Tools for Climate Science</h1>
+<p>Climate Science has always been a domain of "big data" and scientific programming languages like Fortran to run complex models on high-performance clusters -- but through its extensive set of data tools and scientific libraries Python usage has  increased rapidly. This talk will focus on the "small data" of Climate Science and present a few Simple Climate Models and the datasets needed to use them:</p>
+<p>Simple Climate Models are models of reduced complexity which can run within seconds and are widely used to assess climate scenarios and progress in emissions reductions, or to emulate complex climate models and to analyse uncertainties.</p>
+<p>Three models are easily usable with Python:</p>
+<p>Pymagicc (<a href="https://doi.org/10.21105/joss.00516">Gieseke, Willner, Mengel, 2018</a>), which wraps the widely used model MAGICC using <a href="https://www.winehq.org/">Wine</a> to run the Windows-only binary on all platforms.</p>
+<p>Pyhector (<a href="https://doi.org/10.21105/joss.00248">Willner, Hartin, Gieseke, 2017</a>) is a Python interface to the Hector model written in C++ and allows it to drive the model with Pandas DataFrames and Python dictionaries as input instead of CSV files and INI-files.</p>
+<p><a href="https://github.com/OMS-NetZero/FAIR">FAIR</a> (<a href="https://doi.org/10.5194/gmd-2017-266">Smith et al., 2017, in discussion</a>) is another Simple Climate Model written completely in Python and thus the easiest to explore.</p>
+<p>To drive and validate these models data like global surface temperatures, greenhouse gas concentrations and emissions in an easily processable format are needed.</p>
+<p>Python's data tools are ideally suited to get data out of Excel sheets or custom text formats and turn them into clean CSV files and <a href="https://frictionlessdata.io/">Data Packages</a> that can easily be used with Python and Pandas and in Jupyter Notebooks.</p>
+<p>See <a href="https://openclimatedata.net/">openclimatedata.net</a> for an overview and example notebooks powered by <a href="https://mybinder.org/">Binder</a>.</p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

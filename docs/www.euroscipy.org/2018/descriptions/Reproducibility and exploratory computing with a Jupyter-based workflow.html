@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Reproducibility and exploratory computing with a Jupyter-based workflow</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Reproducibility and exploratory computing with a Jupyter-based workflow</h3>
+    
+    <h1>Reproducibility and exploratory computing with a Jupyter-based workflow</h1>
+<p>Projects requirements are wildly varying across different lifetime stages. In a new project, we need to try a large number of ideas to find the correct approach. Conversely, a mature project may be used to drive decision-making in company or to produce scientific results in an academic lab. As a consequence, mature projects require stable and well-tested codebases. As projects grow, they oftentimes suffer from decisions made at earlier stages, accumulating so called “technical debt”.</p>
+<p>In this talk I will present a Jupyter-based workflow for managing a project lifecycle, from the initial exploratory phase to a mature and stable codebase. I will show that combining basic tools such as git, Google Drive, conda environments, python packaging and batch notebook execution, it is possible to manage the complexity of a quickly growing project, with an eye on computational reproducibility.</p>
+<p>To this end, we start with a data-first approach. Data needs to be extracted, cleaned and formatted in a form most appropriate for subsequent analysis. By relying on a appropriate data abstractions, we can simplify the code and make the analysis more understandable. </p>
+<p>Next, we illustrate how a young single-notebook project can gradually grow into a larger project using a few python modules and eventually full-blown python packages. As the project is applied more broadly, for example to different datasets, the notebook execution can be automated through batch analysis. Intermediate results and HTML reports should be saved at this point for keeping track of the analysis. Finally, a mature project will depend on custom python packages which employ continuous integration for testing and automated documentation. To improves reproducibility, conda environments can be used to take snapshots of the of dependencies throughout the project lifecycles.</p>
+<p>Developing a project throughout its lifetime involves continuous trade-offs between exploratory data analysis and reproducibility, with a focus shifting from the former to the latter as the project matures. With a proper project organization and employing the right tools, it is possible to manage this transition effectively.</p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

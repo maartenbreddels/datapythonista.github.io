@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Going full Python for Machine Learning in Biomedical engineering</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Going full Python for Machine Learning in Biomedical engineering</h3>
+    
+    <h1>Going full Python for Machine Learning in Biomedical engineering</h1>
+<p>The talk with cover the following reflexions coming from the application:
+First we need to address a set of constrains coming from the Biomedical application:
+  - Data is expensive but dimensions are many: gathering experimental data on humans is complicated (ethics, recruiting subjects, performing actual measurements…) but then each recording holds  a lot of informations (tens of EMG channels at up to 4kHz, accelerometers, motion capture…) and many features can be extracted from that raw data.
+  - Robustness is important to address early as there can be a high variability of the signals recorded between subjects but also for the same subject at different times or in slightly different conditions (for example just misplacing electrodes)
+  - Supervision of algorithm can be tricky: specially in absence of objective gold standard, then categorization of subjects is often subjective (type/stage of pathology established only by clinical score or MD appreciation)
+  - Accuracy is critical in medical application: Sensitivity and Specificity must be as high as possible as  false negative would mean failing to treat and false positive treating healthy patients.
+  - Finally, the whole process has to be fully automated and fast to fit within existing procedures and time frames.</p>
+<p>We choose to go full Python for our developments in this project for Python versatility and efficiency:
+  - We need to test and prototype many methods to find the most suitable ones: <em>scipy</em> and <em>scikit</em> learn have already implemented most components we might need. Hence we can focus on application specific aspects.
+  - We need to communicate with non developers (experimenters, MD,…) at various stages with plots, graphical interfaces or even dynamics websites: this can be covered easily in Python.
+  - We wish for our code to take advantage of currently available hardware: parallel computation and GPU usage can be easily prototyped with <em>Numba</em>, <em>Dask</em> or <em>TensorFlow/CAFFE</em>.
+  - Finally, Python enables us to address all these task with a single language, easy to learn for interns/students hired within the project.</p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Pyccel, a Fortran static compiler for scientific High-Performance Computing</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Pyccel, a Fortran static compiler for scientific High-Performance Computing</h3>
+    
+    <h1>Pyccel, a Fortran static compiler for scientific High-Performance Computing</h1>
+<p><em>Pyccel</em> is a new <strong>static compiler</strong> for Python that uses <strong>Fortran</strong> as backend language while enabling High-Performance Computing <strong>HPC</strong> capabilities.</p>
+<p>Fortran is a computer language for scientific programming that is tailored for efficient run-time execution on a wide variety of processors. Even if the <em>2003</em> and <em>2008</em> standards added major improvements like <em>OOP, Coarrays, Submodules, do concurrent</em>, etc ... they are not covered by all available compilers. Moreover, the Fortran developer still suffers from the lack of <strong>meta-programming</strong> compared to <strong>C++</strong> ones. Therefore, it is more and more difficult for applied mathematicians and computational physicists to write applications at the <em>state of art</em> (targeting CPUs, GPUs, MICs) while implementing complicated algorithms or numerical schemes.</p>
+<p>Pyccel can be used in two cases:</p>
+<ul>
+<li>accelerate Python code by converting it to Fortran and calling <em>f2py</em>,</li>
+<li>generate portable HPC Fortran codes from a DSL using the Python syntax.</li>
+</ul>
+<p>In order to achieve the second point, we developed an internal DSL for <em>types</em> and <em>macros</em>. The later is used to map sentences based on <em>mpi4py</em>, <em>scipy.linalg.blas or lapack</em> onto the appropriate calls in Fortran. Moreover, two parsers, for <em>OpenMP</em> and <em>OpenACC</em>, were added too, allowing for explicit parallelism through the use of pragmas.</p>
+<p>Last but not least, Pyccel is an extension of <strong>Sympy</strong>. Actually, it converts a Python code to symbolic expressions/trees, from a Full Syntax Tree (<em>RedBaron</em>), then annotates the new AST using types or different settings provided by the user.</p>
+<p>In this talk, after a brief description of Pyccel, we will show different applications including Finite Elements (1d, 2d, 3d), Kronecker linear solvers and Neural Networks.</p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>F2x - Automated FORTRAN wrapping without limits</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>F2x - Automated FORTRAN wrapping without limits</h3>
+    
+    <h1>F2x - Automated FORTRAN wrapping without limits</h1>
+<p>f2py is still a very important tool for the scientific community. However, even though some efford has been put in upgrading it, it did not overcome it's initial limitations (e.g. no support for derived types). When we ran into some of these limitations, we decided not to extend f2py but to start our own wrapper that could</p>
+<ul>
+<li>work out of the box,</li>
+<li>wrap derived types and complex interfaces,</li>
+<li>use modern FORTRAN features for compiler-neutral wrapping,</li>
+<li>generate wrappers for other high-level languages.</li>
+</ul>
+<p>The result is F2x which is already in productive use within the German Aerospace Center. In contrast to f2py it uses a real FORTRAN grammar and template-based code generation. While this slows down the wrapping process, it comes with way more potential for adaptation and extension. Using Cython as wrapping target, we could observe a runtime performance equal to that of f2py.</p>
+<p>F2x is available as open source and actively developed under https://github.com/DLR-SC/F2x.</p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

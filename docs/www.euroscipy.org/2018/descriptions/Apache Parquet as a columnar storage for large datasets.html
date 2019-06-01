@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Apache Parquet as a columnar storage for large datasets</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Apache Parquet as a columnar storage for large datasets</h3>
+    
+    <h1>Apache Parquet as a columnar storage for large datasets</h1>
+<h1>Apache Parquet Data Format</h1>
+<p>Apache Parquet is a binary, efficient columnar data format. It uses various
+techniques to store data in a CPU and I/O efficient way like row groups,
+compression for pages in column chunks or dictionary encoding for columns.
+Index hints and statistics to quickly skip over chunks of irrelevant data
+enable efficient queries on large amount of data.</p>
+<h1>Apache Parquet with Pandas &amp; Dask</h1>
+<p>Apache Parquet files can be read into Pandas DataFrames with the two libraries
+fastparquet and Apache Arrow. While Pandas is mostly used to work with data
+that fits into memory, Apache Dask allows us to work with data larger then memory 
+and even larger than local disk space. Data can be split up into partitions
+and stored in cloud object storage systems like Amazon S3 or Azure Storage.</p>
+<p>Using Metadata from the partiton filenames, parquet column statistics and
+dictonary filtering allows faster performance for selective queries without
+reading all data. This talk will show how use partitioning, 
+row group skipping and general data layout to speed up queries on large
+amount of data.</p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

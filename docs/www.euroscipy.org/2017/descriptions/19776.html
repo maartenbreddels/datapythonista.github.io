@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Multi-scale computational homogenization in SfePy</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Multi-scale computational homogenization in SfePy</h3>
+    
+    <p>Homogenization method [1] is an efficient tool for modeling physical phenomena on media with periodic structure. The mathematical model leads to the systems of partial differential equations at different scales. These systems are decoupled in the case of a linear problem. For non-linear problems, the systems of equations are linked and the complexity of the solution increases considerably.</p>
+<p>We illustrate how to use the partial differential equation solution package SfePy (http://sfepy.org) [2] for solving various multi-scale problems. We have developed so called "homogenization engine" which solves the multiple homogenization multiple subproblems at the microscopic level. To speed-up computing, the micro-problems are solved in parallel using multithreading or multiprocessing approach.</p>
+<p>[1] D. Cioranescu, P. Donato, An Introduction to Homogenization, Oxford Lecture Series in Mathematics and its Applications, vol. 17, Oxford University Press, 1999.</p>
+<p>[2] R. Cimrman, SfePy - Write Your Own FE Application, Proceedings of the  6th European Conference on Python in Science (EuroSciPy 2013), 2014, pp. 65-70. http://arxiv.org/abs/1404.6391</p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

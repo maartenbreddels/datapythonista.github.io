@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Big geospatial data visualization and analysis in Jupyter</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Big geospatial data visualization and analysis in Jupyter</h3>
+    
+    <h1>Big geospatial data visualization and analysis in Jupyter</h1>
+<p>The Joint Research Centre (JRC) of the European Commission has set up the JRC Earth Observation Data and Processing Platform (JEODPP) as a pilot infrastructure to enable the knowledge production Units to process and analyze big geospatial data in support to EU policy needs. The very heterogeneous data domains and analysis workflows of the various JRC projects require a flexible set-up of the data access and processing environments.
+The basis of the platform consists of a petabyte-scale data storage system running EOS, a distributed file
+system developed and maintained by CERN. Three data processing levels have been implemented on top of this data storage and are delivered through a cluster of processing servers. The batch processing level allows running large-scale data processing tasks in a parallelized environment. The web-based remote desktop level provides access to tools and software libraries for fast prototyping in a standard desktop environment. The highest abstraction level is defined by an interactive processing environment based on Jupyter notebooks using Python language.
+The interactive data processing in notebooks allows for advanced data analysis and visualization of the results on interactive maps on-the-fly. The processing in the notebooks is delegated via HTTP requests to a pool of processing servers for deferred parallel execution. As a response to the requests, the servers return the results of the data processing as JSON stream or map tiles which are rendered in the notebook. The processing is based on a custom developed API (written in C++ and made available to the Python language through SWIG) for analysis and visualization of geospatial data. The notebook-based approach gives users also the possibility to share data analysis and processing workflows with other users instead of merely sharing the output data of processing results. This facilitates collaborative data analysis.
+To obtain good performance in visualization and processing of big datasets, JEODPP combines the interactive map viewer with the concept of deferred execution pattern (using an approach similar to what is used by the Google Earth Engine). The idea behind the concept of deferred execution pattern is to break the image into workable sized tiles, apply the processing to each tile in parallel, and finally merge the processed tiles to produce the requested result for visualization. In short, rather than processing the whole data, the processing is deferred and only applied when needed at the extent and scale the user has zoomed in.
+Several applications will be demonstrated: interactive display of global scale Digital Elevation Models, on-the fly analysis of protected sites impacted by multi-annual forest fires, Sentinel-2 products interactively browsed and processed, image segmentation and classification using a variety of AI methods, automatic extraction of multi-temporal NDVI profiles from agricultural parcels, etc., aiming at demonstrating the platform versatility, ease of use and power in managing big geospatial datasets.</p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

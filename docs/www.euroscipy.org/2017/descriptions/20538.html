@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Ten Steps to Keras</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Ten Steps to Keras</h3>
+    
+    <p>Goal of the Tutorial</p>
+<ul>
+<li><strong>Introduce</strong> main features of Keras APIs to build Neural Networks.   </li>
+<li><strong>Learn</strong> how to implement simple and complex Deep Neural Networks Architectures using Keras.   </li>
+<li>
+<p><strong>Discover</strong> Keras Implementation and Internals.</p>
+</li>
+<li>
+<p><strong>Note</strong>: examples and hands-on exercises will be provided along the way.</p>
+</li>
+<li>
+<p><em>Multi-layer Fully Connected Networks (and the <code>backends</code>)</em></p>
+</li>
+<li><em>Bottleneck features and Embeddings</em></li>
+<li><em>Convolutional Networks</em></li>
+<li><em>Transfer Learning and Fine Tuning</em></li>
+<li><em>Residual Networks</em></li>
+<li><em>Recursive Neural Networks</em></li>
+<li><em>[Variational] AutoEncoders and Adversarials</em></li>
+<li><em>Multi-Modal Networks</em></li>
+<li><em>Custom Layers and Optimisers</em> </li>
+<li><em>Interactive Networks and Callbacks</em></li>
+</ul>
+<hr>
+<h1>Description</h1>
+<ol>
+<li>
+<p><em>Multi-layer Fully Connected Networks</em>
+In this notebook we will learn the basic building blocks of Keras APIs to create deep neural networks. We will learn how to use the <code>Sequential</code> object as well as <em>Functional</em> and <code>keras.backend</code> APIs. First examples of MLP and Fully Connected Networks will be presented.</p>
+</li>
+<li>
+<p><em>Bootleneck Features and Embeddings</em> 
+After having played a bit with Keras APIs for building networks, we start learn how to inspect network's internals. In details, we will learn (1) how to iterate over layers; (2) how to initialise and get weights; (3) how to extract bottleneck features and create embeddings.</p>
+</li>
+<li>
+<p><em>Convolutional Networks</em>
+This notebook will teach how to build CNN (Convolutional Neural Networks). Convolutional, Pooling, DropOut layers will be presented, along with clear description on how to properly apply convolutions on images, depending on <code>image_dim_ordering</code> setting.</p>
+</li>
+<li>
+<p><em>Transfer Learning and Fine Tuning</em>
+The Keras implementation of some famous Deep Convolutional Networks  will be presented (i.e. <code>keras.applications.vgg16</code>, <code>keras.applications.vgg19</code>, and <code>keras.applications.inceptionv3</code>). We will learn how to leverage on these models for transfer learning and fine tuning using Keras <code>Layer</code> APIs.</p>
+</li>
+<li>
+<p><em>Residual Networks</em>
+In this notebook, Residual Networks will be presented. In particular, the Keras implementation of the residual network topology will be explained. Then, ResNet (<code>keras.applications.resnet50</code>)  Keras implementation will be detailed.   </p>
+</li>
+<li>
+<p><em>Recurrent Neural Networks</em>
+Recurrent Neural Networks (i.e. LSTM and GRU) are the main topic of this notebook. The Keras implementation of these two types of network will be presented along with working examples combining Word Embeddings and Convolutional Layers (i.e. <code>keras.layers.convolutional_recurrent</code>)</p>
+</li>
+<li>
+<p><em>[Variational] AutoEncoders and Adversarials</em>
+This notebook will be devoted to show how to implement AutoEncoders in Keras. In particular, the implementation of Stacked AutoEncoders, Variational AutoEncoders and Generative Adversarial Networks will be presented.</p>
+</li>
+<li>
+<p><em>Multi-Modal Networks</em>
+Multi-Input and Multi-task Networks are the fundamental steps for advanced deep networks. This notebook will provide implementation recipes and examples. </p>
+</li>
+<li>
+<p><em>Custom Layers and Optimisers</em>
+This notebook will provide details and examples of Keras internals. In particular, we will learn how to implement a Custom Layer in Keras, and custom Activation functions, and custom optimisers. </p>
+</li>
+<li>
+<p><em>Interactive Networks and Callbacks</em> 
+In this last notebook, <code>keras.callbacks</code> will be explained. Callbacks to track and monitor network performances during the training process will be built and integrated inside a web app. Finally, an example of <code>keras-js</code> will be described, detailing functions in Keras to export models and weights (in <code>json</code> and <code>hdf5</code> formats).</p>
+</li>
+</ol>
+<h1>Requirements</h1>
+<p>This tutorial requires the following packages:</p>
+<ul>
+<li>
+<p>Python version 3.5.x
+        - Python 3.4 is fine as well
+        - likely Python 2.7 would also be fine, but <em>who knows</em>? :P</p>
+</li>
+<li>
+<p><code>numpy</code> version 1.10 or later: http://www.numpy.org/</p>
+</li>
+<li><code>scipy</code> version 0.16 or later: http://www.scipy.org/</li>
+<li><code>matplotlib</code> version 1.4 or later: http://matplotlib.org/</li>
+<li><code>pandas</code> version 0.16 or later: http://pandas.pydata.org</li>
+<li><code>scikit-learn</code> version 0.15 or later: http://scikit-learn.org</li>
+<li><code>keras</code> version 1.0 or later: http://keras.io</li>
+<li><code>tensorflow</code> version 0.9 or later: https://www.tensorflow.org</li>
+<li><code>ipython</code>/<code>jupyter</code> version 4.0 or later, with notebook support</li>
+</ul>
+<p>(Optional but recommended):</p>
+<ul>
+<li><code>pyyaml</code></li>
+<li><code>hdf5</code> and <code>h5py</code> (required if you use model saving/loading functions in keras)</li>
+</ul>
+<p>The easiest way to get (most) these is to use an all-in-one installer such as <a href="http://www.continuum.io/downloads">Anaconda</a> from Continuum. These are available for multiple architectures.</p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

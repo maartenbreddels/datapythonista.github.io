@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Introduction into the ppci project</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Introduction into the ppci project</h3>
+    
+    <p>The ppci project was started by the need for a better system level programming language then C. The compiler is implemented in python, and hence is not very fast. On the other hand, the compiler is portable and is easier to develop due to being implemented into a higher level language. Currently it supports msp430, x86, xtensa, avr, arm, open risc and stm8 computer architectures, in various levels of maturity. The supported languages are C3 and brainfuck. Language support for C is a work in progress.</p>
+<p>The C3 language was the starting point for the compiler, aiming at being a better version of C. It has no header files, but features a more modular approach like C# and java. Furthermore its syntax is context free, making it easier to parse using standard compiler tools.</p>
+<p>The backend of the compiler consists of a code generator featuring both instruction selection and register coloring algorithms. The output of the compiler is an instruction stream, which can be serialized as text or in binary form.</p>
+<p>Possible uses of this library are:</p>
+<ul>
+<li>Compile code and include it into the currently running python instance</li>
+<li>Create ctypes bindings for C code by making use of the C parser frontend</li>
+<li>Create a programming language using ply/textx and generate machine code from it using ppci</li>
+</ul>
+<p>During this session, we will explore the various parts of the ppci library and have a good overview what it is capable of.</p>
+<p>Further documentation is <a href="http://ppci.readthedocs.io/en/latest/">located here</a></p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

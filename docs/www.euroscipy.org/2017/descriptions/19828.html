@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>AutoWIG: Wrapping very large C++ libraries in Python automatically</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>AutoWIG: Wrapping very large C++ libraries in Python automatically</h3>
+    
+    <p>Most of Python and R scientific packages incorporate compiled scientific libraries to speed up the execution of the code needed for high-performance computing and to reuse legacy libraries.</p>
+<p>Several semi-automatic solutions exist to wrap these compiled libraries: SWIG, Cython, Boost.Python.
+However, the process of wrapping a large C++ library is cumbersome and time consuming, mainly due some high-level constructs that have no equivalent in Python (template, complex iterators, ...).</p>
+<p>In this talk, we introduce AutoWIG, a Python package that enables full C++ introspection using LLVM/Clang technologies.
+Default strategies have been designed to transform any C++ construct into Python, using Boost.Python for instance.
+Based on the introspection, a set of classes, methods, namespaces are retrieve and Boost.Python code is generated using the Mako template engine.</p>
+<p>Our approach is automatic, extensible, and applies to complex C++ libraries, composed of thousands of classes or incorporating modern meta-programming constructs.
+For instance, we wrap with AutoWIG the full Clang library to obtain full introspection on C++ code such as template classes.
+<a href="http://autowig.readthedocs.io/en/latest/examples/index.html">Jupyter notebooks</a> and <a href="http://autowig.readthedocs.io/en/latest/install/docker.html">Docker images</a> render AutoWIG easy to pick up and play with.
+The source code is hosted on <a href="http://github.com/StatisKit/AutoWIG">GitHub</a> and binaries can be <a href="http://autowig.readthedocs.io/en/latest/install/anaconda.html">installed</a> with Conda.
+Designed as a library, this package can easily be integrated with compiler toolchains, such as SCons, to ease the development process of teams.
+A more detailed description of this package can be read on this <a href="https://arxiv.org/abs/1705.11000">preprint</a>.</p>
+<p>During the talk, we will describe AutoWIG main features and cover how you can generate Python bindings for your C++ libraries illustrating by various Jupyter notebooks.
+In particular, we will explain how we have bootstrapped the wrapping of LLVM/Clang in Python, using libclang, to provide unavailable features such as introspection on C++ templates from Python.
+An example of the wrapping of C++  <a href="http://eigen.tuxfamily.org">linear algebra</a> and  <a href="http://github.com/StatisKit">statistical</a> libraries to benefit of state-of-the-art graphical model learning algorithms will be discussed in depth.</p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

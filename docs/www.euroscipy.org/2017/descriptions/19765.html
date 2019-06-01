@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Bayesian Optimisation, can you do better than randomly guessing parameters?</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Bayesian Optimisation, can you do better than randomly guessing parameters?</h3>
+    
+    <p>Choosing the right hyper-parameters for a deep neural network, configuring a fluid dynamics simulation or finding the recipe of the next prize winning beer have three things in common: each trial is expensive, you don't have an analytic function you can minimise with <code>scipy.minimize</code> and you only get noisy observations from each trial.</p>
+<p>Bayesian optimisation (BO) to the rescue! BO is a clever piece of math designed to solve exactly these kinds of problems. This talk is for people who have to find the best configuration for an "algorithm" that is expensive to run. Currently you might be performing a grid search or trying settings at random. Neither of these learn from observations they have already made. The fundamental idea of BO is to use previous observations to make a prediction about which settings to try next. By doing this you can reduce the number of evaluations needed to find the optimal settings.</p>
+<p>In this talk you will learn about bayesian optimisation, how to implement the basics yourself, some tricks of the trade, and I will introduce you to the scikit-optimize library: a simple and efficient library to minimize (very) expensive and noisy black-box functions. It implements several methods for BO and attempts to be accessible and easy to use in many different contexts.</p>
+<p>We will start by looking at some simple examples in depth, discuss when BO is the right tool and when not, and then use scikit-optimize to find the best hyper-parameters for a neural network.</p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

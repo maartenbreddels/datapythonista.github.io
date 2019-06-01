@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Scikit-learn and tabular data: closing the gap</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Scikit-learn and tabular data: closing the gap</h3>
+    
+    <h1>Scikit-learn and tabular data: closing the gap</h1>
+<p>Scikit-learn traditionally centered its data model around numpy arrays (and sparse matrices), for good historical and implementation details. However, in an important subset of scikit-learn's usecases, the original data in the machine learning pipeline is tabular: heterogenously typed and labeled. In the meantime, pandas has become very popular, and is one of the driving foces behind the huge popularity of Python for data science (amongst other libraries!). Pandas DataFrames are increasingly used to represent those tabular data, but scikit-learn does not always play well with it.</p>
+<p>Typically you need to preprocess the data (vectorize or featurize) to obtain array data. But until recently, the preprocessing tools of scikit-learn were lacking to deal with heterogenous tabular data (e.g. using different transformations for different columns, dealing with categorical data). Further, the label information of the data (the column names (and row labels)) gets lost.</p>
+<p>This talk will give an overview of the challenges and current bottlenecks when working with tabular data and scikit-learn. Then it will show the ungoing developments in sckikit-learn to improve this situation as well as highlight some third-party libraries that try to ease those problems. Finally conclude with some open questions on what further needs to be done in this area.</p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

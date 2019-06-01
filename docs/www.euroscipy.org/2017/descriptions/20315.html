@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Real-time Crowd-sourced Detection of Earthquakes</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Real-time Crowd-sourced Detection of Earthquakes</h3>
+    
+    <p>The European-Mediterranean Seismological Centre publishes up to date earthquake information from around the world. However, for several years, we have been able to detect many important earthquakes earlier than the seismic networks! After an earthquake, people affected often rapidly arrive on our website or use our app, this causes a peak in internet traffic that our customised traffic monitoring system detects.</p>
+<p>When a peak is detected, our website and app respond by requesting our users to complete a questionnaire if they have felt an earthquake. Each peak is also analyzed to estimate its epicentre and start time, whereupon the system starts trying to associate the peak with a seismically detected earthquake. If an association is obtained, this earthquake is given special status by our website since we can be sure that it has been felt by the public (most earthquakes are only felt by a few people). This system helps us improve our site’s responsivity and hence our connection with the public.</p>
+<p>The system consists of a collection of python processes linked via <a href="https://www.rabbitmq.com/">RabbitMQ</a>. RabbitMQ is a messaging server that creates a queue of messages for each process to consume. We use the <a href="https://github.com/pika/pika">pika</a> library to interact with RabbitMQ from python, each process is an actor in the RMQ network.</p>
+<p>Users are localized via their IP or mobile phone geolocation. Peaks are localized using a clustering algorithm. This allows us to create maps of activity, which is done using <a href="http://gmt.soest.hawaii.edu/">GMT</a> (via <a href="http://emolch.github.io/gmtpy/">gmtpy</a> - GMT is a mapping software popular in the seismic community).</p>
+<p>Data and results are also persisted to a <a href="https://www.postgresql.org">postgresql</a> database using the <a href="https://www.sqlalchemy.org">sqlalchemy</a> toolkit. A realtime display of the postgresql data is accomplished using <a href="https://grafana.com/">Grafana</a> via a customization of the <a href="https://graphite-api.readthedocs.io/en/latest/">graphite-api</a> application.</p>
+<p>This talk will give an overview of our system’s operation and details on its technical implementation.</p>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>

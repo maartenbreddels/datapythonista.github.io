@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Leverage knowledge from under-represented classes in machine learning: an introduction to imbalanced-learn</title>
+
+    <link rel="stylesheet" href="../../theme/css/normalize.css" />
+    <link rel="stylesheet" href="../../theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="../../theme/css/style.css" />
+    <link rel="stylesheet" href="../../theme/css/pygments.css" />	
+    <link rel="shortcut icon" href="../../theme/images/icons/favicon.ico"/>
+    <script src="../../theme/js/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="../../static/2019/euroscipy.css" />
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+      <a href="../.."><img src="../../theme/images/euroscipy_logo.png" alt="EuroSciPy Website"/></a>
+      <h1>EuroSciPy</h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+    <h3>Leverage knowledge from under-represented classes in machine learning: an introduction to imbalanced-learn</h3>
+    
+    <h2>The curse of imbalanced data sets</h2>
+<p>The curse of imbalanced data set refers to data sets in which the number of samples in one class is less than in others. This issue is often encountered in real world data sets such as medical imaging applications (e.g. cancer detection), fraud detection, etc. In such particular condition, machine learning algorithms learn sub-optimal models which will generally favor the class having the largest number of samples.</p>
+<p>In this talk, we will present the <a href="https://github.com/scikit-learn-contrib/imbalanced-learn"><code>imbalanced-learn</code></a> package which implement some of the state-of-the-art algorithms, tackling the class imbalance problem.</p>
+<h2>A <code>scikit-learn-contrib</code> project</h2>
+<p><code>scikit-learn</code> includes a tremendous set of pre-processing methods (i.e. transformers, standardizers, etc.) to optimally train machine learning algorithms. However, there is currently no estimators to reduce or generate samples. Therefore, the <code>imbalanced-learn</code> provides a new type of estimator, named sampler, aiming at resampling a data set whenever it is desired. The samplers are fully compatible with the current <code>scikit-learn</code> API and are composed of the following main methods inspired from <code>scikit-learn</code>: (i) <code>fit</code>, (ii) <code>sample</code>, and (iii) <code>fit_sample</code>. Additionally, a class <code>Pipeline</code> is inherited from <code>scikit-learn</code>, permitting to incorporate samplers in the usual classification pipeline. During the talk, we will also present the key parameters, shared by all the samplers.</p>
+<h2>A data science perspective</h2>
+<p>Regarding the data science aspect of this talk, we will highlight the distinctive characteristics of the different algorithms: (i) over-sampling, (ii) controlled under-sampling, (iii) cleaning under-sampling, (iv) combination of over-sampling and cleaning under-sampling, and (v) ensemble sampler.</p>
+<h2>Concrete examples</h2>
+<p>In addition, we will briefly present a couple of examples in which the package has been used on real-world data sets.</p>
+<h2>Perspectives</h2>
+<p>Our package is still under heavy development and we are aiming at improving the following points:</p>
+<ol>
+<li>Speed optimization through benchmarking and profiling.</li>
+<li>Quantitative classification performance benchmarking.</li>
+<li>Additional algorithms (categorical features, ...)</li>
+</ol>
+    </div>
+    <!-- End Main Content -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<footer role="contentinfo"><!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-8 columns">
+                <p>EuroSciPy by The EuroSciPy team <info@euroscipy.org></p>
+            </div>
+            <div class="large-4 columns">
+            	<a href="privacy.html"> Privacy terms</a>
+            </div>
+    </div>
+</footer></footer>
