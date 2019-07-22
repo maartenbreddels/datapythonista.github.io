@@ -1,4 +1,12 @@
+Title: pandas: The two cultures
+Author: Marc
+Date: 2019-07-22 23:26:00
+Slug: pandas-the-two-cultures
+Tags: pandas
+
 # pandas: The two cultures
+
+![](/static/img/blog/two_cultures/leo_breiman.jpeg)
 
 In 2001, [Leo Breiman](https://www.stat.berkeley.edu/~breiman/) published the
 paper [Statistical Modeling: The Two Cultures](http://www2.math.uu.se/~thulin/mm/breiman.pdf).
@@ -62,6 +70,8 @@ the Zen of Python, applies:
 - ...
 
 ## One pandas to rule them all
+
+![](/static/img/blog/two_cultures/ring.jpeg)
 
 What I find the most interesting part about _The two cultures_ I just described, is that I use
 pandas for both. I think pandas is the best tool for both use cases, and I won't admit I'm biased
@@ -138,6 +148,8 @@ be a bottleneck, they are able to avoid pandas making assumptions, and will be a
 memory they need at the cost of providing an addition parameter.
 
 ### How many legs unicorns have?
+
+![](/static/img/blog/two_cultures/unicorn.jpeg)
 
 An important question we face is, how many legs unicorns have? In the previous example, we specified
 they have 4, but do unicorns really have 4 legs? Does anybody has seen a unicorn? Let's try to be
@@ -273,6 +285,8 @@ I'll write in a different article more details about this proposal.
 
 Lazy pandas
 -----------
+
+![](/static/img/blog/two_cultures/lazy_pandas.jpeg)
 
 To conclude this article, I will talk about what in my opinion is one of the biggest
 differences between the needs of data analysts using pandas in a Jupyter notebook,

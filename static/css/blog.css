@@ -9,3 +9,14 @@
 #blog-header .blog-description a:visited {
     color: white;
 }
+.inner {
+    max-width: 44em !important;
+}
+.post-content img {
+    width: auto !important;
+    display: inline !important;
+    margin: 0 !important;
+}
+code, pre {
+    font-size: .8em !important;
+}
