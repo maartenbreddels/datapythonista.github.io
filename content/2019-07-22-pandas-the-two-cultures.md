@@ -4,8 +4,6 @@ Date: 2019-07-22 23:26:00
 Slug: pandas-the-two-cultures
 Tags: pandas
 
-# pandas: The two cultures
-
 ![](/static/img/blog/two_cultures/leo_breiman.jpeg)
 
 In 2001, [Leo Breiman](https://www.stat.berkeley.edu/~breiman/) published the
@@ -13,7 +11,7 @@ paper [Statistical Modeling: The Two Cultures](http://www2.math.uu.se/~thulin/mm
 Breiman was a distinguished statistician at UC Berkeley, known among other things for his
 major contributions to CART (decision trees), and ensemble techniques, mainly bootstrap
 aggregation. Combining both, he was able to define one of the most popular machine learning
-models even today (18 years after the publication of the paper)
+models even today (18 years after the publication of the paper),
 [Random forests](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf).
 
 In the paper of about _The two cultures_, Breiman identified that there were two somehow
@@ -32,9 +30,12 @@ at NeurIPS 2017.
 
 But this post is not about machine learning, but about [pandas](https://pandas.pydata.org/).
 And about the two cultures in the pandas community, that I don't think are often well identified,
-causing frustration to the users, and making decision making difficult to developers.
+causing frustration to the users, and making the decisions regarding the development of the project
+more difficult.
 
 ## Dr Jekyll and Mr Hyde
+
+![](/static/img/blog/two_cultures/dr_jekyll_mr_hyde.jpeg)
 
 For the last years I've been mainly working as a data scientist. Since the developers of
 [scikit-learn](https://scikit-learn.org/stable/) are doing all the _fun_ work and implementing
@@ -49,7 +50,7 @@ What I value the most is being able to write code fast, to the extend I alias ev
 library I import to things like ``np``, ``pd``, ``plt`` to make sure I save those microseconds
 from typing the actual names the developers of those tools decided. And I really appreciate
 the software making as many decisions as needed to save me from having to spend the time on
-being explicit on what I want. Ok, this is a bit exagerated, and I don't really let my notebook
+being explicit on what I want. Ok, this is a bit exaggerated, and I don't really let my notebook
 names be untitled whatever, or use aliases, but I think you see my point.
 
 On the other hand, when working in **data engineering** I use vim, and I write all my code in
@@ -101,7 +102,7 @@ dtype: int64
 
 I think we can agree that pandas is letting us create our data in the simplest possible way. There
 are other options that pandas lets us do, like providing one list for the values and another for the
-index too, which in some cases can be more convenint. As a data analyst, I don't think pandas can
+index too, which in some cases can be more convenient. As a data analyst, I don't think pandas can
 be improved to make our life easier.
 
 But as a data engineering, there are more things to consider. Imagine our data, instead of having 3
@@ -122,7 +123,7 @@ with 18 digits? Or do we expect negative numbers of legs at all? Probably not. W
 pandas don't, and it's deciding for us a conservative representation for our data that won't
 cause as problems (as opposed as one that saves as memory).
 
-In this case, the Series constructor has a paramter ``dtype`` that we can use to tell pandas to not
+In this case, the Series constructor has a parameter ``dtype`` that we can use to tell pandas to not
 decide for us how to internally represent the data, but to tell it explicitly. This is the result:
 
 ```python

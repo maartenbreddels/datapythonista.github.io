@@ -43,7 +43,7 @@
 
   <link href="https://datapythonista.github.io/blog/pandas-the-two-cultures.html" rel="canonical" />
 
-    <meta name="description" content="pandas: The two cultures In 2001, Leo Breiman published the paper Statistical Modeling: The Two Cultures. Breiman was a distinguished...">
+    <meta name="description" content="In 2001, Leo Breiman published the paper Statistical Modeling: The Two Cultures. Breiman was a distinguished statistician at UC...">
 
     <meta name="author" content="Marc">
 
@@ -55,7 +55,7 @@
 <!-- Open Graph -->
 <meta property="og:site_name" content="datapythonista blog"/>
 <meta property="og:title" content="pandas: The two cultures"/>
-<meta property="og:description" content="pandas: The two cultures In 2001, Leo Breiman published the paper Statistical Modeling: The Two Cultures. Breiman was a distinguished..."/>
+<meta property="og:description" content="In 2001, Leo Breiman published the paper Statistical Modeling: The Two Cultures. Breiman was a distinguished statistician at UC..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://datapythonista.github.io/blog/pandas-the-two-cultures.html"/>
 <meta property="og:type" content="article"/>
@@ -83,7 +83,7 @@
   },
   "image": "https://datapythonista.github.io/blog/../static/img/bg.jpg",
   "url": "https://datapythonista.github.io/blog/pandas-the-two-cultures.html",
-  "description": "pandas: The two cultures In 2001, Leo Breiman published the paper Statistical Modeling: The Two Cultures. Breiman was a distinguished..."
+  "description": "In 2001, Leo Breiman published the paper Statistical Modeling: The Two Cultures. Breiman was a distinguished statistician at UC..."
 }
 </script>
 </head>
@@ -136,14 +136,13 @@
         <article class="post">
         <div class="inner">
             <section class="post-content">
-                <h1>pandas: The two cultures</h1>
-<p><img alt="" src="/static/img/blog/two_cultures/leo_breiman.jpeg"></p>
+                <p><img alt="" src="/static/img/blog/two_cultures/leo_breiman.jpeg"></p>
 <p>In 2001, <a href="https://www.stat.berkeley.edu/~breiman/">Leo Breiman</a> published the
 paper <a href="http://www2.math.uu.se/~thulin/mm/breiman.pdf">Statistical Modeling: The Two Cultures</a>.
 Breiman was a distinguished statistician at UC Berkeley, known among other things for his
 major contributions to CART (decision trees), and ensemble techniques, mainly bootstrap
 aggregation. Combining both, he was able to define one of the most popular machine learning
-models even today (18 years after the publication of the paper)
+models even today (18 years after the publication of the paper),
 <a href="https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf">Random forests</a>.</p>
 <p>In the paper of about <em>The two cultures</em>, Breiman identified that there were two somehow
 conflicting cultures in the discipline of statistical modeling. One that was focussing on
@@ -160,8 +159,10 @@ the obtained results, more than by the theory behind the results. Ali Rahimi gav
 at NeurIPS 2017.</p>
 <p>But this post is not about machine learning, but about <a href="https://pandas.pydata.org/">pandas</a>.
 And about the two cultures in the pandas community, that I don't think are often well identified,
-causing frustration to the users, and making decision making difficult to developers.</p>
+causing frustration to the users, and making the decisions regarding the development of the project
+more difficult.</p>
 <h2>Dr Jekyll and Mr Hyde</h2>
+<p><img alt="" src="/static/img/blog/two_cultures/dr_jekyll_mr_hyde.jpeg"></p>
 <p>For the last years I've been mainly working as a data scientist. Since the developers of
 <a href="https://scikit-learn.org/stable/">scikit-learn</a> are doing all the <em>fun</em> work and implementing
 all the complex algorithms for the rest of us, I'll argue that my job (and the job of the rest
@@ -174,7 +175,7 @@ What I value the most is being able to write code fast, to the extend I alias ev
 library I import to things like <code>np</code>, <code>pd</code>, <code>plt</code> to make sure I save those microseconds
 from typing the actual names the developers of those tools decided. And I really appreciate
 the software making as many decisions as needed to save me from having to spend the time on
-being explicit on what I want. Ok, this is a bit exagerated, and I don't really let my notebook
+being explicit on what I want. Ok, this is a bit exaggerated, and I don't really let my notebook
 names be untitled whatever, or use aliases, but I think you see my point.</p>
 <p>On the other hand, when working in <strong>data engineering</strong> I use vim, and I write all my code in
 Python files in a clear directory structure. Every file and directory are carefully named,
@@ -217,7 +218,7 @@ can offer an API to both kinds of users what they need? Is that always possible.
 
 <p>I think we can agree that pandas is letting us create our data in the simplest possible way. There
 are other options that pandas lets us do, like providing one list for the values and another for the
-index too, which in some cases can be more convenint. As a data analyst, I don't think pandas can
+index too, which in some cases can be more convenient. As a data analyst, I don't think pandas can
 be improved to make our life easier.</p>
 <p>But as a data engineering, there are more things to consider. Imagine our data, instead of having 3
 samples, has 3 million. How much memory is pandas consuming here? And why? For simplicity, let's
@@ -235,7 +236,7 @@ store numbers from around -9e18 to 9e18. But do we really expect animals to have
 with 18 digits? Or do we expect negative numbers of legs at all? Probably not. We know it, but
 pandas don't, and it's deciding for us a conservative representation for our data that won't
 cause as problems (as opposed as one that saves as memory).</p>
-<p>In this case, the Series constructor has a paramter <code>dtype</code> that we can use to tell pandas to not
+<p>In this case, the Series constructor has a parameter <code>dtype</code> that we can use to tell pandas to not
 decide for us how to internally represent the data, but to tell it explicitly. This is the result:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pandas</span>
 

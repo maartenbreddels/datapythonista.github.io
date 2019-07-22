@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/feeds/all-en.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2019-07-22T23:26:00+01:00</updated><subtitle>about me</subtitle><entry><title>pandas: The two cultures</title><link href="https://datapythonista.github.io/blog/pandas-the-two-cultures.html" rel="alternate"></link><published>2019-07-22T23:26:00+01:00</published><updated>2019-07-22T23:26:00+01:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2019-07-22:/blog/pandas-the-two-cultures.html</id><summary type="html">&lt;h1&gt;pandas: The two cultures&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/leo_breiman.jpeg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/feeds/all-en.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2019-07-22T23:26:00+01:00</updated><subtitle>about me</subtitle><entry><title>pandas: The two cultures</title><link href="https://datapythonista.github.io/blog/pandas-the-two-cultures.html" rel="alternate"></link><published>2019-07-22T23:26:00+01:00</published><updated>2019-07-22T23:26:00+01:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2019-07-22:/blog/pandas-the-two-cultures.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/leo_breiman.jpeg"&gt;&lt;/p&gt;
 &lt;p&gt;In 2001, &lt;a href="https://www.stat.berkeley.edu/~breiman/"&gt;Leo Breiman&lt;/a&gt; published the
 paper &lt;a href="http://www2.math.uu.se/~thulin/mm/breiman.pdf"&gt;Statistical Modeling: The Two Cultures&lt;/a&gt;.
 Breiman was a distinguished statistician at UC Berkeley, known among other things for his
 major contributions to CART (decision trees), and ensemble techniques, mainly bootstrap
-aggregation. Combining both, he was able to define one …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;pandas: The two cultures&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/leo_breiman.jpeg"&gt;&lt;/p&gt;
+aggregation. Combining both, he was able to define one of the most popular …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/leo_breiman.jpeg"&gt;&lt;/p&gt;
 &lt;p&gt;In 2001, &lt;a href="https://www.stat.berkeley.edu/~breiman/"&gt;Leo Breiman&lt;/a&gt; published the
 paper &lt;a href="http://www2.math.uu.se/~thulin/mm/breiman.pdf"&gt;Statistical Modeling: The Two Cultures&lt;/a&gt;.
 Breiman was a distinguished statistician at UC Berkeley, known among other things for his
 major contributions to CART (decision trees), and ensemble techniques, mainly bootstrap
 aggregation. Combining both, he was able to define one of the most popular machine learning
-models even today (18 years after the publication of the paper)
+models even today (18 years after the publication of the paper),
 &lt;a href="https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf"&gt;Random forests&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In the paper of about &lt;em&gt;The two cultures&lt;/em&gt;, Breiman identified that there were two somehow
 conflicting cultures in the discipline of statistical modeling. One that was focussing on
@@ -29,8 +27,10 @@ the obtained results, more than by the theory behind the results. Ali Rahimi gav
 at NeurIPS 2017.&lt;/p&gt;
 &lt;p&gt;But this post is not about machine learning, but about &lt;a href="https://pandas.pydata.org/"&gt;pandas&lt;/a&gt;.
 And about the two cultures in the pandas community, that I don't think are often well identified,
-causing frustration to the users, and making decision making difficult to developers.&lt;/p&gt;
+causing frustration to the users, and making the decisions regarding the development of the project
+more difficult.&lt;/p&gt;
 &lt;h2&gt;Dr Jekyll and Mr Hyde&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/dr_jekyll_mr_hyde.jpeg"&gt;&lt;/p&gt;
 &lt;p&gt;For the last years I've been mainly working as a data scientist. Since the developers of
 &lt;a href="https://scikit-learn.org/stable/"&gt;scikit-learn&lt;/a&gt; are doing all the &lt;em&gt;fun&lt;/em&gt; work and implementing
 all the complex algorithms for the rest of us, I'll argue that my job (and the job of the rest
@@ -43,7 +43,7 @@ What I value the most is being able to write code fast, to the extend I alias ev
 library I import to things like &lt;code&gt;np&lt;/code&gt;, &lt;code&gt;pd&lt;/code&gt;, &lt;code&gt;plt&lt;/code&gt; to make sure I save those microseconds
 from typing the actual names the developers of those tools decided. And I really appreciate
 the software making as many decisions as needed to save me from having to spend the time on
-being explicit on what I want. Ok, this is a bit exagerated, and I don't really let my notebook
+being explicit on what I want. Ok, this is a bit exaggerated, and I don't really let my notebook
 names be untitled whatever, or use aliases, but I think you see my point.&lt;/p&gt;
 &lt;p&gt;On the other hand, when working in &lt;strong&gt;data engineering&lt;/strong&gt; I use vim, and I write all my code in
 Python files in a clear directory structure. Every file and directory are carefully named,
@@ -86,7 +86,7 @@ can offer an API to both kinds of users what they need? Is that always possible.
 
 &lt;p&gt;I think we can agree that pandas is letting us create our data in the simplest possible way. There
 are other options that pandas lets us do, like providing one list for the values and another for the
-index too, which in some cases can be more convenint. As a data analyst, I don't think pandas can
+index too, which in some cases can be more convenient. As a data analyst, I don't think pandas can
 be improved to make our life easier.&lt;/p&gt;
 &lt;p&gt;But as a data engineering, there are more things to consider. Imagine our data, instead of having 3
 samples, has 3 million. How much memory is pandas consuming here? And why? For simplicity, let's
@@ -104,7 +104,7 @@ store numbers from around -9e18 to 9e18. But do we really expect animals to have
 with 18 digits? Or do we expect negative numbers of legs at all? Probably not. We know it, but
 pandas don't, and it's deciding for us a conservative representation for our data that won't
 cause as problems (as opposed as one that saves as memory).&lt;/p&gt;
-&lt;p&gt;In this case, the Series constructor has a paramter &lt;code&gt;dtype&lt;/code&gt; that we can use to tell pandas to not
+&lt;p&gt;In this case, the Series constructor has a parameter &lt;code&gt;dtype&lt;/code&gt; that we can use to tell pandas to not
 decide for us how to internally represent the data, but to tell it explicitly. This is the result:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt;
 
