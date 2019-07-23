@@ -1,84 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <title>datapythonista blog - Django tag</title>
-        <meta charset="utf-8" />
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>datapythonista blog - Tag Django</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="https://datapythonista.github.io/blog/" rel="canonical" />
+
+  <!-- Feed -->
         <link href="https://datapythonista.github.io/blog/atom.xml" type="application/atom+xml" rel="alternate" title="datapythonista blog Full Atom Feed" />
+
+  <link href="https://datapythonista.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://datapythonista.github.io/blog/theme/css/code_blocks/github.css" rel="stylesheet">
+
+    <!-- CSS specified by the user -->
+
+
+    <link href="https://datapythonista.github.io/blog/../static/css/blog.css" type="text/css" rel="stylesheet" />
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
 </head>
+<!-- TODO : Body class -->
+<body class="home-template">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://datapythonista.github.io/blog/">datapythonista blog <strong>about me</strong></a></h1>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-            <li><a href="https://datapythonista.github.io/blog/category/misc.html">misc</a></li>
-        </ul></nav><!-- /#menu -->
-<section id="content">
-<h2>Articles tagged with Django</h2>
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
 
-<ol id="post-list">
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="https://datapythonista.github.io/blog/django-catalan-usergroup-meeting.html" rel="bookmark" title="Permalink to Django Catalan usergroup meeting">Django Catalan usergroup meeting</a></h2> </header>
-                <footer class="post-info">
-                    <time class="published" datetime="2008-04-01T04:43:00+01:00"> Tue 01 April 2008 </time>
-                    <address class="vcard author">By
-                        <a class="url fn" href="https://datapythonista.github.io/blog/author/marc.html">Marc</a>
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> <p>Six months ago, I decided to create the <a href="http://groups.google.com/group/django-cat">Django Catalan usergroup</a>, for user in <a href="http://en.wikipedia.org/wiki/Catalonia">Catalonia</a>, and for users who speak <a href="http://en.wikipedia.org/wiki/Catalan_language">catalan</a>.<br/><br/>Today I'm happy to announce that we are already 26 members, and we are going to have our first meeting on April 3rd. We've decided to meet together with …</p> </div><!-- /.entry-content -->
-        </article></li>
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="https://datapythonista.github.io/blog/transdb-pretty-much-easier.html" rel="bookmark" title="Permalink to TransDb: Pretty much easier">TransDb: Pretty much easier</a></h2> </header>
-                <footer class="post-info">
-                    <time class="published" datetime="2008-03-06T19:49:00+00:00"> Thu 06 March 2008 </time>
-                    <address class="vcard author">By
-                        <a class="url fn" href="https://datapythonista.github.io/blog/author/marc.html">Marc</a>
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> <p>Today I've released a new version of TransDb, the Django package that allows storing text at database in more than one language (using the same field).<br/><br/>New version is pretty much easier to use, after fixing many bugs, and avoiding the use of a filter in templates.<br/><br/>Now, migrating your …</p> </div><!-- /.entry-content -->
-        </article></li>
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="https://datapythonista.github.io/blog/media-data-without-media-directory.html" rel="bookmark" title="Permalink to Media data without media directory">Media data without media directory</a></h2> </header>
-                <footer class="post-info">
-                    <time class="published" datetime="2008-01-17T16:13:00+00:00"> Thu 17 January 2008 </time>
-                    <address class="vcard author">By
-                        <a class="url fn" href="https://datapythonista.github.io/blog/author/marc.html">Marc</a>
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> <p>It's not a big trouble, but I wanted to remove the /media/ prefix on all my media links, like...<br/><br/><code><br/><img alt="My Image" src="/media/img/myimage.png"/><br/><link rel="stylesheet" href="/media/css/mysheet.css" type="text/css"/><br/></code><br/><br/>and so on.<br/><br/>This can be easily achieved by replacing in apache's configuration file:<br/><br/><code><br/><Location "/media/"><br/>SetHandler None<br/></LocationMatch><br/></code><br/><br/>by<br/><br/><code><br/><LocationMatch "/((css|js|img|swf|pdf)/|favicon.ico)"><br/>SetHandler None<br/></LocationMatch><br/></code><br/><br/>Of course you have to have all you media files in folders …</p> </div><!-- /.entry-content -->
-        </article></li>
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="https://datapythonista.github.io/blog/normalize-name-and-size-images-in.html" rel="bookmark" title="Permalink to Normalize name and size images in Django (and adding thumbnails)">Normalize name and size images in Django (and adding thumbnails)</a></h2> </header>
-                <footer class="post-info">
-                    <time class="published" datetime="2007-12-10T01:19:00+00:00"> Mon 10 December 2007 </time>
-                    <address class="vcard author">By
-                        <a class="url fn" href="https://datapythonista.github.io/blog/author/marc.html">Marc</a>
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> <p>I wanted to assign an image to every element in a model. I wanted them to have a thumbnail, and to have normalized sizes and names. And of course, I want my application to do everything automatically.<br/><br/>The best method I've found is next, modifying models.py (note that PIL …</p> </div><!-- /.entry-content -->
-        </article></li>
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="https://datapythonista.github.io/blog/transdb-djangos-i18n-for-database.html" rel="bookmark" title="Permalink to TransDb: Django’s i18n for database">TransDb: Django’s i18n for database</a></h2> </header>
-                <footer class="post-info">
-                    <time class="published" datetime="2007-12-08T07:15:00+00:00"> Sat 08 December 2007 </time>
-                    <address class="vcard author">By
-                        <a class="url fn" href="https://datapythonista.github.io/blog/author/marc.html">Marc</a>
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> <p>Today I've created my own code for having (in Django) fields in more than one language stored in database. There were some other packages, but none of them useful for me (as commented <a href="http://vaig.be/2007/07/11/django-database-texts-translated/">here</a>).<br/><br/>TransDb's main goal is that is simple, for application users, application programmers, and the code itself …</p> </div><!-- /.entry-content -->
-        </article></li>
-</ol><!-- /#posts-list -->
-<p class="paginator">
-        <a href="https://datapythonista.github.io/blog/tag/django4.html">&laquo;</a>
-    Page 5 / 8
-        <a href="https://datapythonista.github.io/blog/tag/django6.html">&raquo;</a>
+
+    </ul>
+  </div>
+</nav>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="blog-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span class="blog-logo">
+                <a href="https://datapythonista.github.io/blog/"><img src="../static/img/profile.png" alt="Blog Logo" /></a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Tag Django</h1>
+        <span class="blog-description">Posts: 36</span>
+          <div class="blog-cover cover" style="background-image: url('https://datapythonista.github.io/blog/../static/img/bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+<div id="index" class="container">
+  <main class="content" role="main">
+    <div class="extra-pagination">
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <a class="pagination-next" href="https://datapythonista.github.io/blog/tag/django4.html"><i class="ic ic-arrow-left"></i> <span class="pagination-label">Newer Posts</span></a>
+    <span class="pagination-info">Page 5 / 8</span>
+    <a class="pagination-prev" href="https://datapythonista.github.io/blog/tag/django6.html"><span class="pagination-label">Older Posts</span> <i class="ic ic-arrow-right"></i></a>
+    <div class="clear"></div>
+  </div>
+</nav>
+    </div>
+
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="https://datapythonista.github.io/blog/django-catalan-usergroup-meeting.html" rel="bookmark" title="Permalink to Django Catalan usergroup meeting">Django Catalan usergroup meeting</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://datapythonista.github.io/blog/author/marc.html">Marc</a>
+                     | <time datetime="Tue 01 April 2008">Tue 01 April 2008</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        Six months ago, I decided to create the Django Catalan usergroup, for user in Catalonia, and for users who speak catalan.Today I'm happy to announce that we are already 26 members, and we are going to have our first meeting on April 3rd. We've...
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/django-catalan-usergroup-meeting.html" href="https://datapythonista.github.io/blog/django-catalan-usergroup-meeting.html#disqus_thread">comments</a>
 </p>
-</section><!-- /#content -->
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="https://datapythonista.github.io/blog/transdb-pretty-much-easier.html" rel="bookmark" title="Permalink to TransDb: Pretty much easier">TransDb: Pretty much easier</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://datapythonista.github.io/blog/author/marc.html">Marc</a>
+                     | <time datetime="Thu 06 March 2008">Thu 06 March 2008</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        Today I've released a new version of TransDb, the Django package that allows storing text at database in more than one language (using the same field).New version is pretty much easier to use, after fixing many bugs, and avoiding the use of a...
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/transdb-pretty-much-easier.html" href="https://datapythonista.github.io/blog/transdb-pretty-much-easier.html#disqus_thread">comments</a>
+</p>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="https://datapythonista.github.io/blog/media-data-without-media-directory.html" rel="bookmark" title="Permalink to Media data without media directory">Media data without media directory</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://datapythonista.github.io/blog/author/marc.html">Marc</a>
+                     | <time datetime="Thu 17 January 2008">Thu 17 January 2008</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        It's not a big trouble, but I wanted to remove the /media/ prefix on all my media links, like...and so on.This can be easily achieved by replacing in apache's configuration file:SetHandler NonebySetHandler NoneOf course you have to have all you...
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/media-data-without-media-directory.html" href="https://datapythonista.github.io/blog/media-data-without-media-directory.html#disqus_thread">comments</a>
+</p>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="https://datapythonista.github.io/blog/normalize-name-and-size-images-in.html" rel="bookmark" title="Permalink to Normalize name and size images in Django (and adding thumbnails)">Normalize name and size images in Django (and adding thumbnails)</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://datapythonista.github.io/blog/author/marc.html">Marc</a>
+                     | <time datetime="Mon 10 December 2007">Mon 10 December 2007</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        I wanted to assign an image to every element in a model. I wanted them to have a thumbnail, and to have normalized sizes and names. And of course, I want my application to do everything automatically.The best method I've found is next, modifying...
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/normalize-name-and-size-images-in.html" href="https://datapythonista.github.io/blog/normalize-name-and-size-images-in.html#disqus_thread">comments</a>
+</p>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="https://datapythonista.github.io/blog/transdb-djangos-i18n-for-database.html" rel="bookmark" title="Permalink to TransDb: Django’s i18n for database">TransDb: Django’s i18n for database</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://datapythonista.github.io/blog/author/marc.html">Marc</a>
+                     | <time datetime="Sat 08 December 2007">Sat 08 December 2007</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        Today I've created my own code for having (in Django) fields in more than one language stored in database. There were some other packages, but none of them useful for me (as commented here).TransDb's main goal is that is simple, for application...
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/transdb-djangos-i18n-for-database.html" href="https://datapythonista.github.io/blog/transdb-djangos-i18n-for-database.html#disqus_thread">comments</a>
+</p>
+            </div>
+        </article>
+
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <a class="pagination-next" href="https://datapythonista.github.io/blog/tag/django4.html"><i class="ic ic-arrow-left"></i> <span class="pagination-label">Newer Posts</span></a>
+    <span class="pagination-info">Page 5 / 8</span>
+    <a class="pagination-prev" href="https://datapythonista.github.io/blog/tag/django6.html"><span class="pagination-label">Older Posts</span> <i class="ic ic-arrow-right"></i></a>
+    <div class="clear"></div>
+  </div>
+</nav>
+  </main>
+</div>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="https://datapythonista.github.io/blog/theme/js/script.js"></script>
+
+    <!-- Script specified by the user -->
+    <script type="text/javascript"  src="https://datapythonista.github.io/blog/../static/js/blog.js"></script>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1635939-25"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-1635939-25', { 'anonymize_ip': true });
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'datapythonista';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 </body>
 </html>
