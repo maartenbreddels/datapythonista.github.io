@@ -1,142 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-
-  <title>Building RPMs for Python3.1</title>
-
-
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="referrer" content="origin" />
-  <meta name="generator" content="Pelican" />
-  <link href="https://datapythonista.github.io/blog/" rel="canonical" />
-
-  <!-- Feed -->
+          <title>datapythonista blog - Building RPMs for Python3.1</title>
+        <meta charset="utf-8" />
         <link href="https://datapythonista.github.io/blog/atom.xml" type="application/atom+xml" rel="alternate" title="datapythonista blog Full Atom Feed" />
 
-  <link href="https://datapythonista.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
-
-  <!-- Code highlight color scheme -->
-      <link href="https://datapythonista.github.io/blog/theme/css/code_blocks/github.css" rel="stylesheet">
-
-    <!-- CSS specified by the user -->
-
-
-    <link href="https://datapythonista.github.io/blog/../static/css/blog.css" type="text/css" rel="stylesheet" />
-
-  <!-- Custom fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-
-  <link href="https://datapythonista.github.io/blog/building-rpms-for-python31.html" rel="canonical" />
-
-    <meta name="description" content="While it's been a long time since the first stable version Python 3 was released, it's not yet available on several operating systems....">
-
-    <meta name="author" content="Marc">
-
-    <meta name="tags" content="Python">
 
 
 
+    <meta name="tags" content="Python" />
 
-<!-- Open Graph -->
-<meta property="og:site_name" content="datapythonista blog"/>
-<meta property="og:title" content="Building RPMs for Python3.1"/>
-<meta property="og:description" content="While it's been a long time since the first stable version Python 3 was released, it's not yet available on several operating systems...."/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://datapythonista.github.io/blog/building-rpms-for-python31.html"/>
-<meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2011-06-11 20:48:00+01:00"/>
-<meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://datapythonista.github.io/blog/author/marc.html">
-<meta property="article:section" content="misc"/>
-<meta property="article:tag" content="Python"/>
-<meta property="og:image" content="https://datapythonista.github.io/blog/../static/img/bg.jpg">
-
-<!-- Twitter Card -->
-
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Article",
-  "name": "Building RPMs for Python3.1",
-  "headline": "Building RPMs for Python3.1",
-  "datePublished": "2011-06-11 20:48:00+01:00",
-  "dateModified": "",
-  "author": {
-    "@type": "Person",
-    "name": "Marc",
-    "url": "https://datapythonista.github.io/blog/author/marc.html"
-  },
-  "image": "https://datapythonista.github.io/blog/../static/img/bg.jpg",
-  "url": "https://datapythonista.github.io/blog/building-rpms-for-python31.html",
-  "description": "While it's been a long time since the first stable version Python 3 was released, it's not yet available on several operating systems...."
-}
-</script>
 </head>
-<!-- TODO : Body class -->
-<body class="home-template">
 
-<nav id="menu">
-  <a class="close-button">Close</a>
-  <div class="nav-wrapper">
-    <p class="nav-label">Menu</p>
-    <ul>
-
-
-    </ul>
-  </div>
-</nav>
-    <!-- Progressbar -->
-    <div class="progress-container">
-        <span class="progress-bar"></span>
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://datapythonista.github.io/blog/">datapythonista blog <strong>about me</strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+            <li class="active"><a href="https://datapythonista.github.io/blog/category/misc.html">misc</a></li>
+        </ul></nav><!-- /#menu -->
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="https://datapythonista.github.io/blog/building-rpms-for-python31.html" rel="bookmark"
+         title="Permalink to Building RPMs for Python3.1">Building RPMs for Python3.1</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2011-06-11T20:48:00+01:00">
+      Sat 11 June 2011
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="https://datapythonista.github.io/blog/author/marc.html">Marc</a>
+    </address>
+    <div class="category">
+        Category: <a href="https://datapythonista.github.io/blog/category/misc.html">misc</a>
     </div>
-
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header id="post-header" class="has-cover">
-      <div class="inner">
-        <nav id="navigation">
-            <span class="blog-logo">
-                <a href="https://datapythonista.github.io/blog/"><img src="../static/img/profile.png" alt="Blog Logo" /></a>
-            </span>
-          <span id="menu-button" class="nav-button">
-            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
-          </span>
-        </nav>
-        <h1 class="post-title">Building RPMs for Python3.1</h1>
-        <!-- TODO : Proper class for headline -->
-        <span class="post-meta">
-                <a href="https://datapythonista.github.io/blog/author/marc.html">Marc</a>
-            | <time datetime="Sat 11 June 2011">Sat 11 June 2011</time>
-        </span>
-        <!-- TODO : Modified check -->
-            <div class="post-cover cover" style="background-image: url('https://datapythonista.github.io/blog/../static/img/bg.jpg')">
-      </div>
-    </header>
-
-  <section id="wrapper">
-    <a class="hidden-close"></a>
-
-    <!-- Post content -->
-    <main class="content" role="main">
-        <article class="post">
-        <div class="inner">
-            <section class="post-content">
-                <p>While it's been a long time since the first stable version Python 3 was released, it's not yet available on several operating systems. Looking for a repository with Python 3 rpms, I found <a href="http://iuscommunity.org/Repos">IUS Community</a>, but I had some problems with it, and I thought on building my own rpms.</p>
+    <div class="tags">
+        Tags:
+            <a href="https://datapythonista.github.io/blog/tag/python.html">Python</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>While it's been a long time since the first stable version Python 3 was released, it's not yet available on several operating systems. Looking for a repository with Python 3 rpms, I found <a href="http://iuscommunity.org/Repos">IUS Community</a>, but I had some problems with it, and I thought on building my own rpms.</p>
 <p>The process for building an rpm from a source tarball is pretty easy (if you know the steps). The only problem in this case, is that the .spec file delivered with Python is not updated, so the process fails.</p>
 <p>I did required changes to the .spec file, and I uploaded it to: <a href="http://files.vaig.be/python-3.1.spec">http://files.vaig.be/python-3.1.spec</a> (NOTE, that is necessary to edit the exact version of Python you're building in line 37. Version in uploaded file is 3.1.3, but it could be changes to 3.1.3, 3.1.4rc1,...).</p>
 <p>Next, you can find the steps for creating a RPM package for Python 3.1 on a CentOS 5 (using my custom .spec file):</p>
@@ -159,84 +65,13 @@ wget http://files.vaig.be/python-3.1.spec</p>
 /usr/src/redhat/RPMS/<YOUR-ARCH>/python3.1-devel-3.1.3-1pydotorg.i386.rpm
 /usr/src/redhat/RPMS/<YOUR-ARCH>/python3.1-tools-3.1.3-1pydotorg.i386.rpm
 </code></p>
-            </section>
-
-            <section class="post-info">
-                <div class="post-share">
-                    <a class="twitter" href="https://twitter.com/share?text=Building RPMs for Python3.1&amp;url=https://datapythonista.github.io/blog/building-rpms-for-python31.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
-                    </a>
-                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://datapythonista.github.io/blog/building-rpms-for-python31.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
-                    </a>
-                    <a class="googleplus" href="https://plus.google.com/share?url=https://datapythonista.github.io/blog/building-rpms-for-python31.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
-                    </a>
-                    <div class="clear"></div>
-                </div>
-
-                <aside class="post-tags">
-<a href="https://datapythonista.github.io/blog/tag/python.html">Python</a>                </aside>
-
-                <div class="clear"></div>
-
-
-                </section>
-
-                <script type="text/javascript">
-                    var disqus = 'datapythonista';
-                    var disqus_shortname = 'datapythonista';
-                    var disqus_identifier = '/building-rpms-for-python31.html';
-                    var disqus_url = 'https://datapythonista.github.io/blog/building-rpms-for-python31.html';
-                </script>
-                <noscript>Please enable JavaScript to view the comments.</noscript>
-                <section class="post-comments">
-                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/building-rpms-for-python31.html" >Show Comments</a>
-                    <div id="disqus_thread"></div>
-                </section>
-
-                <aside class="post-nav">
-                    <div class="clear"></div>
-                </aside>
-
-            </div>
-        </article>
-    </main>
-      <!-- TODO : Body class -->
-    <div id="body-class" style="display: none;" class=""></div>
-
-    <footer id="footer">
-      <div class="inner">
-        <section class="credits">
-
-
-          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
-          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
-        </section>
-      </div>
-    </footer>
-  </section>
-
-  <script type="text/javascript" src="https://datapythonista.github.io/blog/theme/js/script.js"></script>
-
-    <!-- Script specified by the user -->
-    <script type="text/javascript"  src="https://datapythonista.github.io/blog/../static/js/blog.js"></script>
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1635939-25"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-1635939-25', { 'anonymize_ip': true });
-    </script>
-<script type="text/javascript">
-    var disqus_shortname = 'datapythonista';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
+  </div><!-- /.entry-content -->
+</section>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
 </body>
 </html>
