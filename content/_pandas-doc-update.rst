@@ -9,31 +9,44 @@ But let me provide a bit of context on where this comes from.
 
 It's a personal opinion, but I think pandas is one of the clearest examples of a new
 revolution in the free software world. Probably responsible of the huge growth of
-Python, a language that very few people knew about when pandas started.
+Python, a language that that not many people knew about when pandas started around 10
+years ago, even if now it's hard to believe.
 
 And I think its documentation has been the clearest example of the paradox of open
 source. While pandas users were growing to the millions, and it was adopted in thousands
 of companies (including the largest companies in the world), almost nobody spent any time
-or money to its documentation (requiring a lot of work). It's surely not to blame the
-around 3 people who took the responsibility, and were busy making the tool as great as it
-is, mainly in their weekends and evening after work.
+or money in its documentation (which requires a lot of work to keep updated and consistent).
+It's surely not to blame the around 3 people who took the responsibility of maintaining pandas,
+and were busy not only making pandas survive and handle the huge increase in its user base,
+but making the tool as great as it is and improving it in every version. That work was done mainly
+in weekends, commutes and evening after work, by volunteers who had an unrelated full time job.
 
 Around 2 years ago I sent to the project my first pull request, fixing a single docstring
-(one of the 1,300 in the project). This week I worked with other pandas developers in a
-new clearer structure, and making the documentaion homepage more useful to find all the
-existing pages.
+(one of the 1,300 in the project). Since then, I spent significant amounts of time working
+on the pandas documentation, and encouraging and mentoring people to work on it too.
+Many people told me that they saw significant improvements in the pandas documentation in
+the last couple of years. But there is still a lot of work to do.
 
-I'll leave the personal details for another blog post I'll probably never write. But
-this post is intended as a hand over, for anyone interested in continuing the work
-on the documentation. While I may or may not continue working on pandas or other free
-software projects, I don't plan to spend more time on the documentation.
+This post is a summary of what has been done, and the roadmap on what's pending until pandas
+has one of the best documentations of any open source project, the one that it deserves.
+This roadmap was discussed with several participants of the
+[European pandas summit](https://python-sprints.github.io/europandas2019/), that happened at
+the beginning of this year. But while I expect few changes to it, discussion about the
+points mentioned here is highly encouraged (and not only restricted to pandas maintainers,
+but from anyone interested in helping make the documentation of pandas better).
+
+**If you work for a company that is making money using pandas, and that would be more productive
+and make even more money if pandas documentation was better, please contact a pandas maintainer
+including [myself](mailto:garcia.marc@gmail.com) or [NumFOCUS](https://www.numfocus.org).
+We are happy to discuss funding opportunities, including small grants and helping your company
+hire people to work on pandas.**
 
 The problem with the docstrings
 -------------------------------
 
-The pandas API is huge, and includes around 1,300 pages (functions, methods, classes...).
-Given the very limited resources of the library, many of these API pages couldn't be
-created when the features were implemented with the standards a library like pandas
+The pandas API is huge, and includes around 1,500 pages (functions, methods, classes...).
+Given the very limited amount of people who developed the library, many of these API pages couldn't be
+created when the features were implemented, with the standards a library like pandas
 should have. See for example the
 `Resampler.last <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.resample.Resampler.last.html>`_
 page.
@@ -53,21 +66,31 @@ The pandas documentation sprint
 -------------------------------
 
 As it's obvious that a single person can't do much, one of the things that was tried
-was to organize a `huge sprint <https://python-sprints.github.io/pandas/>`. While the 
-sprint was probably successful in some ways, with 500 participants we managed to get
-around 200 docstrings improved significantly. But that was at the cost of keeping
-the whole core development team distracted from any other development for two weeks
-or more. A fun experience for the many who participated I'd say, but something that
-I wouldn't like to see repeated (at least in the same way).
+was to organize a `huge sprint <https://python-sprints.github.io/pandas/>` to work on
+docstrings. While the sprint was probably successful in some ways, with 30 local user
+groups in different parts of the world (Korea, India, Kenya, Nigeria, Argentina, and
+many other locations, mainly in US and Europe). Around 500 participants worked in
+fixing docstrings, and around 200 docstrings improved significantly. That
+was in a way extremly great (and 200 out of 1,500 leaves a lot of work but it's a
+significant contribution). But not everything was so positive in may opinion, and surely
+not an option to repeat the experience in the same way. That is because the bottleneck
+was not in attracting new contributors (the response of the community was amazing),
+but the core development team, and the reviewers. The sprint distracted the team from
+any other development for more than two weeks, and increased massively the amount of work
+of a small team of volunteers that already do more than they can. I took care personally
+of the last pull requests of the sprint, and that was more than 6 months after it happened.
 
-The good news was that with all the efforts of `NumFOCUS <https://numfocus.org/` to
-create a strong PyData community, it was somehow easy to find 500 pandas users who
-wouldn't mind spending a Sunday working on the pandas documentation. That's really
-amazing I think.
+It's worth repeating how amazing was the response of the community on participating
+in the sprint and helping develop pandas. And besides all the enthusiastic people who
+joined, I think it's fair to give a big part of the credit to `NumFOCUS <https://numfocus.org/`
+for creating a strong PyData community, and opening the channels to reach the more than 500 pandas
+users who wouldn't mind spending a whole Sunday working on the pandas documentation. That's really
+impressive I think, and now that the community is so healthy, it may be easy to forget the
+amount of work it takes to build a community with around 150 local user groups, and between 10
+and 20 conferences per year.
 
-But the bad news is that the bottleneck is not there. But in the reviwing of the
-work. It's expected that people making their first contribution require mentorship
-and feedback from more experienced developers.
+But that alone doesn't fix the problem, since as mentioned, the bottleneck wasn't on the
+number of contributors, but in the number of maintainers.
 
 The validation script
 ---------------------
@@ -209,90 +232,3 @@ Where do we come from?
 If you are wondering what was the status of the pandas documentation (the docstrings)
 before the sprint, the validation docstring, and all the work many people did in the
 last 
-
-Today I've got my new Dell XPS (with Ubuntu preinstalled), and this is the procedure
-to set it up, and get my perfect working environment. This is expected to be useful
-mainly for my **future self**, but sharing it here in case someone else can find
-ideas or tips that are useful. Also happy to receive comments on how you do things
-differently (and potentially better).
-
-My operating system of choice is `Fedora MATE Compiz <https://spins.fedoraproject.org/mate-compiz/>`_,
-I think GNOME 3 was a big mistake, so staying in what was GNOME 2.
-
-After downloading the ISO, I create the live USB with `UNetbootin <https://unetbootin.github.io/>`_.
-This works well, but it has a problem. The label of the volume is not updated, and it becomes inconsistent
-with the one that GRUB loads. This will create a lot of warnings like this::
-
-   dracut-initqueue[602]: Warning dracut-initqueue timeout - starting timeout scripts
-
-With couple of final warnings::
-
-   Warning: /dev/disk/by-label/Fedora-Live-WS-x86_64-29-1 does not exist
-   Warning: /dev/mapper/live-rw does not exist
-
-To fix it, we just need to know the label of our live USB (can be obtained in the rescue terminal by
-calling ``blkid``). And then, in the GRUB menu, press `e` with the `Start Fedora Live` option
-selected, and replace the value of `LABEL` by the correct one. A `Ctrl-x` will make the system
-boot with the updated configuration, and should start normally. This
-`video <https://www.youtube.com/watch?v=C3iSqmfPRxY>`_ shows the process step by step.
-
-The default configurations during the installation work well for me (using 50Gb for `/`, the rest
-for `/home/`, and `ext4` filesystem). But I encrypt `/home/`, which is not enabled by default.
-
-Once the new system is installed, and running, those are the tasks I perform.
-
-Configuration
--------------
-
-- Merge both panels into one, and leave it to the bottom (removing the workspaces and Thunderbird,
-  which I not use)
-- Mouse setup: enable touchpad click, natural scrolling and increase acceleration
-- Disable screensaver, and make windows be selected when mouse moves over them
-- Change the terminal shorcuts to change and move tabs (I got used to the KDE shortcuts and never
-  bothered in learning the GNOME ones)
-- Change the default search engine in Firefox to `DuckDuckGo <https://duckduckgo.com/>`_.
-- Set up couple of aliases in `~/.bashrc`: ``alias rgrep="grep -R"`` and ``alias vi="vim"`` (which
-  doesn't seem to be required anymore)
-- Set up `vim` for Python (and remove some unwanted features like folding)::
-
-   syntax on
-   set number
-   set autoindent
-   set expandtab
-   set shiftwidth=4
-   set tabstop=4
-   set nofoldenable
-
-   execute pathogen#infect()
-   set statusline+=%#warningmsg#
-   set statusline+=%{SyntasticStatuslineFlag()}
-   set statusline+=%*
-   let g:syntastic_always_populate_loc_list = 1
-   let g:syntastic_auto_loc_list = 0
-   let g:syntastic_check_on_open = 1
-   let g:syntastic_check_on_wq = 0
-
-Installing software
--------------------
-
-Quite happy with the software that comes preinstalled with Fedora, but few things left to install.
-First adding `RPM Fusion <https://rpmfusion.org>`_ repositories::
-
-   sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-Then updating the system::
-
-   sudo dnf update
-
-Then installing the development group::
-
-   sudo dnf groupinstall "Development Tools"
-
-Also installing all the missing packages (or not missing, but had this list for some years now)::
-
-   sudo dnf install vim-enhanced git vlc gimp inkscape unzip
-
-And finally installing `Miniconda <https://conda.io/miniconda.html>`_. I prefer Miniconda over
-Anaconda, because I don't like to have any package in the base environment. So, in every
-environment I'm sure there are the packages I'm using (and it's not falling back to the base
-environment version, which can be different of the expected).
