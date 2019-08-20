@@ -29,6 +29,12 @@ I'm sure very soon pandas will have one of the best documentations of any open s
 post explains all the work done by hundreds of people in the last couple of years, and the work
 that is still missing, and how we are going to approach it.
 
+**If you work for a company that is making money using pandas, and that would be more productive
+and make even more money if pandas documentation was better, please contact a pandas maintainer
+including [myself](mailto:garcia.marc@gmail.com) or [NumFOCUS](https://www.numfocus.org).
+We are happy to discuss funding opportunities, including small grants and helping your company
+hire people to work on pandas.**
+
 ## The problem with the docstrings
 
 The pandas API is huge, and includes around 1,500 functions, methods, classes, attributes...
