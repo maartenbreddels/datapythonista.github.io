@@ -19,8 +19,6 @@ CSS_OVERRIDE = ['../static/css/blog.css']
 JS_OVERRIDE = ['../static/js/blog.js']
 DISQUS_SITENAME = 'datapythonista'
 FEED_DOMAIN = SITEURL
-FEED_ALL_ATOM = 'atom.xml'
-# Using CATEGORY_FEED_ATOM seems broken
-CATEGORY_FEED_ATOM = None  #'{slug}.atom.xml'
+CATEGORY_FEED_ATOM = None
 
 DEFAULT_PAGINATION = 5

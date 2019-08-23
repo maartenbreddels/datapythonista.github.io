@@ -2,7 +2,6 @@ Title: pandas: The two cultures
 Author: Marc
 Date: 2019-07-22 23:26:00
 Slug: pandas-the-two-cultures
-Tags: pandas
 
 ![](/static/img/blog/two_cultures/leo_breiman.jpeg)
 
