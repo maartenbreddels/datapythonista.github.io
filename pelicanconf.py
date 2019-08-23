@@ -20,5 +20,6 @@ JS_OVERRIDE = ['../static/js/blog.js']
 DISQUS_SITENAME = 'datapythonista'
 FEED_DOMAIN = SITEURL
 CATEGORY_FEED_ATOM = None
+TAG_FEED_ATOM = 'feeds/{slug}.atom.xml'
 
 DEFAULT_PAGINATION = 5
