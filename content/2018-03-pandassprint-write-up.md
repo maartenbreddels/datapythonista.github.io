@@ -2,7 +2,7 @@ Title: #pandasSprint write-up
 Author: Marc
 Date: 2018-03-22 01:57:00
 Slug: pandassprint-write-up
-Tags: 
+Tags: pandas
 
 The past 10th of March took place [#pandasSprint](https://python-sprints.github.io/pandas/).
 To the best of my knowledge, an unprecedented kind of event, where around 500 people worked
