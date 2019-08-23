@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog - pandas</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/feeds/pandas.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2019-07-22T23:26:00+01:00</updated><subtitle>about me</subtitle><entry><title>pandas: The two cultures</title><link href="https://datapythonista.github.io/blog/pandas-the-two-cultures.html" rel="alternate"></link><published>2019-07-22T23:26:00+01:00</published><updated>2019-07-22T23:26:00+01:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2019-07-22:/blog/pandas-the-two-cultures.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/leo_breiman.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.stat.berkeley.edu/~breiman/"&gt;Leo Breiman&lt;/a&gt; was a distinguished statistician at
+UC Berkeley, known among other things for his major contributions to CART (decision trees),
+and ensemble techniques, mainly bootstrap aggregation. Combining both, he was able to define
+one of the most popular machine learning models even today (18 years after the publication
+of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/leo_breiman.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.stat.berkeley.edu/~breiman/"&gt;Leo Breiman&lt;/a&gt; was a distinguished statistician at
+UC Berkeley, known among other things for his major contributions to CART (decision trees),
+and ensemble techniques, mainly bootstrap aggregation. Combining both, he was able to define
+one of the most popular machine learning models even today (18 years after the publication
+of the paper), &lt;a href="https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf"&gt;Random forests&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In 2001, Breiman published the paper
+&lt;a href="http://www2.math.uu.se/~thulin/mm/breiman.pdf"&gt;Statistical Modeling: The Two Cultures&lt;/a&gt;.
+In it, Breiman identified that there were two somehow conflicting cultures in the discipline
+of statistical modeling. One that was focusing on modeling (and trying to understand) the
+stochastic process generating some random data. While the other followed an algorithmic
+approach focused on obtaining results (minimizing the error between the model results and
+the data), and considered the stochastic process a black box. Today we would probably call
+them &lt;em&gt;statistics&lt;/em&gt; and &lt;em&gt;machine learning&lt;/em&gt;, and the division between them is clear. And in a way,
+machine learning is not even considered part of statistics. While this division among the two
+fields may or may not be a good thing, identifying in 2001 that both communities existed, were
+different and had different needs, surely helped overcome the frustration of both communities at
+that time, and sped up their development. One example that illustrate the differences can be
+seen on how in the area of neural networks, publishing research papers is mostly driven by 
+the obtained results, more than by the theory behind the results. Ali Rahimi gave
+&lt;a href="https://www.youtube.com/watch?v=Qi1Yry33TQE"&gt;his view&lt;/a&gt; on this when receiving the test-of-time
+award at NeurIPS 2017.&lt;/p&gt;
+&lt;p&gt;But this post is not about machine learning, but about &lt;a href="https://pandas.pydata.org/"&gt;pandas&lt;/a&gt;.
+And about the two cultures in the pandas community, that I personally don't think are often
+well identified, causing frustration to some users, and making more complex taking decisions
+regarding the API of the project.&lt;/p&gt;
+&lt;h2&gt;Dr Jekyll and Mr Hyde&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/dr_jekyll_mr_hyde.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;To describe the two cultures, let me talk about my own professional experience.
+For the last years I've been mainly working as a data scientist. Since the developers of
+&lt;a href="https://scikit-learn.org/stable/"&gt;scikit-learn&lt;/a&gt; are doing all the &lt;em&gt;fun&lt;/em&gt; work in machine learning,
+and implementing all the complex algorithms for the rest of us, I'll argue that my job (and the
+job of many other data scientists, some will probably disagree) is to work on data analysis to
+find out what needs to be done, and data engineering to make it work in production.&lt;/p&gt;
+&lt;p&gt;What I call &lt;strong&gt;data analysis&lt;/strong&gt; is performed in a &lt;a href="https://jupyter.org/"&gt;Jupyter notebook&lt;/a&gt;,
+where I analyze and visualize the data. I found out what is wrong with it, and I quickly
+grow the cells of my &lt;code&gt;Untitled23.ipynb&lt;/code&gt; hoping I'll never have to look back at my dirty code.
+What I value the most is being able to write code fast, and focus in the problem I'm solving, and
+not in the code. To the extend I alias every Python library I import with incomprehensible names
+like &lt;code&gt;np&lt;/code&gt;, &lt;code&gt;pd&lt;/code&gt;, &lt;code&gt;plt&lt;/code&gt;,... to make sure I save few microseconds compared to typing the actual
+names. And I really appreciate the software making as many decisions as needed to save me from
+having to spend the time on being explicit on what I want. Ok, this may be a bit exaggerated,
+I don't really let my notebook names be untitled whatever, or use aliases, but I think you get the idea.&lt;/p&gt;
+&lt;p&gt;On the other hand, when working in &lt;strong&gt;data engineering&lt;/strong&gt; I use vim, and I write all my code in
+Python files in a clear directory structure. Every file and directory are carefully named so I can
+easily find them later. Every function is well documented, and the best coding standards are applied.
+All my code is version controlled with git, and code reviewed by my colleagues. I write every single
+line of code knowing that I will have to revisit it many times, and I optimize for its simplicity and
+its clarity.  The thing I'm more adverse to is &lt;em&gt;magic&lt;/em&gt; happening, and any software making decisions
+for me. I want to be in control, I want everything in my code to be deterministic, and I want
+everything in my code to be explicit. Everything that Tim Peters wrote in
+&lt;a href="https://www.python.org/dev/peps/pep-0020/"&gt;PEP-20&lt;/a&gt;, the Zen of Python, applies:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Beautiful is better than ugly.&lt;/li&gt;
+&lt;li&gt;Explicit is better than implicit.&lt;/li&gt;
+&lt;li&gt;Simple is better than complex.&lt;/li&gt;
+&lt;li&gt;Readability counts.&lt;/li&gt;
+&lt;li&gt;Errors should never pass silently.&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;One pandas to rule them all&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/ring.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;What I find the most interesting part about &lt;em&gt;the two cultures&lt;/em&gt; I just described, is that I use
+pandas for both. I think pandas is the best tool for both use cases, and I won't admit I'm biased
+here, since I'm a pandas maintainer because I use the software, and not the other way round.&lt;/p&gt;
+&lt;p&gt;But how is that possible? Both use cases are radically different. Is pandas designed in a way that
+is able offer both kind of users the API and features they need? Is that always possible?&lt;/p&gt;
+&lt;p&gt;The next of this post will try to find an answer by analyzing some examples.&lt;/p&gt;
+&lt;h2&gt;Show me the code&lt;/h2&gt;
+&lt;h3&gt;Creating data from a Python dict&lt;/h3&gt;
+&lt;p&gt;Let's start with a single example, by manually creating some data:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Series&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;unicorn&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;spider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;penguin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;
+&lt;span class="n"&gt;unicorn&lt;/span&gt;    &lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;span class="n"&gt;spider&lt;/span&gt;     &lt;span class="mi"&gt;8&lt;/span&gt;
+&lt;span class="n"&gt;penguin&lt;/span&gt;    &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;int64&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I think we can agree that pandas is letting us create our data in the simplest possible way. There
+could be other ways (and there are other ways that pandas supports), but creating a Series looks to
+me as simple as it can be. That's what I want as a data analyst.&lt;/p&gt;
+&lt;p&gt;But as a data engineer, there are more things to consider. Imagine that my data, instead of having 3
+samples, had 3 million. How much memory is pandas consuming to store in memory my data? And why?
+For simplicity, let's consider only the values (and not the name of the animals):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;memory_usage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="mi"&gt;24&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The values in our Series are consuming 24 bytes. If we see again the representation of our Series,
+we can see how the data type (aka dtype) is &lt;code&gt;int64&lt;/code&gt;. Meaning that every value will consume 64
+bits (8 bytes). 8 bytes per value, multiplied by 3 values (the number of legs for unicorn, spider
+and penguin) totals 24 bytes. But why 64 bits? pandas decided for us that representation, which can
+store numbers from around -9e18 to 9e18. But do we really expect animals to have a number of legs
+with 18 digits? Or do we expect negative numbers of legs at all? Probably not. We know it, but
+pandas doesn't. Because pandas doesn't know anything about our domain, or what is reasonable,
+it's deciding for us a conservative representation for our data that won't cause us problems
+(as opposed as one that saves some memory).&lt;/p&gt;
+&lt;p&gt;This is working well for us as data analysts, but not as data engineers writing production code.
+In this case, the Series constructor has a parameter &lt;code&gt;dtype&lt;/code&gt; that we can use to tell pandas to not
+decide for us how to internally represent the data, but to tell it explicitly. This is the result:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Series&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;unicorn&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;spider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;penguin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;                          &lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;uint8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;
+&lt;span class="n"&gt;unicorn&lt;/span&gt;    &lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;span class="n"&gt;spider&lt;/span&gt;     &lt;span class="mi"&gt;8&lt;/span&gt;
+&lt;span class="n"&gt;penguin&lt;/span&gt;    &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;uint8&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;memory_usage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In this example, pandas provides a reasonable API for both kind of users. It doesn't force us to
+specify the data type when we don't care. But we're able to when we do care. Whether we want to
+optimize for our system resources (mainly memory) or our own time is up to us.&lt;/p&gt;
+&lt;h3&gt;How many legs do unicorns have?&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/unicorn.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;An important question we face is, how many legs do unicorns have? In the previous example, we specified
+they have 4, but do unicorns really have 4 legs? Did anybody have ever seen a unicorn? Let's try to be
+prudent and say that we don't know how many legs they have. By convention, when we have an unknown
+or missing value, we represent it as &lt;code&gt;NaN&lt;/code&gt; (Not a Number). Every number in a computer is represented
+using binary numbers (e.g. &lt;code&gt;01001011&lt;/code&gt;). &lt;code&gt;NaN&lt;/code&gt; is represented internally as one specific sequence of
+bits, reserved to have the meaning of &lt;code&gt;NaN&lt;/code&gt;. There is a convention that &lt;em&gt;translates&lt;/em&gt; how every binary
+sequence corresponds to the number they represent. And this &lt;em&gt;translation&lt;/em&gt; has some exceptions, including
+one value that represents the floating point number &lt;code&gt;NaN&lt;/code&gt;. If that sounds too complex, think that in
+binary, &lt;code&gt;0000&lt;/code&gt; can represent the number 0, &lt;code&gt;0001&lt;/code&gt; the 1, &lt;code&gt;0010&lt;/code&gt;: 2, &lt;code&gt;0011&lt;/code&gt;: 3... and &lt;code&gt;1111&lt;/code&gt;: 15.
+And what microprocessors manufacturers decided is something like letting represent only from 0 to 14
+(instead of from 0 to 15, that we could encode with 4 bits), and reserve the &lt;code&gt;1111&lt;/code&gt; to mean &lt;code&gt;NaN&lt;/code&gt;.
+Things are in reality more complex, since &lt;code&gt;NaN&lt;/code&gt; representations only exists for floating points numbers
+(aka float), which are decimals. But that explanation should give an intuition.&lt;/p&gt;
+&lt;p&gt;So, back to the example, if we want to represent that we don't know how many legs unicorns have, we
+can simply do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;unicorn&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;NaN&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;
+&lt;span class="n"&gt;unicorn&lt;/span&gt;    &lt;span class="n"&gt;NaN&lt;/span&gt;
+&lt;span class="n"&gt;spider&lt;/span&gt;     &lt;span class="mf"&gt;8.0&lt;/span&gt;
+&lt;span class="n"&gt;penguin&lt;/span&gt;    &lt;span class="mf"&gt;2.0&lt;/span&gt;
+&lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;float64&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Many things happened here. We can see, how besides the expected change of having &lt;code&gt;NaN&lt;/code&gt; unicorn legs,
+now we are back to consuming 64 bits. And not only that, but also the rest of values in the column now are
+decimal (float) values. As I just explained, and can also be seen in the example on how &lt;code&gt;NaN&lt;/code&gt; is created,
+&lt;code&gt;NaN&lt;/code&gt; is a float value. Modern computers don't have an integer representation for &lt;code&gt;NaN&lt;/code&gt;, so for pandas
+to do what we asked it to do, converting the column to float was the &lt;em&gt;only&lt;/em&gt; option (not really the only,
+but let's pretend for a second).&lt;/p&gt;
+&lt;p&gt;It feels a bit weird to see in the Series representation that a penguin has 2.0 legs. It's conceptually
+wrong, and also misleading making us believe that animals can have a decimal number of legs. There are
+also technical implications too, we are consuming 4 times more memory now. And also operations among
+integers don't take the same time as operations among floats at the CPU level (note that while floats
+are a more complex representation, modern CPU's are highly optimized for them, and operations can even be
+faster for floats than for integers).&lt;/p&gt;
+&lt;p&gt;But there is something else, see this example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mf"&gt;0.1&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mf"&gt;0.2&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mf"&gt;0.3&lt;/span&gt;
+&lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Floating point numbers are approximations. They are mapping an infinite set of numbers (let's say all
+real numbers) to the finite set of possible representations with 64 bits (&lt;code&gt;2 ** 64&lt;/code&gt;). In many
+cases using this approximate values won't make a difference (the height of a person keeps being the
+same if we change the 20th decimal). But, if for example a column contains an integer id that we use
+to join two data sets, converting it to floating point can mean data loss or bugs. Since floating points
+are just approximations, we may try to join by &lt;code&gt;20.0000000001 == 19.9999999999&lt;/code&gt;, which won't match.
+So, converting an integer column to its floating point representation can be dangerous, and probably
+more for the data engineering use cases described before.&lt;/p&gt;
+&lt;p&gt;In pandas 0.24 we introduced a new data type to mix integer values with missing values. This is done
+by instead of using the float &lt;code&gt;NaN&lt;/code&gt; to represent the missing values, we internally keep a separate
+Boolean array that identifies where the missing values are. This adds an extra layer of complexity
+inside pandas, but avoids problems like the one just described. By default, pandas still uses the
+original types, but we can write the previous code as follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Series&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;unicorn&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;spider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;penguin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;                          &lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;UInt8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;unicorn&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;NaN&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;
+&lt;span class="n"&gt;unicorn&lt;/span&gt;    &lt;span class="n"&gt;NaN&lt;/span&gt;
+&lt;span class="n"&gt;spider&lt;/span&gt;       &lt;span class="mi"&gt;8&lt;/span&gt;
+&lt;span class="n"&gt;penguin&lt;/span&gt;      &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;UInt8&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Note that &lt;code&gt;UInt8&lt;/code&gt; represents the pandas type with the mask, and &lt;code&gt;uint8&lt;/code&gt; (lowercase) represents the
+original type based on numpy. Also note that the new type may not be as stable as the old, and may not
+implement all the operations.&lt;/p&gt;
+&lt;p&gt;While the new data type fixes this specific problem, the fact that pandas silently casts a data type
+when needed is very convenient for the use cases of data analysts, but in my opinion does a poor job
+to the interests of precision and reliability of data engineers. And while the &lt;code&gt;.loc[]&lt;/code&gt; syntax is very
+convenient, doesn't allow us to solve the problem with a simple parameter. A new
+&lt;a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html"&gt;pandas option&lt;/a&gt; could be an option
+to control whether we want pandas to automatically cast columns when needed, or raise an exception instead.
+But as far as I know, there has not been discussion about it.&lt;/p&gt;
+&lt;h2&gt;The most popular pandas function&lt;/h2&gt;
+&lt;p&gt;CSV is in general a poor format to store data. It has a clear advantage, that is being able
+to open CSV files in a text editor. Other than that, I think all are disadvantages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Inefficient storage (space that file uses in disk)&lt;/li&gt;
+&lt;li&gt;Inefficient I/O (because the volume of data, and also the required casting)&lt;/li&gt;
+&lt;li&gt;Lack of types (everything is a string in a CSV, so original types are lost)&lt;/li&gt;
+&lt;li&gt;Lack of a standard (different quoting, delimiters,...)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Despite of those, CSV happens to be one of the most popular formats out there, being the
+page &lt;a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html"&gt;pandas.read_csv&lt;/a&gt;
+the one with most visits in the pandas documentation.&lt;/p&gt;
+&lt;p&gt;To manage all the trickiness of the format, &lt;code&gt;pandas.read_csv&lt;/code&gt; provides as much as 50
+arguments, to customize for your file format, and for your needs.
+&lt;a href="https://github.com/InvestmentSystems/static-frame"&gt;StaticFrame&lt;/a&gt; a project (somehow)
+aiming to compete with pandas, contains the next sentence in its README file:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Pandas CSV reader far out-performs the NumPy-based reader in StaticFrame: thus, for now, using Frame.from_pandas(pd.read_csv(fp)) is recommended for loading CSV files.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This gives an idea of all the complexity in the CSV parser, not only in terms of the parameters,
+but also in terms of how optimized it is for performance.&lt;/p&gt;
+&lt;p&gt;Despite being one of the most powerful and optimized CSV parsers out there,
+&lt;a href="http://twitter.com/dontusethiscode"&gt;James Powell&lt;/a&gt; gave a
+&lt;a href="https://www.youtube.com/watch?v=QkQ5HHEu1b4&amp;amp;t=1554"&gt;lightning talk at PyData London 2019&lt;/a&gt;
+on how the parser could be easily improved in several ways for a use case he's got.&lt;/p&gt;
+&lt;p&gt;Those include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Assume string columns are properly encoded and load them directly into memory&lt;/li&gt;
+&lt;li&gt;Optimize date casting by assuming a specific format, and a limited set of values&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Again, no matter the great job done in implementing pandas, the software is
+being unable to fully satisfy all user cases. &lt;code&gt;pandas.read_csv&lt;/code&gt; does again a
+good job at making life easy to data analysts (as defined at the beginning of this
+post). And it also does an impressive job at adding parameters to empower users that
+know what they are doing and have production-ready code need (data engineers). But
+even with an insane number of parameters like 50, looks like loading a CSV file into
+memory may be too complex for a single generic function.&lt;/p&gt;
+&lt;p&gt;What is the solution here? Personally, I think that having &lt;em&gt;one pandas to rule them all&lt;/em&gt;
+is still possible and the best option. But not a &lt;code&gt;pandas.read_csv&lt;/code&gt; to rule them all.
+My view is that pandas shouldn't include I/O modules that are able to load data from
+every possible format, and in every possible way. That's just impossible.
+But pandas could do a better job at allowing and encouraging an ecosystem of I/O
+pandas plugins. I proposed in &lt;a href="https://github.com/pandas-dev/pandas/issues/26804"&gt;this issue&lt;/a&gt;
+a first refactoring that would make this possible. It is still under discussion,
+since the proposed changes are big.  I'll write in a different article more details about this proposal.&lt;/p&gt;
+&lt;h2&gt;Lazy pandas&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/lazy_pandas.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;To conclude this article, I will talk about what in my opinion is one of the biggest
+differences between the needs of data analysts using pandas in a Jupyter notebook,
+compared to data engineers using it to write production pipelines.&lt;/p&gt;
+&lt;p&gt;See this example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Series&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;unicorn&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;spider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;penguin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;median&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="mf"&gt;4.0&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_frame&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;
+         &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="n"&gt;unicorn&lt;/span&gt;  &lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;span class="n"&gt;spider&lt;/span&gt;   &lt;span class="mi"&gt;8&lt;/span&gt;
+&lt;span class="n"&gt;penguin&lt;/span&gt;  &lt;span class="mi"&gt;2&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;legs&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;
+         &lt;span class="n"&gt;legs&lt;/span&gt;
+&lt;span class="n"&gt;unicorn&lt;/span&gt;     &lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;span class="n"&gt;spider&lt;/span&gt;      &lt;span class="mi"&gt;8&lt;/span&gt;
+&lt;span class="n"&gt;penguin&lt;/span&gt;     &lt;span class="mi"&gt;2&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;kind&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;legs&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;biped&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;                                              &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;quadruped&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;                                              &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;octoped&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;
+         &lt;span class="n"&gt;legs&lt;/span&gt;       &lt;span class="n"&gt;kind&lt;/span&gt;
+&lt;span class="n"&gt;unicorn&lt;/span&gt;     &lt;span class="mi"&gt;4&lt;/span&gt;  &lt;span class="n"&gt;quadruped&lt;/span&gt;
+&lt;span class="n"&gt;spider&lt;/span&gt;      &lt;span class="mi"&gt;8&lt;/span&gt;    &lt;span class="n"&gt;octoped&lt;/span&gt;
+&lt;span class="n"&gt;penguin&lt;/span&gt;     &lt;span class="mi"&gt;2&lt;/span&gt;      &lt;span class="n"&gt;biped&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;num_legs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;legs&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+         &lt;span class="n"&gt;legs&lt;/span&gt;       &lt;span class="n"&gt;kind&lt;/span&gt;
+&lt;span class="n"&gt;unicorn&lt;/span&gt;     &lt;span class="mi"&gt;4&lt;/span&gt;  &lt;span class="n"&gt;quadruped&lt;/span&gt;
+&lt;span class="n"&gt;penguin&lt;/span&gt;     &lt;span class="mi"&gt;2&lt;/span&gt;      &lt;span class="n"&gt;biped&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_legs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_parquet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;num_legs.parquet&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And compare it with this other code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Series&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;unicorn&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;spider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;penguin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;        &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_frame&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;        &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;legs&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;        &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assign&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kind&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;legs&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;biped&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;                                                    &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;quadruped&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;                                                    &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;octoped&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}))&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;        &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;legs &amp;lt;= 4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;        &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_parquet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;num_legs.parquet&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Before you are tempted to think on which one is better, let's discuss which
+problem solves each of them.&lt;/p&gt;
+&lt;p&gt;The first version is part of an iterative process where at every step we need
+to visualize how our data looks like. We also may need not only to visualize the
+data, but &lt;em&gt;understand&lt;/em&gt; or verify it, for example by checking which is the median
+of one column. It is likely that at the end of writing that code, we don't care
+about it anymore, since we already verified what was in the data, and extracted
+the insights we care about.&lt;/p&gt;
+&lt;p&gt;In the second case, while doing almost the same, the code is written to be read
+and to be maintained. If there is a bug in the code, it should be easy to
+understand what it does, and fix it. The goal is not to discover anything
+while writing the code. But just to add a functionality to a system, and to be
+able to run it in a reliable and performant way.&lt;/p&gt;
+&lt;p&gt;For more information about the style in the second approach, you can check
+the must-read &lt;a href="https://tomaugspurger.github.io/method-chaining"&gt;Method Chaining&lt;/a&gt;
+by the pandas maintainer &lt;a href="https://tomaugspurger.github.io/pages/about.html"&gt;Tom Augspurger&lt;/a&gt;.
+Also, I discussed about method chaining in my talk
+&lt;a href="https://www.youtube.com/watch?v=hK6o_TDXXN8"&gt;Towards pandas 1.0&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Back to the example, pandas let us write code in a way that suits both
+data analysts and data engineers. But there is something else that is worth
+considering. In the first version, the operations must be executed one at
+a time, since they are independent. But in the example using method chaining,
+there is no need to execute anything until &lt;code&gt;to_parquet&lt;/code&gt; is run. The reason
+is that the result is not made available to the user or anywhere else.&lt;/p&gt;
+&lt;p&gt;This may sound irrelevant at first, since we are going to execute it anyway.
+But being able to postpone the actual execution until a later stage, can
+be extremely useful in some situations. In the example, if pandas postpones
+the execution until it knows all what the user wants to do with all the data,
+it could optimize the execution. For example, if the row of the spider is
+going to be discarded, why load it to memory and why compute which is its
+kind? Some memory and some computation power and time can be saved. In this
+toy example it doesn't make a difference, but imagine you want to operate
+with 1Tb of data in a file, apply some transformations,
+and save the result in another file in disk. With the &lt;em&gt;data analyst approach&lt;/em&gt;
+this is not feasible when running the code in a normal laptop. And while
+pandas is not able to work in an out-of-core way, or optimize the execution
+even when using method chaining, that could be implemented.&lt;/p&gt;
+&lt;p&gt;There are related tools where this lazy execution approach already
+exists, mainly &lt;a href="https://dask.org/"&gt;Dask&lt;/a&gt;. Dask implements a
+pandas-like API, where operations are evaluated in a lazy way, and the
+final task graph is not only optimized, but distributed over a cluster.
+&lt;a href="https://github.com/vaexio/vaex"&gt;Vaex&lt;/a&gt; is another example of pandas-like
+API implemented with lazy evaluation.
+&lt;a href="https://youtu.be/2Tt0i823-ec"&gt;This talk&lt;/a&gt; has a demo showing how Vaex
+uses lazy evaluation to deal with data sets with more than one billion
+rows.&lt;/p&gt;
+&lt;p&gt;Lazy evaluation may be out of scope for pandas, and there are many things
+that should be changed even before being considered. But in my opinion is
+another example on the different needs of the different pandas users.&lt;/p&gt;
+&lt;p&gt;I guess a dual pandas would be possible, and for the user, may be a
+simple pandas option &lt;code&gt;pandas.options.lazy_execution = True&lt;/code&gt; would be enough.
+Together with few methods to allow users to trigger the execution of a task
+graph (e.g. a &lt;code&gt;.collect()&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;There are also other approaches that could be considered. With the recent
+addition of &lt;a href="https://pandas.pydata.org/pandas-docs/stable/development/extending.html#extension-types"&gt;pandas extension arrays&lt;/a&gt;,
+custom data types can be implemented. And having types for memory
+maps, or calculated columns could be an option that could allow
+some sort of laziness. In the example, we could have a normal
+DataFrame, that could have a kind column that does not actually save
+the strings &lt;code&gt;biped&lt;/code&gt;, &lt;code&gt;quadruped&lt;/code&gt;,... but instead stores the
+function applied, and to which column. The actual lookup could then
+happen after the data is filtered.&lt;/p&gt;
+&lt;p&gt;Whatever could be the approach, it would require major changes to
+pandas internals, and it's not something that could be implemented
+easily. Custom data types can be implemented, but currently some
+operations will convert the data to numpy arrays, and would not
+allow having a proper lazy data type.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I think the number of pandas users, and the different kinds of work
+that are being done are evidence of many good design decisions and
+implementation. But conflicting interests among groups of users do
+exist. In some cases is doable to find a good solution for most
+use cases. In others is not obvious and serving better our users would
+require a huge amount of work.&lt;/p&gt;
+&lt;p&gt;Personally, I think a more modular pandas architecture would make it
+easier to adjust to every kind of user. By having more than one version
+of &lt;code&gt;pandas.read_csv&lt;/code&gt; different users could implement solutions that
+better suit their needs. Same could apply to other areas.&lt;/p&gt;
+&lt;p&gt;But probably the most important challenge to get those implemented is
+not what is the technical solution, but it's in how pandas is developed.
+The project is mostly developed by volunteers, including the maintainers
+(the people who review the contributions, discuss in the issues that
+users open...). Our roadmap is not determined by the needs
+of your company or your industry. In my personal case, my roadmap
+is determined by my personal interests on what I want to work on,
+and on the kind of things I need or I want to see in pandas myself.
+If your company would be more productive with certain pandas features or
+developments, you should consider hiring someone to improve pandas
+based in your interests. You can contact &lt;a href="https://numfocus.org/"&gt;NumFOCUS&lt;/a&gt;
+who manages the pandas funding, can assist with any question, and
+is in direct contact with the pandas maintainers. Besides hiring someone
+in your own team, you could also provide funds to develop pandas that
+are managed by NumFOCUS. Also feel free to &lt;a href="mailto:garcia.marc@gmail.com"&gt;contact me&lt;/a&gt;
+directly if you want more advice, and are interested in this.&lt;/p&gt;</content><category term="pandas"></category></entry><entry><title>#pandasSprint write-up</title><link href="https://datapythonista.github.io/blog/pandassprint-write-up.html" rel="alternate"></link><published>2018-03-22T01:57:00+00:00</published><updated>2018-03-22T01:57:00+00:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2018-03-22:/blog/pandassprint-write-up.html</id><summary type="html">&lt;p&gt;The past 10th of March took place &lt;a href="https://python-sprints.github.io/pandas/"&gt;#pandasSprint&lt;/a&gt;.
+To the best of my knowledge, an unprecedented kind of event, where around 500 people worked
+together in improving the documentation of the popular pandas library.&lt;/p&gt;
+&lt;p&gt;As one of the people involved in the organization of the event, I wanted to write …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The past 10th of March took place &lt;a href="https://python-sprints.github.io/pandas/"&gt;#pandasSprint&lt;/a&gt;.
+To the best of my knowledge, an unprecedented kind of event, where around 500 people worked
+together in improving the documentation of the popular pandas library.&lt;/p&gt;
+&lt;p&gt;As one of the people involved in the organization of the event, I wanted to write about why
+I think this event was much more than the contributions sent, and the fun day we had. And
+also provide information on how it was planned, to help future organizers.&lt;/p&gt;
+&lt;h2&gt;Some historical context&lt;/h2&gt;
+&lt;p&gt;To explain where the idea of the #pandasSprint came from, I need to go back in time more
+than 15 years. Those were the times where open source was named free software, people queued
+to see &lt;a href="https://en.wikipedia.org/wiki/Richard_Stallman"&gt;Richard Stallman&lt;/a&gt; talks, and
+companies like SCO and Microsoft were in the dark side of proprietary software. Free
+software was more about freedom than about software, and the free software community was
+working hard and united to build the software that could challenge the status quo.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://trisquel.info/files/richard%20stallman.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Now we’re in 2018, and things changed a lot. SCO doesn’t exist anymore, and Microsoft is one
+of the companies supporting more open source. Employing more Python core developers than any
+other company, sponsoring major events like PyCon or EuroPython, and funding non-profits
+like &lt;a href="https://www.numfocus.org/"&gt;NumFOCUS&lt;/a&gt;,
+&lt;a href="https://www.python.org/psf/"&gt;The Python Software Foundation&lt;/a&gt; and even
+&lt;a href="http://www.linuxfoundation.org/"&gt;The Linux Foundation&lt;/a&gt;. Python is growing in popularity, and
+nobody questions the advantages of open source software.&lt;/p&gt;
+&lt;p&gt;But what happened to all the free software hackers who untiringly were making their projects
+be to the highest standards? Of course there are still many people there, but my perception
+is that the growth in popularity of open source projects didn’t translate linearly to a
+growth in the number of contributors. And I think pandas is one of the clearest examples.&lt;/p&gt;
+&lt;p&gt;For the last years, pandas has been becoming a de-facto standard in data analytics and data
+science. Recently, Stack Overflow published that
+&lt;a href="https://stackoverflow.blog/2017/09/14/python-growing-quickly/"&gt;almost 1% of their traffic from developed countries is caused by pandas&lt;/a&gt;.
+The book Python for data analysis by pandas creator
+&lt;a href="https://twitter.com/wesmckinn/status/974303935530876928"&gt;sold more more 250,000 copies&lt;/a&gt;,
+and the pandas website has around
+&lt;a href="https://twitter.com/jorisvdbossche/status/974322924034449408"&gt;400,000 activeusers per month&lt;/a&gt;.
+It’s difficult to know how many pandas users exist, but some
+&lt;a href="https://twitter.com/teoliphant/status/974056911627866113"&gt;informed opinions talk about 5 million&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://stackoverflow.blog/wp-content/uploads/2017/09/related_tags_over_time-1-1200x1200.png"&gt;&lt;/p&gt;
+&lt;p&gt;What about the contributors? In a quick look at
+&lt;a href="https://github.com/pandas-dev/pandas/graphs/contributors"&gt;GitHub&lt;/a&gt;, I counted 12 developers
+that have been active in the last year, and that contributed more than 20 commits to the project.
+This leaves a ratio of 1 significant contributor for more than 400,000 users. Not long before
+the #pandasSprint the project achieved 1,000 contributors. Meaning that 1 in each 5,000 ever made
+a contribution.&lt;/p&gt;
+&lt;p&gt;You can find these small or big depending on your expectations. And it’s difficult to compare
+without numbers about Python projects 10 years ago. But my feeling is that we transitioned from a
+free software community of developers actively participating in the projects, to a community of
+mainly users, who in many cases see free software as
+&lt;a href="https://en.wikipedia.org/wiki/Free_as_in_Freedom"&gt;free beer&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;How to become part of the open source community&lt;/h2&gt;
+&lt;p&gt;I don’t know why people become part of the open source community, in terms of participating
+actively on it. But I know how I did. It’s a beautiful and sad story that I want to share.&lt;/p&gt;
+&lt;p&gt;Around 12 years ago, I was quite new to Python, but really liking the language compared to
+what I used before. Most of what I was doing was web based, so I quickly discovered Django,
+and felt in love. What in PHP (the de-facto standard at that time) took one week or more to
+implement, in Django was done in minutes, and with much higher quality. Django was simply
+amazing, the web framework for perfectionists with deadlines. But in some areas not as
+mature as it is now. And I’m talking mainly about localization. The system to translate
+static text was amazing, but you couldn't make calendars start in Monday, or use the comma
+as a decimal separator. That was a big problem for me, as my users in Spain wouldn't be
+happy using the US localization. The good news was that it was open source, so I started to
+take a look on what could be done.&lt;/p&gt;
+&lt;p&gt;When I submitted my first bug reports and patches to Django, I found the best mentor a
+newcomer to open source can find, Malcolm Treddinick. He was the core developer more
+involved in the localization part of Django. Malcolm helped me in every step, and I learned
+a lot from him about Python, Django, subversion... But I also learned from him (and also
+from others in the community) about kindness and collaboration. It was a really welcoming
+community, and honestly, at the beginning I found it quite surprising the amount of time
+people was happy to spend helping and giving support to someone who didn’t have so much to
+contribute. After some time, I managed to be more experienced, and I was able to contribute
+back, taking care of the Catalan and Spanish translations for some years, and doing a major
+&lt;a href="https://datapythonista.blogspot.co.uk/2009/12/new-localization-system-already-in.html"&gt;refactoring of Django's localization system&lt;/a&gt;,
+as part of a &lt;a href="https://summerofcode.withgoogle.com/"&gt;Google summer of code&lt;/a&gt;. But who could
+know that beforehand.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://puzzling.org/wp-content/uploads/2013/03/2834869959_85974cbd42_b-248x300.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;I was in shock when in 2013
+&lt;a href="https://www.djangoproject.com/weblog/2013/mar/19/goodbye-malcolm/"&gt;Malcolm passed away&lt;/a&gt;.
+Besides being a tragedy for him and his close ones, it was also for many of us, who barely
+met him in person, but considered him a friend. The Django Software Foundation created the
+&lt;a href="https://www.djangoproject.com/foundation/prizes/"&gt;Malcolm Tredinnick Memorial Prize&lt;/a&gt; in
+his honor. The prize is awarded, quoting the DSF page “to the person who best exemplifies
+the spirit of Malcolm’s work - someone who welcomes, supports and nurtures newcomers;
+freely gives feedback and assistance to others, and helps to grow the community”.&lt;/p&gt;
+&lt;p&gt;Malcolm was unique, but the open source community is the amazing community it is, because
+there are so many amazing people who exemplifies the spirit of Malcolm every day.&lt;/p&gt;
+&lt;h2&gt;London Python Sprints&lt;/h2&gt;
+&lt;p&gt;So, with such an amazing community (and I experienced it enough to be sure about it), what
+is it preventing more people to get involved? I would say most people thinks that
+technically speaking, they are not good enough for the projects. That you need the mind of
+&lt;a href="https://en.wikipedia.org/wiki/Alan_Turing"&gt;Alan Turing&lt;/a&gt;,
+&lt;a href="https://en.wikipedia.org/wiki/Dennis_Ritchie"&gt;Dennis Ritchie&lt;/a&gt; or
+&lt;a href="https://en.wikipedia.org/wiki/Linus_Torvalds"&gt;Linus Torvalds&lt;/a&gt; to make a contribution. I
+strongly disagree. Even the less technical people can participate in many things such as
+translations, writing documentation, ticket triaging… There are also many great projects in
+their early stages were contributing code is much easier than contributing to the more
+complex and intimidating ones.&lt;/p&gt;
+&lt;p&gt;Then, what’s the problem? Personally, I think the only problem is getting started. The first
+time, it’s difficult to find a task to get started. It’s difficult to understand the
+&lt;a href="https://docs.google.com/presentation/d/1rOSYXZPyMe9KXnbVK_xbJzw_-ijxd6bIxndmvPU6L2o/edit?usp=sharing"&gt;logistics of sending a pull request&lt;/a&gt;.
+It’s difficult to know beforehand whether project maintainers will welcome our small
+contributions. And it may be difficult to even know that we need a task to work in, that we
+need to send a pull request, or that there is a community out there working on every project.
+But these are just difficult until someone is able to help you get started.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://secure.meetupstatic.com/photos/event/5/e/a/f/highres_465084239.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;With this idea in mind, &lt;a href="https://www.meetup.com/Python-Sprints/"&gt;London Python Sprints&lt;/a&gt; was
+born. A place where open source contributors could mentor newcomers in their first steps. And
+personally, I think it’s very successful. Not only we managed to send around 50 pull requests
+to different projects in 2017, but people who did the first pull request with us, are now the
+mentors helping others get started.&lt;/p&gt;
+&lt;h2&gt;#pandasSprint: the idea&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://secure.meetupstatic.com/photos/event/6/2/2/1/highres_468505121.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;While the experience in London was great, it was very low scale. And we could do much better.
+All it takes for many people to love becoming a contributor, is to have some guidance in these
+first steps. We already had the experience from several months of sprints in London, and with
+some preparation we could help other user groups do the same.&lt;/p&gt;
+&lt;p&gt;Why pandas? There are plenty of great projects to contribute to. But for pandas... Everybody
+loves pandas, it’s very popular. It’s a welcoming project in the spirit of Malcolm. Improving
+the documentation would be something very useful. And it’s one of the projects I’m more
+familiar with&lt;/p&gt;
+&lt;p&gt;But it’s probably clear that the goal wasn’t that much about the specific project or
+contributions. But about letting people get into the open source world in the way many of us
+love it. Becoming part of it, and not just being a user of some software we don’t need to pay
+for.&lt;/p&gt;
+&lt;h2&gt;#pandasSprint: the implementation&lt;/h2&gt;
+&lt;p&gt;So, we wanted to have a huge open source party, but of course that required a huge amount of
+work.&lt;/p&gt;
+&lt;p&gt;The first thing was to make sure the pandas core developers were happy with it. It was going
+to be a lot of work from their side, and they know much more about pandas than anyone else,
+and could tell whether it was a good idea, or provide useful feedback. An email to
+&lt;a href="https://twitter.com/jreback"&gt;Jeff Reback&lt;/a&gt; was enough to start. He loved the idea, even if I
+think he didn’t believed at that time it was going to be something as big as it finally was. :)&lt;/p&gt;
+&lt;h3&gt;Dividing the work&lt;/h3&gt;
+&lt;p&gt;The next thing was to make sure everybody had something to work on the day of the sprint.
+Working on the documentation made it possible. There are around
+&lt;a href="https://docs.google.com/spreadsheets/d/10EpQFkVDqiIFLLVGtIWzCMRACz20yWuta3_DU0qV6-E/edit?usp=sharing"&gt;1,200 API pages&lt;/a&gt;
+in the pandas documentation. Writing a script to get the list was easy. We could even gather
+some information on the state of the documentation (which pages had examples, which methods
+had mistakes in their documented parameters...).&lt;/p&gt;
+&lt;p&gt;The trickiest part was the system to share docstrings in pandas. There are many functions and
+methods in pandas, that are similar enough to have a shared template for the documentation,
+customized with few variables specific to each page. The original idea was to use Python
+introspection system to find the exact ones sharing a template, so we could avoid duplicates.
+That was more complex than it originally seemed, and we finally delegated the task of finding
+out to each user group. &lt;/span&gt;&lt;span style="font-weight: normal;"&gt;To help with that, we
+divided the pages in groups by topics, and assigned whole groups to each sprint chapter.
+Sharing of docstrings was more likely to happen inside these groups. For example, all the
+functions in Series.str where in a group. Functions like
+&lt;a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.lower.html"&gt;lower()&lt;/a&gt;,
+&lt;a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.upper.html"&gt;upper()&lt;/a&gt;,
+&lt;a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.capitalize.html"&gt;capitalize()&lt;/a&gt;
+use the same template, so it should be somehow easy to detect it in the chapter working on that group.&lt;/p&gt;
+&lt;h3&gt;Documentation&lt;/h3&gt;
+&lt;p&gt;Then, after being able to provide each participant a task, we had to make sure everybody knew
+what to do. For it, there were two main things. First, having documentation explaining all the
+steps. And second having mentors in every city.&lt;/p&gt;
+&lt;p&gt;For the documentation, we had 3 main documents:
+- &lt;a href="https://python-sprints.github.io/pandas/guide/pandas_setup.html"&gt;Set up instructions&lt;/a&gt;
+  (installing requirements, cloning the repository, compiling C extensions...)
+- &lt;a href="http://pandas-docs.github.io/pandas-docs-travis/contributing_docstring.html"&gt;Guide&lt;/a&gt;
+  on how to write a docstring for pandas
+- &lt;a href="https://python-sprints.github.io/pandas/guide/pandas_pr.html"&gt;Instructions&lt;/a&gt;
+  on how to validate the changes, and submit them&lt;/p&gt;
+&lt;p&gt;The most complex part was defining how a “perfect” docstring had to look like. Following some
+standards would be very useful for pandas users. All the pages would be implemented in the best
+possible way we could think of. And users would be able to get used to one format, and find
+information faster.&lt;/p&gt;
+&lt;p&gt;We started with a draft of a guide in the form of
+&lt;a href="https://github.com/pandas-dev/pandas/pull/19704/files"&gt;pull request&lt;/a&gt;, so everybody could
+review and add comments. And then it was a bit of discussion on the topics with disagreements
+or unclear. I think the result was great. But of course we couldn’t anticipate all the cases.&lt;/p&gt;
+&lt;p&gt;We also had to write &lt;a href="https://github.com/pandas-dev/pandas/pull/20016/files"&gt;documentation&lt;/a&gt;
+about shared docstrings, and what was the preferred way to implement it.
+&lt;a href="https://twitter.com/TomAugspurger"&gt;Tom Augspurger&lt;/a&gt; took care of it.&lt;/p&gt;
+&lt;h3&gt;Mentoring&lt;/h3&gt;
+&lt;p&gt;A key thing was to make sure in every location we had people who could mentor participants.
+We created a &lt;a href="https://gitter.im/py-sprints/pandas-doc"&gt;gitter channel&lt;/a&gt; for the event, but it
+would be difficult to remotely help in more than specific things. Everybody was in their own
+local sprint, and we also had different time zones, so availability during the sprint would
+be limited.&lt;/p&gt;
+&lt;p&gt;So, what we did was to ask
+&lt;a href="https://docs.google.com/spreadsheets/d/138095mUxOTOCCXmvQGz7YOh-0yWLoTH_8_IlrAI5w2c/edit?usp=sharing"&gt;somebody from each chapter to work on a taskbefore the sprint&lt;/a&gt;.
+In most cases that was the same organizers. I don't know if that is true, but I had the
+feeling that some organizers were underestimating how complex improving a single API
+documentation page is. And how difficult is to help a large group of people who is doing
+their first open source contribution can be. Letting them prepare before hand should be
+useful in different ways: Organizers would be better prepared, and have a better sprint,
+without so much stress and uncertainty. They should be able to help participants better.
+The "mini" sprint of the organizers would be a proof of concept that would let us
+anticipate problems in the documentation, the procedure...&lt;/p&gt;
+&lt;p&gt;Not all the organizers found the time to prepare, as we were ready to start this stage
+less than a week before the global sprint date. But I think it was very useful for the
+ones who could prepare for the sprint.&lt;/p&gt;
+&lt;h3&gt;Tools&lt;/h3&gt;
+&lt;p&gt;One of the areas we worked on preparing the sprint, was in having better tools.
+&lt;a href="https://twitter.com/jorisvdbossche"&gt;Joris Van den Bossche&lt;/a&gt;, besides being key in all
+the parts of the sprint, did an amazing job on this part. We implemented a way to
+&lt;a href="https://github.com/pandas-dev/pandas/pull/19840/files"&gt;build a single document in Sphinx&lt;/a&gt;,
+and a &lt;a href="https://github.com/pandas-dev/pandas/blob/master/scripts/validate_docstrings.py"&gt;script to validated formatting errors in docstrings&lt;/a&gt;.
+We also set up a &lt;a href="https://github.com/pandas-dev/pandas/pull/20015/files"&gt;sphinx plugin to easily include plots in the documentation&lt;/a&gt;,
+which &lt;a href="http://pandas-docs.github.io/pandas-docs-travis/generated/pandas.DataFrame.plot.kde.html"&gt;made some pages look really great&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Last minute, we also build a &lt;a href="https://python-sprints.github.io/pandas/dashboard.html"&gt;dashboard&lt;/a&gt;
+with a list of checkpoints that the users could follow during the day, so it was
+clearer to know what to do, and it should help them make better contributions.&lt;/p&gt;
+&lt;h3&gt;Promotion&lt;/h3&gt;
+&lt;p&gt;Promoting the event, and finding the people willing to participate was done in
+different ways: The first one was to direct message the organizers of different
+communities. Among all the great things of the Python community, is how well
+organized it is. In a &lt;a href="https://www.meetup.com/pro/pydata"&gt;single page&lt;/a&gt; there are
+the links to the almost 100 PyData meetups all around the world. In the Python
+website there is a &lt;a href="https://wiki.python.org/moin/LocalUserGroups"&gt;wiki&lt;/a&gt; with
+tens of Python user groups. Not everybody we contacted was interested, or even
+answered, but most of the groups were really happy with the idea.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.python.org/psf/"&gt;The Python Software Foundation&lt;/a&gt;, &lt;a href="https://www.numfocus.org/"&gt;NumFOCUS&lt;/a&gt;
+were also key in spreading the word about the event.&lt;/p&gt;
+&lt;p&gt;As the sprint was to work on the documentation, we also contacted
+&lt;a href="http://www.writethedocs.org/"&gt;Write the docs&lt;/a&gt;, a global community focused on
+writing technical documentation. Some of their members joined the sprint too.&lt;/p&gt;
+&lt;h2&gt;The sprint&lt;/h2&gt;
+&lt;p&gt;For the day of the sprint, we've got a last minute surprise. I really think
+what every participant of the sprint was going to do, was something really
+great. Even if in a way it felt more like a Saturday with friends. And I
+think it was worth that people knew how important is to contribute to the
+open source projects that power from the scientific research to the
+financial markets, or the data science infrastructure of so many companies
+in the world. So, just few hours after the sprint we spoke with
+&lt;a href="https://twitter.com/wesmckinn"&gt;Wes McKinney&lt;/a&gt;, creator of pandas,
+&lt;a href="https://twitter.com/NaomiCeder"&gt;Naomi Ceder&lt;/a&gt;, chair of the Python Software
+Foundation, and Leah Silen, executive director at
+&lt;a href="https://twitter.com/NumFOCUS"&gt;NumFOCUS&lt;/a&gt;, to see if they could record a
+short message to the participants. Even with the very short notice, all them
+sent really great messages that we could show the participants at the
+beginning of the sprints.&lt;/p&gt;
+&lt;iframe allowfullscreen="" class="YOUTUBE-iframe-video"
+        data-thumbnail-src="https://i.ytimg.com/vi/YnFKV2oxs8Q/0.jpg"
+        frameborder="0" height="266"
+        src="https://www.youtube.com/embed/YnFKV2oxs8Q?feature=player_embedded" width="320"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;It's difficult to know what happened in the sprint at a global scale. I
+think in London we've got a great time, with nice atmosphere and a luxury
+location provided by our sponsor &lt;a href="https://twitter.com/TechAtBloomberg"&gt;Bloomberg&lt;/a&gt;.
+I think for most of us the sprint seemed too short. Even if I think it was
+a typical British pub follow up to the sprint, that I couldn't join.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://secure.meetupstatic.com/photos/event/a/5/1/5/highres_469122261.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;In other locations, for what I know the experience was also good. It's worth
+taking a look at the &lt;a href="https://twitter.com/hashtag/pandasSprint"&gt;twitter feed of the sprint&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://2.bp.blogspot.com/-Cyqt0qDvzfU/WrL7uGMLE-I/AAAAAAAAy3o/wiQzl-n-45sDUpNBpTBuQYIvEdlxRnqGgCLcBGAs/s320/DX9KVEaX0AAhZ0N.jpg"&gt;
+&lt;img alt="" src="https://3.bp.blogspot.com/-idbpUQxods4/WrL7tfBPrAI/AAAAAAAAy3c/fRlBRkiszl03L2OHb90YJ8FuM5ZdatrQgCLcBGAs/s320/DX9KVEXX4AIpNYv.jpg"&gt;
+&lt;img alt="" src="https://2.bp.blogspot.com/-AWSA-0nxm08/WrL7tniUZbI/AAAAAAAAy3k/u59ZVgzqyEUTG5nd3wBjHi51BweaH13XgCLcBGAs/s320/DX9KVEWWkAQR4hg.jpg"&gt;
+&lt;img alt="" src="https://2.bp.blogspot.com/-Q5v-KXlNu1c/WrL7tkMJDFI/AAAAAAAAy3g/KPHHNDTV3xM7pXvKoEiSlNHT04gIJW3_ACLcBGAs/s320/DX9KVEXWsAImaHY.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Also, I really enjoyed reading the write-ups that some organizers and participats wrote:
+- From Iva and Tsvetelina, organizers in Sofia: &lt;a href="https://www.facebook.com/evolutiontc/posts/2040798282603060"&gt;&lt;/a&gt;
+- From Priyanka, a participant in Amsterdam: &lt;a href="https://www.linkedin.com/pulse/pandassprint-amsterdam-my-experiences-priyanka-ojha/"&gt;&lt;/a&gt;
+- From &lt;a href="https://twitter.com/IHackPY"&gt;Himanshu&lt;/a&gt;, organiser in &lt;a href="https://twitter.com/PythonKanpur"&gt;Kanpur&lt;/a&gt;, India: &lt;a href="https://kanpurpython.wordpress.com/2018/03/15/experience-of-pandas-documentation-sprint/"&gt;&lt;/a&gt;
+- Live streaming of the sprint in Shen Zhen: &lt;a href="https://www.youtube.com/watch?v=SK-sF_biP04"&gt;&lt;/a&gt;
+- From Marc, participant in Toronto: &lt;a href="https://towardsdatascience.com/making-my-first-open-source-software-contribution-8ebf622be33c"&gt;https://towardsdatascience.com/making-my-first-open-source-software-contribution-8ebf622be33c&lt;/a&gt;
+- From &lt;a href="https://bluekiri.com/"&gt;Bluekiri&lt;/a&gt;, sponsor in Mallorca: &lt;a href="https://medium.com/bluekiri/pandas-documentation-sprint-90f5a76c0e24"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And it's worth taking a look at this analysis on the impact on the sprint
+in the pandas GitHub activity by &lt;a href="https://twitter.com/jorisvdbossche"&gt;Joris&lt;/a&gt;:
+&lt;a href="https://jorisvandenbossche.github.io/blog/2018/03/13/pandas-sprint-activity/"&gt;https://jorisvandenbossche.github.io/blog/2018/03/13/pandas-sprint-activity/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;#pandasSprint aftermath&lt;/h2&gt;
+&lt;p&gt;This is what I think was the aftermath of the sprint:
+- A lot of hard work before the sprint by all the local organizers and core developers
+- More than 200 pull requests sent, around 150 already merged
+- Many people really loved the experience
+- An incredible work by the pandas core development team after the sprint
+- In London, our sprint after the 10th of March have long waiting list, which
+  was not happening before the #pandasSprint
+- Several people keeps contributing to the pandas documentation after
+  sending their first contribution&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://1.bp.blogspot.com/-H5C_zl4ms8w/WrL7_nbUOkI/AAAAAAAAy3s/In1eAslaH0cgylzT__9RRYFpIGsnj8-3ACLcBGAs/s320/Screenshot%2Bat%2B2018-03-22%2B00-41-14.png"&gt;&lt;/p&gt;
+&lt;p&gt;And what I think it's more important. We did a small but great step in making
+sprints a popular event format in the Python community, to add the missing piece
+to the numerous conferences, meetups based on talks, dojos, workshops and others.&lt;/p&gt;
+&lt;p&gt;Several people asked me when is the next one. In London we are having two sprints
+this week. Man AHL is hosting this great &lt;a href="http://ahl.com/hackathon"&gt;hackathon&lt;/a&gt;
+in one month. I hope to see other user groups organizing sprints in the future.
+And about another worldwide sprint... May be in some months we could do a PyData
+Festival and have 10,000 people contributing to 20 different projects during a
+whole weekend? :)&lt;/p&gt;</content><category term="pandas"></category></entry></feed>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog - Python</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/feeds/python.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2015-12-22T14:07:00+00:00</updated><subtitle>about me</subtitle><entry><title>Jupyter environment setup</title><link href="https://datapythonista.github.io/blog/jupyter-environment-setup.html" rel="alternate"></link><published>2015-12-22T14:07:00+00:00</published><updated>2015-12-22T14:07:00+00:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2015-12-22:/blog/jupyter-environment-setup.html</id><summary type="html">&lt;p&gt;This is a short note about how I set up my "data scientist" environment. Different people have different tastes, but what I use, and what I set up is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;li&gt;&lt;strong&gt;conda&lt;/strong&gt; for environment and package management (equivalent to virtualenv and pip to say)&lt;/li&gt;&lt;li&gt;Latest &lt;strong&gt;Python&lt;/strong&gt; (yes, Python 3)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&amp;nbsp;(aka IPython …&lt;/li&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;This is a short note about how I set up my "data scientist" environment. Different people have different tastes, but what I use, and what I set up is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;li&gt;&lt;strong&gt;conda&lt;/strong&gt; for environment and package management (equivalent to virtualenv and pip to say)&lt;/li&gt;&lt;li&gt;Latest &lt;strong&gt;Python&lt;/strong&gt; (yes, Python 3)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&amp;nbsp;(aka IPython notebook)&lt;/li&gt;&lt;li&gt;Disable all the autocomplete quotes and brackets stuff, that comes by default with Jupyter&lt;/li&gt;&lt;li&gt;Set the IPython backend for matplotlib&lt;/li&gt;
+&lt;div&gt;So, we download Anaconda from:&amp;nbsp;https://www.continuum.io/downloads (Linux 64 bits, Python 3, in my case). We install it by:&lt;/div&gt;&lt;div&gt;
+&lt;/div&gt;&lt;blockquote class="tr_bq"&gt;bash&amp;nbsp;Anaconda3-2.4.1-Linux-x86_64.sh&lt;/blockquote&gt;&lt;div&gt;
+&lt;/div&gt;&lt;div&gt;We can either restart the terminal, or type the next command, so we start using conda environment:&lt;/div&gt;&lt;div&gt;
+&lt;/div&gt;&lt;blockquote class="tr_bq"&gt;. ~/.bashrc&lt;/blockquote&gt;&lt;div&gt;
+&lt;/div&gt;&lt;div&gt;We can update conda and all packages:&lt;/div&gt;&lt;div&gt;
+&lt;/div&gt;&lt;blockquote class="tr_bq"&gt;conda update conda &amp;amp;&amp;amp; conda update --all&lt;/blockquote&gt;&lt;div&gt;
+&lt;/div&gt;&lt;div&gt;Then we create a new conda environment (this way we can change package versions without affecting the main conda packages). We name it myenv and specify the packages we want (numpy, pandas...).&lt;/div&gt;&lt;div&gt;
+&lt;/div&gt;&lt;blockquote class="tr_bq"&gt;conda create --name myenv jupyter numpy scipy pandas matplotlib scikit-learn bokeh&lt;/blockquote&gt;&lt;div&gt;
+&lt;/div&gt;&lt;div&gt;We activate the new environment:&lt;/div&gt;&lt;div&gt;
+&lt;/div&gt;&lt;blockquote class="tr_bq"&gt;source activate myenv&lt;/blockquote&gt;&lt;div&gt;
+&lt;/div&gt;&lt;div&gt;Now we have everything we wanted installed, let's change the configuration.&lt;/div&gt;&lt;div&gt;
+&lt;/div&gt;&lt;div&gt;We start by creating a default ipython profile.&lt;/div&gt;&lt;div&gt;
+&lt;/div&gt;&lt;blockquote class="tr_bq"&gt;ipython profile create&lt;/blockquote&gt;&lt;div&gt;
+&lt;/div&gt;&lt;div&gt;Then we edit the file ~/.ipython/profile_default/ipython_kernel_config.py and we add the next lines to make matplotlib display the images with the inline backend, and with a decent size:&lt;/div&gt;&lt;div&gt;
+&lt;/div&gt;&lt;blockquote class="tr_bq"&gt;c.InteractiveShellApp.matplotlib = 'inline' c.InlineBackend.rc = {'font.size': 10, 'figure.figsize': (18., 9.), 'figure.facecolor': 'white', 'savefig.dpi': 72, 'figure.subplot.bottom': 0.125, 'figure.edgecolor': 'white'} &lt;/blockquote&gt;
+&lt;div&gt;
+&lt;/div&gt;&lt;div&gt;To disable autoclosing brackets, run in a notebook:&lt;/div&gt;&lt;div&gt;
+&lt;/div&gt;&lt;pre style="background-color: #f6f8fa; border-radius: 3px; box-sizing: border-box; color: #24292e; font-family: SFMono-Regular, Consolas, &amp;quot;Liberation Mono&amp;quot;, Menlo, Courier, monospace; font-size: 11.9px; font-stretch: normal; line-height: 1.45; overflow: auto; padding: 16px; word-break: normal; word-wrap: normal;"&gt;&lt;span class="pl-k" style="box-sizing: border-box; color: #d73a49;"&gt;from&lt;/span&gt; notebook.services.config &lt;span class="pl-k" style="box-sizing: border-box; color: #d73a49;"&gt;import&lt;/span&gt; ConfigManager
+c &lt;span class="pl-k" style="box-sizing: border-box; color: #d73a49;"&gt;=&lt;/span&gt; ConfigManager()
+c.update(&lt;span class="pl-s" style="box-sizing: border-box; color: #032f62;"&gt;&lt;span class="pl-pds" style="box-sizing: border-box;"&gt;'&lt;/span&gt;notebook&lt;span class="pl-pds" style="box-sizing: border-box;"&gt;'&lt;/span&gt;&lt;/span&gt;, {&lt;span class="pl-s" style="box-sizing: border-box; color: #032f62;"&gt;&lt;span class="pl-pds" style="box-sizing: border-box;"&gt;"&lt;/span&gt;CodeCell&lt;span class="pl-pds" style="box-sizing: border-box;"&gt;"&lt;/span&gt;&lt;/span&gt;: {&lt;span class="pl-s" style="box-sizing: border-box; color: #032f62;"&gt;&lt;span class="pl-pds" style="box-sizing: border-box;"&gt;"&lt;/span&gt;cm_config&lt;span class="pl-pds" style="box-sizing: border-box;"&gt;"&lt;/span&gt;&lt;/span&gt;: {&lt;span class="pl-s" style="box-sizing: border-box; color: #032f62;"&gt;&lt;span class="pl-pds" style="box-sizing: border-box;"&gt;"&lt;/span&gt;autoCloseBrackets&lt;span class="pl-pds" style="box-sizing: border-box;"&gt;"&lt;/span&gt;&lt;/span&gt;: &lt;span class="pl-c1" style="box-sizing: border-box; color: #005cc5;"&gt;False&lt;/span&gt;}}})&lt;/pre&gt;
+&lt;div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Python"></category><category term="Data Mining"></category></entry><entry><title>Unified Python</title><link href="https://datapythonista.github.io/blog/unified-python.html" rel="alternate"></link><published>2011-06-25T01:19:00+01:00</published><updated>2011-06-25T01:19:00+01:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2011-06-25:/blog/unified-python.html</id><summary type="html">&lt;p&gt;After all these days at EuroPython, there is a thought that keep me thinking. It is about how Python have different ways to represent what it could be considered the same thing.&lt;/p&gt;
+&lt;p&gt;On today's talk, Alex Martelli pointed out that "def" and "lambda" are actually the same concept. This was …&lt;/p&gt;</summary><content type="html">&lt;p&gt;After all these days at EuroPython, there is a thought that keep me thinking. It is about how Python have different ways to represent what it could be considered the same thing.&lt;/p&gt;
+&lt;p&gt;On today's talk, Alex Martelli pointed out that "def" and "lambda" are actually the same concept. This was part of a more complete idea about that both of them have the wrong name ("function" should be the right), and that lambda actually should disappear, but that's another question.&lt;/p&gt;
+&lt;p&gt;Also, yesterday, Raymond Hettinger reminded that class are actually dictionaries, something that most Pythonistas know, but which also made me thought.&lt;/p&gt;
+&lt;p&gt;Then, there is something that I never saw very clearly, and it is the subtle difference between an instance and a dictionary, and how trivial it can be in some case, the difference between person['name'] and person.name.&lt;/p&gt;
+&lt;p&gt;So, I wanted to do an experiment on how it could look Python, if it would try to merge all this entities in ones single format, and even some other things like avoiding assignments that doesn't follow the assignment pattern (I mean class or function definition here, where instead of &lt;em&gt;my_func = [...]&lt;/em&gt; it's used &lt;em&gt;def my_func[...]&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Next, there is how the most stupid example I could invent looks like, but first some definitions to make it easier to understand the idea.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;map&lt;/strong&gt;: could be also "class", "dict", "obj", "hash",... and it's the structure for dictionaries, classes and instances.
+&lt;strong&gt;seq&lt;/strong&gt;: a list or tuple, any linear sequence of values.
+&lt;strong&gt;func&lt;/strong&gt;: a function or callable, that in Python is defined by "def" or "lambda".&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;
+foods = seq:
+    "meat"
+    "milk"
+    "bread"&lt;/p&gt;
+&lt;p&gt;sounds = map:
+    "bark" = "woof woof"
+    "mew" = "meow meow"&lt;/p&gt;
+&lt;p&gt;animal = map:
+    "step_size" = None
+    "sound" = None&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;move&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;num_steps&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;I&amp;#39;ve moved {} units&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num_steps&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;step_size&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="ss"&gt;&amp;quot;talk&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sounds&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="k"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sound&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="ss"&gt;&amp;quot;eat&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;food&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;I&amp;#39;m eating {}&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;food&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;cat = map(animal):
+    "step_size" = 80
+    "sound" = "mew"&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;eat&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;func&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;self&lt;/span&gt;, &lt;span class="nv"&gt;food&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;:
+    &lt;span class="nv"&gt;print&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;I only eat {} if I want to&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;.&lt;span class="nv"&gt;format&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;food&lt;/span&gt;&lt;span class="ss"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;azrael = map(cat):
+    "owner_name" = "Gargamel"&lt;/p&gt;
+&lt;p&gt;azrael.move(5)
+for food in foods:
+    azrael.eat(food)
+&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Of course, there are too many things that should be considered before being able to implement this syntax, but can give an idea on how it could look a more &lt;em&gt;unified&lt;/em&gt; approach of Python syntax.&lt;/p&gt;
+&lt;p&gt;See how the syntax for "sounds", which would be a dictionary, "cat", which would be a class, and "azrael", which would be a instance, is exactly the same.&lt;/p&gt;
+&lt;p&gt;Being used to Python syntax, it's difficult to say if this syntax could be readable, so far I just find it weird. But what looks clear, is that this syntax would make the language simpler, from the implementation point of view, and probably from the programmer point of view, who would probably need to forget some OP concepts first.&lt;/p&gt;
+&lt;p&gt;Whatever is the conclusion the reader can get from this example, I think it's quite interesting seeing how a class can look exactly the same way as a dictionary, and how an instance can look exactly as a subclass of the base class.&lt;/p&gt;</content><category term="Python"></category></entry><entry><title>Building RPMs for Python3.1</title><link href="https://datapythonista.github.io/blog/building-rpms-for-python31.html" rel="alternate"></link><published>2011-06-11T20:48:00+01:00</published><updated>2011-06-11T20:48:00+01:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2011-06-11:/blog/building-rpms-for-python31.html</id><summary type="html">&lt;p&gt;While it's been a long time since the first stable version Python 3 was released, it's not yet available on several operating systems. Looking for a repository with Python 3 rpms, I found &lt;a href="http://iuscommunity.org/Repos"&gt;IUS Community&lt;/a&gt;, but I had some problems with it, and I thought on building my own rpms …&lt;/p&gt;</summary><content type="html">&lt;p&gt;While it's been a long time since the first stable version Python 3 was released, it's not yet available on several operating systems. Looking for a repository with Python 3 rpms, I found &lt;a href="http://iuscommunity.org/Repos"&gt;IUS Community&lt;/a&gt;, but I had some problems with it, and I thought on building my own rpms.&lt;/p&gt;
+&lt;p&gt;The process for building an rpm from a source tarball is pretty easy (if you know the steps). The only problem in this case, is that the .spec file delivered with Python is not updated, so the process fails.&lt;/p&gt;
+&lt;p&gt;I did required changes to the .spec file, and I uploaded it to: &lt;a href="http://files.vaig.be/python-3.1.spec"&gt;http://files.vaig.be/python-3.1.spec&lt;/a&gt; (NOTE, that is necessary to edit the exact version of Python you're building in line 37. Version in uploaded file is 3.1.3, but it could be changes to 3.1.3, 3.1.4rc1,...).&lt;/p&gt;
+&lt;p&gt;Next, you can find the steps for creating a RPM package for Python 3.1 on a CentOS 5 (using my custom .spec file):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&lt;/p&gt;
+&lt;h1&gt;Install required software&lt;/h1&gt;
+&lt;p&gt;yum install rpm-build gcc expat-devel db4-devel gdbm-devel sqlite-devel ncurses-devel readline-devel zlib-devel openssl-devel&lt;/p&gt;
+&lt;h1&gt;Download Python source&lt;/h1&gt;
+&lt;p&gt;cd /usr/src/redhat/SOURCES/
+wget http://www.python.org/ftp/python/3.1.3/Python-3.1.3.tar.bz2&lt;/p&gt;
+&lt;h1&gt;Download .spec (rpm specifications file)&lt;/h1&gt;
+&lt;p&gt;cd /usr/src/redhat/SPECS/
+wget http://files.vaig.be/python-3.1.spec&lt;/p&gt;
+&lt;h1&gt;Generate RPMs (and SRPMs)&lt;/h1&gt;
+&lt;p&gt;rpmbuild -ba /usr/src/redhat/SPECS/python-3.1.spec
+&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Compiling Python and creating the RPM will take a while, but after this process, you'll have the RPMs at:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;
+/usr/src/redhat/SRPMS/python3.1-3.1.3-1pydotorg.src.rpm
+/usr/src/redhat/RPMS/&lt;YOUR-ARCH&gt;/python3.1-3.1.3-1pydotorg.i386.rpm
+/usr/src/redhat/RPMS/&lt;YOUR-ARCH&gt;/python3.1-devel-3.1.3-1pydotorg.i386.rpm
+/usr/src/redhat/RPMS/&lt;YOUR-ARCH&gt;/python3.1-tools-3.1.3-1pydotorg.i386.rpm
+&lt;/code&gt;&lt;/p&gt;</content><category term="Python"></category></entry><entry><title>Restrict multiple simultaneos executions of a Python program</title><link href="https://datapythonista.github.io/blog/restrict-multiple-simultaneos.html" rel="alternate"></link><published>2009-03-06T15:52:00+00:00</published><updated>2009-03-06T15:52:00+00:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2009-03-06:/blog/restrict-multiple-simultaneos.html</id><summary type="html">&lt;p&gt;Here you've a simple function to avoid a python script to be executed more than once at the same time:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;
+def use_lock(func, lockfile):
+    if not os.path.exists(lockfile):
+        with open(lockfile, 'w') as f:
+            f.write(str(os.getpid()))
+        func()
+        os.remove(lockfile)
+        return True
+    else:
+        return None …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here you've a simple function to avoid a python script to be executed more than once at the same time:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;
+def use_lock(func, lockfile):
+    if not os.path.exists(lockfile):
+        with open(lockfile, 'w') as f:
+            f.write(str(os.getpid()))
+        func()
+        os.remove(lockfile)
+        return True
+    else:
+        return None
+&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To execute a function main() using a lock file "/var/run/myprogram.pid" just write:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;
+use_lock(main, '/var/run/myprogram.pid')
+&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Hope you find it useful.&lt;/p&gt;</content><category term="Python"></category></entry></feed>
