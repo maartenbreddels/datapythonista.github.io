@@ -1,0 +1,41 @@
+.navbar-brand img {
+    max-height: 40px;
+}
+.intro-lead-in {
+    font-size: 28px !important;
+}
+#mainNav .navbar-toggler,
+.btn-primary {
+    background-color: #c42424;
+    border-color: #c42424;
+}
+#mainNav .navbar-toggler:hover,
+.btn-primary:hover {
+    background-color: #c45555;
+    border-color: #c42424;
+}
+.social-buttons a,
+.btn-primary a {
+    color: white !important;
+}
+a {
+    color: #c42424;
+}
+.text-primary {
+    color: #c42424 !important;
+}
+#mainNav .navbar-nav .nav-item .nav-link.active,
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: #c45555;
+}
+a:hover {
+    color: #c45555;
+    text-decoration: none;
+}
+#partners img,
+#clients img {
+    vertical-align: middle;
+}
+#contact h3.section-subheading {
+    color: white;
+}

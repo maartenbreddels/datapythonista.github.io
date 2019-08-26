@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with matplotlib (http://matplotlib.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="160pt"
+   version="1.1"
+   viewBox="0 0 200 160"
+   width="200pt"
+   id="svg204"
+   sodipodi:docname="time_series.svg"
+   inkscape:version="0.92.4 (unknown)">
+  <metadata
+     id="metadata208">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1050"
+     id="namedview206"
+     showgrid="false"
+     inkscape:zoom="2.0412693"
+     inkscape:cx="225.64565"
+     inkscape:cy="43.858617"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg204" />
+  <defs
+     id="defs4"
+     style="stroke-linecap:butt;stroke-linejoin:round">
+    <style
+       type="text/css"
+       id="style2">
+*{stroke-linecap:butt;stroke-linejoin:round;}
+  </style>
+  </defs>
+  <g
+     id="line2d_1"
+     style="stroke-linecap:butt;stroke-linejoin:round"
+     transform="matrix(1.9797826,0,0,1.9797826,-507.23892,-9.090216)">
+    <path
+       clip-path="url(#p4dc94feb3b)"
+       d="m 275.30182,28.25879 8.97662,-15.986063 8.97662,65.454546 8.97663,-3.725297 8.97662,1.461323 8.97662,-53.330994 8.97663,33.82535 8.97662,5.340915"
+       style="fill:none;stroke:#1f77b4;stroke-width:1.5;stroke-linecap:square;stroke-linejoin:round"
+       id="path54"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     id="line2d_2"
+     style="stroke-linecap:butt;stroke-linejoin:round"
+     transform="matrix(1.9797826,0,0,1.9797826,-507.23892,-9.090216)">
+    <path
+       clip-path="url(#p4dc94feb3b)"
+       d="m 275.30182,61.597884 8.97662,3.282935 8.97662,7.923558 8.97663,-27.712493 8.97662,7.468067 8.97662,16.267638 8.97663,-48.125965 8.97662,12.675721"
+       style="fill:none;stroke:#ff7f0e;stroke-width:1.5;stroke-linecap:square;stroke-linejoin:round"
+       id="path57"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     id="line2d_3"
+     style="stroke-linecap:butt;stroke-linejoin:round"
+     transform="matrix(1.9797826,0,0,1.9797826,-507.23892,-9.090216)">
+    <path
+       clip-path="url(#p4dc94feb3b)"
+       d="m 275.30182,61.030555 8.97662,-7.69359 8.97662,17.238272 8.97663,-45.263114 8.97662,34.324255 8.97662,-44.120311 8.97663,2.762201 8.97662,-2.57297"
+       style="fill:none;stroke:#2ca02c;stroke-width:1.5;stroke-linecap:square;stroke-linejoin:round"
+       id="path60"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     id="line2d_4"
+     style="stroke-linecap:butt;stroke-linejoin:round"
+     transform="matrix(1.9797826,0,0,1.9797826,-507.23892,-9.090216)">
+    <path
+       clip-path="url(#p4dc94feb3b)"
+       d="m 275.30182,24.671958 8.97662,0.07966 8.97662,29.613671 8.97663,-31.61834 8.97662,20.382852 8.97662,13.662911 8.97663,-20.444602 8.97662,-13.913949"
+       style="fill:none;stroke:#d62728;stroke-width:1.5;stroke-linecap:square;stroke-linejoin:round"
+       id="path63"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     id="matplotlib.axis_3"
+     style="stroke-linecap:butt;stroke-linejoin:round"
+     transform="translate(0,70.000001)" />
+  <g
+     id="matplotlib.axis_4"
+     style="stroke-linecap:butt;stroke-linejoin:round"
+     transform="translate(0,70.000001)" />
+  <defs
+     id="defs202">
+    <clipPath
+       id="p65e1c8b035"
+       style="stroke-linecap:butt;stroke-linejoin:round">
+      <rect
+         height="72"
+         width="69.120003"
+         x="194.39999"
+         y="9"
+         id="rect193"
+         style="stroke-linecap:butt;stroke-linejoin:round" />
+    </clipPath>
+    <clipPath
+       id="p4dc94feb3b"
+       style="stroke-linecap:butt;stroke-linejoin:round">
+      <rect
+         height="72"
+         width="69.120003"
+         x="272.16"
+         y="9"
+         id="rect196"
+         style="stroke-linecap:butt;stroke-linejoin:round" />
+    </clipPath>
+    <clipPath
+       id="pfceed726e3"
+       style="stroke-linecap:butt;stroke-linejoin:round">
+      <rect
+         height="72"
+         width="69.120003"
+         x="349.92001"
+         y="9"
+         id="rect199"
+         style="stroke-linecap:butt;stroke-linejoin:round" />
+    </clipPath>
+  </defs>
+</svg>
