@@ -44,9 +44,8 @@ copying the memory.&lt;/p&gt;
 to move in that direction. People was in general happy with the idea, but there were some concerns
 about decisions made in Arrow (mainly contributed by Sylvain, from xframe):&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Arrow memory being immutable and &lt;strong&gt;copy-on-write&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Apache arrow C++ API and implementation not following common C++ idioms&lt;/li&gt;
 &lt;li&gt;Using a monorepo (including all bindings in the same repo as Arrow)&lt;/li&gt;
-&lt;li&gt;Lack of a community on git&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Interoperability&lt;/h3&gt;
 &lt;p&gt;The next topic was about &lt;strong&gt;interoperability&lt;/strong&gt;. How dataframe libraries can interact among them, and

@@ -51,9 +51,8 @@ Vaex is already using Arrow, and pandas has plans in its [roadmap](https://panda
 to move in that direction. People was in general happy with the idea, but there were some concerns
 about decisions made in Arrow (mainly contributed by Sylvain, from xframe):
 
-- Arrow memory being immutable and **copy-on-write**
+- Apache arrow C++ API and implementation not following common C++ idioms
 - Using a monorepo (including all bindings in the same repo as Arrow)
-- Lack of a community on git
 
 ### Interoperability
 
