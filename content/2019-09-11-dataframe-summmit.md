@@ -48,11 +48,12 @@ wheel, and transferring data among packages (e.g. pandas to R) can be done witho
 copying the memory.
 
 Vaex is already using Arrow, and pandas has plans in its [roadmap](https://pandas.pydata.org/pandas-docs/stable/development/roadmap.html)
-to move in that direction. People was in general happy with the idea, but there were some concerns
+to move in that direction. People were in general happy with the idea, but there were some concerns
 about decisions made in Arrow (mainly contributed by Sylvain, from xframe):
 
 - Apache arrow C++ API and implementation not following common C++ idioms
 - Using a monorepo (including all bindings in the same repo as Arrow)
+- Not a clear distinction between the specification and implementation (as in for instance project Jupyter)
 
 ### Interoperability
 
