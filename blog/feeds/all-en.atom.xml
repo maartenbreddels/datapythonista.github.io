@@ -1,5 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/feeds/all-en.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2019-07-22T23:26:00+01:00</updated><subtitle>about me</subtitle><entry><title>pandas: The two cultures</title><link href="https://datapythonista.github.io/blog/pandas-the-two-cultures.html" rel="alternate"></link><published>2019-07-22T23:26:00+01:00</published><updated>2019-07-22T23:26:00+01:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2019-07-22:/blog/pandas-the-two-cultures.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/leo_breiman.jpeg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/feeds/all-en.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2019-09-11T00:00:00+01:00</updated><subtitle>about me</subtitle><entry><title>Dataframe summit @ EuroSciPy write up</title><link href="https://datapythonista.github.io/blog/dataframe-summit-at-euroscipy.html" rel="alternate"></link><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2019-09-11:/blog/dataframe-summit-at-euroscipy.html</id><summary type="html">&lt;p&gt;Last week took place in Bilbao, Spain, &lt;a href="https://www.euroscipy.org/2019/"&gt;EuroSciPy 2019&lt;/a&gt;.
+This year we introduced the &lt;a href="https://www.euroscipy.org/2019/maintainers.html"&gt;maintainers track&lt;/a&gt;
+a room dedicated to discussions among maintainers. The idea is similar to the 
+&lt;a href="https://en.wikipedia.org/wiki/Birds_of_a_feather_(computing)"&gt;birds of a feather&lt;/a&gt; or unconference
+sessions of other conferences. But focussed on open source maintainers and contributors. And
+we scheduled …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Last week took place in Bilbao, Spain, &lt;a href="https://www.euroscipy.org/2019/"&gt;EuroSciPy 2019&lt;/a&gt;.
+This year we introduced the &lt;a href="https://www.euroscipy.org/2019/maintainers.html"&gt;maintainers track&lt;/a&gt;
+a room dedicated to discussions among maintainers. The idea is similar to the 
+&lt;a href="https://en.wikipedia.org/wiki/Birds_of_a_feather_(computing)"&gt;birds of a feather&lt;/a&gt; or unconference
+sessions of other conferences. But focussed on open source maintainers and contributors. And
+we scheduled most of the sessions in advanced, to attract the interested people to join the
+conference. We also had a maintainers plenary session, in which 26 maintainers of popular
+open source scientific projects participated (my guess is that around 50 maintainers attended
+the conference).&lt;/p&gt;
+&lt;h2&gt;Dataframe summit session&lt;/h2&gt;
+&lt;p&gt;One of the sessions was a 2 hours discussion on Python dataframes. 16 people attended it, around
+half of them were maintainers of dataframe open source libraries. There were also pandas users
+and contributors, maintainers of other projects (PyPy, pytest) and people interested in being involved.
+Also the developer of a proprietary dataframe library in Python, who could also add value to the discussion.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/dataframe_summit.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;Those were the libraries represented:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/pandas-dev/pandas"&gt;pandas&lt;/a&gt;&lt;/strong&gt; Flexible and powerful data analysis / manipulation library for Python&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/dask/dask"&gt;Dask&lt;/a&gt;&lt;/strong&gt; Parallel computing with task scheduling&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/vaexio/vaex"&gt;Vaex&lt;/a&gt;&lt;/strong&gt; Out-of-Core DataFrames for Python&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/modin-project/modin"&gt;Modin&lt;/a&gt;&lt;/strong&gt; Scaling pandas with &lt;a href="https://github.com/ray-project/ray/"&gt;Ray&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/QuantStack/xframe"&gt;xframe&lt;/a&gt;&lt;/strong&gt; DataFrame library in C++&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We started by personal introductions, project introductions, and what people wanted to get out
+of the session (many people already proposed topics before the event, and we defined an agenda with those).&lt;/p&gt;
+&lt;h3&gt;Document the ecosystem&lt;/h3&gt;
+&lt;p&gt;One of the first topics discussed was on how to let users know what is the best dataframe
+tool for their job, and how the existing packages are different. The general consensus was
+that the &lt;a href="https://pandas.pydata.org/pandas-docs/stable/ecosystem.html"&gt;pandas ecosystem&lt;/a&gt; page
+is the best place for it. There are already plans to improve this page (and plans and work in progress to improve
+the look and feel of the pandas website and documentation).&lt;/p&gt;
+&lt;h3&gt;Apache Arrow&lt;/h3&gt;
+&lt;p&gt;Another topic that was discussed early was &lt;strong&gt;&lt;a href="https://arrow.apache.org/"&gt;Apache Arrow&lt;/a&gt;&lt;/strong&gt;. Arrow's mission is to
+provide a common memory representation for all dataframe libraries. So, libraries don't need to reinvent the
+wheel, and transferring data among packages (e.g. pandas to R) can be done without transformations or even without
+copying the memory.&lt;/p&gt;
+&lt;p&gt;Vaex is already using Arrow, and pandas has plans in its &lt;a href="https://pandas.pydata.org/pandas-docs/stable/development/roadmap.html"&gt;roadmap&lt;/a&gt;
+to move in that direction. People was in general happy with the idea, but there were some concerns
+about decisions made in Arrow (mainly contributed by Sylvain, from xframe):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Arrow memory being immutable and &lt;strong&gt;copy-on-write&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Using a monorepo (including all bindings in the same repo as Arrow)&lt;/li&gt;
+&lt;li&gt;Lack of a community on git&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Interoperability&lt;/h3&gt;
+&lt;p&gt;The next topic was about &lt;strong&gt;interoperability&lt;/strong&gt;. How dataframe libraries can interact among them, and
+with the rest of the ecosystem. Examples can be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Using the same plotting backends from different dataframe libraries&lt;/li&gt;
+&lt;li&gt;Passing to &lt;a href="https://scikit-learn.org/stable/index.html"&gt;scikit-learn&lt;/a&gt; pandas-like dataframe objects&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There was consensus that defining a standard (and minimal) dataframe API would help. Dataframe libraries
+could extend this smaller API and offer users a much bigger APIs (like pandas). But having a subset of
+operations and methods would be very useful for third party libraries expecting dataframe objects.&lt;/p&gt;
+&lt;p&gt;Devin from Modin is doing research at UC Berkeley on defining this API, and he's already got some
+documentation he's happy to share. Modin is already implemented with this design, and while it's
+one of the less mature participating projects (in Devin's words), it's user-facing layer could
+potentially be reused by other projects reimplementing dataframes with a different backend.&lt;/p&gt;
+&lt;p&gt;It was noted that could be useful to have a common test suite, if a standard dataframe API is defined.
+There was agreement that the pandas test suite is not appropriate for other packages.&lt;/p&gt;
+&lt;h3&gt;Public API improvements&lt;/h3&gt;
+&lt;p&gt;At the end of the session, we discussed about possible improvements to the public pandas API.
+Since several of the participants reimplemented the pandas API, was a good opportunity to see
+places where they found inconsistencies, or where the API was making their lives difficult
+when using other approaches.&lt;/p&gt;
+&lt;p&gt;Indexing was the part of pandas that other maintainers were less happy about. The way &lt;code&gt;.loc&lt;/code&gt;
+behaves was one of the comments. And being forced to have a default index, and not being able
+to index by other columns were other comments.&lt;/p&gt;
+&lt;h3&gt;Next steps&lt;/h3&gt;
+&lt;p&gt;Couple of things were discussed to keep those discussions active, and keep coordinating on
+shaping the dataframes of the future.&lt;/p&gt;
+&lt;p&gt;The first was to start a workgroup, or a distribution list (or discourse). The &lt;code&gt;pandas-dev&lt;/code&gt;
+list wasn't used by the participants (except the pandas maintainers), and it didn't seem
+to be the appropriate place.&lt;/p&gt;
+&lt;p&gt;Another idea would be to organize another bigger dataframe summit in the future. It was
+proposed to be hosted somewhere in the Caribbean (ok, it was me who proposed that, and
+everybody else laughed, but here I leave it again). :)&lt;/p&gt;</content><category term="pandas"></category></entry><entry><title>pandas: The two cultures</title><link href="https://datapythonista.github.io/blog/pandas-the-two-cultures.html" rel="alternate"></link><published>2019-07-22T23:26:00+01:00</published><updated>2019-07-22T23:26:00+01:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2019-07-22:/blog/pandas-the-two-cultures.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/leo_breiman.jpeg"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.stat.berkeley.edu/~breiman/"&gt;Leo Breiman&lt;/a&gt; was a distinguished statistician at
 UC Berkeley, known among other things for his major contributions to CART (decision trees),
 and ensemble techniques, mainly bootstrap aggregation. Combining both, he was able to define
